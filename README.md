@@ -1,2 +1,12 @@
-# big-data-project
-Big Data Project
+# Big Data Capstone Project
+## 1. Mô tả bài toán
+
+Trong thị trường tiền số tiền số, sự biến động lớn của thị trường cũng như từng loại tài sản trong thị trường trở thành rủi ro rất lớn với nhà đầu tư. Những biến động tốt có xấu có có thể được tạo ra bằng những nguồn tin trên mạng xã hội. Bất cứ khi nào xuất hiện những thông tin bất lợi cho tài sản thì gần như ngay lập tức số lượng thông tin được phổ biến trên mạng xã hội tăng lên nhanh chóng, từ đó, tạo một phản ứng tiêu cực của cộng đồng lên loại tài sản đó. Do đó, cần thiết một công cụ theo dõi những thông tin trending về các loại tài sản số này trên các nền tảng mạng xã hội, đặc biệt Twitter nơi các trang mạng xã hội thông tin chính thức của nhiều nền tảng tiền kĩ thuật số. Công cụ này có thể giúp người dùng biết được những tài sản số nào đang được quan tâm nhiều nhất trên mạng xã hội trong một khoảng thời gian nhất định và mức độ phản hồi của nó như thế nào của cộng đồng.
+
+## 2. Mục tiêu và phạm vi của đề tài
+Thông qua khảo sát, mục tiêu của đề tài, nhóm mong muốn tạo ra công cụ đưa ra cái nhìn tổng quan cho người dùng về các luồng thông tin của mạng xã hội một cách tốt nhất. Bài toán nhóm đặt ra có nhiệm vụ chính sau: 
+
+Thu thập dữ liệu những tài sản số có giá trị tốt lắm trong top 100 coin hiện tại thông qua API của các chuyên trang phân tích như Coingecko, ngoài ra thu thập dữ liệu về giá của các loại tài sản trên sàn.
+
+Thu thập dữ liệu từ các Tweet với hashtag liên quan trực tiếp tới từng loại tài sản ví dụ như #FTM, #SOL, #LUNC, … thường được thêm vào bài viết liên quan tới loại tài sản đó cũng như các hashtag liên quan tới tài sản số như #Web3. Ngoài thông tin thu thập được, nhóm mong muốn đưa thêm vào tính năng phân tích semantic dữ liệu văn bản của các tweet bằng tiếng Anh để hiểu tweet đang đánh giá tích cực hoặc tiêu cực về loại tài sản này.
+Tạo phân tích dựa trên dữ liệu thu thập được từ dữ liệu trending về thông tin tweet của loại tài sản trên mạng xã hội cũng như giá biến động của tài sản
