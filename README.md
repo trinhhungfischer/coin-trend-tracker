@@ -11,7 +11,14 @@ Thu thập dữ liệu những tài sản số có giá trị tốt lắm trong 
 Thu thập dữ liệu từ các Tweet với hashtag liên quan trực tiếp tới từng loại tài sản ví dụ như #FTM, #SOL, #LUNC, … thường được thêm vào bài viết liên quan tới loại tài sản đó cũng như các hashtag liên quan tới tài sản số như #Web3. Ngoài thông tin thu thập được, nhóm mong muốn đưa thêm vào tính năng phân tích semantic dữ liệu văn bản của các tweet bằng tiếng Anh để hiểu tweet đang đánh giá tích cực hoặc tiêu cực về loại tài sản này.
 Tạo phân tích dựa trên dữ liệu thu thập được từ dữ liệu trending về thông tin tweet của loại tài sản trên mạng xã hội cũng như giá biến động của tài sản
 
+## 3. Mô hình luồng dự án
+Mô hình luồng dự án sẽ dựa trên kiến trúc Lambda (&#955;) với các tầng xử lý dữ liệu khác nhau  được trình bày trong sơ đồ dưới
+![#Data Pipeline](images/pipeline.png)
+
+
 # Các bước thực hiện
 
 ## Tạo luồng crawl top 100 coin từ Coingeko
-Đầu tiên nghiên cứu các API liên quan đến lấy dữ liệu từ Coingeko về tài sản top 100 theo tổng giá trị.  
+Đầu tiên nghiên cứu các API liên quan đến lấy dữ liệu từ Coingeko về tài sản top 100 theo tổng giá trị. 
+
+## Tạo giao diện phân tích cho trang
