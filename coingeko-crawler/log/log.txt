@@ -1,0 +1,5 @@
+2022-12-05 14:07:30,307 ERROR division by zero
+Traceback (most recent call last):
+  File "coingeko-crawler/logger.py", line 16, in <module>
+    1 / 0
+ZeroDivisionError: division by zero
