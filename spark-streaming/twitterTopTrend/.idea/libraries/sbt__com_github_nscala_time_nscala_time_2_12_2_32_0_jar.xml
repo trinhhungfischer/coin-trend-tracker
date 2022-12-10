@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sbt: com.github.nscala-time:nscala-time_2.12:2.32.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/nscala-time/nscala-time_2.12/2.32.0/nscala-time_2.12-2.32.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
