@@ -55,3 +55,4 @@ target
 /data/namenode/*
 /iot-spark-processor/data/iot-data-parque/
 .venv
+__pycache__
