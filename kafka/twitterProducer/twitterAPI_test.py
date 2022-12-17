@@ -1,21 +1,21 @@
-import snscrape.modules.twitter as sntwitter
-import pandas as pd
+from twython import TwythonStreamer
+import json
 
-# Creating list to append tweet data to
-tweets_list1 = []
+class MyStreamer(TwythonStreamer):
+    def on_success(self, data):
+        if 'text' in data:
+            print(data['text'].encode('utf-8'))
+            # producer.send_messages(topicName, json.dumps(data))
+    def on_error(self, status_code, data, headers = None):
+    	print(status_code)
 
-# tweet_file = open("tweets.", "w")
 
-# Using TwitterSearchScraper to scrape data and append tweets to list
-for i, tweet in enumerate(sntwitter.TwitterSearchScraper('%23BTC ').get_items()):
-    if i>200:
-        break
-    tweet.content = tweet.content.replace('\n', ' ')
-    
-    tweets_list1.append([tweet.date, tweet.id, tweet.content, tweet.user.username])
-    print(tweet)
-    
-# Creating a dataframe from the tweets list above 
-tweets_df1 = pd.DataFrame(tweets_list1, columns=['Datetime', 'Tweet Id', 'Text', 'Username'])
+CONSUMERKEY = ""
+CONSUMERSECRET = ""
+OAUTHTOKEN = ""
+OAUTHTOKENSECRET=""
 
-tweets_df1.to_csv('tweets.csv', index=False)
+stream = MyStreamer(CONSUMERKEY, CONSUMERSECRET, OAUTHTOKEN, OAUTHTOKENSECRET)
+
+results = stream.statuses.filter(track=twitterFilter)
+

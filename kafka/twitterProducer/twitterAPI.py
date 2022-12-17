@@ -55,8 +55,10 @@ def delete_all_rules(rules):
 def set_rules(delete):
     # You can adjust the rules if needed
     sample_rules = [
-        {"value": "dog has:images", "tag": "dog pictures"},
-        {"value": "cat has:images -grumpy", "tag": "cat pictures"},
+        # {"value": "dog has:images", "tag": "dog pictures"},
+        # {"value": "cat has:images -grumpy", "tag": "cat pictures"},
+        {"value": "crypto", "tag": "crypto"},
+        {"value": "bitcoin", "tag": "bitcoin"},
     ]
     payload = {"add": sample_rules}
     response = requests.post(

@@ -8,3 +8,14 @@
 # description: This script is used to orchestrate the project
 ######################################################################
 
+# Create cassandra schema
+docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/createTweetsTable.cql
+docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/createTwitterSeries.cql
+docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/createTwitterSeriesStreaming.cql
+docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/createTwitterTrending.cql
+docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/createTwitterTrendingStreaming.cql
+
+# Create kafka topic
+docker exec kafka-coin-trendy kafka-topics --create --zookeeper zookeeper-coin-trendy:2181 --replication-factor 1 --partitions 1 --topic twitter-tweets
+
+# Create spark job
