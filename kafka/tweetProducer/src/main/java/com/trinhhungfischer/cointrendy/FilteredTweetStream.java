@@ -24,9 +24,10 @@ import java.util.*;
 public class FilteredTweetStream {
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
+    private static final String bearerToken = "AAAAAAAAAAAAAAAAAAAAAC%2BWkQEAAAAA5VceSkxXDVgtBKWMUhmSeZRVkuc%3DySnwaTG37tA1Xa5051I2A7lvjMsNdpodUSLQdgyxn9PxrxGWav";
+
 
     public static void main(String args[]) throws IOException, URISyntaxException {
-        String bearerToken = System.getenv("BEARER_TOKEN");
         if (null != bearerToken) {
             Map<String, String> rules = new HashMap();
             rules.put("cats has:images", "cat images");
@@ -43,12 +44,9 @@ public class FilteredTweetStream {
      * */
     private static void connectStream(String bearerToken) throws IOException, URISyntaxException {
 
-        HttpClient httpClient = HttpClients.custom()
-                .setDefaultRequestConfig(RequestConfig.custom()
-                        .setCookieSpec(CookieSpecs.STANDARD).build())
-                .build();
+        HttpClient httpClient = getHttpClient();
 
-        URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream");
+        URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream?tweet.fields=public_metrics");
 
         HttpGet httpGet = new HttpGet(uriBuilder.build());
         httpGet.setHeader("Authorization", String.format("Bearer %s", bearerToken));
@@ -63,8 +61,8 @@ public class FilteredTweetStream {
                 line = reader.readLine();
             }
         }
-
     }
+
 
     /*
      * Helper method to setup rules before streaming data
@@ -81,10 +79,7 @@ public class FilteredTweetStream {
      * Helper method to create rules for filtering
      * */
     private static void createRules(String bearerToken, Map<String, String> rules) throws URISyntaxException, IOException {
-        HttpClient httpClient = HttpClients.custom()
-                .setDefaultRequestConfig(RequestConfig.custom()
-                        .setCookieSpec(CookieSpecs.STANDARD).build())
-                .build();
+        HttpClient httpClient = getHttpClient();
 
         URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream/rules");
 
@@ -105,10 +100,7 @@ public class FilteredTweetStream {
      * */
     private static List<String> getRules(String bearerToken) throws URISyntaxException, IOException {
         List<String> rules = new ArrayList();
-        HttpClient httpClient = HttpClients.custom()
-                .setDefaultRequestConfig(RequestConfig.custom()
-                        .setCookieSpec(CookieSpecs.STANDARD).build())
-                .build();
+        HttpClient httpClient = getHttpClient();
 
         URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream/rules");
 
@@ -134,10 +126,7 @@ public class FilteredTweetStream {
      * Helper method to delete rules
      * */
     private static void deleteRules(String bearerToken, List<String> existingRules) throws URISyntaxException, IOException {
-        HttpClient httpClient = HttpClients.custom()
-                .setDefaultRequestConfig(RequestConfig.custom()
-                        .setCookieSpec(CookieSpecs.STANDARD).build())
-                .build();
+        HttpClient httpClient = getHttpClient();
 
         URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream/rules");
 
@@ -181,5 +170,14 @@ public class FilteredTweetStream {
             return String.format(string, result.substring(0, result.length() - 1));
         }
     }
+
+    private static HttpClient getHttpClient() {
+        HttpClient httpClient = HttpClients.custom()
+                .setDefaultRequestConfig(RequestConfig.custom()
+                        .setCookieSpec(CookieSpecs.STANDARD).build())
+                .build();
+        return httpClient;
+    }
+
 
 }

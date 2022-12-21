@@ -19,3 +19,12 @@ docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/
 docker exec kafka-coin-trendy kafka-topics --create --zookeeper zookeeper-coin-trendy:2181 --replication-factor 1 --partitions 1 --topic twitter-tweets
 
 # Create spark job
+
+
+# Create our folders on Hadoop file system and total permission to those
+docker exec namenode hdfs dfs -rm -r /cointrendy
+docker exec namenode hdfs dfs -mkdir /cointrendy
+docker exec namenode hdfs dfs -mkdir /cointrendy/tweets
+docker exec namenode hdfs dfs -chmod -R 777 /cointrendy
+docker exec namenode hdfs dfs -chmod -R 777 /cointrendy/tweets
+

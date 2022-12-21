@@ -1,0 +1,582 @@
+{
+    "data": {
+        "author_id": "934099013787373569",
+        "created_at": "2022-12-19T22:58:13.000Z",
+        "edit_history_tweet_ids": [
+            "1604974410368028672"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 51,
+                    "normalized_text": "Katie",
+                    "probability": 0.6245,
+                    "start": 47,
+                    "type": "Other"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 10,
+                    "id": "4196983835",
+                    "start": 0,
+                    "username": "dog_rates"
+                },
+                {
+                    "end": 21,
+                    "id": "28460551",
+                    "start": 11,
+                    "username": "Trupanion"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/tWhT3uqnsJ",
+                    "end": 79,
+                    "expanded_url": "https://twitter.com/2ManySodiumz/status/1604974410368028672/photo/1",
+                    "media_key": "3_1604974407771906049",
+                    "start": 56,
+                    "url": "https://t.co/tWhT3uqnsJ"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974410368028672",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1604891617256542208",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@dog_rates @Trupanion Happy Holidays from Miss Katie \u2764\ufe0f https://t.co/tWhT3uqnsJ"
+    },
+    "matching_rules": [
+        {
+            "id": "1604973532639031297",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "36863937",
+        "created_at": "2022-12-19T22:58:13.000Z",
+        "edit_history_tweet_ids": [
+            "1604974412163432448"
+        ],
+        "entities": {
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/pcI71meXeY",
+                    "end": 132,
+                    "expanded_url": "https://twitter.com/ayeleexay/status/1604974412163432448/photo/1",
+                    "media_key": "3_1604974407428046849",
+                    "start": 109,
+                    "url": "https://t.co/pcI71meXeY"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974412163432448",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "He left today to go to his forever family and I\u2019m so happy for him but equally devastated. I love that dog \ud83d\ude2d https://t.co/pcI71meXeY"
+    },
+    "matching_rules": [
+        {
+            "id": "1604973532639031297",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "82828320",
+        "created_at": "2022-12-19T22:58:14.000Z",
+        "edit_history_tweet_ids": [
+            "1604974416055750656"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 16,
+                    "id": "3228038033",
+                    "start": 0,
+                    "username": "barbaraward1211"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/O8CjjFU534",
+                    "end": 102,
+                    "expanded_url": "https://twitter.com/Ex_arv_sgt/status/1604974416055750656/photo/1",
+                    "media_key": "3_1604974413782327296",
+                    "start": 79,
+                    "url": "https://t.co/O8CjjFU534"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974416055750656",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1604839116427780096",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@barbaraward1211 He's 3 weeks away with the adult kids etc.  He's good thanks. https://t.co/O8CjjFU534"
+    },
+    "matching_rules": [
+        {
+            "id": "1604973532639031297",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "19777195",
+        "created_at": "2022-12-19T22:58:14.000Z",
+        "edit_history_tweet_ids": [
+            "1604974417607786496"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 10,
+                    "id": "4196983835",
+                    "start": 0,
+                    "username": "dog_rates"
+                },
+                {
+                    "end": 21,
+                    "id": "28460551",
+                    "start": 11,
+                    "username": "Trupanion"
+                },
+                {
+                    "end": 74,
+                    "id": "44166798",
+                    "start": 64,
+                    "username": "NHLBruins"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/yy0L9eCkYy",
+                    "end": 103,
+                    "expanded_url": "https://twitter.com/JenLWat/status/1604974417607786496/photo/1",
+                    "media_key": "3_1604974415464333313",
+                    "start": 80,
+                    "url": "https://t.co/yy0L9eCkYy"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974417607786496",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1604891617256542208",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@dog_rates @Trupanion There's our Hatty the hockey dog! She's a @NHLBruins fan! https://t.co/yy0L9eCkYy"
+    },
+    "matching_rules": [
+        {
+            "id": "1604974413023444992",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1539715103729356802",
+        "created_at": "2022-12-19T22:58:13.000Z",
+        "edit_history_tweet_ids": [
+            "1604974411345702914"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 10,
+                    "id": "4196983835",
+                    "start": 0,
+                    "username": "dog_rates"
+                },
+                {
+                    "end": 21,
+                    "id": "28460551",
+                    "start": 11,
+                    "username": "Trupanion"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/8B9y6e0jPN",
+                    "end": 59,
+                    "expanded_url": "https://twitter.com/bvbykota/status/1604974411345702914/photo/1",
+                    "media_key": "3_1604974408996724736",
+                    "start": 36,
+                    "url": "https://t.co/8B9y6e0jPN"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974411345702914",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1604891617256542208",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@dog_rates @Trupanion \u2728\ufe0f festive \u2728\ufe0f https://t.co/8B9y6e0jPN"
+    },
+    "matching_rules": [
+        {
+            "id": "1604974413023444992",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1597929513534754817",
+        "created_at": "2022-12-19T22:58:19.000Z",
+        "edit_history_tweet_ids": [
+            "1604974437517910020"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 12,
+                    "id": "1486085314812776448",
+                    "start": 0,
+                    "username": "MaraNFT_DAO"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/5565qYVIjp",
+                    "end": 277,
+                    "expanded_url": "https://twitter.com/LucidDreamerSOL/status/1604974437517910020/photo/1",
+                    "media_key": "3_1604974423173480448",
+                    "start": 254,
+                    "url": "https://t.co/5565qYVIjp"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974437517910020",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1604842406691700743",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@MaraNFT_DAO I'm inviting you to check our stealth mint that we launched yesterday!\nWe already passed 60% and looking for sold out in the next couple of hours. Join our discord if you want to find out more about our goals and art. Our discord is in BIO! https://t.co/5565qYVIjp"
+    },
+    "matching_rules": [
+        {
+            "id": "1604974413023444992",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1300427798423756803",
+        "created_at": "2022-12-19T22:58:20.000Z",
+        "edit_history_tweet_ids": [
+            "1604974440097497089"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 9,
+                    "id": "228023472",
+                    "start": 0,
+                    "username": "Casimiro"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/l71fG95Qmp",
+                    "end": 310,
+                    "expanded_url": "https://twitter.com/_borgeswalisson/status/1604974440097497089/photo/1",
+                    "media_key": "3_1604974437639520256",
+                    "start": 287,
+                    "url": "https://t.co/l71fG95Qmp"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974440097497089",
+        "lang": "pt",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1604966814248620033",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@Casimiro \ud83c\udd98\ufe0f\u26a0\ufe0fPIX DE NATAL URGENTE\u26a0\ufe0f\ud83c\udd98\ufe0f\n Lar Dog Lar Bq,para compra de ra\u00e7\u00e3o, colchoes e cobertores\nSem a ajuda de voc\u00eas, infelizmente n\u00e3o teremos de onde tirar.\nDoem quanto puder pelo pix cpf 077.469.026-77 C6 bank Walisson Borges \nS\u00e3o 77 caezinhos, 25k racao dia.\nE que aben\u00e7oe a todos https://t.co/l71fG95Qmp"
+    },
+    "matching_rules": [
+        {
+            "id": "1604974413023444992",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1553054511895298049",
+        "created_at": "2022-12-19T22:58:23.000Z",
+        "edit_history_tweet_ids": [
+            "1604974452579737600"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 5,
+                    "start": 0,
+                    "tag": "nsfw"
+                },
+                {
+                    "end": 16,
+                    "start": 6,
+                    "tag": "adultonly"
+                },
+                {
+                    "end": 22,
+                    "start": 17,
+                    "tag": "sexy"
+                },
+                {
+                    "end": 34,
+                    "start": 23,
+                    "tag": "nsfwseller"
+                },
+                {
+                    "end": 51,
+                    "start": 35,
+                    "tag": "Sellingcontents"
+                },
+                {
+                    "end": 66,
+                    "start": 52,
+                    "tag": "buyingcontent"
+                },
+                {
+                    "end": 75,
+                    "start": 67,
+                    "tag": "selling"
+                },
+                {
+                    "end": 85,
+                    "start": 76,
+                    "tag": "snapchat"
+                },
+                {
+                    "end": 99,
+                    "start": 86,
+                    "tag": "snapchatnsfw"
+                },
+                {
+                    "end": 114,
+                    "start": 100,
+                    "tag": "seriousbuyers"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Badass Gabbie Show is on Snapchat!",
+                    "display_url": "snapchat.com/add/badassgabb\u2026",
+                    "end": 219,
+                    "expanded_url": "https://www.snapchat.com/add/badassgabbie02?share_id=T3YA3A-7nxI&locale=en-US",
+                    "images": [
+                        {
+                            "height": 800,
+                            "url": "https://pbs.twimg.com/news_img/1602785458106286081/V0dOovZ9?format=jpg&name=orig",
+                            "width": 800
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1602785458106286081/V0dOovZ9?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 196,
+                    "status": 200,
+                    "title": "badassgabbie02 on Snapchat",
+                    "unwound_url": "https://www.snapchat.com/add/badassgabbie02?share_id=T3YA3A-7nxI&locale=en-US",
+                    "url": "https://t.co/jIemzmvcCQ"
+                },
+                {
+                    "display_url": "pic.twitter.com/WzrfH35HQt",
+                    "end": 243,
+                    "expanded_url": "https://twitter.com/jadecole066/status/1604974452579737600/photo/1",
+                    "media_key": "3_1604974436817555463",
+                    "start": 220,
+                    "url": "https://t.co/WzrfH35HQt"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974452579737600",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "#nsfw #adultonly #sexy #nsfwseller #Sellingcontents #buyingcontent #selling #snapchat #snapchatnsfw #seriousbuyers\nAdd me on Snapchat and but my Full dog content clips Live on snap Badassgabbie02 https://t.co/jIemzmvcCQ https://t.co/WzrfH35HQt"
+    },
+    "matching_rules": [
+        {
+            "id": "1604974413023444992",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "28451934",
+        "created_at": "2022-12-19T22:58:25.000Z",
+        "edit_history_tweet_ids": [
+            "1604974463157948416"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 10,
+                    "id": "4196983835",
+                    "start": 0,
+                    "username": "dog_rates"
+                },
+                {
+                    "end": 21,
+                    "id": "28460551",
+                    "start": 11,
+                    "username": "Trupanion"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/xqLjhIIu54",
+                    "end": 82,
+                    "expanded_url": "https://twitter.com/thebuffaloveRN/status/1604974463157948416/photo/1",
+                    "media_key": "3_1604974457315098629",
+                    "start": 59,
+                    "url": "https://t.co/xqLjhIIu54"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974463157948416",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1604891617256542208",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@dog_rates @Trupanion Skeptical about the Santa Situation. https://t.co/xqLjhIIu54"
+    },
+    "matching_rules": [
+        {
+            "id": "1604974413023444992",
+            "tag": "dog pictures"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "3304606710",
+        "created_at": "2022-12-19T22:58:24.000Z",
+        "edit_history_tweet_ids": [
+            "1604974459869200384"
+        ],
+        "entities": {
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/MtOsNjPgDx",
+                    "end": 53,
+                    "expanded_url": "https://twitter.com/jordan_pastorik/status/1604974459869200384/photo/1",
+                    "media_key": "3_1604974450763595779",
+                    "start": 30,
+                    "url": "https://t.co/MtOsNjPgDx"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1604974459869200384",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "He\u2019s just got that dog in him https://t.co/MtOsNjPgDx"
+    },
+    "matching_rules": [
+        {
+            "id": "1604974413023444992",
+            "tag": "dog pictures"
+        }
+    ]
+}
