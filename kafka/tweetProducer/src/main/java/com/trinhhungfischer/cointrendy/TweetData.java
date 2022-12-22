@@ -1,42 +1,82 @@
 package com.trinhhungfischer.cointrendy;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class TweetData implements Serializable {
+    private static final Logger logger = Logger.getLogger(TweetData.class);
     private String tweetId;
     private String text;
     private ArrayList<String> editTweetIds;
     private ArrayList<String> hashtags;
+    private String language;
     private int retweetCount;
     private int replyCount;
     private int likeCount;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="MST")
+    private int quoteCount;
     private Date createdAt;
     private String authorId;
 
 
 
     public TweetData() {
-
+          this.editTweetIds = new ArrayList<String>();
+          this.hashtags = new ArrayList<String>();
     }
 
-    public TweetData(String tweetId, String text, ArrayList<String> editTweetIds,
-                     ArrayList<String> hashtags, int retweetCount, int replyCount,
-                     int likeCount, Date createdAt, String authorId) {
-        this.tweetId = tweetId;
-        this.text = text;
-        this.editTweetIds = editTweetIds;
-        this.hashtags = hashtags;
-        this.retweetCount = retweetCount;
-        this.replyCount = replyCount;
-        this.likeCount = likeCount;
-        this.createdAt = createdAt;
-        this.authorId = authorId;
+    public TweetData(JsonNode jsonNode) {
+        this();
+        try {
+            JsonNode data = jsonNode.get("data");
+            this.tweetId = data.get("id").asText();
+            this.text = data.get("text").asText();
+            this.createdAt = new DateTime(data.get("created_at").asText()).toDate();
+            this.authorId = data.get("author_id").asText();
+            this.language = data.get("lang").asText();
+
+            // Tweet Histories ID
+            ArrayNode tweetHistoryIds = (ArrayNode) data.get("edit_history_tweet_ids");
+            if (tweetHistoryIds!= null && tweetHistoryIds.size() > 0) {
+                for (JsonNode tweetIdNode : tweetHistoryIds) {
+                    String tweetId = tweetIdNode.asText();
+                    if (tweetId != null) {
+                        this.editTweetIds.add(tweetId);
+                    }
+                }
+            }
+
+            // Get Public Metrics includes retweets, replies, likes and quotes.
+            JsonNode publicMetrics = data.get("public_metrics");
+            if (publicMetrics!= null) {
+                this.retweetCount = publicMetrics.get("retweet_count").asInt();
+                this.replyCount = publicMetrics.get("reply_count").asInt();
+                this.likeCount = publicMetrics.get("like_count").asInt();
+                this.quoteCount = publicMetrics.get("quote_count").asInt();
+            }
+
+            // Get Tweet hashtags from Filter response
+            ArrayNode hashtagsArray = (ArrayNode) data.get("entities").get("hashtags");
+            if (hashtagsArray!= null && hashtagsArray.size() > 0) {
+                for (JsonNode hashtagsNode : hashtagsArray) {
+                    String hashtag = hashtagsNode.get("tag").asText();
+                    this.hashtags.add(hashtag);
+                }
+            }
+        }
+        catch (Exception e) {
+            logger.error("Cannot get tweet fields", e);
+        }
+
     }
 
     public String getTweetId() {
@@ -74,4 +114,13 @@ public class TweetData implements Serializable {
     public String getAuthorId() {
         return authorId;
     }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public int getQuoteCount() {
+        return quoteCount;
+    }
+
 }

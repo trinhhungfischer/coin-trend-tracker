@@ -8,6 +8,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kafka.serializer.Encoder;
 import kafka.utils.VerifiableProperties;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * Class to conver TweetData java object to JSON
  *
@@ -33,4 +36,5 @@ public class TweetDataEncoder implements Encoder<TweetData> {
         }
         return null;
     }
+
 }

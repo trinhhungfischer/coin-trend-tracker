@@ -1,0 +1,99 @@
+{
+    "data": {
+        "author_id": "618243224",
+        "created_at": "2022-12-22T08:40:32.000Z",
+        "edit_history_tweet_ids": [
+            "1605845731784372225"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "start": 37,
+                    "end": 49,
+                    "probability": 0.8442,
+                    "type": "Other",
+                    "normalized_text": "Hyatt Centric"
+                }
+            ],
+            "hashtags": [
+                {
+                    "start": 141,
+                    "end": 150,
+                    "tag": "homeless"
+                },
+                {
+                    "start": 151,
+                    "end": 156,
+                    "tag": "cats"
+                },
+                {
+                    "start": 157,
+                    "end": 166,
+                    "tag": "pyropaws"
+                },
+                {
+                    "start": 167,
+                    "end": 174,
+                    "tag": "kkcity"
+                }
+            ],
+            "mentions": [
+                {
+                    "start": 51,
+                    "end": 58,
+                    "username": "KKCity",
+                    "id": "316907137"
+                }
+            ],
+            "urls": [
+                {
+                    "start": 175,
+                    "end": 198,
+                    "url": "https://t.co/HfxlD6ZaCf",
+                    "expanded_url": "https://twitter.com/AJpyroMMA/status/1605845731784372225/photo/1",
+                    "display_url": "pic.twitter.com/HfxlD6ZaCf",
+                    "media_key": "3_1605845723689365504"
+                },
+                {
+                    "start": 175,
+                    "end": 198,
+                    "url": "https://t.co/HfxlD6ZaCf",
+                    "expanded_url": "https://twitter.com/AJpyroMMA/status/1605845731784372225/photo/1",
+                    "display_url": "pic.twitter.com/HfxlD6ZaCf",
+                    "media_key": "3_1605845723697713154"
+                },
+                {
+                    "start": 175,
+                    "end": 198,
+                    "url": "https://t.co/HfxlD6ZaCf",
+                    "expanded_url": "https://twitter.com/AJpyroMMA/status/1605845731784372225/photo/1",
+                    "display_url": "pic.twitter.com/HfxlD6ZaCf",
+                    "media_key": "3_1605845723689340928"
+                },
+                {
+                    "start": 175,
+                    "end": 198,
+                    "url": "https://t.co/HfxlD6ZaCf",
+                    "expanded_url": "https://twitter.com/AJpyroMMA/status/1605845731784372225/photo/1",
+                    "display_url": "pic.twitter.com/HfxlD6ZaCf",
+                    "media_key": "3_1605845723693518848"
+                }
+            ]
+        },
+        "id": "1605845731784372225",
+        "lang": "en",
+        "public_metrics": {
+            "retweet_count": 0,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "text": "Feeding the homeless cats behind the Hyatt Centric @KKCity . I was lucky when I finished feeding the cats, the heavy rain started to pour 🌧🌧\n#homeless #cats #pyropaws #kkcity https://t.co/HfxlD6ZaCf"
+    },
+    "matching_rules": [
+        {
+            "id": "1605843304171835393",
+            "tag": "cat images"
+        }
+    ]
+}

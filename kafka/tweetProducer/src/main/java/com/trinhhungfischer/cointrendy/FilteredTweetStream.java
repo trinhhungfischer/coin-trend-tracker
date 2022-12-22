@@ -1,5 +1,10 @@
 package com.trinhhungfischer.cointrendy;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.trinhhungfischer.cointrendy.constant.TweetConstant;
+import kafka.javaapi.producer.Producer;
+import kafka.producer.KeyedMessage;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -11,7 +16,9 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -22,44 +29,66 @@ import java.util.*;
  * Sample code to demonstrate the use of the Filtered Stream endpoint
  * */
 public class FilteredTweetStream {
-    // To set your enviornment variables in your terminal run the following line:
+
+    private static final Logger logger = Logger.getLogger(FilteredTweetStream.class);
+    // To set your environment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
-    private static final String bearerToken = "AAAAAAAAAAAAAAAAAAAAAC%2BWkQEAAAAA5VceSkxXDVgtBKWMUhmSeZRVkuc%3DySnwaTG37tA1Xa5051I2A7lvjMsNdpodUSLQdgyxn9PxrxGWav";
+    private static String bearerToken = "AAAAAAAAAAAAAAAAAAAAAC%2BWkQEAAAAA5VceSkxXDVgtBKWMUhmSeZRVkuc%3DySnwaTG37tA1Xa5051I2A7lvjMsNdpodUSLQdgyxn9PxrxGWav";
 
-
-    public static void main(String args[]) throws IOException, URISyntaxException {
-        if (null != bearerToken) {
-            Map<String, String> rules = new HashMap();
-            rules.put("cats has:images", "cat images");
-            rules.put("dogs has:images", "dog images");
-            setupRules(bearerToken, rules);
-            connectStream(bearerToken);
-        } else {
-            System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
-        }
-    }
+//    public static void main(String args[]) throws IOException, URISyntaxException {
+//        if (null != bearerToken) {
+//            Map<String, String> rules = new HashMap();
+//            rules.put("cats has:images", "cat images");
+//            rules.put("dogs has:images", "dog images");
+//            setupRules(bearerToken, rules);
+//            transferStream(bearerToken);
+//        } else {
+//            System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
+//        }
+//    }
 
     /*
      * This method calls the filtered stream endpoint and streams Tweets from it
      * */
-    private static void connectStream(String bearerToken) throws IOException, URISyntaxException {
+    public static void transferStream(Producer<String, TweetData> producer,
+                                       String topic)
+            throws IOException, URISyntaxException {
 
         HttpClient httpClient = getHttpClient();
 
-        URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream?tweet.fields=public_metrics");
+        String uri = "https://api.twitter.com/2/tweets/search/stream?" + TweetConstant.getTweetFieldsString();
+
+
+        URIBuilder uriBuilder = new URIBuilder(uri);
 
         HttpGet httpGet = new HttpGet(uriBuilder.build());
         httpGet.setHeader("Authorization", String.format("Bearer %s", bearerToken));
 
         HttpResponse response = httpClient.execute(httpGet);
         HttpEntity entity = response.getEntity();
+
+        ObjectMapper mapper = new ObjectMapper();
+
         if (null != entity) {
             BufferedReader reader = new BufferedReader(new InputStreamReader((entity.getContent())));
+
             String line = reader.readLine();
             while (line != null) {
-                System.out.println(line);
+                try {
+                    if (!line.isEmpty()) {
+                        JsonNode jsonNode = mapper.readTree(line);
+                        TweetData tweetData = new TweetData(jsonNode);
+
+                        producer.send(new KeyedMessage<>(topic, tweetData));
+                    }
+                } catch (JSONException e) {
+                    logger.info("Input stream was delayed");
+                }
+
+
                 line = reader.readLine();
             }
+
         }
     }
 
@@ -67,18 +96,18 @@ public class FilteredTweetStream {
     /*
      * Helper method to setup rules before streaming data
      * */
-    private static void setupRules(String bearerToken, Map<String, String> rules) throws IOException, URISyntaxException {
-        List<String> existingRules = getRules(bearerToken);
+    public static void setupRules(Map<String, String> rules) throws IOException, URISyntaxException {
+        List<String> existingRules = getRules();
         if (existingRules.size() > 0) {
-            deleteRules(bearerToken, existingRules);
+            deleteRules(existingRules);
         }
-        createRules(bearerToken, rules);
+        createRules(rules);
     }
 
     /*
      * Helper method to create rules for filtering
      * */
-    private static void createRules(String bearerToken, Map<String, String> rules) throws URISyntaxException, IOException {
+    private static void createRules(Map<String, String> rules) throws URISyntaxException, IOException {
         HttpClient httpClient = getHttpClient();
 
         URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream/rules");
@@ -91,14 +120,14 @@ public class FilteredTweetStream {
         HttpResponse response = httpClient.execute(httpPost);
         HttpEntity entity = response.getEntity();
         if (null != entity) {
-            System.out.println(EntityUtils.toString(entity, "UTF-8"));
+            logger.info(EntityUtils.toString(entity, "UTF-8"));
         }
     }
 
     /*
      * Helper method to get existing rules
      * */
-    private static List<String> getRules(String bearerToken) throws URISyntaxException, IOException {
+    private static List<String> getRules() throws URISyntaxException, IOException {
         List<String> rules = new ArrayList();
         HttpClient httpClient = getHttpClient();
 
@@ -125,7 +154,7 @@ public class FilteredTweetStream {
     /*
      * Helper method to delete rules
      * */
-    private static void deleteRules(String bearerToken, List<String> existingRules) throws URISyntaxException, IOException {
+    private static void deleteRules(List<String> existingRules) throws URISyntaxException, IOException {
         HttpClient httpClient = getHttpClient();
 
         URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/stream/rules");
@@ -138,7 +167,7 @@ public class FilteredTweetStream {
         HttpResponse response = httpClient.execute(httpPost);
         HttpEntity entity = response.getEntity();
         if (null != entity) {
-            System.out.println(EntityUtils.toString(entity, "UTF-8"));
+            logger.info(EntityUtils.toString(entity, "UTF-8"));
         }
     }
 
