@@ -16,5 +16,5 @@ mvn exec:java -Dexec.mainClass="TweetDataProducer"
 Alternate way to run this application is using the twitter-kafka-producer-1.0.jar file created by maven. Open command prompt, go to target folder and execute below command.
 
 ```sh
-java -jar twitter-kafka-producer-1.0.jar
+java -jar twitter-kafka-producer-1.0.0.jar
 ```

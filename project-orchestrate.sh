@@ -16,7 +16,7 @@ docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/
 docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/createTwitterTrendingStreaming.cql
 
 # Create kafka topic
-docker exec kafka-coin-trendy kafka-topics --create --zookeeper zookeeper-coin-trendy:2181 --replication-factor 1 --partitions 1 --topic twitter-tweets
+docker exec kafka-coin-trendy kafka-topics --create --topic twitter-data-event --zookeeper zookeeper-coin-trendy:2181 --replication-factor 1 --partitions 1
 
 # Create spark job
 

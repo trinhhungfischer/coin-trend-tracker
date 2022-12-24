@@ -4,7 +4,7 @@
   <groupId>com.trinhhungfischer.cointrendy</groupId>
   <artifactId>twitter-kafka-producer</artifactId>
   <name>Twitter Kafka Producer</name>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <url>http://maven.apache.org</url>
   <build>
     <resources>
