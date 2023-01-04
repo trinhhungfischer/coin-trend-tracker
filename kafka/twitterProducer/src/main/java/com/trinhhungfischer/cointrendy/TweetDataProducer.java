@@ -2,7 +2,6 @@ package com.trinhhungfischer.cointrendy;
 
 import kafka.javaapi.producer.Producer;
 import kafka.producer.ProducerConfig;
-
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ public class TweetDataProducer {
     private static final Logger logger = Logger.getLogger(TweetDataProducer.class);
     private final Producer<String, TweetData> producer;
 
-    private FilteredTweetStream filteredTweetStream = new FilteredTweetStream();
+    private final FilteredTweetStream filteredTweetStream = new FilteredTweetStream();
 
     public TweetDataProducer(Producer<String, TweetData> producer) {
         this.producer = producer;
@@ -32,11 +31,11 @@ public class TweetDataProducer {
     }
 
     public void sendTweetData(String topic) throws IOException, URISyntaxException {
-            Map<String, String> rules = new HashMap();
-            rules.put("cats has:images", "cat images");
-            rules.put("dogs has:images", "dog images");
-            FilteredTweetStream.setupRules(rules);
-            FilteredTweetStream.transferStream(producer, topic);
+        Map<String, String> rules = new HashMap();
+        rules.put("cats has:images", "cat images");
+        rules.put("dogs has:images", "dog images");
+        FilteredTweetStream.setupRules(rules);
+        FilteredTweetStream.transferStream(producer, topic);
     }
 
 }

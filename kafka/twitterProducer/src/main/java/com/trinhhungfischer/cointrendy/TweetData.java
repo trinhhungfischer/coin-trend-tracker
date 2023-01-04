@@ -1,15 +1,11 @@
 package com.trinhhungfischer.cointrendy;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 
 import java.io.Serializable;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,8 +22,6 @@ public class TweetData implements Serializable {
     private int quoteCount;
     private Date createdAt;
     private String authorId;
-
-
 
     public TweetData() {
           this.editTweetIds = new ArrayList<String>();
@@ -72,6 +66,8 @@ public class TweetData implements Serializable {
                     this.hashtags.add(hashtag);
                 }
             }
+
+
         }
         catch (Exception e) {
             logger.error("Cannot get tweet fields", e);
@@ -122,5 +118,4 @@ public class TweetData implements Serializable {
     public int getQuoteCount() {
         return quoteCount;
     }
-
 }

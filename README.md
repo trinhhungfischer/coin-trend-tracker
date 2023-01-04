@@ -6,6 +6,7 @@
   - [3. Mô hình luồng dự án](#3-mô-hình-luồng-dự-án)
 - [Các bước thực hiện](#các-bước-thực-hiện)
   - [Tạo luồng crawl top 100 coin từ Coingeko](#tạo-luồng-crawl-top-100-coin-từ-coingeko)
+  - [Lấy dữ liệu từ](#lấy-dữ-liệu-từ)
   - [Tạo giao diện phân tích cho trang](#tạo-giao-diện-phân-tích-cho-trang)
 
 ## 1. Mô tả bài toán
@@ -30,4 +31,6 @@ Mô hình luồng dự án sẽ dựa trên kiến trúc Lambda (&#955;) với c
 ## Tạo luồng crawl top 100 coin từ Coingeko
 Đầu tiên nghiên cứu các API liên quan đến lấy dữ liệu từ Coingeko về tài sản top 100 theo tổng giá trị. 
 
+
+## Lấy dữ liệu từ 
 ## Tạo giao diện phân tích cho trang

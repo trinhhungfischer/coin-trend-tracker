@@ -1,11 +1,14 @@
 package com.trinhhungfischer.cointrendy;
 
 import com.trinhhungfischer.cointrendy.batch.LatestOffsetReader;
+import com.trinhhungfischer.cointrendy.common.PropertyFileReader;
 import com.trinhhungfischer.cointrendy.common.TweetDataDeserializer;
 import com.trinhhungfischer.cointrendy.common.entity.TweetData;
 import com.trinhhungfischer.cointrendy.streaming.StreamProcessor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.OffsetAndMetadata;
+import org.apache.kafka.clients.consumer.OffsetCommitCallback;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.log4j.Logger;
@@ -15,14 +18,17 @@ import java.io.Serializable;
 import java.util.*;
 
 import com.trinhhungfischer.cointrendy.common.ProcessorUtils;
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
-import org.apache.spark.streaming.kafka010.ConsumerStrategies;
-import org.apache.spark.streaming.kafka010.KafkaUtils;
-import org.apache.spark.streaming.kafka010.LocationStrategies;
+import org.apache.spark.streaming.kafka010.*;
 
+/**
+ * This class represents Kafka Twitter Streaming and create pipeline for processing the Tweets Data
+ * @author trinhhungfischer
+ */
 public class PipelineProcessor implements Serializable {
 
     private static final Logger logger = Logger.getLogger(PipelineProcessor.class);
@@ -31,10 +37,12 @@ public class PipelineProcessor implements Serializable {
         this.properties = properties;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String[] args) throws Exception {
+        String file = "twitter-spark.properties";
+        Properties properties = PropertyFileReader.readPropertyFile(file);
+        PipelineProcessor pipelineProcessor = new PipelineProcessor(properties);
+        pipelineProcessor.start();
     }
-
 
     private void start() throws Exception {
         String parquetFile = properties.getProperty("com.twitter.app.hdfs") + ".twitter-data-parquet";
@@ -65,7 +73,13 @@ public class PipelineProcessor implements Serializable {
 
         StreamProcessor streamProcessor = new StreamProcessor(kafkaStream);
 
+        streamProcessor.transform();
 
+        // Commit offset to Kafka
+        commitOffset(kafkaStream);
+
+        streamingContext.start();
+        streamingContext.awaitTermination();
     }
 
 
@@ -134,5 +148,34 @@ public class PipelineProcessor implements Serializable {
         } catch (Exception e) {
             return new HashMap<>();
         }
+    }
+
+    /**
+     * Commit the ack to kafka after process have completed
+     * This is our fault-tolerance implementation
+     *
+     * @param directKafkaStream
+     */
+    private void commitOffset(JavaInputDStream<ConsumerRecord<String, TweetData>> directKafkaStream) {
+        directKafkaStream.foreachRDD((JavaRDD<ConsumerRecord<String, TweetData>> trafficRdd) -> {
+            if (!trafficRdd.isEmpty()) {
+                OffsetRange[] offsetRanges = ((HasOffsetRanges) trafficRdd.rdd()).offsetRanges();
+
+                CanCommitOffsets canCommitOffsets = (CanCommitOffsets) directKafkaStream.inputDStream();
+                canCommitOffsets.commitAsync(offsetRanges, new TwitterOffsetCommitCallback());
+            }
+        });
+    }
+}
+
+final class TwitterOffsetCommitCallback implements OffsetCommitCallback, Serializable {
+
+    private static final Logger log = Logger.getLogger(TwitterOffsetCommitCallback.class);
+
+    @Override
+    public void onComplete(Map<TopicPartition, OffsetAndMetadata> offsets, Exception exception) {
+        log.info("---------------------------------------------------");
+        log.info(String.format("{0} | {1}", new Object[]{offsets, exception}));
+        log.info("---------------------------------------------------");
     }
 }

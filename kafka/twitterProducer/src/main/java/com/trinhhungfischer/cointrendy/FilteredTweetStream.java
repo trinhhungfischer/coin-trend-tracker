@@ -21,9 +21,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /*
  * Sample code to demonstrate the use of the Filtered Stream endpoint
@@ -33,7 +37,7 @@ public class FilteredTweetStream {
     private static final Logger logger = Logger.getLogger(FilteredTweetStream.class);
     // To set your environment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
-    private static String bearerToken = "AAAAAAAAAAAAAAAAAAAAAC%2BWkQEAAAAA5VceSkxXDVgtBKWMUhmSeZRVkuc%3DySnwaTG37tA1Xa5051I2A7lvjMsNdpodUSLQdgyxn9PxrxGWav";
+    private static final String bearerToken = "AAAAAAAAAAAAAAAAAAAAAC%2BWkQEAAAAA5VceSkxXDVgtBKWMUhmSeZRVkuc%3DySnwaTG37tA1Xa5051I2A7lvjMsNdpodUSLQdgyxn9PxrxGWav";
 
 //    public static void main(String args[]) throws IOException, URISyntaxException {
 //        if (null != bearerToken) {
@@ -51,7 +55,7 @@ public class FilteredTweetStream {
      * This method calls the filtered stream endpoint and streams Tweets from it
      * */
     public static void transferStream(Producer<String, TweetData> producer,
-                                       String topic)
+                                      String topic)
             throws IOException, URISyntaxException {
 
         HttpClient httpClient = getHttpClient();
