@@ -1,0 +1,101 @@
+coin_id,ticker,name,market_cap_rank
+bitcoin,btc,Bitcoin,1
+ethereum,eth,Ethereum,2
+tether,usdt,Tether,3
+usd-coin,usdc,USD Coin,4
+binancecoin,bnb,BNB,5
+ripple,xrp,XRP,6
+binance-usd,busd,Binance USD,7
+dogecoin,doge,Dogecoin,8
+cardano,ada,Cardano,9
+matic-network,matic,Polygon,10
+okb,okb,OKB,11
+staked-ether,steth,Lido Staked Ether,12
+polkadot,dot,Polkadot,13
+litecoin,ltc,Litecoin,14
+dai,dai,Dai,15
+tron,trx,TRON,16
+shiba-inu,shib,Shiba Inu,17
+solana,sol,Solana,18
+uniswap,uni,Uniswap,19
+avalanche-2,avax,Avalanche,20
+leo-token,leo,LEO Token,21
+the-open-network,ton,Toncoin,22
+wrapped-bitcoin,wbtc,Wrapped Bitcoin,23
+cosmos,atom,Cosmos Hub,24
+chainlink,link,Chainlink,25
+monero,xmr,Monero,26
+ethereum-classic,etc,Ethereum Classic,27
+bitcoin-cash,bch,Bitcoin Cash,28
+stellar,xlm,Stellar,29
+quant-network,qnt,Quant,30
+crypto-com-chain,cro,Cronos,31
+apecoin,ape,ApeCoin,32
+algorand,algo,Algorand,33
+near,near,NEAR Protocol,34
+vechain,vet,VeChain,35
+filecoin,fil,Filecoin,36
+lido-dao,ldo,Lido DAO,37
+internet-computer,icp,Internet Computer,38
+frax,frax,Frax,39
+eos,eos,EOS,40
+hedera-hashgraph,hbar,Hedera,41
+terra-luna,lunc,Terra Luna Classic,42
+paxos-standard,usdp,Pax Dollar,43
+true-usd,tusd,TrueUSD,44
+bitcoin-cash-sv,bsv,Bitcoin SV,45
+elrond-erd-2,egld,MultiversX (Elrond),46
+aave,aave,Aave,47
+axie-infinity,axs,Axie Infinity,48
+huobi-token,ht,Huobi,49
+theta-token,theta,Theta Network,50
+flow,flow,Flow,51
+usdd,usdd,USDD,52
+tezos,xtz,Tezos,53
+the-sandbox,sand,The Sandbox,54
+kucoin-shares,kcs,KuCoin,55
+chiliz,chz,Chiliz,56
+bittorrent,btt,BitTorrent,57
+trust-wallet-token,twt,Trust Wallet,58
+decentraland,mana,Decentraland,58
+gemini-dollar,gusd,Gemini Dollar,60
+fantom,ftm,Fantom,61
+compound-usd-coin,cusdc,cUSDC,62
+pancakeswap-token,cake,PancakeSwap,63
+zcash,zec,Zcash,64
+dash,dash,Dash,65
+pax-gold,paxg,PAX Gold,66
+tokenize-xchange,tkx,Tokenize Xchange,67
+iota,miota,IOTA,68
+klay-token,klay,Klaytn,69
+aptos,apt,Aptos,70
+maker,mkr,Maker,71
+ecash,xec,eCash,72
+neo,neo,NEO,73
+gatechain-token,gt,Gate,74
+oec-token,okt,OKC,75
+the-graph,grt,The Graph,76
+tether-gold,xaut,Tether Gold,77
+bitdao,bit,BitDAO,78
+rocket-pool,rpl,Rocket Pool,79
+cdai,cdai,cDAI,80
+thorchain,rune,THORChain,81
+compound-ether,ceth,cETH,82
+nexo,nexo,NEXO,83
+havven,snx,Synthetix Network,84
+osmosis,osmo,Osmosis,85
+frax-share,fxs,Frax Share,86
+btse-token,btse,BTSE Token,87
+curve-dao-token,crv,Curve DAO,88
+mina-protocol,mina,Mina Protocol,88
+ethereum-pow-iou,ethw,EthereumPoW,90
+gmx,gmx,GMX,91
+arweave,ar,Arweave,92
+radix,xrd,Radix,92
+xdce-crowd-sale,xdc,XDC Network,94
+immutable-x,imx,ImmutableX,95
+1inch,1inch,1inch,96
+casper-network,cspr,Casper Network,97
+ethereum-name-service,ens,Ethereum Name Service,98
+blockstack,stx,Stacks,99
+zilliqa,zil,Zilliqa,100

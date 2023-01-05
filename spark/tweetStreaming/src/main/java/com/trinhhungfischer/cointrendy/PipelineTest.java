@@ -16,11 +16,11 @@ public class PipelineTest {
     public static final void main(String[] s) throws InterruptedException {
         SparkConf conf = new SparkConf()
                 .setAppName(PipelineTest.class.getName())
-                .setMaster("local[*]")
+                .setMaster("local[2]")
                 .set("spark.driver.bindAddress", "127.0.0.1");
         JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(30));
 
-        JavaReceiverInputDStream<String> lines = jssc.socketTextStream("localhost", 29092);
+        JavaReceiverInputDStream<String> lines = jssc.socketTextStream("localhost", 9999);
         lines.print();
 
         JavaDStream<Integer> length = lines.map(x -> x.length());
