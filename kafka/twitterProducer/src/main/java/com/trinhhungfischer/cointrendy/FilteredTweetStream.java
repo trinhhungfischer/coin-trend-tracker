@@ -39,17 +39,6 @@ public class FilteredTweetStream {
     // export 'BEARER_TOKEN'='<your_bearer_token>'
     private static final String bearerToken = "AAAAAAAAAAAAAAAAAAAAAC%2BWkQEAAAAA5VceSkxXDVgtBKWMUhmSeZRVkuc%3DySnwaTG37tA1Xa5051I2A7lvjMsNdpodUSLQdgyxn9PxrxGWav";
 
-//    public static void main(String args[]) throws IOException, URISyntaxException {
-//        if (null != bearerToken) {
-//            Map<String, String> rules = new HashMap();
-//            rules.put("cats has:images", "cat images");
-//            rules.put("dogs has:images", "dog images");
-//            setupRules(bearerToken, rules);
-//            transferStream(bearerToken);
-//        } else {
-//            System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
-//        }
-//    }
 
     /*
      * This method calls the filtered stream endpoint and streams Tweets from it

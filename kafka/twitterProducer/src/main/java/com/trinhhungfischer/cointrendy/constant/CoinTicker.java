@@ -11,6 +11,8 @@ import java.util.List;
 
 public class CoinTicker {
 
+    private static final int MAX_CHARS_IN_RULE = 512;
+
     public static ArrayList<String> listCoinTicker;
 
     public static final ArrayList<String> getListCoinTicker() {
@@ -42,5 +44,27 @@ public class CoinTicker {
         return listCoinTicker;
     }
 
-    
+    public static ArrayList<String> getTickerRules() {
+        ArrayList<String> rules = new ArrayList<String>();
+
+        String rule = "";
+
+        listCoinTicker = getListCoinTicker();
+
+        for (int i = 0; i < listCoinTicker.size(); i++) {
+            if (rule.length() + listCoinTicker.get(i).length() + 5 >= MAX_CHARS_IN_RULE) {
+                rules.add(rule.substring(0, rule.length() - 4));
+                rule = "";
+            }
+
+            if (i < listCoinTicker.size() - 1) {
+                rule += ("#" + listCoinTicker.get(i) + " OR ");
+            }
+            else rule += ("#" + listCoinTicker.get(i));
+        }
+        rules.add(rule);
+
+        return rules;
+    }
+
 }

@@ -11,7 +11,11 @@ def coin_tag():
 
     df['ticker'] = df['ticker'].str.upper()
 
-    coin_tickers = df['ticker'].to_numpy()
+    lower_tickers = df['ticker'].str.lower().to_numpy().tolist()
+    
+    coin_tickers = df['ticker'].to_numpy().tolist()
+    
+    coin_tickers += lower_tickers
     
     results = ""
     

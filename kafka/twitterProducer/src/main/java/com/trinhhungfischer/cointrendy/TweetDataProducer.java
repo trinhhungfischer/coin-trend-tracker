@@ -1,11 +1,14 @@
 package com.trinhhungfischer.cointrendy;
 
+import com.trinhhungfischer.cointrendy.constant.CoinTicker;
 import kafka.javaapi.producer.Producer;
 import kafka.producer.ProducerConfig;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -32,8 +35,13 @@ public class TweetDataProducer {
 
     public void sendTweetData(String topic) throws IOException, URISyntaxException {
         Map<String, String> rules = new HashMap();
-        rules.put("cats has:images", "cat images");
-        rules.put("dogs has:images", "dog images");
+
+        ArrayList<String> value_rules = CoinTicker.getTickerRules();
+
+        for (int i = 0; i < value_rules.size(); i ++) {
+            rules.put(value_rules.get(i),  String.format("coin %d", i));
+        }
+
         FilteredTweetStream.setupRules(rules);
         FilteredTweetStream.transferStream(producer, topic);
     }
