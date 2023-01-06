@@ -1,6 +1,7 @@
 import requests
 import os
 import json
+from coin_tag import coin_tag
 
 # To set your enviornment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
@@ -51,9 +52,12 @@ def delete_all_rules(rules):
 
 def set_rules(delete):
     # You can adjust the rules if needed
-    sample_rules = [
-        {"value": "dog has:images", "tag": "dog pictures"},
-    ]
+    rules = coin_tag()
+    sample_rules = []
+    
+    for rule in rules:
+        sample_rules.append({"value": "%s" % rule, "tag": "coin 100" })
+    
     payload = {"add": sample_rules}
     response = requests.post(
         "https://api.twitter.com/2/tweets/search/stream/rules",

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="sbt: com.datastax.oss:java-driver-core-shaded:4.13.0:jar">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/datastax/oss/java-driver-core-shaded/4.13.0/java-driver-core-shaded-4.13.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
