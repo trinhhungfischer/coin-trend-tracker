@@ -1,0 +1,5857 @@
+{
+    "data": {
+        "author_id": "1393743237865738240",
+        "created_at": "2023-01-07T10:46:49.000Z",
+        "edit_history_tweet_ids": [
+            "1611675720132210688"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 226,
+                    "start": 219,
+                    "tag": "Miners"
+                },
+                {
+                    "end": 231,
+                    "start": 227,
+                    "tag": "Bsc"
+                },
+                {
+                    "end": 236,
+                    "start": 232,
+                    "tag": "Bnb"
+                },
+                {
+                    "end": 243,
+                    "start": 237,
+                    "tag": "1000x"
+                },
+                {
+                    "end": 248,
+                    "start": 244,
+                    "tag": "Gem"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 12,
+                    "id": "1492425090054688770",
+                    "start": 0,
+                    "username": "HODLstarter"
+                },
+                {
+                    "end": 37,
+                    "id": "1574134708694392832",
+                    "start": 22,
+                    "username": "0xGreenMachine"
+                },
+                {
+                    "end": 256,
+                    "id": "1437365190081777669",
+                    "start": 249,
+                    "username": "SirGMI"
+                },
+                {
+                    "end": 278,
+                    "id": "913778551555608576",
+                    "start": 267,
+                    "username": "TheDustyBC"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/J5qb4Xt26U",
+                    "end": 308,
+                    "expanded_url": "https://twitter.com/JuanCar12245488/status/1611675720132210688/photo/1",
+                    "media_key": "3_1611675717510610953",
+                    "start": 285,
+                    "url": "https://t.co/J5qb4Xt26U"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675720132210688",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611669199390232578",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@HODLstarter GM Miner @0xgreenmachine\n\nMiner with the ability to farm BNB up to 15% per day.\nGenerous 10%referral system\n\n If you are not with us yet, now is the best time to experience all the mechanics of our product\n#Miners #Bsc #Bnb #1000x #Gem\n@sirGMI @lord_bsc @TheDustyBC\n$3500 https://t.co/J5qb4Xt26U"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "812806988790960132",
+        "created_at": "2023-01-07T10:46:50.000Z",
+        "edit_history_tweet_ids": [
+            "1611675721067540481"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1087416766115037185",
+                    "start": 0,
+                    "username": "zahratamal17"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675721067540481",
+        "lang": "fr",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675667032330242",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@zahratamal17 Maisie"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1607197546199543810",
+        "created_at": "2023-01-07T10:46:51.000Z",
+        "edit_history_tweet_ids": [
+            "1611675725962285056"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 215,
+                    "id": "1533009040384479232",
+                    "start": 204,
+                    "username": "Muatakim12"
+                },
+                {
+                    "end": 226,
+                    "id": "1552810994187268097",
+                    "start": 217,
+                    "username": "MdTrust3"
+                },
+                {
+                    "end": 238,
+                    "id": "1571689632118734849",
+                    "start": 228,
+                    "username": "HasibNala"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/GorillaThugsNF\u2026",
+                    "end": 262,
+                    "expanded_url": "https://twitter.com/GorillaThugsNFT/status/1611069941238886400",
+                    "start": 239,
+                    "url": "https://t.co/GcDatoHaPX"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675725962285056",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611069941238886400",
+                "type": "quoted"
+            }
+        ],
+        "text": "Since I first examined this project physiologically, I sensed that this project is quite promising and it has a great prospect and I will want us to join efforts together and push it to the Moooooon....\n\n@Muatakim12 \n@MdTrust3 \n@HasibNala https://t.co/GcDatoHaPX"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1324188370378002432",
+        "created_at": "2023-01-07T10:46:51.000Z",
+        "edit_history_tweet_ids": [
+            "1611675725358338051"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 15,
+                    "id": "1251652214835146753",
+                    "start": 0,
+                    "username": "instanttnuudle"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675725358338051",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675392120594433",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@instanttnuudle hey man u ok"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1607243441381036033",
+        "created_at": "2023-01-07T10:46:51.000Z",
+        "edit_history_tweet_ids": [
+            "1611675726104633345"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 296,
+                    "normalized_text": "ETH",
+                    "probability": 0.5255,
+                    "start": 294,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 31,
+                    "start": 23,
+                    "tag": "Bitcoin"
+                },
+                {
+                    "end": 297,
+                    "start": 293,
+                    "tag": "ETH"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 12,
+                    "id": "986155045438787584",
+                    "start": 0,
+                    "username": "woonomic_o1"
+                },
+                {
+                    "end": 22,
+                    "id": "904700529988820992",
+                    "start": 13,
+                    "username": "MMCrypto"
+                },
+                {
+                    "end": 222,
+                    "id": "217401824",
+                    "start": 212,
+                    "username": "Zachcoby_"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675726104633345",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611497603840999424",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@woonomic_o1 @MMCrypto #Bitcoin\u00a0\u00a0prices might be volatile but its value the same Now is a perfect opportunity to accumulate at cheap prices. \n\nRemember the bull run is preordained\n\nHowever everyone should follow @Zachcoby_ He\u2019s a super underrated bitcoiner. Superb Tips, I\u2019ve been doing great #ETH"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1545568032524603393",
+        "created_at": "2023-01-07T10:46:51.000Z",
+        "edit_history_tweet_ids": [
+            "1611675727946211328"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 15,
+                    "normalized_text": "LEO",
+                    "probability": 0.4742,
+                    "start": 13,
+                    "type": "Person"
+                },
+                {
+                    "end": 21,
+                    "normalized_text": "\u71c3\u3048\u6bbb\u3055\u3093",
+                    "probability": 0.8324,
+                    "start": 17,
+                    "type": "Person"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 57,
+                    "start": 52,
+                    "tag": "\u30df\u30ea\u30d3\u30ea"
+                },
+                {
+                    "end": 62,
+                    "start": 58,
+                    "tag": "LEO"
+                },
+                {
+                    "end": 67,
+                    "start": 63,
+                    "tag": "\u71c3\u3048\u6bbb"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/Yahoo_GYAO/sta\u2026",
+                    "end": 94,
+                    "expanded_url": "https://twitter.com/Yahoo_GYAO/status/1611648837185150978",
+                    "start": 71,
+                    "url": "https://t.co/zKHja8l55L"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675727946211328",
+        "lang": "ja",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611648837185150978",
+                "type": "quoted"
+            }
+        ],
+        "text": "\u307e\u3060\u805e\u3051\u3066\u306a\u3044\u898b\u308c\u3066\u306a\u3044\u2026LEO\u3068\u71c3\u3048\u6bbb\u3055\u3093\u306e\u30c8\u30fc\u30af\u898b\u308c\u308b\u3068\u601d\u3046\u3068\u7dca\u5f35\u3057\u3061\u3083\u3063\u3066\u2026\uff84\uff9e\uff77\uff84\uff9e\uff77\ud83e\udd74\ud83d\udc95\ud83e\udee0\ud83d\udc96\n#\u30df\u30ea\u30d3\u30ea\n#LEO\n#\u71c3\u3048\u6bbb \u3055\u3093 https://t.co/zKHja8l55L"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1450877838123536386",
+        "created_at": "2023-01-07T10:46:52.000Z",
+        "edit_history_tweet_ids": [
+            "1611675729996947456"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 133,
+                    "normalized_text": "becaz",
+                    "probability": 0.5848,
+                    "start": 129,
+                    "type": "Other"
+                },
+                {
+                    "end": 226,
+                    "normalized_text": "LBank",
+                    "probability": 0.4997,
+                    "start": 222,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 227,
+                    "start": 221,
+                    "tag": "LBank"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 198,
+                    "id": "240407375",
+                    "start": 190,
+                    "username": "amirhos"
+                },
+                {
+                    "end": 210,
+                    "id": "1388126657194692612",
+                    "start": 199,
+                    "username": "123Miladss"
+                },
+                {
+                    "end": 219,
+                    "id": "1466741741445333000",
+                    "start": 211,
+                    "username": "mnb3760"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/LBank_Exchange\u2026",
+                    "end": 251,
+                    "expanded_url": "https://twitter.com/LBank_Exchange/status/1611332820722393090",
+                    "start": 228,
+                    "url": "https://t.co/lB91oDM3V1"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675729996947456",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611332820722393090",
+                "type": "quoted"
+            }
+        ],
+        "text": "I hope this project be extraordinary. known to the world and we're the lucky ones to be a part of it.\ntell your friends about it becaz its a fantastic project with huge potential of growth\n\n@amirhos @123Miladss @mnb3760\n\n#LBank https://t.co/lB91oDM3V1"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "2303691992",
+        "created_at": "2023-01-07T10:46:52.000Z",
+        "edit_history_tweet_ids": [
+            "1611675731263619073"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 22,
+                    "normalized_text": "Coibnase",
+                    "probability": 0.4686,
+                    "start": 15,
+                    "type": "Other"
+                },
+                {
+                    "end": 38,
+                    "normalized_text": "XRP",
+                    "probability": 0.7614,
+                    "start": 36,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 39,
+                    "start": 35,
+                    "tag": "XRP"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Ripple has come along way in the past year and we couldn\u2019t do it without you. XRP continues to be a key player in the Blockchain ecosystem and in Q1 2023 we will be dedicating even more resources to make XRP and RippleNet easier to use and more accessible. To celebrate the global power of #XRP we are proud to announce initiating the annual airdrop pool of 100 000 000 XRP to every Ripple user. Nothing we do at Ripple Labs would be possible without our community, and this is just a part of our efforts to",
+                    "display_url": "xrpevent2023.com/?346394612",
+                    "end": 72,
+                    "expanded_url": "https://xrpevent2023.com/?346394612",
+                    "images": [
+                        {
+                            "height": 720,
+                            "url": "https://pbs.twimg.com/news_img/1611675733180534784/hAlJ8XjL?format=jpg&name=orig",
+                            "width": 1280
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611675733180534784/hAlJ8XjL?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 49,
+                    "status": 200,
+                    "title": "The Next bullish event",
+                    "unwound_url": "https://xrpevent2023.com/?346394612",
+                    "url": "https://t.co/Sz8vvpEEEG"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675731263619073",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "Do you believe Coibnase  will list #XRP in 2023? https://t.co/Sz8vvpEEEG"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1261577153889566720",
+        "created_at": "2023-01-07T10:46:52.000Z",
+        "edit_history_tweet_ids": [
+            "1611675729682472960"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 92,
+                    "normalized_text": "Trustwallet",
+                    "probability": 0.5872,
+                    "start": 82,
+                    "type": "Other"
+                },
+                {
+                    "end": 159,
+                    "normalized_text": "crypto",
+                    "probability": 0.5357,
+                    "start": 154,
+                    "type": "Other"
+                },
+                {
+                    "end": 169,
+                    "normalized_text": "Ethereum",
+                    "probability": 0.5922,
+                    "start": 162,
+                    "type": "Other"
+                },
+                {
+                    "end": 181,
+                    "normalized_text": "CryptoNews",
+                    "probability": 0.7647,
+                    "start": 172,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 93,
+                    "start": 81,
+                    "tag": "Trustwallet"
+                },
+                {
+                    "end": 109,
+                    "start": 94,
+                    "tag": "cryptocurrency"
+                },
+                {
+                    "end": 114,
+                    "start": 110,
+                    "tag": "Bnb"
+                },
+                {
+                    "end": 126,
+                    "start": 120,
+                    "tag": "cyber"
+                },
+                {
+                    "end": 142,
+                    "start": 127,
+                    "tag": "RecoveryPhrase"
+                },
+                {
+                    "end": 152,
+                    "start": 143,
+                    "tag": "coinbase"
+                },
+                {
+                    "end": 160,
+                    "start": 153,
+                    "tag": "crypto"
+                },
+                {
+                    "end": 170,
+                    "start": 161,
+                    "tag": "Ethereum"
+                },
+                {
+                    "end": 182,
+                    "start": 171,
+                    "tag": "CryptoNews"
+                },
+                {
+                    "end": 191,
+                    "start": 183,
+                    "tag": "Binance"
+                },
+                {
+                    "end": 197,
+                    "start": 193,
+                    "tag": "BTC"
+                },
+                {
+                    "end": 210,
+                    "start": 200,
+                    "tag": "Anonymous"
+                },
+                {
+                    "end": 225,
+                    "start": 211,
+                    "tag": "CoinMarketCap"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/D0sZxx9O2Z",
+                    "end": 249,
+                    "expanded_url": "https://twitter.com/HackwithRyan1/status/1611675729682472960/photo/1",
+                    "media_key": "3_1611675723395219457",
+                    "start": 226,
+                    "url": "https://t.co/D0sZxx9O2Z"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675729682472960",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "Inbox me now on how to recover trust wallet phrase and coinbase account recovery #Trustwallet #cryptocurrency #Bnb\u00a0     #cyber #RecoveryPhrase #coinbase #crypto #Ethereum #CryptoNews #Binance\u00a0 #BTC\u00a0  #Anonymous #CoinMarketCap https://t.co/D0sZxx9O2Z"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1574690231009570817",
+        "created_at": "2023-01-07T10:46:51.000Z",
+        "edit_history_tweet_ids": [
+            "1611675725886812160"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 156,
+                    "start": 152,
+                    "tag": "BTC"
+                },
+                {
+                    "end": 166,
+                    "start": 157,
+                    "tag": "Airdrops"
+                },
+                {
+                    "end": 172,
+                    "start": 167,
+                    "tag": "USDT"
+                },
+                {
+                    "end": 179,
+                    "start": 173,
+                    "tag": "BYBIT"
+                },
+                {
+                    "end": 185,
+                    "start": 180,
+                    "tag": "BANK"
+                },
+                {
+                    "end": 193,
+                    "start": 186,
+                    "tag": "crypto"
+                },
+                {
+                    "end": 202,
+                    "start": 194,
+                    "tag": "bitcoin"
+                },
+                {
+                    "end": 218,
+                    "start": 203,
+                    "tag": "cryptocurrency"
+                },
+                {
+                    "end": 223,
+                    "start": 219,
+                    "tag": "btc"
+                },
+                {
+                    "end": 233,
+                    "start": 224,
+                    "tag": "ethereum"
+                },
+                {
+                    "end": 245,
+                    "start": 234,
+                    "tag": "blockchain"
+                },
+                {
+                    "end": 250,
+                    "start": 246,
+                    "tag": "eth"
+                },
+                {
+                    "end": 259,
+                    "start": 251,
+                    "tag": "trading"
+                },
+                {
+                    "end": 268,
+                    "start": 260,
+                    "tag": "altcoin"
+                },
+                {
+                    "end": 277,
+                    "start": 269,
+                    "tag": "binance"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Receive exclusive referral rewards and a 5,030 USDT welcome gift. Start your crypto adventure with Bybit and join our community of over 10,000,000 users worldwide.",
+                    "display_url": "bybit.com/invite?ref=ANQ\u2026",
+                    "end": 150,
+                    "expanded_url": "https://www.bybit.com/invite?ref=ANQNRP",
+                    "images": [
+                        {
+                            "height": 630,
+                            "url": "https://pbs.twimg.com/news_img/1609834854207885312/icA_6-Vn?format=png&name=orig",
+                            "width": 1200
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1609834854207885312/icA_6-Vn?format=png&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 127,
+                    "status": 200,
+                    "title": "Sign Up and Receive a 5,030 USDT Bonus Now!",
+                    "unwound_url": "https://www.bybit.com/en-US/invite/?ref=ANQNRP",
+                    "url": "https://t.co/dZ5KFaWkst"
+                },
+                {
+                    "display_url": "pic.twitter.com/UpSwOXfct9",
+                    "end": 301,
+                    "expanded_url": "https://twitter.com/MelodyO73650813/status/1611675725886812160/photo/1",
+                    "media_key": "3_1611675682240884743",
+                    "start": 278,
+                    "url": "https://t.co/UpSwOXfct9"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675725886812160",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "\u2764\ufe0f Join me at Bybit and earn exclusive rewards \nwith Bybit's Referral Program! Plus, up to 5,030 USDT in bonuses \n\u25b6 await you. https://t.co/dZ5KFaWkst\n\n#BTC #Airdrops #USDT #BYBIT #BANK #crypto #bitcoin #cryptocurrency #btc #ethereum #blockchain #eth #trading #altcoin #binance https://t.co/UpSwOXfct9"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1595067317649829889",
+        "created_at": "2023-01-07T10:46:52.000Z",
+        "edit_history_tweet_ids": [
+            "1611675730689007618"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 60,
+                    "normalized_text": "NETC",
+                    "probability": 0.7424,
+                    "start": 57,
+                    "type": "Organization"
+                },
+                {
+                    "end": 137,
+                    "normalized_text": "PancakeSwap",
+                    "probability": 0.5982,
+                    "start": 127,
+                    "type": "Other"
+                },
+                {
+                    "end": 188,
+                    "normalized_text": "KYC",
+                    "probability": 0.4325,
+                    "start": 186,
+                    "type": "Organization"
+                },
+                {
+                    "end": 255,
+                    "normalized_text": "NETC",
+                    "probability": 0.3574,
+                    "start": 252,
+                    "type": "Organization"
+                },
+                {
+                    "end": 265,
+                    "normalized_text": "BNBChain",
+                    "probability": 0.4168,
+                    "start": 258,
+                    "type": "Organization"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 61,
+                    "start": 56,
+                    "tag": "NETC"
+                },
+                {
+                    "end": 240,
+                    "start": 225,
+                    "tag": "NetworkCapital"
+                },
+                {
+                    "end": 245,
+                    "start": 241,
+                    "tag": "BNB"
+                },
+                {
+                    "end": 256,
+                    "start": 246,
+                    "tag": "HOLD_NETC"
+                },
+                {
+                    "end": 266,
+                    "start": 257,
+                    "tag": "BNBChain"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1494465271058374656",
+                    "start": 0,
+                    "username": "alphaWLgroup"
+                },
+                {
+                    "end": 30,
+                    "id": "1567987645535617024",
+                    "start": 14,
+                    "username": "TheGreedyDegens"
+                },
+                {
+                    "end": 54,
+                    "id": "1606162803345293313",
+                    "start": 41,
+                    "username": "NetworkCapit"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Official global group of Network Capital. Our goal is to be the most secure, sustainable and profitable decentralized bank in the crypto space. \ud83c\udf10 Website: networkcapital.io \ud83d\udc26 Twitter: https://twitter.com/networkcapit",
+                    "display_url": "t.me/networkcapital\u2026",
+                    "end": 295,
+                    "expanded_url": "http://t.me/networkcapitalofficial",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 272,
+                    "status": 200,
+                    "title": "Network Capital \ud83c\uddfa\ud83c\uddf8 | #NETC | Official Group \ud83d\udee1",
+                    "unwound_url": "https://t.me/networkcapitalofficial",
+                    "url": "https://t.co/ipGzgDjbsf"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675730689007618",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611466324215214081",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@alphaWLgroup @TheGreedyDegens Check out @networkcapit! #NETC is a sustainable project, you won't regret to invest in. Live on PancakeSwap!\n\u2705 SAFU\n\u2705 Doxxed\n\u2705 Audit by Solidity Finance\n\u2705 KYC\n\u2705 Big marketing\n\u2705 Monthly 125% APY\n#NetworkCapital #BNB #HOLD_NETC\n#BNBChain \nTG: https://t.co/ipGzgDjbsf\n\u26a018471"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1607421810542510080",
+        "created_at": "2023-01-07T10:46:52.000Z",
+        "edit_history_tweet_ids": [
+            "1611675730005614593"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 5,
+                    "start": 0,
+                    "tag": "USDT"
+                },
+                {
+                    "end": 10,
+                    "start": 6,
+                    "tag": "\u6bd4\u7279\u5e01"
+                },
+                {
+                    "end": 14,
+                    "start": 11,
+                    "tag": "\u6b27\u6613"
+                },
+                {
+                    "end": 19,
+                    "start": 15,
+                    "tag": "OKX"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/nbRz7QKmin",
+                    "end": 85,
+                    "expanded_url": "https://twitter.com/shafaucuquina/status/1611675730005614593/photo/1",
+                    "media_key": "3_1611675720543264768",
+                    "start": 62,
+                    "url": "https://t.co/nbRz7QKmin"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675730005614593",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "#USDT #\u6bd4\u7279\u5e01 #\u6b27\u6613 #OKX\nMust building part member case win.\n\ud83d\ude00\ud83e\udd0f\ud83d\ude0c\ud83e\udd28\ud83d\udc8b https://t.co/nbRz7QKmin"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1611659645659004929",
+        "created_at": "2023-01-07T10:46:52.000Z",
+        "edit_history_tweet_ids": [
+            "1611675731192578048"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 55,
+                    "normalized_text": "NETC",
+                    "probability": 0.7338,
+                    "start": 52,
+                    "type": "Organization"
+                },
+                {
+                    "end": 132,
+                    "normalized_text": "PancakeSwap",
+                    "probability": 0.617,
+                    "start": 122,
+                    "type": "Other"
+                },
+                {
+                    "end": 183,
+                    "normalized_text": "KYC",
+                    "probability": 0.4096,
+                    "start": 181,
+                    "type": "Organization"
+                },
+                {
+                    "end": 250,
+                    "normalized_text": "_NETC",
+                    "probability": 0.3495,
+                    "start": 246,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 56,
+                    "start": 51,
+                    "tag": "NETC"
+                },
+                {
+                    "end": 235,
+                    "start": 220,
+                    "tag": "NetworkCapital"
+                },
+                {
+                    "end": 240,
+                    "start": 236,
+                    "tag": "BNB"
+                },
+                {
+                    "end": 251,
+                    "start": 241,
+                    "tag": "HOLD_NETC"
+                },
+                {
+                    "end": 261,
+                    "start": 252,
+                    "tag": "BNBChain"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 14,
+                    "id": "1296041127531905025",
+                    "start": 0,
+                    "username": "ReubenBester1"
+                },
+                {
+                    "end": 25,
+                    "id": "1243470638477697024",
+                    "start": 15,
+                    "username": "ZssBecker"
+                },
+                {
+                    "end": 49,
+                    "id": "1606162803345293313",
+                    "start": 36,
+                    "username": "NetworkCapit"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Official global group of Network Capital. Our goal is to be the most secure, sustainable and profitable decentralized bank in the crypto space. \ud83c\udf10 Website: networkcapital.io \ud83d\udc26 Twitter: https://twitter.com/networkcapit",
+                    "display_url": "t.me/networkcapital\u2026",
+                    "end": 290,
+                    "expanded_url": "http://t.me/networkcapitalofficial",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 267,
+                    "status": 200,
+                    "title": "Network Capital \ud83c\uddfa\ud83c\uddf8 | #NETC | Official Group \ud83d\udee1",
+                    "unwound_url": "https://t.me/networkcapitalofficial",
+                    "url": "https://t.co/DaV7m9Iwrj"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675731192578048",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611666304896843776",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@ReubenBester1 @ZssBecker Check out @networkcapit! #NETC is a sustainable project, you won't regret to invest in. Live on PancakeSwap!\n\u2705 SAFU\n\u2705 Doxxed\n\u2705 Audit by Solidity Finance\n\u2705 KYC\n\u2705 Big marketing\n\u2705 Monthly 125% APY\n#NetworkCapital #BNB #HOLD_NETC\n#BNBChain \nTG: https://t.co/DaV7m9Iwrj\n19144"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1608949670742724608",
+        "created_at": "2023-01-07T10:46:53.000Z",
+        "edit_history_tweet_ids": [
+            "1611675736145797121"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 48,
+                    "normalized_text": "NETC",
+                    "probability": 0.7424,
+                    "start": 45,
+                    "type": "Organization"
+                },
+                {
+                    "end": 125,
+                    "normalized_text": "PancakeSwap",
+                    "probability": 0.5982,
+                    "start": 115,
+                    "type": "Other"
+                },
+                {
+                    "end": 176,
+                    "normalized_text": "KYC",
+                    "probability": 0.4325,
+                    "start": 174,
+                    "type": "Organization"
+                },
+                {
+                    "end": 243,
+                    "normalized_text": "NETC",
+                    "probability": 0.3574,
+                    "start": 240,
+                    "type": "Organization"
+                },
+                {
+                    "end": 253,
+                    "normalized_text": "BNBChain",
+                    "probability": 0.4168,
+                    "start": 246,
+                    "type": "Organization"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 49,
+                    "start": 44,
+                    "tag": "NETC"
+                },
+                {
+                    "end": 228,
+                    "start": 213,
+                    "tag": "NetworkCapital"
+                },
+                {
+                    "end": 233,
+                    "start": 229,
+                    "tag": "BNB"
+                },
+                {
+                    "end": 244,
+                    "start": 234,
+                    "tag": "HOLD_NETC"
+                },
+                {
+                    "end": 254,
+                    "start": 245,
+                    "tag": "BNBChain"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 9,
+                    "id": "2215531147",
+                    "start": 0,
+                    "username": "sathvikv"
+                },
+                {
+                    "end": 18,
+                    "id": "379305414",
+                    "start": 10,
+                    "username": "Unocoin"
+                },
+                {
+                    "end": 42,
+                    "id": "1606162803345293313",
+                    "start": 29,
+                    "username": "NetworkCapit"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Official global group of Network Capital. Our goal is to be the most secure, sustainable and profitable decentralized bank in the crypto space. \ud83c\udf10 Website: networkcapital.io \ud83d\udc26 Twitter: https://twitter.com/networkcapit",
+                    "display_url": "t.me/networkcapital\u2026",
+                    "end": 283,
+                    "expanded_url": "http://t.me/networkcapitalofficial",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 260,
+                    "status": 200,
+                    "title": "Network Capital \ud83c\uddfa\ud83c\uddf8 | #NETC | Official Group \ud83d\udee1",
+                    "unwound_url": "https://t.me/networkcapitalofficial",
+                    "url": "https://t.co/HAyiz9hTz3"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675736145797121",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611429847678738432",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@sathvikv @Unocoin Check out @networkcapit! #NETC is a sustainable project, you won't regret to invest in. Live on PancakeSwap!\n\u2705 SAFU\n\u2705 Doxxed\n\u2705 Audit by Solidity Finance\n\u2705 KYC\n\u2705 Big marketing\n\u2705 Monthly 125% APY\n#NetworkCapital #BNB #HOLD_NETC\n#BNBChain \nTG: https://t.co/HAyiz9hTz3\n\u26a019271"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1266691004087836674",
+        "created_at": "2023-01-07T10:46:53.000Z",
+        "edit_history_tweet_ids": [
+            "1611675733927120896"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 26,
+                    "id": "1387786547815096321",
+                    "start": 16,
+                    "username": "ch1ckenNS"
+                },
+                {
+                    "end": 40,
+                    "id": "500345045",
+                    "start": 27,
+                    "username": "AffinityPlay"
+                },
+                {
+                    "end": 54,
+                    "id": "1347181903254732804",
+                    "start": 41,
+                    "username": "BtoyFallonme"
+                },
+                {
+                    "end": 63,
+                    "id": "157878881",
+                    "start": 55,
+                    "username": "dagsdog"
+                },
+                {
+                    "end": 71,
+                    "id": "1156046022595903490",
+                    "start": 64,
+                    "username": "MFL_tw"
+                },
+                {
+                    "end": 85,
+                    "id": "2189644939",
+                    "start": 72,
+                    "username": "OpulentNinja"
+                },
+                {
+                    "end": 95,
+                    "id": "1062485810",
+                    "start": 86,
+                    "username": "nghubert"
+                },
+                {
+                    "end": 105,
+                    "id": "1497037825803362307",
+                    "start": 96,
+                    "username": "ZYNKYRA_"
+                },
+                {
+                    "end": 115,
+                    "id": "397151771",
+                    "start": 106,
+                    "username": "pgreco77"
+                },
+                {
+                    "end": 128,
+                    "id": "1400914231998943235",
+                    "start": 116,
+                    "username": "proofofgail"
+                },
+                {
+                    "end": 140,
+                    "id": "1490148054455898112",
+                    "start": 129,
+                    "username": "tweetmotia"
+                },
+                {
+                    "end": 153,
+                    "id": "1385075882",
+                    "start": 141,
+                    "username": "Bitsapiens_"
+                },
+                {
+                    "end": 167,
+                    "id": "905232815943507968",
+                    "start": 154,
+                    "username": "OfficialDugu"
+                },
+                {
+                    "end": 181,
+                    "id": "1374867677395742725",
+                    "start": 168,
+                    "username": "Lulu48888265"
+                },
+                {
+                    "end": 194,
+                    "id": "3147805740",
+                    "start": 182,
+                    "username": "kuo_a996016"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/sukiya00145/st\u2026",
+                    "end": 218,
+                    "expanded_url": "https://twitter.com/sukiya00145/status/1611277789814034433",
+                    "start": 195,
+                    "url": "https://t.co/WqiZ6Fi6DP"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675733927120896",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611277789814034433",
+                "type": "quoted"
+            }
+        ],
+        "text": "wow.. works \ud83d\udd25\ud83d\udd25\ud83d\udd25 @ch1ckenNS @AffinityPlay @BtoyFallonme @dagsdog @MFL_tw @OpulentNinja @nghubert @ZYNKYRA_ @pgreco77 @proofofgail @tweetmotia @Bitsapiens_ @OfficialDugu @Lulu48888265 @kuo_a996016 https://t.co/WqiZ6Fi6DP"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1242511664953479168",
+        "created_at": "2023-01-07T10:46:52.000Z",
+        "edit_history_tweet_ids": [
+            "1611675732492845057"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 18,
+                    "start": 14,
+                    "tag": "btc"
+                },
+                {
+                    "end": 22,
+                    "start": 19,
+                    "tag": "\u5f69\u7968"
+                },
+                {
+                    "end": 47,
+                    "start": 41,
+                    "tag": "\u4e16\u754c\u676f\u4e0b\u6ce8"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/RhAMQRZtfr",
+                    "end": 71,
+                    "expanded_url": "https://twitter.com/hamzar72972704/status/1610876142059417601/video/1",
+                    "media_key": "7_1610875706661273600",
+                    "start": 48,
+                    "url": "https://t.co/RhAMQRZtfr"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675732492845057",
+        "lang": "no",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "Matt Franklin #btc #\u5f69\u7968 Jonathan Caroline #\u4e16\u754c\u676f\u4e0b\u6ce8 https://t.co/RhAMQRZtfr"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1053344420635000832",
+        "created_at": "2023-01-07T10:46:54.000Z",
+        "edit_history_tweet_ids": [
+            "1611675738020941824"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 20,
+                    "start": 16,
+                    "tag": "ETH"
+                },
+                {
+                    "end": 25,
+                    "start": 21,
+                    "tag": "\u65f6\u65f6\u5f69"
+                },
+                {
+                    "end": 47,
+                    "start": 41,
+                    "tag": "\u4e16\u754c\u676f\u76f4\u64ad"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/7cKvaXt8FY",
+                    "end": 71,
+                    "expanded_url": "https://twitter.com/hamzar72972704/status/1610876142059417601/video/1",
+                    "media_key": "7_1610875706661273600",
+                    "start": 48,
+                    "url": "https://t.co/7cKvaXt8FY"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675738020941824",
+        "lang": "cy",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "Ives MacPherson #ETH #\u65f6\u65f6\u5f69 Berg Tomlinson #\u4e16\u754c\u676f\u76f4\u64ad https://t.co/7cKvaXt8FY"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1455778060154785798",
+        "created_at": "2023-01-07T10:46:54.000Z",
+        "edit_history_tweet_ids": [
+            "1611675737773445121"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 34,
+                    "start": 30,
+                    "tag": "sol"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 16,
+                    "id": "1473794170129199104",
+                    "start": 0,
+                    "username": "degen_games_sol"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675737773445121",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1610908984655122434",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@degen_games_sol LFG#shuffle, #sol"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1430161306712117258",
+        "created_at": "2023-01-07T10:46:55.000Z",
+        "edit_history_tweet_ids": [
+            "1611675743272030208"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 201,
+                    "normalized_text": "Airdrop",
+                    "probability": 0.6631,
+                    "start": 195,
+                    "type": "Other"
+                },
+                {
+                    "end": 206,
+                    "normalized_text": "Sol",
+                    "probability": 0.3788,
+                    "start": 204,
+                    "type": "Other"
+                },
+                {
+                    "end": 214,
+                    "normalized_text": "Solana",
+                    "probability": 0.4915,
+                    "start": 209,
+                    "type": "Place"
+                },
+                {
+                    "end": 224,
+                    "normalized_text": "MemeCoin",
+                    "probability": 0.5211,
+                    "start": 217,
+                    "type": "Other"
+                },
+                {
+                    "end": 239,
+                    "normalized_text": "SolanaAirdrop",
+                    "probability": 0.568,
+                    "start": 227,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 202,
+                    "start": 194,
+                    "tag": "Airdrop"
+                },
+                {
+                    "end": 207,
+                    "start": 203,
+                    "tag": "Sol"
+                },
+                {
+                    "end": 215,
+                    "start": 208,
+                    "tag": "Solana"
+                },
+                {
+                    "end": 225,
+                    "start": 216,
+                    "tag": "MemeCoin"
+                },
+                {
+                    "end": 240,
+                    "start": 226,
+                    "tag": "SolanaAirdrop"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 14,
+                    "id": "1551913686541160448",
+                    "start": 0,
+                    "username": "poodle_solana"
+                },
+                {
+                    "end": 118,
+                    "id": "1416897910365585410",
+                    "start": 107,
+                    "username": "harutyaski"
+                },
+                {
+                    "end": 131,
+                    "id": "538039923",
+                    "start": 120,
+                    "username": "rohman_alk"
+                },
+                {
+                    "end": 146,
+                    "id": "944258699337412608",
+                    "start": 133,
+                    "username": "Muhamma14277"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675743272030208",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611018992793300997",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@poodle_solana Impresivve and great project. I'm  happy to be a part of this proudest team. Best of luck.\n\n@harutyaski \n@rohman_alk \n@Muhamma14277\n\n61tMsLoAP31N3hU3WuUQutNGKAFUWuPMtFrF3hqrHjYN\n\n#Airdrop #Sol #Solana #MemeCoin #SolanaAirdrop"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1356211081547558913",
+        "created_at": "2023-01-07T10:46:55.000Z",
+        "edit_history_tweet_ids": [
+            "1611675741934223361"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1087416766115037185",
+                    "start": 0,
+                    "username": "zahratamal17"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675741934223361",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675667032330242",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@zahratamal17 Lillian"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "2616690062",
+        "created_at": "2023-01-07T10:46:55.000Z",
+        "edit_history_tweet_ids": [
+            "1611675744379498497"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 141,
+                    "start": 133,
+                    "tag": "Bitcoin"
+                },
+                {
+                    "end": 146,
+                    "start": 142,
+                    "tag": "BTC"
+                },
+                {
+                    "end": 150,
+                    "start": 147,
+                    "tag": "LN"
+                },
+                {
+                    "end": 168,
+                    "start": 151,
+                    "tag": "LightningNetwork"
+                },
+                {
+                    "end": 180,
+                    "start": 169,
+                    "tag": "boltcoiner"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 53,
+                    "id": "863624208705888257",
+                    "start": 42,
+                    "username": "_bitcoiner"
+                },
+                {
+                    "end": 84,
+                    "id": "1463021259709566977",
+                    "start": 73,
+                    "username": "boltcoiner"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/bQWWJBEHnt",
+                    "end": 204,
+                    "expanded_url": "https://twitter.com/boltcoiner/status/1463381143886127107/photo/1",
+                    "media_key": "16_1463381136156073984",
+                    "start": 181,
+                    "url": "https://t.co/bQWWJBEHnt"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675744379498497",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "I am claiming my free Lightning sats from @_bitcoiner's zesty faucet! \u26a1\n\n@boltcoiner unlock me 1cfb7471-e137-4535-81be-07b4e7cc2d3d\n\n#Bitcoin #BTC #LN #LightningNetwork #boltcoiner\nhttps://t.co/bQWWJBEHnt"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1604335777575751680",
+        "created_at": "2023-01-07T10:46:55.000Z",
+        "edit_history_tweet_ids": [
+            "1611675741946793985"
+        ],
+        "entities": {
+            "cashtags": [
+                {
+                    "end": 13,
+                    "start": 7,
+                    "tag": "BONKO"
+                },
+                {
+                    "end": 25,
+                    "start": 20,
+                    "tag": "BONK"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 6,
+                    "start": 0,
+                    "tag": "BONKO"
+                },
+                {
+                    "end": 19,
+                    "start": 14,
+                    "tag": "BONK"
+                },
+                {
+                    "end": 30,
+                    "start": 26,
+                    "tag": "ETH"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/BONKOerc20/sta\u2026",
+                    "end": 54,
+                    "expanded_url": "https://twitter.com/BONKOerc20/status/1611630643829673987",
+                    "start": 31,
+                    "url": "https://t.co/bevpBfLQ7s"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675741946793985",
+        "lang": "ht",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611630643829673987",
+                "type": "quoted"
+            }
+        ],
+        "text": "#BONKO $BONKO #BONK $BONK #ETH https://t.co/bevpBfLQ7s"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1600654601120022528",
+        "created_at": "2023-01-07T10:46:55.000Z",
+        "edit_history_tweet_ids": [
+            "1611675744282763264"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 40,
+                    "normalized_text": "NETC",
+                    "probability": 0.7678,
+                    "start": 37,
+                    "type": "Organization"
+                },
+                {
+                    "end": 117,
+                    "normalized_text": "PancakeSwap",
+                    "probability": 0.6752,
+                    "start": 107,
+                    "type": "Other"
+                },
+                {
+                    "end": 125,
+                    "normalized_text": "SAFU",
+                    "probability": 0.4027,
+                    "start": 122,
+                    "type": "Organization"
+                },
+                {
+                    "end": 168,
+                    "normalized_text": "KYC",
+                    "probability": 0.4701,
+                    "start": 166,
+                    "type": "Organization"
+                },
+                {
+                    "end": 224,
+                    "normalized_text": "BNB",
+                    "probability": 0.4157,
+                    "start": 222,
+                    "type": "Organization"
+                },
+                {
+                    "end": 235,
+                    "normalized_text": "NETC",
+                    "probability": 0.4116,
+                    "start": 232,
+                    "type": "Organization"
+                },
+                {
+                    "end": 245,
+                    "normalized_text": "BNBChain",
+                    "probability": 0.4348,
+                    "start": 238,
+                    "type": "Organization"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 41,
+                    "start": 36,
+                    "tag": "NETC"
+                },
+                {
+                    "end": 220,
+                    "start": 205,
+                    "tag": "NetworkCapital"
+                },
+                {
+                    "end": 225,
+                    "start": 221,
+                    "tag": "BNB"
+                },
+                {
+                    "end": 236,
+                    "start": 226,
+                    "tag": "HOLD_NETC"
+                },
+                {
+                    "end": 246,
+                    "start": 237,
+                    "tag": "BNBChain"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 10,
+                    "id": "33058015",
+                    "start": 0,
+                    "username": "primalkey"
+                },
+                {
+                    "end": 34,
+                    "id": "1606162803345293313",
+                    "start": 21,
+                    "username": "NetworkCapit"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Official global group of Network Capital. Our goal is to be the most secure, sustainable and profitable decentralized bank in the crypto space. \ud83c\udf10 Website: networkcapital.io \ud83d\udc26 Twitter: https://twitter.com/networkcapit",
+                    "display_url": "t.me/networkcapital\u2026",
+                    "end": 275,
+                    "expanded_url": "http://t.me/networkcapitalofficial",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 252,
+                    "status": 200,
+                    "title": "Network Capital \ud83c\uddfa\ud83c\uddf8 | #NETC | Official Group \ud83d\udee1",
+                    "unwound_url": "https://t.me/networkcapitalofficial",
+                    "url": "https://t.co/AzA54c9JcP"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675744282763264",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611183640058241025",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@primalkey Check out @networkcapit! #NETC is a sustainable project, you won't regret to invest in. Live on PancakeSwap!\n\u2705 SAFU\n\u2705 Doxxed\n\u2705 Audit by Solidity Finance\n\u2705 KYC\n\u2705 Big marketing\n\u2705 Monthly 125% APY\n#NetworkCapital #BNB #HOLD_NETC\n#BNBChain \nTG: https://t.co/AzA54c9JcP\n\u26a019071"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1604345991762583553",
+        "created_at": "2023-01-07T10:46:55.000Z",
+        "edit_history_tweet_ids": [
+            "1611675745662779393"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 73,
+                    "normalized_text": "NETC",
+                    "probability": 0.7576,
+                    "start": 70,
+                    "type": "Organization"
+                },
+                {
+                    "end": 150,
+                    "normalized_text": "PancakeSwap",
+                    "probability": 0.5865,
+                    "start": 140,
+                    "type": "Other"
+                },
+                {
+                    "end": 201,
+                    "normalized_text": "KYC",
+                    "probability": 0.4436,
+                    "start": 199,
+                    "type": "Organization"
+                },
+                {
+                    "end": 263,
+                    "normalized_text": "HOLD",
+                    "probability": 0.3956,
+                    "start": 260,
+                    "type": "Organization"
+                },
+                {
+                    "end": 268,
+                    "normalized_text": "NETC",
+                    "probability": 0.3526,
+                    "start": 265,
+                    "type": "Organization"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 74,
+                    "start": 69,
+                    "tag": "NETC"
+                },
+                {
+                    "end": 253,
+                    "start": 238,
+                    "tag": "NetworkCapital"
+                },
+                {
+                    "end": 258,
+                    "start": 254,
+                    "tag": "BNB"
+                },
+                {
+                    "end": 269,
+                    "start": 259,
+                    "tag": "HOLD_NETC"
+                },
+                {
+                    "end": 279,
+                    "start": 270,
+                    "tag": "BNBChain"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 12,
+                    "id": "1329412138922696707",
+                    "start": 0,
+                    "username": "InsurAce_io"
+                },
+                {
+                    "end": 26,
+                    "id": "1472197491844026370",
+                    "start": 13,
+                    "username": "MoonwellDeFi"
+                },
+                {
+                    "end": 43,
+                    "id": "1214659473123487744",
+                    "start": 27,
+                    "username": "MoonbeamNetwork"
+                },
+                {
+                    "end": 67,
+                    "id": "1606162803345293313",
+                    "start": 54,
+                    "username": "NetworkCapit"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Official global group of Network Capital. Our goal is to be the most secure, sustainable and profitable decentralized bank in the crypto space. \ud83c\udf10 Website: networkcapital.io \ud83d\udc26 Twitter: https://twitter.com/networkcapit",
+                    "display_url": "t.me/networkcapital\u2026",
+                    "end": 308,
+                    "expanded_url": "http://t.me/networkcapitalofficial",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 285,
+                    "status": 200,
+                    "title": "Network Capital \ud83c\uddfa\ud83c\uddf8 | #NETC | Official Group \ud83d\udee1",
+                    "unwound_url": "https://t.me/networkcapitalofficial",
+                    "url": "https://t.co/D9ojdrJF1b"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675745662779393",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611365473072939011",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@InsurAce_io @MoonwellDeFi @MoonbeamNetwork Check out @networkcapit! #NETC is a sustainable project, you won't regret to invest in. Live on PancakeSwap!\n\u2705 SAFU\n\u2705 Doxxed\n\u2705 Audit by Solidity Finance\n\u2705 KYC\n\u2705 Big marketing\n\u2705 Monthly 125% APY\n#NetworkCapital #BNB #HOLD_NETC\n#BNBChain \nTG: https://t.co/D9ojdrJF1b\n\u26a018871"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1583679106809352192",
+        "created_at": "2023-01-07T10:46:56.000Z",
+        "edit_history_tweet_ids": [
+            "1611675747181268993"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 149,
+                    "normalized_text": "Twitter",
+                    "probability": 0.8966,
+                    "start": 143,
+                    "type": "Other"
+                },
+                {
+                    "end": 166,
+                    "normalized_text": "BSC",
+                    "probability": 0.5712,
+                    "start": 164,
+                    "type": "Organization"
+                },
+                {
+                    "end": 189,
+                    "normalized_text": "ProPAD",
+                    "probability": 0.4559,
+                    "start": 184,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 167,
+                    "start": 163,
+                    "tag": "BSC"
+                },
+                {
+                    "end": 172,
+                    "start": 168,
+                    "tag": "NFT"
+                },
+                {
+                    "end": 182,
+                    "start": 173,
+                    "tag": "8BitEARN"
+                },
+                {
+                    "end": 190,
+                    "start": 183,
+                    "tag": "ProPAD"
+                },
+                {
+                    "end": 198,
+                    "start": 191,
+                    "tag": "ProDEX"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 15,
+                    "id": "300656912",
+                    "start": 0,
+                    "username": "cryptoredneckx"
+                },
+                {
+                    "end": 161,
+                    "id": "1560279138166272000",
+                    "start": 152,
+                    "username": "8bitearn"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Passive Income & Benefits \ud83d\udc49(BTC Reflection, Staking, Farming, Monthly DH & Quarterly Revenue Rewards, BUSD Credit, Investment Insurance, Cashback Pools & Deflationary NFTs) Products \ud83d\udc49 ProDEX, ProPAD, NFT Marketplace, Dapp with Staking, DAO & many more.",
+                    "display_url": "t.me/official8BitEa\u2026",
+                    "end": 142,
+                    "expanded_url": "https://t.me/official8BitEarn",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1610658985631272962/CGkTWBpP?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1610658985631272962/CGkTWBpP?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 119,
+                    "status": 200,
+                    "title": "8BitEARN Global Community",
+                    "unwound_url": "https://t.me/official8BitEarn",
+                    "url": "https://t.co/VOzUswm9u0"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675747181268993",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611673445175115779",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@cryptoredneckx Don't miss out pre-sale on \n\ud83e\udd73 14:00 UTC 16th JANUARY 2023\n\nLaunching: 14:00 UTC 20th JANUARY 2023\n\nTg: https://t.co/VOzUswm9u0\nTwitter: @8Bitearn\n\n#BSC #NFT #8BitEARN #ProPAD #ProDEX"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1424292711830458368",
+        "created_at": "2023-01-07T10:46:56.000Z",
+        "edit_history_tweet_ids": [
+            "1611675746988339200"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 187,
+                    "start": 179,
+                    "tag": "Airdrop"
+                },
+                {
+                    "end": 197,
+                    "start": 188,
+                    "tag": "Airdrops"
+                },
+                {
+                    "end": 205,
+                    "start": 198,
+                    "tag": "Crypto"
+                },
+                {
+                    "end": 219,
+                    "start": 206,
+                    "tag": "CryptotownEU"
+                },
+                {
+                    "end": 224,
+                    "start": 220,
+                    "tag": "BTC"
+                },
+                {
+                    "end": 233,
+                    "start": 225,
+                    "tag": "Bitcoin"
+                },
+                {
+                    "end": 238,
+                    "start": 234,
+                    "tag": "BSC"
+                },
+                {
+                    "end": 253,
+                    "start": 239,
+                    "tag": "CarbonBrowser"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1034478294677250048",
+                    "start": 0,
+                    "username": "CryptoTownEU"
+                },
+                {
+                    "end": 154,
+                    "id": "1343202407501598720",
+                    "start": 140,
+                    "username": "Nayem76936491"
+                },
+                {
+                    "end": 167,
+                    "id": "1414922151476432904",
+                    "start": 155,
+                    "username": "arup_borman"
+                },
+                {
+                    "end": 177,
+                    "id": "1438739606275506177",
+                    "start": 168,
+                    "username": "drogo_my"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675746988339200",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611645915944873986",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@CryptoTownEU Wow, Carbon Browser is an amazing project. It is very promising and has the potential to be very successful. Don\u2019t miss guys.\n@Nayem76936491\n@arup_borman\n@drogo_my\n\n#Airdrop #Airdrops #Crypto #CryptotownEU #BTC #Bitcoin #BSC #CarbonBrowser"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1604425104745975808",
+        "created_at": "2023-01-07T10:46:55.000Z",
+        "edit_history_tweet_ids": [
+            "1611675745864278017"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 42,
+                    "start": 37,
+                    "tag": "NETC"
+                },
+                {
+                    "end": 221,
+                    "start": 206,
+                    "tag": "NetworkCapital"
+                },
+                {
+                    "end": 226,
+                    "start": 222,
+                    "tag": "BNB"
+                },
+                {
+                    "end": 237,
+                    "start": 227,
+                    "tag": "HOLD_NETC"
+                },
+                {
+                    "end": 247,
+                    "start": 238,
+                    "tag": "BNBChain"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 11,
+                    "id": "934775377179881473",
+                    "start": 0,
+                    "username": "surferjimw"
+                },
+                {
+                    "end": 35,
+                    "id": "1606162803345293313",
+                    "start": 22,
+                    "username": "NetworkCapit"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Official global group of Network Capital. Our goal is to be the most secure, sustainable and profitable decentralized bank in the crypto space. \ud83c\udf10 Website: networkcapital.io \ud83d\udc26 Twitter: https://twitter.com/networkcapit",
+                    "display_url": "t.me/networkcapital\u2026",
+                    "end": 276,
+                    "expanded_url": "http://t.me/networkcapitalofficial",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611484370296049664/CXisN384?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 253,
+                    "status": 200,
+                    "title": "Network Capital \ud83c\uddfa\ud83c\uddf8 | #NETC | Official Group \ud83d\udee1",
+                    "unwound_url": "https://t.me/networkcapitalofficial",
+                    "url": "https://t.co/Nz8WTyJAJX"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675745864278017",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611486662378377229",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@surferjimw Check out @networkcapit! #NETC is a sustainable project, you won't regret to invest in. Live on PancakeSwap!\n\u2705 SAFU\n\u2705 Doxxed\n\u2705 Audit by Solidity Finance\n\u2705 KYC\n\u2705 Big marketing\n\u2705 Monthly 125% APY\n#NetworkCapital #BNB #HOLD_NETC\n#BNBChain \nTG: https://t.co/Nz8WTyJAJX\n\u26a018671"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "2816261045",
+        "created_at": "2023-01-07T10:46:56.000Z",
+        "edit_history_tweet_ids": [
+            "1611675746677948417"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 5,
+                    "start": 0,
+                    "tag": "USDT"
+                },
+                {
+                    "end": 10,
+                    "start": 6,
+                    "tag": "\u6bd4\u7279\u5e01"
+                },
+                {
+                    "end": 14,
+                    "start": 11,
+                    "tag": "\u6b27\u6613"
+                },
+                {
+                    "end": 19,
+                    "start": 15,
+                    "tag": "OKX"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/Ym1Cnr51GY",
+                    "end": 73,
+                    "expanded_url": "https://twitter.com/aa0696351/status/1611675746677948417/photo/1",
+                    "media_key": "3_1611675733356838913",
+                    "start": 50,
+                    "url": "https://t.co/Ym1Cnr51GY"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675746677948417",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "#USDT #\u6bd4\u7279\u5e01 #\u6b27\u6613 #OKX\nLive value put present.\n\ud83d\udc8c\ud83e\udd10\ud83d\ude04\ud83d\udc4b\ud83e\udd0f https://t.co/Ym1Cnr51GY"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "743863959984480257",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675751572738048"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1087416766115037185",
+                    "start": 0,
+                    "username": "zahratamal17"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675751572738048",
+        "lang": "es",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675667032330242",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@zahratamal17 Patricia"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1605206077523787778",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675751279120385"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 9,
+                    "start": 0,
+                    "tag": "Airdrops"
+                },
+                {
+                    "end": 22,
+                    "start": 10,
+                    "tag": "EsikNetwork"
+                },
+                {
+                    "end": 27,
+                    "start": 23,
+                    "tag": "BSC"
+                },
+                {
+                    "end": 36,
+                    "start": 28,
+                    "tag": "Binance"
+                },
+                {
+                    "end": 41,
+                    "start": 37,
+                    "tag": "BNB"
+                },
+                {
+                    "end": 61,
+                    "start": 42,
+                    "tag": "EsikNetworkAirdrop"
+                },
+                {
+                    "end": 78,
+                    "start": 62,
+                    "tag": "AirdropKingNews"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/AirdropKingNew\u2026",
+                    "end": 102,
+                    "expanded_url": "https://twitter.com/AirdropKingNews/status/1611669634738184193",
+                    "start": 79,
+                    "url": "https://t.co/dqVQxW38rB"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675751279120385",
+        "lang": "qht",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611669634738184193",
+                "type": "quoted"
+            }
+        ],
+        "text": "#Airdrops #EsikNetwork #BSC #Binance #BNB #EsikNetworkAirdrop #AirdropKingNews https://t.co/dqVQxW38rB"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1461027336682455046",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675752210079746"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 190,
+                    "normalized_text": "web3domain",
+                    "probability": 0.5225,
+                    "start": 181,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 163,
+                    "start": 159,
+                    "tag": "ENS"
+                },
+                {
+                    "end": 168,
+                    "start": 164,
+                    "tag": "ens"
+                },
+                {
+                    "end": 179,
+                    "start": 169,
+                    "tag": "ensvision"
+                },
+                {
+                    "end": 191,
+                    "start": 180,
+                    "tag": "web3domain"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 124,
+                    "id": "1500417697707929603",
+                    "start": 114,
+                    "username": "ensvision"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "ENS Vision - ENS Marketplace and Bulk Tools - Register, buy or sell Ethereum Name Service (ENS) domains. Browse data, categories or clubs, get the latest updates on the market.",
+                    "display_url": "ens.vision",
+                    "end": 216,
+                    "expanded_url": "http://ens.vision",
+                    "images": [
+                        {
+                            "height": 600,
+                            "url": "https://pbs.twimg.com/news_img/1611030993846009862/5E9CwOxC?format=jpg&name=orig",
+                            "width": 800
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611030993846009862/5E9CwOxC?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 193,
+                    "status": 200,
+                    "title": "ENS.Vision - Discover and trade ENS names across marketplaces.",
+                    "unwound_url": "https://ens.vision/",
+                    "url": "https://t.co/v5LpS3Jkej"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675752210079746",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "GM! Daily reminder to do an act of kindness! Cost $00 to be kind. Happy Saturday! Let\u2019s all have a great weekend! @ensvision try out all our free tools ! LFG! #ENS #ens #ensvision #web3domain  https://t.co/v5LpS3Jkej"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984451",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1610588531310694407",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675751522406401"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 164,
+                    "start": 157,
+                    "tag": "Sorare"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 25,
+                    "id": "1571220093060644865",
+                    "start": 14,
+                    "username": "Psv4life1w"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitterpicker.com/d/4rkk4s5g",
+                    "end": 155,
+                    "expanded_url": "https://twitterpicker.com/d/4rkk4s5g",
+                    "start": 132,
+                    "status": 404,
+                    "unwound_url": "https://twitterpicker.com/d/4rkk4s5g",
+                    "url": "https://t.co/X5THTcJzK4"
+                },
+                {
+                    "display_url": "twitter.com/SorareTaleb/st\u2026",
+                    "end": 188,
+                    "expanded_url": "https://twitter.com/SorareTaleb/status/1610621666165460992",
+                    "start": 165,
+                    "url": "https://t.co/Mus2LXRPOM"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675751522406401",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1610621666165460992",
+                "type": "quoted"
+            }
+        ],
+        "text": "The WINNER is @Psv4life1w Congratulations! \ud83c\udf89 \nPlease DM me with the name of your Sorare club. You will get both Enzo and Julian \ud83e\udd70 \n\nhttps://t.co/X5THTcJzK4\n\n#Sorare https://t.co/Mus2LXRPOM"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1425012631459487775",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675752935686144"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 49,
+                    "normalized_text": "cryptocurrencies",
+                    "probability": 0.7082,
+                    "start": 34,
+                    "type": "Other"
+                },
+                {
+                    "end": 66,
+                    "normalized_text": "cryptonewstoday",
+                    "probability": 0.822,
+                    "start": 52,
+                    "type": "Other"
+                },
+                {
+                    "end": 78,
+                    "normalized_text": "CryptoNews",
+                    "probability": 0.9325,
+                    "start": 69,
+                    "type": "Other"
+                },
+                {
+                    "end": 100,
+                    "normalized_text": "YouTube",
+                    "probability": 0.9347,
+                    "start": 94,
+                    "type": "Other"
+                },
+                {
+                    "end": 117,
+                    "normalized_text": "BTC",
+                    "probability": 0.5525,
+                    "start": 115,
+                    "type": "Other"
+                },
+                {
+                    "end": 122,
+                    "normalized_text": "btc",
+                    "probability": 0.582,
+                    "start": 120,
+                    "type": "Other"
+                },
+                {
+                    "end": 127,
+                    "normalized_text": "ETH",
+                    "probability": 0.6484,
+                    "start": 125,
+                    "type": "Other"
+                },
+                {
+                    "end": 132,
+                    "normalized_text": "eth",
+                    "probability": 0.6599,
+                    "start": 130,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 50,
+                    "start": 33,
+                    "tag": "cryptocurrencies"
+                },
+                {
+                    "end": 67,
+                    "start": 51,
+                    "tag": "cryptonewstoday"
+                },
+                {
+                    "end": 79,
+                    "start": 68,
+                    "tag": "CryptoNews"
+                },
+                {
+                    "end": 92,
+                    "start": 80,
+                    "tag": "Information"
+                },
+                {
+                    "end": 101,
+                    "start": 93,
+                    "tag": "YouTube"
+                },
+                {
+                    "end": 113,
+                    "start": 102,
+                    "tag": "ComingSoon"
+                },
+                {
+                    "end": 118,
+                    "start": 114,
+                    "tag": "BTC"
+                },
+                {
+                    "end": 123,
+                    "start": 119,
+                    "tag": "btc"
+                },
+                {
+                    "end": 128,
+                    "start": 124,
+                    "tag": "ETH"
+                },
+                {
+                    "end": 133,
+                    "start": 129,
+                    "tag": "eth"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/iQFixldBct",
+                    "end": 157,
+                    "expanded_url": "https://twitter.com/LWCryptoNews/status/1611675752935686144/video/1",
+                    "media_key": "7_1611675714905833472",
+                    "start": 134,
+                    "url": "https://t.co/iQFixldBct"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675752935686144",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "Coming soon!\nWatch this space \ud83d\udcab\n\n#cryptocurrencies #cryptonewstoday #CryptoNews #Information #YouTube #ComingSoon #BTC #btc #ETH #eth https://t.co/iQFixldBct"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1277942598158565376",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675753871208449"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 12,
+                    "id": "1442514718791405569",
+                    "start": 0,
+                    "username": "Gregalmundo"
+                },
+                {
+                    "end": 22,
+                    "id": "1358495802386243585",
+                    "start": 13,
+                    "username": "ape_swap"
+                },
+                {
+                    "end": 34,
+                    "id": "1456630406636245003",
+                    "start": 23,
+                    "username": "ApeSwapNFT"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675753871208449",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611357324538511361",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@Gregalmundo @ape_swap @ApeSwapNFT 2023 is the Year of the Ape Swap!"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1578731681024032777",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675754017787905"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 67,
+                    "normalized_text": "bitcoin",
+                    "probability": 0.8586,
+                    "start": 61,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 49,
+                    "start": 41,
+                    "tag": "bitcoin"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1498205986930425859",
+                    "start": 0,
+                    "username": "singing4sats"
+                },
+                {
+                    "end": 26,
+                    "id": "285636352",
+                    "start": 14,
+                    "username": "Breedlove22"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675754017787905",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611201010420285444",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@singing4sats @Breedlove22 We don't  buy #bitcoin\u00a0\u00a0\u00a0\nWe earn bitcoin From Mining \nI'm ready to show 10 lucky people how to earn 0.1BTC (1600$)and more daily without sending out funds to anyone.\nNo referral \nNo withdrawal fees \nIf interested, kindly send a DM."
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "779896699",
+        "created_at": "2023-01-07T10:46:58.000Z",
+        "edit_history_tweet_ids": [
+            "1611675754689073153"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 16,
+                    "id": "4440377620",
+                    "start": 0,
+                    "username": "BitcoinCasinosC"
+                },
+                {
+                    "end": 33,
+                    "id": "1559733154893758464",
+                    "start": 17,
+                    "username": "WadsworthNegra1"
+                },
+                {
+                    "end": 42,
+                    "id": "1515259886850183172",
+                    "start": 34,
+                    "username": "Oxchiko"
+                },
+                {
+                    "end": 51,
+                    "id": "1511984987482247173",
+                    "start": 43,
+                    "username": "cagizzz"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675754689073153",
+        "lang": "qam",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611399926658830337",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@BitcoinCasinosC @WadsworthNegra1 @Oxchiko @cagizzz"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1574773076130136066",
+        "created_at": "2023-01-07T10:46:57.000Z",
+        "edit_history_tweet_ids": [
+            "1611675753833193473"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 27,
+                    "start": 14,
+                    "tag": "pitbulltoken"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "298493234",
+                    "start": 0,
+                    "username": "koinefendisi"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675753833193473",
+        "lang": "qme",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611367582556200961",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@koinefendisi #pitbulltoken"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1359681022196019202",
+        "created_at": "2023-01-07T10:46:59.000Z",
+        "edit_history_tweet_ids": [
+            "1611675758921134081"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1516710530",
+                    "start": 0,
+                    "username": "BonkFroggies"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675758921134081",
+        "lang": "et",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611107954127958016",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@BonkFroggies XeXtBYDFQoeTSrvQhqJVrRzzEk6YWAoHsWRFGYNLCcs"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1550052933529735168",
+        "created_at": "2023-01-07T10:46:59.000Z",
+        "edit_history_tweet_ids": [
+            "1611675760636329984"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 29,
+                    "id": "241869718",
+                    "start": 21,
+                    "username": "0xSvage"
+                },
+                {
+                    "end": 42,
+                    "id": "1468249163787907078",
+                    "start": 30,
+                    "username": "EdwinNazir3"
+                },
+                {
+                    "end": 59,
+                    "id": "887312486910840832",
+                    "start": 43,
+                    "username": "DeepakK71154924"
+                },
+                {
+                    "end": 69,
+                    "id": "1356549749936189440",
+                    "start": 60,
+                    "username": "jumparo1"
+                },
+                {
+                    "end": 86,
+                    "id": "1461631611565481985",
+                    "start": 70,
+                    "username": "StitchiaNetwork"
+                },
+                {
+                    "end": 97,
+                    "id": "1487758469700763652",
+                    "start": 87,
+                    "username": "PaulJt369"
+                },
+                {
+                    "end": 109,
+                    "id": "1437114792070811650",
+                    "start": 98,
+                    "username": "igor280584"
+                },
+                {
+                    "end": 122,
+                    "id": "1502434882110509056",
+                    "start": 110,
+                    "username": "platform5V5"
+                },
+                {
+                    "end": 131,
+                    "id": "1479777518869569539",
+                    "start": 123,
+                    "username": "srikky2"
+                },
+                {
+                    "end": 148,
+                    "id": "1503577112107962380",
+                    "start": 132,
+                    "username": "marie_manolette"
+                },
+                {
+                    "end": 158,
+                    "id": "1485184965000241156",
+                    "start": 149,
+                    "username": "Virmiton"
+                },
+                {
+                    "end": 168,
+                    "id": "1299439827188879361",
+                    "start": 159,
+                    "username": "ATrushyn"
+                },
+                {
+                    "end": 179,
+                    "id": "1441423431417806860",
+                    "start": 169,
+                    "username": "My_860104"
+                },
+                {
+                    "end": 191,
+                    "id": "1355021944232370177",
+                    "start": 180,
+                    "username": "MA73092429"
+                },
+                {
+                    "end": 199,
+                    "id": "2221685587",
+                    "start": 192,
+                    "username": "zayy_i"
+                },
+                {
+                    "end": 216,
+                    "id": "1501328942484967424",
+                    "start": 200,
+                    "username": "SophiaL99638137"
+                },
+                {
+                    "end": 229,
+                    "id": "1428662656102289410",
+                    "start": 217,
+                    "username": "Tom70282883"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/OpenOceanGloba\u2026",
+                    "end": 253,
+                    "expanded_url": "https://twitter.com/OpenOceanGlobaI/status/1611409206531309568",
+                    "start": 230,
+                    "url": "https://t.co/MxGXyU66w9"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675760636329984",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611409206531309568",
+                "type": "quoted"
+            }
+        ],
+        "text": "2nd batch don\u2019t miss @0xSvage @EdwinNazir3 @DeepakK71154924 @jumparo1 @StitchiaNetwork @PaulJt369 @igor280584 @platform5V5 @srikky2 @marie_manolette @Virmiton @ATrushyn @My_860104 @MA73092429 @zayy_i @SophiaL99638137 @Tom70282883 https://t.co/MxGXyU66w9"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1564012294660816896",
+        "created_at": "2023-01-07T10:46:58.000Z",
+        "edit_history_tweet_ids": [
+            "1611675758275211264"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 12,
+                    "normalized_text": "jadedstill",
+                    "probability": 0.8626,
+                    "start": 3,
+                    "type": "Other"
+                },
+                {
+                    "end": 35,
+                    "normalized_text": "newji",
+                    "probability": 0.3657,
+                    "start": 31,
+                    "type": "Other"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/ultsangwon/sta\u2026",
+                    "end": 93,
+                    "expanded_url": "https://twitter.com/ultsangwon/status/1611674154977329152",
+                    "start": 70,
+                    "url": "https://t.co/avteeTeG5J"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675758275211264",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611674154977329152",
+                "type": "quoted"
+            }
+        ],
+        "text": "mr jadedstill, aka the biggest newji stan, would rlly like this edit! https://t.co/avteeTeG5J"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1321634182385213441",
+        "created_at": "2023-01-07T10:46:58.000Z",
+        "edit_history_tweet_ids": [
+            "1611675757411172352"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 15,
+                    "id": "1492037340637900800",
+                    "start": 0,
+                    "username": "PROJECPROMOTER"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/g1IwvNYe13",
+                    "end": 39,
+                    "expanded_url": "https://twitter.com/Oxbigwin100x/status/1611675757411172352/photo/1",
+                    "media_key": "3_1611675748397645825",
+                    "start": 16,
+                    "url": "https://t.co/g1IwvNYe13"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675757411172352",
+        "lang": "qme",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611423435376234505",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@PROJECPROMOTER https://t.co/g1IwvNYe13"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1516097243941842944",
+        "created_at": "2023-01-07T10:46:59.000Z",
+        "edit_history_tweet_ids": [
+            "1611675758833065985"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 16,
+                    "id": "1544044068413521922",
+                    "start": 0,
+                    "username": "cryptosanthoshK"
+                },
+                {
+                    "end": 29,
+                    "id": "1455152106072068096",
+                    "start": 17,
+                    "username": "vorasol0828"
+                },
+                {
+                    "end": 38,
+                    "id": "14172824",
+                    "start": 30,
+                    "username": "Bedtime"
+                },
+                {
+                    "end": 51,
+                    "id": "1479101152780161026",
+                    "start": 39,
+                    "username": "derluckiest"
+                },
+                {
+                    "end": 69,
+                    "id": "1511646611570536448",
+                    "start": 53,
+                    "username": "AssyifaHuznaAz2"
+                },
+                {
+                    "end": 87,
+                    "id": "1549254188517179396",
+                    "start": 71,
+                    "username": "Almahyra_winner"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/CwT5CUbF3F",
+                    "end": 111,
+                    "expanded_url": "https://twitter.com/Shanumlucky02/status/1611675758833065985/photo/1",
+                    "media_key": "3_1611675743582564354",
+                    "start": 88,
+                    "url": "https://t.co/CwT5CUbF3F"
+                },
+                {
+                    "display_url": "pic.twitter.com/CwT5CUbF3F",
+                    "end": 111,
+                    "expanded_url": "https://twitter.com/Shanumlucky02/status/1611675758833065985/photo/1",
+                    "media_key": "3_1611675750314442755",
+                    "start": 88,
+                    "url": "https://t.co/CwT5CUbF3F"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675758833065985",
+        "lang": "qme",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611670205809446913",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@cryptosanthoshK @vorasol0828 @Bedtime @derluckiest \n@AssyifaHuznaAz2 \n@Almahyra_winner https://t.co/CwT5CUbF3F"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1526906711784796160",
+        "created_at": "2023-01-07T10:46:58.000Z",
+        "edit_history_tweet_ids": [
+            "1611675758581407746"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 11,
+                    "id": "970698661364715520",
+                    "start": 0,
+                    "username": "CryptoBusy"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "You can view and join @SHIWAPORTAL right away.",
+                    "display_url": "t.me/SHIWAPORTAL",
+                    "end": 35,
+                    "expanded_url": "https://t.me/SHIWAPORTAL",
+                    "images": [
+                        {
+                            "height": 320,
+                            "url": "https://pbs.twimg.com/news_img/1609544093750931457/OMHyF5tA?format=jpg&name=orig",
+                            "width": 320
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1609544093750931457/OMHyF5tA?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 12,
+                    "status": 200,
+                    "title": "SHIWA PORTAL",
+                    "unwound_url": "https://t.me/SHIWAPORTAL",
+                    "url": "https://t.co/ZMiIR2Ctu2"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675758581407746",
+        "lang": "qme",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611652611857436672",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@CryptoBusy https://t.co/ZMiIR2Ctu2"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1589597220550098944",
+        "created_at": "2023-01-07T10:46:59.000Z",
+        "edit_history_tweet_ids": [
+            "1611675761332592642"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 9,
+                    "id": "932302331676430342",
+                    "start": 0,
+                    "username": "Kenzen7x"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675761332592642",
+        "lang": "und",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611669499039875073",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@Kenzen7x 494550690"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1495015555283120130",
+        "created_at": "2023-01-07T10:46:59.000Z",
+        "edit_history_tweet_ids": [
+            "1611675762347900933"
+        ],
+        "entities": {
+            "cashtags": [
+                {
+                    "end": 118,
+                    "start": 113,
+                    "tag": "WING"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 9,
+                    "start": 0,
+                    "tag": "WINGUSDT"
+                },
+                {
+                    "end": 89,
+                    "start": 82,
+                    "tag": "crypto"
+                },
+                {
+                    "end": 96,
+                    "start": 90,
+                    "tag": "whale"
+                },
+                {
+                    "end": 101,
+                    "start": 97,
+                    "tag": "btc"
+                },
+                {
+                    "end": 106,
+                    "start": 102,
+                    "tag": "eth"
+                },
+                {
+                    "end": 112,
+                    "start": 107,
+                    "tag": "WING"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/hiMnVSu8GV",
+                    "end": 142,
+                    "expanded_url": "https://twitter.com/abnormal_crypto/status/1611675762347900933/photo/1",
+                    "media_key": "3_1611675759327997952",
+                    "start": 119,
+                    "url": "https://t.co/hiMnVSu8GV"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675762347900933",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "#WINGUSDT Bear Alert!\n\n5X Volume\nPrice:      5.21\n5-min %: 0.0%\nVolume:  $2,789\n \n#crypto #whale #btc #eth #WING $WING https://t.co/hiMnVSu8GV"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "49106325",
+        "created_at": "2023-01-07T10:47:00.000Z",
+        "edit_history_tweet_ids": [
+            "1611675762955878401"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "855987471766753280",
+                    "start": 0,
+                    "username": "Akblackcloud"
+                },
+                {
+                    "end": 29,
+                    "id": "1415324327113805830",
+                    "start": 14,
+                    "username": "MrBigWhaleREAL"
+                },
+                {
+                    "end": 77,
+                    "id": "1611448684964634625",
+                    "start": 64,
+                    "username": "ShiboneERC20"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/neFzgkRssq",
+                    "end": 104,
+                    "expanded_url": "https://twitter.com/FuHok3/status/1611675762955878401/photo/1",
+                    "media_key": "3_1611675757230657536",
+                    "start": 81,
+                    "url": "https://t.co/neFzgkRssq"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675762955878401",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675413377335299",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@Akblackcloud @MrBigWhaleREAL Based dev this will send hard LFG @ShiboneErc20 \ud83d\udd25\ud83d\ude80 https://t.co/neFzgkRssq"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "2229419612",
+        "created_at": "2023-01-07T10:46:59.000Z",
+        "edit_history_tweet_ids": [
+            "1611675762708611078"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 236,
+                    "start": 227,
+                    "tag": "Canaboyz"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 15,
+                    "id": "1602848018973491200",
+                    "start": 0,
+                    "username": "CatvillsXQuack"
+                },
+                {
+                    "end": 246,
+                    "id": "1467417953318678528",
+                    "start": 237,
+                    "username": "Canaboyz"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/7miiqVaHgw",
+                    "end": 277,
+                    "expanded_url": "https://twitter.com/afriani_aisyah/status/1611675762708611078/photo/1",
+                    "media_key": "3_1611675757893521419",
+                    "start": 254,
+                    "url": "https://t.co/7miiqVaHgw"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675762708611078",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611587336160313344",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@CatvillsXQuack Welcome to Canaboyz  \u2764\n\nIntroducing you Canaboyz, a trusted and legit project \ud83d\udc8e\n\nCanaBoyz is a Grow-to-Earn (grow and earn) ecosystem where players are rewarded by growing their digital farm growing business \u2705\n\n#Canaboyz\n@Canaboyz #11831 https://t.co/7miiqVaHgw"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1454094746947706890",
+        "created_at": "2023-01-07T10:47:00.000Z",
+        "edit_history_tweet_ids": [
+            "1611675765086748675"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 11,
+                    "id": "1597419763113795584",
+                    "start": 0,
+                    "username": "_mr_fix_it"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675765086748675",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611657170969415680",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@_mr_fix_it What state do you offer your services?"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "857893383536357376",
+        "created_at": "2023-01-07T10:47:00.000Z",
+        "edit_history_tweet_ids": [
+            "1611675763698290688"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 10,
+                    "normalized_text": "XRP",
+                    "probability": 0.7355,
+                    "start": 8,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 11,
+                    "start": 7,
+                    "tag": "XRP"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Ripple has come along way in the past year and we couldn\u2019t do it without you. XRP continues to be a key player in the Blockchain ecosystem and in Q1 2023 we will be dedicating even more resources to make XRP and RippleNet easier to use and more accessible. To celebrate the global power of #XRP we are proud to announce initiating the annual airdrop pool of 100 000 000 XRP to every Ripple user. Nothing we do at Ripple Labs would be possible without our community, and this is just a part of our efforts to",
+                    "display_url": "xrpevent2023.com/?437251204",
+                    "end": 58,
+                    "expanded_url": "https://xrpevent2023.com/?437251204",
+                    "start": 35,
+                    "status": 200,
+                    "title": "The Next bullish event",
+                    "unwound_url": "https://xrpevent2023.com/?437251204",
+                    "url": "https://t.co/7CXOlMTMlr"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675763698290688",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "Why is #XRP going up a little bit? https://t.co/7CXOlMTMlr"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1451530865918550022",
+        "created_at": "2023-01-07T10:47:00.000Z",
+        "edit_history_tweet_ids": [
+            "1611675766554492928"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 10,
+                    "id": "1522366479735341056",
+                    "start": 0,
+                    "username": "XRPsaberz"
+                },
+                {
+                    "end": 24,
+                    "id": "977545641441316864",
+                    "start": 11,
+                    "username": "criptonightt"
+                },
+                {
+                    "end": 37,
+                    "id": "563405016",
+                    "start": 25,
+                    "username": "SoloGenesis"
+                },
+                {
+                    "end": 47,
+                    "id": "1433092516941811720",
+                    "start": 38,
+                    "username": "solhank_"
+                },
+                {
+                    "end": 63,
+                    "id": "357071628",
+                    "start": 48,
+                    "username": "ReTwitPrensesi"
+                },
+                {
+                    "end": 80,
+                    "id": "1582887247350595584",
+                    "start": 64,
+                    "username": "KingdomTalesNFT"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675766554492928",
+        "lang": "qam",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611435979478339585",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@XRPsaberz @criptonightt @SoloGenesis @solhank_ @ReTwitPrensesi @KingdomTalesNFT"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1518441207948578816",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675768438034434"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1087416766115037185",
+                    "start": 0,
+                    "username": "zahratamal17"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675768438034434",
+        "lang": "no",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675667032330242",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@zahratamal17 Darlene"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1469616852598886401",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675768626778119"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 8,
+                    "id": "1458837726799679488",
+                    "start": 0,
+                    "username": "Famoinu"
+                },
+                {
+                    "end": 34,
+                    "id": "795824503511138304",
+                    "start": 23,
+                    "username": "Nickjazz33"
+                },
+                {
+                    "end": 48,
+                    "id": "725581966012080128",
+                    "start": 35,
+                    "username": "reyanshroy14"
+                },
+                {
+                    "end": 65,
+                    "id": "1314144994400169984",
+                    "start": 49,
+                    "username": "NaveenR79124454"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675768626778119",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611347182900367360",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@Famoinu Nice project\n\n@Nickjazz33 @reyanshroy14 @NaveenR79124454"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "782260462519934981",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675767100018688"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 273,
+                    "start": 266,
+                    "tag": "Miners"
+                },
+                {
+                    "end": 278,
+                    "start": 274,
+                    "tag": "Bsc"
+                },
+                {
+                    "end": 283,
+                    "start": 279,
+                    "tag": "Gem"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1554816399385759744",
+                    "start": 0,
+                    "username": "_Crypto_Frog"
+                },
+                {
+                    "end": 22,
+                    "id": "1493226085815025664",
+                    "start": 14,
+                    "username": "9gagceo"
+                },
+                {
+                    "end": 32,
+                    "id": "1353384573435056128",
+                    "start": 23,
+                    "username": "rovercrc"
+                },
+                {
+                    "end": 40,
+                    "id": "11411872",
+                    "start": 33,
+                    "username": "0xBitc"
+                },
+                {
+                    "end": 65,
+                    "id": "1574134708694392832",
+                    "start": 50,
+                    "username": "0xGreenMachine"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/zGK7QkiYrZ",
+                    "end": 313,
+                    "expanded_url": "https://twitter.com/mobevl/status/1611675767100018688/photo/1",
+                    "media_key": "3_1611675763027378176",
+                    "start": 290,
+                    "url": "https://t.co/zGK7QkiYrZ"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675767100018688",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611671234625867778",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@_Crypto_Frog @9gagceo @rovercrc @0xBitc\nGM Miner @0xgreenmachine\n\nMiner with the ability to farm BNB up to 15% per day.\n\nGenerous 10%referral system for your investor's deposit and more.\nIf you are not with us yet, now is the best time to experience of our product\n#Miners #Bsc #Gem\n\ud83c\udf3f3655 https://t.co/zGK7QkiYrZ"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1468977550638653440",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675767900983297"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 7,
+                    "normalized_text": "ENS",
+                    "probability": 0.4814,
+                    "start": 5,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 8,
+                    "start": 4,
+                    "tag": "ENS"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675767900983297",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "New #ENS domain registrations \n\nblock365.eth\nbingo888.eth"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984451",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1180588884801064961",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675769297682434"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 9,
+                    "id": "892263746516770816",
+                    "start": 0,
+                    "username": "1buraker"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675769297682434",
+        "lang": "tr",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611671771291291649",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@1buraker Btc nin hareketleri ne kadar etkiler xrp yi"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "924315370403565569",
+        "created_at": "2023-01-07T10:47:02.000Z",
+        "edit_history_tweet_ids": [
+            "1611675773601218562"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 9,
+                    "id": "957713296643289088",
+                    "start": 0,
+                    "username": "richaiow"
+                },
+                {
+                    "end": 24,
+                    "id": "3311661677",
+                    "start": 10,
+                    "username": "JeroenRutgers"
+                },
+                {
+                    "end": 33,
+                    "id": "1377943811951898627",
+                    "start": 25,
+                    "username": "AIOW_io"
+                },
+                {
+                    "end": 47,
+                    "id": "1473281679166955523",
+                    "start": 34,
+                    "username": "walletoffame"
+                },
+                {
+                    "end": 58,
+                    "id": "1099194656615612416",
+                    "start": 48,
+                    "username": "MinaBibi2"
+                },
+                {
+                    "end": 75,
+                    "id": "1223626357432700928",
+                    "start": 59,
+                    "username": "Vedansh79361462"
+                },
+                {
+                    "end": 86,
+                    "id": "1143570798512398336",
+                    "start": 76,
+                    "username": "vibor1311"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675773601218562",
+        "lang": "qam",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611106533735124995",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@richaiow @JeroenRutgers @AIOW_io @walletoffame @MinaBibi2 @Vedansh79361462 @vibor1311"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "909305370346004480",
+        "created_at": "2023-01-07T10:47:02.000Z",
+        "edit_history_tweet_ids": [
+            "1611675772661661696"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 22,
+                    "start": 13,
+                    "tag": "SHIKARMY"
+                },
+                {
+                    "end": 31,
+                    "start": 23,
+                    "tag": "shikoku"
+                },
+                {
+                    "end": 37,
+                    "start": 32,
+                    "tag": "shik"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/HuobiGlobal/st\u2026",
+                    "end": 61,
+                    "expanded_url": "https://twitter.com/HuobiGlobal/status/1610472954365906945",
+                    "start": 38,
+                    "url": "https://t.co/HELpbvdBhu"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675772661661696",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1610472954365906945",
+                "type": "quoted"
+            }
+        ],
+        "text": "I'll go with #SHIKARMY #shikoku #shik https://t.co/HELpbvdBhu"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1540932880146518019",
+        "created_at": "2023-01-07T10:47:02.000Z",
+        "edit_history_tweet_ids": [
+            "1611675771332079619"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 16,
+                    "id": "1511613705594843136",
+                    "start": 0,
+                    "username": "TechCryptoAnlst"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/n3kUQGj7ES",
+                    "end": 40,
+                    "expanded_url": "https://twitter.com/oneL23_/status/1611675771332079619/photo/1",
+                    "media_key": "3_1611675662548623362",
+                    "start": 17,
+                    "url": "https://t.co/n3kUQGj7ES"
+                },
+                {
+                    "display_url": "pic.twitter.com/n3kUQGj7ES",
+                    "end": 40,
+                    "expanded_url": "https://twitter.com/oneL23_/status/1611675771332079619/photo/1",
+                    "media_key": "3_1611675732304068612",
+                    "start": 17,
+                    "url": "https://t.co/n3kUQGj7ES"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675771332079619",
+        "lang": "qme",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611605255648841730",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@TechCryptoAnlst https://t.co/n3kUQGj7ES"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "970413010266271746",
+        "created_at": "2023-01-07T10:47:02.000Z",
+        "edit_history_tweet_ids": [
+            "1611675772015583233"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 19,
+                    "normalized_text": "Stuart",
+                    "probability": 0.5564,
+                    "start": 14,
+                    "type": "Other"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1087416766115037185",
+                    "start": 0,
+                    "username": "zahratamal17"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675772015583233",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675667032330242",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@zahratamal17 Stuart"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "514770583",
+        "created_at": "2023-01-07T10:47:02.000Z",
+        "edit_history_tweet_ids": [
+            "1611675773013729280"
+        ],
+        "entities": {},
+        "geo": {},
+        "id": "1611675773013729280",
+        "lang": "zh",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611581912543526914",
+                "type": "replied_to"
+            }
+        ],
+        "text": "\u201d\u9996\u5148\uff0c\u91cd\u8981\u7684\u662f\u8981\u8ba4\u8bc6\u5230\u52a0\u5bc6\u4e16\u754c\u6709\u65f6\u4f1a\u52a8\u8361\u548c\u4e0d\u786e\u5b9a\u3002\u603b\u4f1a\u6709\u8d77\u8d77\u843d\u843d\uff0c\u5f88\u5bb9\u6613\u9677\u5165\u968f\u4e4b\u800c\u6765\u7684\u6050\u60e7\u3001\u4e0d\u786e\u5b9a\u548c\u6000\u7591 (FUD)\u3002\u201c  -- \u5b59\u54e5\u5982\u662f\u8bf4 \ud83d\ude04"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "2956533320",
+        "created_at": "2023-01-07T10:47:02.000Z",
+        "edit_history_tweet_ids": [
+            "1611675771315146752"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 15,
+                    "id": "1427747805515374594",
+                    "start": 0,
+                    "username": "BitMartlisting"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675771315146752",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611237834584907776",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@BitMartlisting I was number 799 lolol"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1412053450121043969",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675770484842496"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 12,
+                    "id": "1611534681820000258",
+                    "start": 0,
+                    "username": "SolaHamster"
+                },
+                {
+                    "end": 95,
+                    "id": "1404043583871590406",
+                    "start": 87,
+                    "username": "IdTenko"
+                },
+                {
+                    "end": 106,
+                    "id": "1404134936152449025",
+                    "start": 96,
+                    "username": "Kuntul885"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675770484842496",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611614896441163776",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@SolaHamster I'am enthusiast for this project and also support it untill success sir!\n\n@IdTenko @Kuntul885 \n\n35YLAQvehXgK9zEw9YLHT6znckxTXLme8EHJzKxiinge"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "86245275",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675769553489920"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 11,
+                    "id": "1406013905651089411",
+                    "start": 0,
+                    "username": "DHScot1988"
+                },
+                {
+                    "end": 20,
+                    "id": "10228272",
+                    "start": 12,
+                    "username": "YouTube"
+                },
+                {
+                    "end": 33,
+                    "id": "1305349277422477313",
+                    "start": 21,
+                    "username": "PancakeSwap"
+                },
+                {
+                    "end": 47,
+                    "id": "1385939406444445700",
+                    "start": 34,
+                    "username": "thecakemnstr"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675769553489920",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611672904126676993",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@DHScot1988 @YouTube @PancakeSwap @thecakemnstr Can\u2019t wait for the vault to open and cycle two will be \ud83d\udd25"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1214790485698473985",
+        "created_at": "2023-01-07T10:47:01.000Z",
+        "edit_history_tweet_ids": [
+            "1611675769499185154"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1445360423042121732",
+                    "start": 0,
+                    "username": "nhunghugo357"
+                },
+                {
+                    "end": 23,
+                    "id": "1519262125029412865",
+                    "start": 14,
+                    "username": "anh_tu21"
+                },
+                {
+                    "end": 34,
+                    "id": "1519955889624473600",
+                    "start": 24,
+                    "username": "Tram_Anh6"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/AstroBonk/stat\u2026",
+                    "end": 58,
+                    "expanded_url": "https://twitter.com/AstroBonk/status/1611537332888387585",
+                    "start": 35,
+                    "url": "https://t.co/TMQ4Ez0PXZ"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675769499185154",
+        "lang": "qam",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611537332888387585",
+                "type": "quoted"
+            }
+        ],
+        "text": "@nhunghugo357 @anh_tu21 @Tram_Anh6 https://t.co/TMQ4Ez0PXZ"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1508688186536607744",
+        "created_at": "2023-01-07T10:47:02.000Z",
+        "edit_history_tweet_ids": [
+            "1611675772770738176"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 93,
+                    "start": 83,
+                    "tag": "Droverinu"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1309548880078548992",
+                    "start": 0,
+                    "username": "Crypto__Diva"
+                },
+                {
+                    "end": 29,
+                    "id": "805532293951606785",
+                    "start": 14,
+                    "username": "MattWallace888"
+                },
+                {
+                    "end": 39,
+                    "id": "44196397",
+                    "start": 30,
+                    "username": "elonmusk"
+                },
+                {
+                    "end": 54,
+                    "id": "1263491240336769026",
+                    "start": 40,
+                    "username": "WholeMarsBlog"
+                },
+                {
+                    "end": 69,
+                    "id": "1579353091329122305",
+                    "start": 55,
+                    "username": "ValerianIlies"
+                },
+                {
+                    "end": 106,
+                    "id": "2932289471",
+                    "start": 94,
+                    "username": "DroverToken"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675772770738176",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675451444830209",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@Crypto__Diva @MattWallace888 @elonmusk @WholeMarsBlog @ValerianIlies Buy and Hodl #Droverinu @Drovertoken\nIt's a long time project, secured and safe"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "137054788",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675775501230080"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 16,
+                    "normalized_text": "XRP",
+                    "probability": 0.6709,
+                    "start": 14,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 17,
+                    "start": 13,
+                    "tag": "XRP"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Ripple has come along way in the past year and we couldn\u2019t do it without you. XRP continues to be a key player in the Blockchain ecosystem and in Q1 2023 we will be dedicating even more resources to make XRP and RippleNet easier to use and more accessible. To celebrate the global power of #XRP we are proud to announce initiating the annual airdrop pool of 100 000 000 XRP to every Ripple user. Nothing we do at Ripple Labs would be possible without our community, and this is just a part of our efforts to",
+                    "display_url": "xrpevent2023.com/?712481736",
+                    "end": 76,
+                    "expanded_url": "https://xrpevent2023.com/?712481736",
+                    "images": [
+                        {
+                            "height": 720,
+                            "url": "https://pbs.twimg.com/news_img/1611675778806329344/zM8te-3u?format=jpg&name=orig",
+                            "width": 1280
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1611675778806329344/zM8te-3u?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 53,
+                    "status": 200,
+                    "title": "The Next bullish event",
+                    "unwound_url": "https://xrpevent2023.com/?712481736",
+                    "url": "https://t.co/d2TmAFfChM"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675775501230080",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "Do you think #XRP will reach $10 before 2024? Ripple https://t.co/d2TmAFfChM"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "726311749",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675778252701697"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 15,
+                    "id": "1544730760850153475",
+                    "start": 0,
+                    "username": "MysteriousMoai"
+                },
+                {
+                    "end": 26,
+                    "id": "1539118954437812224",
+                    "start": 16,
+                    "username": "FoxxedNFT"
+                },
+                {
+                    "end": 40,
+                    "id": "1496879821359828992",
+                    "start": 27,
+                    "username": "Elle20134090"
+                },
+                {
+                    "end": 53,
+                    "id": "1564149009086058497",
+                    "start": 41,
+                    "username": "captcyborg2"
+                },
+                {
+                    "end": 61,
+                    "id": "1519773701180432384",
+                    "start": 54,
+                    "username": "xFuse0"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675778252701697",
+        "lang": "qam",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611641412281327617",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@MysteriousMoai @FoxxedNFT @Elle20134090 @captcyborg2 @xFuse0"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1413838884300021764",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675777870741505"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 27,
+                    "start": 14,
+                    "tag": "pitbulltoken"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "298493234",
+                    "start": 0,
+                    "username": "koinefendisi"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675777870741505",
+        "lang": "qme",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611367582556200961",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@koinefendisi #pitbulltoken"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1563762539674173441",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675775974907905"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 272,
+                    "start": 265,
+                    "tag": "Miners"
+                },
+                {
+                    "end": 277,
+                    "start": 273,
+                    "tag": "Bsc"
+                },
+                {
+                    "end": 283,
+                    "start": 279,
+                    "tag": "Gem"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 16,
+                    "id": "1482245104752640001",
+                    "start": 0,
+                    "username": "KristinaKale101"
+                },
+                {
+                    "end": 25,
+                    "id": "946213559213555712",
+                    "start": 17,
+                    "username": "opensea"
+                },
+                {
+                    "end": 37,
+                    "id": "77740842",
+                    "start": 26,
+                    "username": "SaatchiArt"
+                },
+                {
+                    "end": 62,
+                    "id": "1574134708694392832",
+                    "start": 47,
+                    "username": "0xGreenMachine"
+                },
+                {
+                    "end": 294,
+                    "id": "1357282440335736833",
+                    "start": 285,
+                    "username": "ShibArmy"
+                },
+                {
+                    "end": 302,
+                    "id": "11411872",
+                    "start": 295,
+                    "username": "0xBitc"
+                },
+                {
+                    "end": 310,
+                    "id": "51709173",
+                    "start": 303,
+                    "username": "0xFitz"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/K0vv5pUNzU",
+                    "end": 342,
+                    "expanded_url": "https://twitter.com/V_i_c_t_o_r_y01/status/1611675775974907905/photo/1",
+                    "media_key": "3_1611675769066987520",
+                    "start": 319,
+                    "url": "https://t.co/K0vv5pUNzU"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675775974907905",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1610911138174349312",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@KristinaKale101 @opensea @SaatchiArt GM Miner @0xgreenmachine\n\nMiner with the ability to farm BNB up to 15% per day.\n\nGenerous 10%referral system for your investor's deposit and more.\n If you are not with us yet, now is the best time to experience  of our product\n#Miners #Bsc  #Gem\n\n@ShibArmy\n@0xBitc\n@0xFitz    3391 https://t.co/K0vv5pUNzU"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1474681004",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675775790448640"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 3,
+                    "normalized_text": "XRP",
+                    "probability": 0.716,
+                    "start": 1,
+                    "type": "Other"
+                },
+                {
+                    "end": 35,
+                    "normalized_text": "XRPHolders",
+                    "probability": 0.7457,
+                    "start": 26,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 4,
+                    "start": 0,
+                    "tag": "XRP"
+                },
+                {
+                    "end": 36,
+                    "start": 25,
+                    "tag": "XRPHolders"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Ripple has come along way in the past year and we couldn\u2019t do it without you. XRP continues to be a key player in the Blockchain ecosystem and in Q1 2023 we will be dedicating even more resources to make XRP and RippleNet easier to use and more accessible. To celebrate the global power of #XRP we are proud to announce initiating the annual airdrop pool of 100 000 000 XRP to every Ripple user. Nothing we do at Ripple Labs would be possible without our community, and this is just a part of our efforts to",
+                    "display_url": "xrpevent2023.com/?666952581",
+                    "end": 60,
+                    "expanded_url": "https://xrpevent2023.com/?666952581",
+                    "start": 37,
+                    "status": 200,
+                    "title": "The Next bullish event",
+                    "unwound_url": "https://xrpevent2023.com/?666952581",
+                    "url": "https://t.co/FXa0t89fkK"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675775790448640",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "#XRP to $589 by January! #XRPHolders https://t.co/FXa0t89fkK"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1504705701477859337",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675778286247936"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 8,
+                    "id": "1225743599020589056",
+                    "start": 0,
+                    "username": "nd_eths"
+                },
+                {
+                    "end": 22,
+                    "id": "1478469335370895367",
+                    "start": 9,
+                    "username": "theunioverse"
+                },
+                {
+                    "end": 38,
+                    "id": "1541174780803649537",
+                    "start": 23,
+                    "username": "buyshapeninjas"
+                },
+                {
+                    "end": 53,
+                    "id": "1300195333738299395",
+                    "start": 39,
+                    "username": "LightGabriel5"
+                },
+                {
+                    "end": 64,
+                    "id": "1305929120942108674",
+                    "start": 54,
+                    "username": "_mofisayo"
+                },
+                {
+                    "end": 73,
+                    "id": "1503314769176055808",
+                    "start": 65,
+                    "username": "Bola__k"
+                },
+                {
+                    "end": 84,
+                    "id": "1504705701477859337",
+                    "start": 74,
+                    "username": "kunmiii__"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675778286247936",
+        "lang": "qam",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611672940201771008",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@nd_eths @theunioverse @buyshapeninjas @LightGabriel5 @_mofisayo @Bola__k @kunmiii__"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1428033776752467975",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675778508374018"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 86,
+                    "normalized_text": "BabyBonk",
+                    "probability": 0.6402,
+                    "start": 79,
+                    "type": "Other"
+                },
+                {
+                    "end": 188,
+                    "normalized_text": "BabyBonk",
+                    "probability": 0.5239,
+                    "start": 181,
+                    "type": "Other"
+                },
+                {
+                    "end": 222,
+                    "normalized_text": "SolanaGiveaways",
+                    "probability": 0.5466,
+                    "start": 208,
+                    "type": "Other"
+                },
+                {
+                    "end": 243,
+                    "normalized_text": "SolanaAirdrop",
+                    "probability": 0.5736,
+                    "start": 231,
+                    "type": "Other"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 87,
+                    "start": 78,
+                    "tag": "BabyBonk"
+                },
+                {
+                    "end": 189,
+                    "start": 180,
+                    "tag": "BabyBonk"
+                },
+                {
+                    "end": 197,
+                    "start": 192,
+                    "tag": "Bonk"
+                },
+                {
+                    "end": 206,
+                    "start": 198,
+                    "tag": "bonkinu"
+                },
+                {
+                    "end": 223,
+                    "start": 207,
+                    "tag": "SolanaGiveaways"
+                },
+                {
+                    "end": 228,
+                    "start": 224,
+                    "tag": "SOL"
+                },
+                {
+                    "end": 244,
+                    "start": 230,
+                    "tag": "SolanaAirdrop"
+                },
+                {
+                    "end": 254,
+                    "start": 245,
+                    "tag": "Airdrops"
+                },
+                {
+                    "end": 264,
+                    "start": 255,
+                    "tag": "Babybonk"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 13,
+                    "id": "1599891827343106051",
+                    "start": 0,
+                    "username": "Baby_bonkinu"
+                },
+                {
+                    "end": 103,
+                    "id": "1439533004750299137",
+                    "start": 89,
+                    "username": "FlipperGarsia"
+                },
+                {
+                    "end": 119,
+                    "id": "1431124165826945026",
+                    "start": 104,
+                    "username": "Viktor10812674"
+                },
+                {
+                    "end": 132,
+                    "id": "1460700115941924864",
+                    "start": 120,
+                    "username": "AnkooDesign"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675778508374018",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1610607923289260035",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@Baby_bonkinu Thank you very much for allowing me to be part of this project. #BabyBonk \n@FlipperGarsia\n@Viktor10812674\n@AnkooDesign\n\nBRGma3JKExedVmJ9bdY2qs3zDY8D9mTgXKwparuRLEbP\n\n#BabyBonk \n\n#Bonk #bonkinu #SolanaGiveaways #SOL  #SolanaAirdrop #Airdrops #Babybonk"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "634940905",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675777690652675"
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "end": 14,
+                    "id": "3272371225",
+                    "start": 0,
+                    "username": "expert_khaled"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675777690652675",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611675709898100738",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@expert_khaled Joyce"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1606425158616776704",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675777170575363"
+        ],
+        "entities": {
+            "cashtags": [
+                {
+                    "end": 13,
+                    "start": 7,
+                    "tag": "BONKO"
+                },
+                {
+                    "end": 25,
+                    "start": 20,
+                    "tag": "BONK"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 6,
+                    "start": 0,
+                    "tag": "BONKO"
+                },
+                {
+                    "end": 19,
+                    "start": 14,
+                    "tag": "BONK"
+                },
+                {
+                    "end": 30,
+                    "start": 26,
+                    "tag": "ETH"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "twitter.com/BONKOerc20/sta\u2026",
+                    "end": 54,
+                    "expanded_url": "https://twitter.com/BONKOerc20/status/1611630643829673987",
+                    "start": 31,
+                    "url": "https://t.co/RPBKKzs7Xl"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675777170575363",
+        "lang": "ht",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611630643829673987",
+                "type": "quoted"
+            }
+        ],
+        "text": "#BONKO $BONKO #BONK $BONK #ETH https://t.co/RPBKKzs7Xl"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1533934245751709700",
+        "created_at": "2023-01-07T10:47:04.000Z",
+        "edit_history_tweet_ids": [
+            "1611675781230649346"
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "end": 25,
+                    "start": 21,
+                    "tag": "\u5e0c\u7231\u529b"
+                },
+                {
+                    "end": 30,
+                    "start": 26,
+                    "tag": "BTC"
+                },
+                {
+                    "end": 36,
+                    "start": 31,
+                    "tag": "\u5ef6\u65f6\u4ea7\u54c1"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/XriuPYkKXC",
+                    "end": 60,
+                    "expanded_url": "https://twitter.com/RonaldJessie6/status/1611675781230649346/photo/1",
+                    "media_key": "3_1611675777145405440",
+                    "start": 37,
+                    "url": "https://t.co/XriuPYkKXC"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675781230649346",
+        "lang": "und",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "0do36hri8s hymnodist #\u5e0c\u7231\u529b #BTC #\u5ef6\u65f6\u4ea7\u54c1 https://t.co/XriuPYkKXC"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "13150602",
+        "created_at": "2023-01-07T10:47:03.000Z",
+        "edit_history_tweet_ids": [
+            "1611675778785382400"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 13,
+                    "normalized_text": "AKRO",
+                    "probability": 0.5324,
+                    "start": 10,
+                    "type": "Other"
+                },
+                {
+                    "end": 62,
+                    "normalized_text": "USDT",
+                    "probability": 0.7624,
+                    "start": 59,
+                    "type": "Other"
+                },
+                {
+                    "end": 170,
+                    "normalized_text": "cryptobox",
+                    "probability": 0.5658,
+                    "start": 162,
+                    "type": "Other"
+                }
+            ],
+            "cashtags": [
+                {
+                    "end": 14,
+                    "start": 9,
+                    "tag": "AKRO"
+                },
+                {
+                    "end": 63,
+                    "start": 58,
+                    "tag": "USDT"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 171,
+                    "start": 161,
+                    "tag": "cryptobox"
+                },
+                {
+                    "end": 180,
+                    "start": 172,
+                    "tag": "Binance"
+                },
+                {
+                    "end": 189,
+                    "start": 182,
+                    "tag": "crypto"
+                },
+                {
+                    "end": 201,
+                    "start": 190,
+                    "tag": "cryptonews"
+                },
+                {
+                    "end": 216,
+                    "start": 202,
+                    "tag": "cryptocurrecy"
+                },
+                {
+                    "end": 223,
+                    "start": 217,
+                    "tag": "huobi"
+                },
+                {
+                    "end": 228,
+                    "start": 224,
+                    "tag": "box"
+                },
+                {
+                    "end": 234,
+                    "start": 229,
+                    "tag": "free"
+                },
+                {
+                    "end": 240,
+                    "start": 235,
+                    "tag": "usdt"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "bit.ly/3V9hTfF",
+                    "end": 159,
+                    "expanded_url": "https://bit.ly/3V9hTfF",
+                    "start": 136,
+                    "status": 200,
+                    "title": "Huobi | The Leading Global Digital Asset Exchange",
+                    "unwound_url": "https://www.huobi.com/en-us/v/register/double-invite/?invite_code=v3dn6223&inviter_id=11345710",
+                    "url": "https://t.co/slu72MwHda"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675778785382400",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "5QA08S6D $AKRO\n\nContribute Binance: 230430290\n\nEarn 5,672 $USDT and a 20% discount on commissions.  If you want to know more register \ud83d\udc49 https://t.co/slu72MwHda\n\n#cryptobox #Binance\u202f #crypto #cryptonews #cryptocurrecy #huobi #box #free #usdt"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1392757143149891587",
+        "created_at": "2023-01-07T10:47:04.000Z",
+        "edit_history_tweet_ids": [
+            "1611675782807420931"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 24,
+                    "normalized_text": "BingX",
+                    "probability": 0.7195,
+                    "start": 20,
+                    "type": "Other"
+                },
+                {
+                    "end": 76,
+                    "normalized_text": "RISKFREE",
+                    "probability": 0.4074,
+                    "start": 69,
+                    "type": "Other"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 8,
+                    "id": "1252509835154919424",
+                    "start": 0,
+                    "username": "TKralow"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "bingx.com/partner/coinat\u2026",
+                    "end": 62,
+                    "expanded_url": "https://bingx.com/partner/coination",
+                    "start": 39,
+                    "status": 503,
+                    "unwound_url": "https://bingx.com/partner/coination",
+                    "url": "https://t.co/esHiEzhmq4"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611675782807420931",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1611667869997072386",
+                "type": "replied_to"
+            }
+        ],
+        "text": "@TKralow Better use BingX less fees \ud83d\udd25\ud83c\udf89\nhttps://t.co/esHiEzhmq4\n+ 50$ RISKFREE WELCOME BONUS"
+    },
+    "matching_rules": [
+        {
+            "id": "1611675722010984450",
+            "tag": "coin 100"
+        }
+    ]
+}

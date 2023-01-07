@@ -1,0 +1,245 @@
+{
+    "data": {
+        "author_id": "1590596820639842304",
+        "created_at": "2023-01-07T10:20:36.000Z",
+        "edit_history_tweet_ids": [
+            "1611669120562630656"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 3,
+                    "normalized_text": "BAC",
+                    "probability": 0.7464,
+                    "start": 1,
+                    "type": "Organization"
+                }
+            ],
+            "cashtags": [
+                {
+                    "end": 4,
+                    "start": 0,
+                    "tag": "BAC"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities.",
+                    "display_url": "discord.gg/Uz9AR3eEcz",
+                    "end": 69,
+                    "expanded_url": "https://discord.gg/Uz9AR3eEcz",
+                    "images": [
+                        {
+                            "height": 500,
+                            "url": "https://pbs.twimg.com/news_img/1610296800518471683/334iEM5t?format=jpg&name=orig",
+                            "width": 500
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1610296800518471683/334iEM5t?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 46,
+                    "status": 200,
+                    "title": "Discord - A New Way to Chat with Friends & Communities",
+                    "unwound_url": "https://discord.com/invite/Uz9AR3eEcz",
+                    "url": "https://t.co/SY0alHkfwu"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611669120562630656",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "$BAC  Top analyst price target for the week\ud83d\udcc9\ud83d\ude80 https://t.co/SY0alHkfwu"
+    },
+    "matching_rules": [
+        {
+            "id": "1611668961728364544",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1590596820639842304",
+        "created_at": "2023-01-07T10:20:43.000Z",
+        "edit_history_tweet_ids": [
+            "1611669150765838343"
+        ],
+        "entities": {
+            "cashtags": [
+                {
+                    "end": 4,
+                    "start": 0,
+                    "tag": "BAC"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities.",
+                    "display_url": "discord.gg/Uz9AR3eEcz",
+                    "end": 76,
+                    "expanded_url": "https://discord.gg/Uz9AR3eEcz",
+                    "images": [
+                        {
+                            "height": 500,
+                            "url": "https://pbs.twimg.com/news_img/1610296800518471683/334iEM5t?format=jpg&name=orig",
+                            "width": 500
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1610296800518471683/334iEM5t?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 53,
+                    "status": 200,
+                    "title": "Discord - A New Way to Chat with Friends & Communities",
+                    "unwound_url": "https://discord.com/invite/Uz9AR3eEcz",
+                    "url": "https://t.co/SY0alHkfwu"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611669150765838343",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "$BAC  *Top analyst price target for the\u00a0week..\ud83d\udcc8\ud83d\udcc9\ud83d\ude80  \ud83d\ude80 https://t.co/SY0alHkfwu"
+    },
+    "matching_rules": [
+        {
+            "id": "1611668961728364544",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1590660674707148800",
+        "created_at": "2023-01-07T10:20:45.000Z",
+        "edit_history_tweet_ids": [
+            "1611669160106561536"
+        ],
+        "entities": {
+            "cashtags": [
+                {
+                    "end": 3,
+                    "start": 0,
+                    "tag": "ba"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities.",
+                    "display_url": "discord.gg/Q8Qg87kMfT",
+                    "end": 68,
+                    "expanded_url": "https://discord.gg/Q8Qg87kMfT",
+                    "images": [
+                        {
+                            "height": 500,
+                            "url": "https://pbs.twimg.com/news_img/1609583053713854467/RMuq51D_?format=jpg&name=orig",
+                            "width": 500
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1609583053713854467/RMuq51D_?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 45,
+                    "status": 200,
+                    "title": "Discord - A New Way to Chat with Friends & Communities",
+                    "unwound_url": "https://discord.com/invite/Q8Qg87kMfT",
+                    "url": "https://t.co/I3cV1wDrAc"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611669160106561536",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "$ba Top analyst price target for next week.!\nhttps://t.co/I3cV1wDrAc"
+    },
+    "matching_rules": [
+        {
+            "id": "1611668961728364544",
+            "tag": "coin 100"
+        }
+    ]
+}
+{
+    "data": {
+        "author_id": "1611632278974910466",
+        "created_at": "2023-01-07T10:21:12.000Z",
+        "edit_history_tweet_ids": [
+            "1611669273486987269"
+        ],
+        "entities": {
+            "cashtags": [
+                {
+                    "end": 2,
+                    "start": 0,
+                    "tag": "c"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities.",
+                    "display_url": "discord.gg/JvMpeqB3Z3",
+                    "end": 66,
+                    "expanded_url": "https://discord.gg/JvMpeqB3Z3",
+                    "images": [
+                        {
+                            "height": 500,
+                            "url": "https://pbs.twimg.com/news_img/1609569191878881280/icqUnvaW?format=jpg&name=orig",
+                            "width": 500
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1609569191878881280/icqUnvaW?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 43,
+                    "status": 200,
+                    "title": "Discord - A New Way to Chat with Friends & Communities",
+                    "unwound_url": "https://discord.com/invite/JvMpeqB3Z3",
+                    "url": "https://t.co/BFkJYPKDHl"
+                }
+            ]
+        },
+        "geo": {},
+        "id": "1611669273486987269",
+        "lang": "en",
+        "public_metrics": {
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "text": "$c Top analyst price target for next week.\nhttps://t.co/BFkJYPKDHl"
+    },
+    "matching_rules": [
+        {
+            "id": "1611668961728364544",
+            "tag": "coin 100"
+        }
+    ]
+}

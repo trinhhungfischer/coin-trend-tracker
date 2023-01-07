@@ -1,18 +1,15 @@
 package com.trinhhungfischer.cointrendy.constant;
 
-import com.trinhhungfischer.cointrendy.PropertyFileReader;
-
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CoinTicker {
 
     private static final int MAX_CHARS_IN_RULE = 512;
 
+    private static String END_RULE_STR = " has:hashtags lang:en -is:retweet";
     public static ArrayList<String> listCoinTicker;
 
     public static final ArrayList<String> getListCoinTicker() {
@@ -52,8 +49,9 @@ public class CoinTicker {
         listCoinTicker = getListCoinTicker();
 
         for (int i = 0; i < listCoinTicker.size(); i++) {
-            if (rule.length() + listCoinTicker.get(i).length() + 5 >= MAX_CHARS_IN_RULE) {
-                rules.add(rule.substring(0, rule.length() - 4));
+            if (rule.length() + listCoinTicker.get(i).length() + 5 +
+                    END_RULE_STR.length() >= MAX_CHARS_IN_RULE) {
+                rules.add(rule.substring(0, rule.length() - 4) + END_RULE_STR);
                 rule = "";
             }
 
@@ -62,7 +60,7 @@ public class CoinTicker {
             }
             else rule += ("#" + listCoinTicker.get(i));
         }
-        rules.add(rule);
+        rules.add(rule + END_RULE_STR);
 
         return rules;
     }

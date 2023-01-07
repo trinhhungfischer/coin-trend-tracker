@@ -1,5 +1,6 @@
 import requests
 import os
+import sys
 import json
 from coin_tag import coin_tag
 
@@ -56,8 +57,8 @@ def set_rules(delete):
     sample_rules = []
     
     for rule in rules:
-        sample_rules.append({"value": "%s" % rule, "tag": "coin 100" })
-    
+        sample_rules.append({"value": "%s" % rule, "tag": "coin 100"})
+        
     payload = {"add": sample_rules}
     response = requests.post(
         "https://api.twitter.com/2/tweets/search/stream/rules",
@@ -86,6 +87,13 @@ def get_stream(set):
                 response.status_code, response.text
             )
         )
+    
+    script_path = os.path.realpath(sys.modules['__main__'].__file__)
+    script_dir = os.path.dirname(script_path)
+    data_path = os.path.join(script_dir, 'tweets_es.json')
+    
+    f = open(data_path, "a")
+    
     for response_line in response.iter_lines():
         if response_line:
             json_response = json.loads(response_line)
@@ -95,7 +103,7 @@ def get_stream(set):
                 if json_response.get("data").get("referenced_tweets")[0].get("type") == "retweeted":
                     continue
             
-            print(json.dumps(json_response, indent=4, sort_keys=True))
+            f.write(json.dumps(json_response, indent=4, sort_keys=True) + "\n")
 
 
 def main():
