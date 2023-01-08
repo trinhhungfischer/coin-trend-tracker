@@ -24,7 +24,7 @@ docker exec kafka-coin-trendy kafka-topics --create --topic twitter-data-event -
 # Create our folders on Hadoop file system and total permission to those
 docker exec namenode hdfs dfs -rm -r /cointrendy
 docker exec namenode hdfs dfs -mkdir /cointrendy
-docker exec namenode hdfs dfs -mkdir /cointrendy/tweets
+docker exec namenode hdfs dfs -mkdir /cointrendy/checkpoint
 docker exec namenode hdfs dfs -chmod -R 777 /cointrendy
-docker exec namenode hdfs dfs -chmod -R 777 /cointrendy/tweets
+docker exec namenode hdfs dfs -chmod -R 777 /cointrendy/checkpoint
 

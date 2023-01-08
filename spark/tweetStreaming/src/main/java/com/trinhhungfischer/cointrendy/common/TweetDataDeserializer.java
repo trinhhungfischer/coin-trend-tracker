@@ -46,5 +46,4 @@ public class TweetDataDeserializer implements Deserializer<TweetData> {
     public void close() {
         Deserializer.super.close();
     }
-
 }

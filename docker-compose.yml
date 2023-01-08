@@ -77,7 +77,7 @@ services:
       - INIT_DAEMON_STEP=false
       - SPARK_DRIVER_HOST=192.168.1.5
     volumes:
-      - ./spark/tweetStreaming/target:/opt/spark-data/twitterStreaming
+      - ./spark/tweetStreaming/target:/opt/spark-data/
     networks:
       - net
 

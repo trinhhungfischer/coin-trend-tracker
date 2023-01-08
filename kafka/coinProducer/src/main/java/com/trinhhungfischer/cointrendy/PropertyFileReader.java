@@ -11,7 +11,7 @@ public class PropertyFileReader {
     private static Properties prop = new Properties();
     public static Properties readPropertyFile() throws Exception {
         if (prop.isEmpty()) {
-            InputStream input = PropertyFileReader.class.getClassLoader().getResourceAsStream("iot-kafka.properties");
+            InputStream input = PropertyFileReader.class.getClassLoader().getResourceAsStream("twitter-kafka.properties");
             try {
                 prop.load(input);
             } catch (IOException ex) {

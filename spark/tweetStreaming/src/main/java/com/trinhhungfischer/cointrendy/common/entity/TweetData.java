@@ -2,7 +2,7 @@ package com.trinhhungfischer.cointrendy.common.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.Map;
 
 public class TweetData implements Serializable {
@@ -15,13 +15,13 @@ public class TweetData implements Serializable {
     private int replyCount;
     private int likeCount;
     private int quoteCount;
-    private Date createdAt;
+    private Timestamp createdAt;
     private String authorId;
 
     private Map<String, String> metaData;
 
     public TweetData(String tweetId, String text, ArrayList<String> editTweetIds, ArrayList<String> hashtags, String language,
-                     int retweetCount, int replyCount, int likeCount, int quoteCount, Date createdAt, String authorId) {
+                     int retweetCount, int replyCount, int likeCount, int quoteCount, Timestamp createdAt, String authorId) {
         this.tweetId = tweetId;
         this.text = text;
         this.editTweetIds = editTweetIds;
@@ -69,7 +69,7 @@ public class TweetData implements Serializable {
         return likeCount;
     }
 
-    public Date getCreatedAt() {
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
 

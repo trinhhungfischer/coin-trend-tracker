@@ -5,6 +5,10 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.log4j.Logger;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function2;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
+import org.apache.spark.sql.SparkSession;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.kafka010.HasOffsetRanges;
 import org.apache.spark.streaming.kafka010.OffsetRange;
@@ -34,6 +38,35 @@ public class StreamProcessor {
         return item.mapPartitionsWithIndex(addMetaData(offsetRanges), true);
     }
 
+    public StreamProcessor appendToHDFS(final SparkSession sql, final String file) {
+        transformedStream.foreachRDD(rdd -> {
+                    if (rdd.isEmpty()) {
+                        return;
+                    }
+                    Dataset<Row> dataFrame = sql.createDataFrame(rdd, TweetData.class);
+                    Dataset<Row> dfStore = dataFrame.selectExpr(
+                            "tweetId", "text", "editTweetIds",
+                            "hashtags", "language", "retweetCount", "replyCount", "likeCount",
+                            "quoteCount", "createdAt", "authorId",
+                            "metaData.topic as topic",
+                            "metaData.fromOffset as fromOffset",
+                            "metaData.kafkaPartition as kafkaPartition",
+                            "metaData.untilOffset as untilOffset",
+                            "metaData.hour as hour",
+                            "metaData.dayOfMonth as dayOfMonth",
+                            "metaData.month as month",
+                            "metaData.year as year"
+                    );
+                    dfStore.printSchema();
+                    dfStore.write()
+                            .partitionBy("topic", "kafkaPartition", "year", "month", "dayOfMonth", "hour")
+                            .mode(SaveMode.Append)
+                            .parquet(file);
+                }
+        );
+        return this;
+    }
+
     public StreamProcessor transform() {
         this.transformedStream = directKafkaConsumer.transform(StreamProcessor::transformRecord);
         return this;
@@ -53,7 +86,10 @@ public class StreamProcessor {
                 meta.put("fromOffset", "" + offsetRanges[index].fromOffset());
                 meta.put("kafkaPartition", "" + offsetRanges[index].partition());
                 meta.put("untilOffset", "" + offsetRanges[index].untilOffset());
-//                meta.put("dayOfWeek", "" + dataItem.getTimestamp().toLocalDate().getDayOfWeek().getValue());
+                meta.put("hour", "" + dataItem.getCreatedAt().toLocalDateTime().getHour());
+                meta.put("dayOfMonth", "" + dataItem.getCreatedAt().toLocalDateTime().getDayOfMonth());
+                meta.put("month", "" + dataItem.getCreatedAt().toLocalDateTime().getMonth());
+                meta.put("year", "" + dataItem.getCreatedAt().toLocalDateTime().getYear());
 
                 dataItem.setMetaData(meta);
                 list.add(dataItem);

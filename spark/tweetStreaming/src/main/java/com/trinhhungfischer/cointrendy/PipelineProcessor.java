@@ -24,6 +24,7 @@ import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.streaming.kafka010.*;
+import scala.reflect.ClassTag;
 
 /**
  * This class represents Kafka Twitter Streaming and create pipeline for processing the Tweets Data
@@ -45,7 +46,7 @@ public class PipelineProcessor implements Serializable {
     }
 
     private void start() throws Exception {
-        String parquetFile = properties.getProperty("com.twitter.app.hdfs") + ".twitter-data-parquet";
+        String parquetFile = properties.getProperty("com.twitter.app.hdfs") + "twitter-data-parquet";
         Map<String, Object> kafkaProperties = getKafkaParams(properties);
 
         SparkConf conf = ProcessorUtils.getSparkConf(properties, "streaming-processor");
@@ -54,14 +55,17 @@ public class PipelineProcessor implements Serializable {
         JavaStreamingContext streamingContext = new JavaStreamingContext(conf, Durations.seconds(5));
 
 
-        //
+        // Please note that while data checkpointing is useful for stateful processing, it comes with a latency cost.
+        // Hence, it's necessary to use this wisely.
+        // This is necessary because we keep state in some operations.
+        // We are not using this for fault-tolerance. For that, we use Kafka offset @see commitOffset
         streamingContext.checkpoint(properties.getProperty("com.twitter.app.spark.checkpoint.dir"));
         SparkSession sparkSession = SparkSession.builder().config(conf).getOrCreate();
 
         Map<TopicPartition, Long> offsets = getOffsets(parquetFile, sparkSession);
 
 
-        //
+        // Create kafka steamer instance
         JavaInputDStream<ConsumerRecord<String, TweetData>> kafkaStream = getKafkaStream(
              properties,
              streamingContext,
@@ -71,9 +75,13 @@ public class PipelineProcessor implements Serializable {
 
         logger.info("Starting Kafka Steaming Process");
 
+        // Broadcast variables. Basically we are sending the data to each worker nodes on a Spark cluster.
+
+        // Streaming process starts here.
         StreamProcessor streamProcessor = new StreamProcessor(kafkaStream);
 
-        streamProcessor.transform();
+        streamProcessor.transform().
+                appendToHDFS(sparkSession, parquetFile);
 
         // Commit offset to Kafka
         commitOffset(kafkaStream);
@@ -118,13 +126,22 @@ public class PipelineProcessor implements Serializable {
         return kafkaProperties;
     }
 
+    /**
+     * This method creates a directed stream from properties
+     * and stream context
+     * @param prop
+     * @param streamingContext
+     * @param kafkaProperties
+     * @param fromOffsets
+     * @return
+     */
     private JavaInputDStream<ConsumerRecord<String, TweetData>> getKafkaStream(
             Properties prop,
             JavaStreamingContext streamingContext,
             Map<String, Object> kafkaProperties,
             Map<TopicPartition, Long> fromOffsets
     ) {
-        List<String> topicSet = Arrays.asList(new String[]{prop.getProperty("com.iot.app.kafka.topic")});
+        List<String> topicSet = Arrays.asList(new String[]{prop.getProperty("com.twitter.app.kafka.topic")});
         if (fromOffsets.isEmpty()) {
             return KafkaUtils.createDirectStream(
                     streamingContext,
@@ -168,6 +185,10 @@ public class PipelineProcessor implements Serializable {
     }
 }
 
+/**
+ * This class implements OffsetCommitCallback interface
+ *
+ */
 final class TwitterOffsetCommitCallback implements OffsetCommitCallback, Serializable {
 
     private static final Logger log = Logger.getLogger(TwitterOffsetCommitCallback.class);
