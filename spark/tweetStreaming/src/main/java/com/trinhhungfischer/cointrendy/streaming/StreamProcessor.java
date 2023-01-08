@@ -72,6 +72,11 @@ public class StreamProcessor {
         return this;
     }
 
+    public StreamProcessor processTweetData() {
+        TweetDataProcess.processTweetData(transformedStream);
+        return this;
+    }
+
     private static Function2<Integer, Iterator<ConsumerRecord<String, TweetData>>, Iterator<TweetData>> addMetaData(
             final OffsetRange[] offsetRanges
     ) {

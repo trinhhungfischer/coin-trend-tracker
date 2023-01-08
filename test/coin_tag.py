@@ -16,19 +16,19 @@ def coin_tag():
     
     coin_tickers = df['ticker'].to_numpy().tolist()
         
-    results = ""
+    results = "("
     
     list_results = []
         
     for i, ticker in enumerate(coin_tickers):
         if (len(results) + len(ticker) + 5 + len(END_RULE_STR)) >= 512:
-            list_results.append(results[:-4] + END_RULE_STR)
-            results = ""
+            list_results.append(results[:-4] + ")" + END_RULE_STR)
+            results = "("
         
         if i != len(coin_tickers) - 1:
             results += "#" + ticker + " OR "
         else:
-            results += "#" + ticker
+            results += "#" + ticker + ")"
     
     list_results.append(results + END_RULE_STR)
     
