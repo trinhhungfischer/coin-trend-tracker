@@ -10,8 +10,10 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.streaming.api.java.JavaDStream;
+import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.kafka010.HasOffsetRanges;
 import org.apache.spark.streaming.kafka010.OffsetRange;
+import scala.Tuple2;
 
 import java.util.*;
 
@@ -77,6 +79,24 @@ public class StreamProcessor {
         return this;
     }
 
+    public StreamProcessor filterTweetData() {
+        // We need filtered stream for total counts and sentiment counts later
+        var map = this.mapToPair(transformedStream);
+//        var key =
+
+        return this;
+    }
+
+    public StreamProcessor cache() {
+        this.filteredStream.cache();
+        return this;
+    }
+
+    public StreamProcessor processTotalTweetData() {
+
+        return this;
+    }
+
     private static Function2<Integer, Iterator<ConsumerRecord<String, TweetData>>, Iterator<TweetData>> addMetaData(
             final OffsetRange[] offsetRanges
     ) {
@@ -101,6 +121,21 @@ public class StreamProcessor {
             }
             return list.iterator();
         };
+    }
+
+    private JavaPairDStream<String, TweetData> mapToPair(final JavaDStream<TweetData> stream) {
+        var dStream = stream.flatMapToPair(tweetData -> {
+            List<Tuple2<String, TweetData>> pairs = new ArrayList<>();
+
+            List<String> hashTags = tweetData.getHashtags();
+            for (String tag : hashTags) {
+                pairs.add(new Tuple2<>(tag, tweetData));
+            }
+
+            return pairs.iterator();
+        });
+
+        return dStream;
     }
 
 }

@@ -34,6 +34,7 @@ public class TweetDataProcess {
         columnNameMappings.put("replyCount", "reply_count");
         columnNameMappings.put("quoteCount", "quote_count");
         columnNameMappings.put("createdAt", "created_at");
+        columnNameMappings.put("hashtags", "hashtags");
 
         // Call CassandraStreamingJavaUtil function to save in DB
         CassandraStreamingJavaUtil.javaFunctions(dataStream)

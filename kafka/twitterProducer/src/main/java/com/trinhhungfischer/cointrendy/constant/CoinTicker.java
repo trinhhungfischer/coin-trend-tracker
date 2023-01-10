@@ -44,21 +44,21 @@ public class CoinTicker {
     public static ArrayList<String> getTickerRules() {
         ArrayList<String> rules = new ArrayList<String>();
 
-        String rule = "";
+        String rule = "(";
 
         listCoinTicker = getListCoinTicker();
 
         for (int i = 0; i < listCoinTicker.size(); i++) {
             if (rule.length() + listCoinTicker.get(i).length() + 5 +
                     END_RULE_STR.length() >= MAX_CHARS_IN_RULE) {
-                rules.add(rule.substring(0, rule.length() - 4) + END_RULE_STR);
-                rule = "";
+                rules.add(rule.substring(0, rule.length() - 4) + ")" + END_RULE_STR);
+                rule = "(";
             }
 
             if (i < listCoinTicker.size() - 1) {
                 rule += ("#" + listCoinTicker.get(i) + " OR ");
             }
-            else rule += ("#" + listCoinTicker.get(i));
+            else rule += ("#" + listCoinTicker.get(i) + ")");
         }
         rules.add(rule + END_RULE_STR);
 
