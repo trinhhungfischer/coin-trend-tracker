@@ -30,7 +30,8 @@ public class StreamProcessor {
     }
 
     /**
-     *
+     * This method does transform operations allowing RDD-to-RDD function applied on
+     * current DStream
      * @param item
      * @return
      */
@@ -83,12 +84,12 @@ public class StreamProcessor {
         // We need filtered stream for total counts and sentiment counts later
         var map = this.mapToPair(transformedStream);
 //        var key =
-
+//        var state = this.
         return this;
     }
 
     public StreamProcessor cache() {
-        this.filteredStream.cache();
+//        this.filteredStream.cache();
         return this;
     }
 
@@ -134,6 +135,7 @@ public class StreamProcessor {
 
             return pairs.iterator();
         });
+        dStream.print();
 
         return dStream;
     }

@@ -11,9 +11,16 @@ import scala.Tuple2;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class processes the Tweets data
+ */
 public class TweetDataProcess {
     private static final Logger logger = Logger.getLogger(TweetDataProcess.class);
 
+    /**
+     * Method to get and save Tweets data that has hashtags
+     * @param dataStream original Tweet data stream
+     */
     public static void processTweetData(
             JavaDStream<TweetData> dataStream
     ) {
