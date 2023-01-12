@@ -1,6 +1,6 @@
 package com.trinhhungfischer.cointrendy.common;
 
-import com.trinhhungfischer.cointrendy.common.entity.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 
 import java.io.Serializable;
 import java.util.Comparator;

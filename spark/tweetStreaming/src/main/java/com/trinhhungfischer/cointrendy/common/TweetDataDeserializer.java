@@ -1,13 +1,10 @@
 package com.trinhhungfischer.cointrendy.common;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.trinhhungfischer.cointrendy.common.entity.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import org.apache.kafka.common.header.Headers;
 import org.apache.kafka.common.serialization.Deserializer;
 
-import java.io.IOException;
 import java.util.Map;
 
 /**

@@ -2,11 +2,10 @@ package com.trinhhungfischer.cointrendy.streaming;
 
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
 import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
-import com.trinhhungfischer.cointrendy.common.entity.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import org.apache.log4j.Logger;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.joda.time.Duration;
-import scala.Tuple2;
 
 import java.util.HashMap;
 import java.util.Map;

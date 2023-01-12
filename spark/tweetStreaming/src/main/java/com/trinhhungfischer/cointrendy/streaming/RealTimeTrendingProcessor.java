@@ -1,13 +1,16 @@
 package com.trinhhungfischer.cointrendy.streaming;
 
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
+import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
 import com.trinhhungfischer.cointrendy.common.entity.TotalTweetData;
-import com.trinhhungfischer.cointrendy.common.entity.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import org.apache.log4j.Logger;
+import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.State;
 import org.apache.spark.streaming.StateSpec;
 import org.apache.spark.streaming.api.java.JavaDStream;
+import scala.Serializable;
 import scala.Tuple2;
 
 import java.sql.Timestamp;
@@ -29,7 +32,8 @@ public class RealTimeTrendingProcessor {
      * Window duration = 30 seconds and Slide interval = 10 seconds
      * @param filteredTweetData
      */
-    public static void processTotalTweetPerHashtag(JavaDStream<TweetData> filteredTweetData) {
+    public static void processTotalTweetPerHashtag(JavaDStream<TweetData> filteredTweetData,
+                                                   Broadcast<HashtagData> broadcastData) {
         // Need to keep state for total count
         StateSpec<AggregateKey, Long, Long, Tuple2<AggregateKey, Long>> stateSpec = StateSpec
                 .function(RealTimeTrendingProcessor::updateState)
@@ -45,15 +49,19 @@ public class RealTimeTrendingProcessor {
                         }
                         return output.iterator();
                     })
+                .filter(hashtagPair -> {
+                    String hashtag = hashtagPair._1().getHashtag();
+                    return broadcastData.value().isNeededHashtags(hashtag);
+                })
                 .reduceByKey((a, b) -> a + b)
                 .mapWithState(stateSpec)
                 .map(tuple2 -> tuple2)
-                .map(RealTimeTrendingProcessor::mapToTrafficData);
+                .map(RealTimeTrendingProcessor::mapToTotalTweetData);
 
         saveTotalTweetPerHashtag(totalTweetDStream);
     }
 
-    private static TotalTweetData mapToTrafficData(Tuple2<AggregateKey, Long> tuple) {
+    private static TotalTweetData mapToTotalTweetData(Tuple2<AggregateKey, Long> tuple) {
         logger.debug(
                 "Total Count : " + "key " + tuple._1().getHashtag() + " value " +
                         tuple._2());
@@ -69,7 +77,12 @@ public class RealTimeTrendingProcessor {
         HashMap<String, String> columnNameMappings = new HashMap<>();
         columnNameMappings.put("hashtag", "hashtag");
         columnNameMappings.put("totalTweets", "total_tweets");
+        columnNameMappings.put("totalLikes", "total_likes");
+        columnNameMappings.put("totalRetweets", "total_retweets");
+        columnNameMappings.put("totalReplies", "total_replies");
+        columnNameMappings.put("totalQuotes", "total_quotes");
         columnNameMappings.put("recordDate", "record_date");
+
 
         // Call CassandraStreamingJavaUtils function to save in DB
         CassandraStreamingJavaUtil.javaFunctions(totalTweetData).writerBuilder(
@@ -101,5 +114,22 @@ public class RealTimeTrendingProcessor {
         return total;
     }
 
+}
 
+
+class TweetAnalysisField implements Serializable {
+    private Long num_tweet = 1L;
+
+    private Long num_like;
+    private Long num_retweet;
+    private Long num_reply;
+    private Long num_quote;
+
+    public TweetAnalysisField(Long num_tweet, Long num_like, Long num_retweet, Long num_reply, Long num_quote) {
+        this.num_tweet = num_tweet;
+        this.num_like = num_like;
+        this.num_retweet = num_retweet;
+        this.num_reply = num_reply;
+        this.num_quote = num_quote;
+    }
 }

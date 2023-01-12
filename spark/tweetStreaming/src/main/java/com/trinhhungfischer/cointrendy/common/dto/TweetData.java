@@ -1,4 +1,4 @@
-package com.trinhhungfischer.cointrendy.common.entity;
+package com.trinhhungfischer.cointrendy.common.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -8,7 +8,7 @@ public class AggregateKey implements Serializable {
 
     public AggregateKey(String hashtag) {
         super();
-        this.hashtag = hashtag;
+        this.hashtag = hashtag.toLowerCase();
     }
 
     public String getHashtag() {
@@ -16,7 +16,7 @@ public class AggregateKey implements Serializable {
     }
 
     public void setHashtag(String hashtag) {
-        this.hashtag = hashtag;
+        this.hashtag = hashtag.toLowerCase();
     }
 
     @Override
@@ -40,4 +40,5 @@ public class AggregateKey implements Serializable {
         }
         return false;
     }
+
 }

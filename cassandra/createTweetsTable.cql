@@ -22,7 +22,10 @@ CREATE TABLE total_tweets_per_hashtag
 (
  hashtag text,
  total_tweets int,
- record_date timestamp,
+ total_likes bigint,
+ total_retweets bigint,
+ total_replies bigint,
+ total_quotes bigint,
+ record_dates timestamp,
  PRIMARY KEY (hashtag)
 );
-

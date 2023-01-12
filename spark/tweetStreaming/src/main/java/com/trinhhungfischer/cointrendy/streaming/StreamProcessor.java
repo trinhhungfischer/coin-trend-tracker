@@ -1,11 +1,13 @@
 package com.trinhhungfischer.cointrendy.streaming;
 
-import com.trinhhungfischer.cointrendy.common.entity.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.log4j.Logger;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.Optional;
 import org.apache.spark.api.java.function.Function2;
+import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
@@ -98,8 +100,8 @@ public class StreamProcessor {
         return this;
     }
 
-    public StreamProcessor processTotalTweetData() {
-        RealTimeTrendingProcessor.processTotalTweetPerHashtag(filteredStream);
+    public StreamProcessor processTotalTweetData(Broadcast<HashtagData> broadcastData) {
+        RealTimeTrendingProcessor.processTotalTweetPerHashtag(filteredStream, broadcastData);
         return this;
     }
 

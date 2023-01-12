@@ -1,9 +1,11 @@
 package com.trinhhungfischer.cointrendy;
 
+import com.datastax.spark.connector.util.JavaApiHelper;
 import com.trinhhungfischer.cointrendy.batch.LatestOffsetReader;
 import com.trinhhungfischer.cointrendy.common.PropertyFileReader;
 import com.trinhhungfischer.cointrendy.common.TweetDataDeserializer;
-import com.trinhhungfischer.cointrendy.common.entity.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import com.trinhhungfischer.cointrendy.streaming.StreamProcessor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -19,6 +21,7 @@ import java.util.*;
 
 import com.trinhhungfischer.cointrendy.common.ProcessorUtils;
 import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaInputDStream;
@@ -76,6 +79,11 @@ public class PipelineProcessor implements Serializable {
         logger.info("Starting Kafka Steaming Process");
 
         // Broadcast variables. Basically we are sending the data to each worker nodes on a Spark cluster.
+        ClassTag<HashtagData> classTag = JavaApiHelper.getClassTag(HashtagData.class);
+        Broadcast<HashtagData> broadcastHashtagsValue = sparkSession
+                .sparkContext()
+                .broadcast(getHashtagData(), classTag);
+
 
         // Streaming process starts here.
         StreamProcessor streamProcessor = new StreamProcessor(kafkaStream);
@@ -85,7 +93,7 @@ public class PipelineProcessor implements Serializable {
                 .processTweetData()
                 .filterTweetData()
                 .cache()
-                .processTotalTweetData();
+                .processTotalTweetData(broadcastHashtagsValue);
 
         // Commit offset to Kafka
         commitOffset(kafkaStream);
@@ -178,14 +186,21 @@ public class PipelineProcessor implements Serializable {
      * @param directKafkaStream
      */
     private void commitOffset(JavaInputDStream<ConsumerRecord<String, TweetData>> directKafkaStream) {
-        directKafkaStream.foreachRDD((JavaRDD<ConsumerRecord<String, TweetData>> trafficRdd) -> {
-            if (!trafficRdd.isEmpty()) {
-                OffsetRange[] offsetRanges = ((HasOffsetRanges) trafficRdd.rdd()).offsetRanges();
+        directKafkaStream.foreachRDD((JavaRDD<ConsumerRecord<String, TweetData>> tweetRdd) -> {
+            if (!tweetRdd.isEmpty()) {
+                OffsetRange[] offsetRanges = ((HasOffsetRanges) tweetRdd.rdd()).offsetRanges();
 
                 CanCommitOffsets canCommitOffsets = (CanCommitOffsets) directKafkaStream.inputDStream();
                 canCommitOffsets.commitAsync(offsetRanges, new TwitterOffsetCommitCallback());
             }
         });
+    }
+
+
+    private HashtagData getHashtagData() {
+        HashtagData hashtagData = new HashtagData();
+        hashtagData.getHashtags();
+        return hashtagData;
     }
 }
 
