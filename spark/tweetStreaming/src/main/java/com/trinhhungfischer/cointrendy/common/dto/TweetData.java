@@ -11,10 +11,10 @@ public class TweetData implements Serializable {
     private ArrayList<String> editTweetIds;
     private ArrayList<String> hashtags;
     private String language;
-    private int retweetCount;
-    private int replyCount;
-    private int likeCount;
-    private int quoteCount;
+    private long retweetCount;
+    private long replyCount;
+    private long likeCount;
+    private long quoteCount;
     private Timestamp createdAt;
     private String authorId;
 
@@ -57,15 +57,15 @@ public class TweetData implements Serializable {
         return hashtags;
     }
 
-    public int getRetweetCount() {
+    public long getRetweetCount() {
         return retweetCount;
     }
 
-    public int getReplyCount() {
+    public long getReplyCount() {
         return replyCount;
     }
 
-    public int getLikeCount() {
+    public long getLikeCount() {
         return likeCount;
     }
 
@@ -81,7 +81,7 @@ public class TweetData implements Serializable {
         return language;
     }
 
-    public int getQuoteCount() {
+    public long getQuoteCount() {
         return quoteCount;
     }
 

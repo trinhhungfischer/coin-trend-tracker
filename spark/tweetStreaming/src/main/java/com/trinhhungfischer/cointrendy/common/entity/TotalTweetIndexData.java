@@ -2,23 +2,14 @@ package com.trinhhungfischer.cointrendy.common.entity;
 
 import java.sql.Timestamp;
 
-public class TotalTweetData {
+public class TotalTweetIndexData {
     private String hashtag;
     private Long totalTweets;
-
     private Long totalLikes;
-
     private Long totalRetweets;
-
     private Long totalReplies;
-
     private Long totalQuotes;
-
-
     private Timestamp recordDate;
-
-
-
     public String getHashtag() {
         return hashtag;
     }

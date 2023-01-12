@@ -2,7 +2,7 @@ package com.trinhhungfischer.cointrendy.streaming;
 
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
-import com.trinhhungfischer.cointrendy.common.entity.TotalTweetData;
+import com.trinhhungfischer.cointrendy.common.entity.TotalTweetIndexData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import org.apache.log4j.Logger;
 import org.apache.spark.broadcast.Broadcast;
@@ -31,21 +31,24 @@ public class RealTimeTrendingProcessor {
      * This method to get window tweets for each different hashtags.
      * Window duration = 30 seconds and Slide interval = 10 seconds
      * @param filteredTweetData
+     * @param broadcastData
      */
     public static void processTotalTweetPerHashtag(JavaDStream<TweetData> filteredTweetData,
                                                    Broadcast<HashtagData> broadcastData) {
         // Need to keep state for total count
-        StateSpec<AggregateKey, Long, Long, Tuple2<AggregateKey, Long>> stateSpec = StateSpec
+        StateSpec<AggregateKey, TweetAnalysisField, TweetAnalysisField, Tuple2<AggregateKey, TweetAnalysisField>> stateSpec = StateSpec
                 .function(RealTimeTrendingProcessor::updateState)
                 .timeout(Durations.seconds(3600));
 
         // We need to get count of tweets group by hashtag
-        JavaDStream<TotalTweetData> totalTweetDStream = filteredTweetData
+        JavaDStream<TotalTweetIndexData> totalTweetDStream = filteredTweetData
                 .flatMapToPair(tweetData -> {
-                        List<Tuple2<AggregateKey, Long>> output = new ArrayList();
+                        List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
                         for (String hashtag: tweetData.getHashtags()) {
                             AggregateKey aggregateKey = new AggregateKey(hashtag);
-                            output.add(new Tuple2<>(aggregateKey, 1L));
+                            TweetAnalysisField tweetIndex = new TweetAnalysisField(1L, tweetData.getLikeCount(),
+                                    tweetData.getRetweetCount(), tweetData.getReplyCount(), tweetData.getQuoteCount());
+                            output.add(new Tuple2<>(aggregateKey, tweetIndex));
                         }
                         return output.iterator();
                     })
@@ -53,7 +56,7 @@ public class RealTimeTrendingProcessor {
                     String hashtag = hashtagPair._1().getHashtag();
                     return broadcastData.value().isNeededHashtags(hashtag);
                 })
-                .reduceByKey((a, b) -> a + b)
+                .reduceByKey((a, b) -> TweetAnalysisField.add(a, b))
                 .mapWithState(stateSpec)
                 .map(tuple2 -> tuple2)
                 .map(RealTimeTrendingProcessor::mapToTotalTweetData);
@@ -61,18 +64,22 @@ public class RealTimeTrendingProcessor {
         saveTotalTweetPerHashtag(totalTweetDStream);
     }
 
-    private static TotalTweetData mapToTotalTweetData(Tuple2<AggregateKey, Long> tuple) {
+    private static TotalTweetIndexData mapToTotalTweetData(Tuple2<AggregateKey, TweetAnalysisField> tuple) {
         logger.debug(
                 "Total Count : " + "key " + tuple._1().getHashtag() + " value " +
                         tuple._2());
-        TotalTweetData totalTweetData = new TotalTweetData();
-        totalTweetData.setHashtag(tuple._1.getHashtag());
-        totalTweetData.setTotalTweets(tuple._2());
-        totalTweetData.setRecordDate(new Timestamp(new Date().getTime()));
-        return totalTweetData;
+        TotalTweetIndexData totalTweetIndexData = new TotalTweetIndexData();
+        totalTweetIndexData.setHashtag(tuple._1.getHashtag());
+        totalTweetIndexData.setTotalTweets(tuple._2().getNumTweet());
+        totalTweetIndexData.setTotalLikes(tuple._2().getNumLike());
+        totalTweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
+        totalTweetIndexData.setTotalReplies(tuple._2().getNumQuote());
+        totalTweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
+        totalTweetIndexData.setRecordDate(new Timestamp(new Date().getTime()));
+        return totalTweetIndexData;
     }
 
-    private static void saveTotalTweetPerHashtag(final JavaDStream<TotalTweetData> totalTweetData) {
+    private static void saveTotalTweetPerHashtag(final JavaDStream<TotalTweetIndexData> totalTweetData) {
         // Map class property to cassandra table column
         HashMap<String, String> columnNameMappings = new HashMap<>();
         columnNameMappings.put("hashtag", "hashtag");
@@ -88,7 +95,7 @@ public class RealTimeTrendingProcessor {
         CassandraStreamingJavaUtil.javaFunctions(totalTweetData).writerBuilder(
                 "tweets_info",
                 "total_tweets_per_hashtag",
-                CassandraJavaUtil.mapToRow(TotalTweetData.class, columnNameMappings)
+                CassandraJavaUtil.mapToRow(TotalTweetIndexData.class, columnNameMappings)
         ).saveToCassandra();
     }
 
@@ -97,39 +104,75 @@ public class RealTimeTrendingProcessor {
      * Function to get running sum by maintaining the state
      *
      * @param key
-     * @param currentSum
+     * @param currentIndex
      * @param state
      * @return
      */
-    private static Tuple2<AggregateKey, Long> updateState(
+    private static Tuple2<AggregateKey, TweetAnalysisField> updateState(
             AggregateKey key,
-            org.apache.spark.api.java.Optional<Long> currentSum,
-            State<Long> state
+            org.apache.spark.api.java.Optional<TweetAnalysisField> currentIndex,
+            State<TweetAnalysisField> state
     ) {
-        Long objectOption = currentSum.get();
-        objectOption = objectOption == null ? 0l : objectOption;
-        long totalSum = objectOption + (state.exists() ? state.get() : 0);
-        Tuple2<AggregateKey, Long> total = new Tuple2<>(key, totalSum);
-        state.update(totalSum);
-        return total;
+        TweetAnalysisField objectOption = currentIndex.get();
+        objectOption = objectOption == null ? new TweetAnalysisField(0L, 0L, 0L, 0L, 0L) : objectOption;
+        long totalTweet = objectOption.getNumTweet() + (state.exists() ? state.get().getNumTweet() : 0);
+        long totalLike = objectOption.getNumLike() + (state.exists() ? state.get().getNumTweet() : 0);
+        long totalRetweet = objectOption.getNumRetweet() + (state.exists() ? state.get().getNumRetweet() : 0);
+        long totalReply = objectOption.getNumReply() + (state.exists() ? state.get().getNumReply() : 0);
+        long totalQuote = objectOption.getNumQuote() + (state.exists() ? state.get().getNumQuote() : 0);
+
+        TweetAnalysisField newSum = new TweetAnalysisField(totalTweet, totalLike, totalRetweet, totalReply, totalQuote);
+
+        Tuple2<AggregateKey, TweetAnalysisField> totalPair = new Tuple2<>(key, newSum);
+        state.update(newSum);
+
+        return totalPair;
     }
 
 }
 
 
 class TweetAnalysisField implements Serializable {
-    private Long num_tweet = 1L;
-
-    private Long num_like;
-    private Long num_retweet;
-    private Long num_reply;
-    private Long num_quote;
+    private Long numTweet = 1L;
+    private Long numLike;
+    private Long numRetweet;
+    private Long numReply;
+    private Long numQuote;
 
     public TweetAnalysisField(Long num_tweet, Long num_like, Long num_retweet, Long num_reply, Long num_quote) {
-        this.num_tweet = num_tweet;
-        this.num_like = num_like;
-        this.num_retweet = num_retweet;
-        this.num_reply = num_reply;
-        this.num_quote = num_quote;
+        this.numTweet = num_tweet;
+        this.numLike = num_like;
+        this.numRetweet = num_retweet;
+        this.numReply = num_reply;
+        this.numQuote = num_quote;
+    }
+
+    public Long getNumTweet() {
+        return numTweet;
+    }
+
+    public Long getNumLike() {
+        return numLike;
+    }
+
+    public Long getNumRetweet() {
+        return numRetweet;
+    }
+
+    public Long getNumReply() {
+        return numReply;
+    }
+
+    public Long getNumQuote() {
+        return numQuote;
+    }
+
+    public static TweetAnalysisField add(TweetAnalysisField o1, TweetAnalysisField o2) {
+        long totalTweet = o1.getNumTweet() + o2.getNumTweet();
+        long totalLike = o1.getNumLike() + o2.getNumLike();
+        long totalRetweet = o1.getNumRetweet() + o2.getNumRetweet();
+        long totalReply = o1.getNumReply() + o2.getNumReply();
+        long totalQuote = o1.getNumQuote() + o2.getNumQuote();
+        return  new TweetAnalysisField(totalTweet, totalLike, totalRetweet, totalReply, totalQuote);
     }
 }
