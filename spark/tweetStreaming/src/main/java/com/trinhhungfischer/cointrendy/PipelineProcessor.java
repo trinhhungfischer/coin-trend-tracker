@@ -84,7 +84,8 @@ public class PipelineProcessor implements Serializable {
                 .appendToHDFS(sparkSession, parquetFile)
                 .processTweetData()
                 .filterTweetData()
-                .cache();
+                .cache()
+                .processTotalTweetData();
 
         // Commit offset to Kafka
         commitOffset(kafkaStream);

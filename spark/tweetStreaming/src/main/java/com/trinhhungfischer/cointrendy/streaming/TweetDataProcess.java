@@ -45,8 +45,8 @@ public class TweetDataProcess {
 
         // Call CassandraStreamingJavaUtil function to save in DB
         CassandraStreamingJavaUtil.javaFunctions(dataStream)
-                .writerBuilder("latesttweets",
-                        "recenttweets",
+                .writerBuilder("tweets_info",
+                        "recent_tweets",
                         CassandraJavaUtil.mapToRow(TweetData.class, columnNameMappings))
                 .withConstantTTL(Duration.standardSeconds(120)) // Keeps data for 120 seconds
                 .saveToCassandra();

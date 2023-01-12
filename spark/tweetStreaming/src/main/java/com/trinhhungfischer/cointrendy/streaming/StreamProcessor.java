@@ -4,12 +4,17 @@ import com.trinhhungfischer.cointrendy.common.entity.TweetData;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.log4j.Logger;
 import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.Optional;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.streaming.Durations;
+import org.apache.spark.streaming.State;
+import org.apache.spark.streaming.StateSpec;
 import org.apache.spark.streaming.api.java.JavaDStream;
+import org.apache.spark.streaming.api.java.JavaMapWithStateDStream;
 import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.kafka010.HasOffsetRanges;
 import org.apache.spark.streaming.kafka010.OffsetRange;
@@ -83,24 +88,33 @@ public class StreamProcessor {
     public StreamProcessor filterTweetData() {
         // We need filtered stream for total counts and sentiment counts later
         var map = this.mapToPair(transformedStream);
-//        var key =
-//        var state = this.
+        var state = this.mapWithState(map);
+        this.filteredStream = filterByState(state).map(tuple -> tuple._1);
         return this;
     }
 
     public StreamProcessor cache() {
-//        this.filteredStream.cache();
+        this.filteredStream.cache();
         return this;
     }
 
     public StreamProcessor processTotalTweetData() {
-
+        RealTimeTrendingProcessor.processTotalTweetPerHashtag(filteredStream);
         return this;
     }
 
+    /**
+     * Helper method sections from here
+     */
+
+    /**
+     *
+     * @param offsetRanges
+     * @return
+     */
     private static Function2<Integer, Iterator<ConsumerRecord<String, TweetData>>, Iterator<TweetData>> addMetaData(
-            final OffsetRange[] offsetRanges
-    ) {
+            final OffsetRange[] offsetRanges)
+    {
         return (index, items) -> {
             List<TweetData> list = new ArrayList<>();
             while (items.hasNext()) {
@@ -125,19 +139,40 @@ public class StreamProcessor {
     }
 
     private JavaPairDStream<String, TweetData> mapToPair(final JavaDStream<TweetData> stream) {
-        var dStream = stream.flatMapToPair(tweetData -> {
-            List<Tuple2<String, TweetData>> pairs = new ArrayList<>();
-
-            List<String> hashTags = tweetData.getHashtags();
-            for (String tag : hashTags) {
-                pairs.add(new Tuple2<>(tag, tweetData));
-            }
-
-            return pairs.iterator();
-        });
+        var dStream = stream.mapToPair(tweetData -> new Tuple2<>(tweetData.getTweetId(), tweetData));
         dStream.print();
+        return dStream;
+    }
+    
+    private JavaMapWithStateDStream<String, TweetData, Boolean, Tuple2<TweetData, Boolean>> mapWithState(final JavaPairDStream<String, TweetData> key) {
+        // Check tweets id is already processed
+        StateSpec<String, TweetData, Boolean, Tuple2<TweetData, Boolean>> stateFunc = StateSpec
+                .function(StreamProcessor::updateState)
+                .timeout(Durations.seconds(3600));//maintain state for one hour
 
+        var dStream = key.mapWithState(stateFunc);
+        dStream.print();
         return dStream;
     }
 
+    private JavaDStream<Tuple2<TweetData, Boolean>> filterByState(
+            final JavaMapWithStateDStream<String, TweetData, Boolean, Tuple2<TweetData, Boolean>> state) {
+        var dsStream = state .filter(tuple -> tuple._2.equals(Boolean.FALSE));
+        logger.info("Starting Stream Processing");
+        dsStream.print();
+        return dsStream;
+    }
+
+    private static Tuple2<TweetData, Boolean> updateState(String str,
+              Optional<TweetData> tweetData, State<Boolean> state) {
+
+        Tuple2<TweetData, Boolean> tweets= new Tuple2<>(tweetData.get(), false);
+        if (state.exists()) {
+            tweets = new Tuple2<>(tweetData.get(), true);
+        } else {
+            state.update(Boolean.TRUE);
+        }
+        return tweets;
+    }
+    
 }

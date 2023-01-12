@@ -1,9 +1,9 @@
-DROP KEYSPACE IF EXISTS latesttweets;
-CREATE KEYSPACE latesttweets WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+DROP KEYSPACE IF EXISTS tweets_info;
+CREATE KEYSPACE tweets_info WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
 
-use latesttweets;
+use tweets_info;
 
-CREATE TABLE recenttweets
+CREATE TABLE recent_tweets
 (
  tweet_id text,
  user_id text,
@@ -17,4 +17,12 @@ CREATE TABLE recenttweets
  PRIMARY KEY ((tweet_id), user_id, created_at)
 );
 
+
+CREATE TABLE total_tweets_per_hashtag
+(
+ hashtag text,
+ total_tweets int,
+ record_date timestamp,
+ PRIMARY KEY (hashtag)
+);
 

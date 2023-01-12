@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class AggregateKey implements Serializable {
 
-    private String coinTicker;
+    private String hashtag;
 
-    public AggregateKey(String coinTicker) {
+    public AggregateKey(String hashtag) {
         super();
-        this.coinTicker = coinTicker;
+        this.hashtag = hashtag;
     }
 
-    public String getCoinTicker() {
-        return coinTicker;
+    public String getHashtag() {
+        return hashtag;
     }
 
-    public void setCoinTicker(String coinTicker) {
-        this.coinTicker = coinTicker;
+    public void setHashtag(String hashtag) {
+        this.hashtag = hashtag;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class AggregateKey implements Serializable {
         int result = 1;
 
         // Hash Coin Ticker string
-        result = prime * result + ((this.coinTicker == null) ? 0 : this.coinTicker.hashCode());
+        result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
 
         return result;
     }
@@ -34,7 +34,7 @@ public class AggregateKey implements Serializable {
     public boolean equals(Object obj) {
         if (obj != null && obj instanceof AggregateKey) {
             AggregateKey other = (AggregateKey) obj;
-            if (other.getCoinTicker() != null && other.getCoinTicker().equals(this.coinTicker)) {
+            if (other.getHashtag() != null && other.getHashtag().equals(this.hashtag)) {
                 return true;
             }
         }
