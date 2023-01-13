@@ -83,7 +83,7 @@ public class StreamProcessor {
     }
 
     public StreamProcessor processTweetData() {
-        TweetDataProcess.processTweetData(transformedStream);
+        TweetDataProcessor.processTweetData(transformedStream);
         return this;
     }
 
@@ -101,7 +101,12 @@ public class StreamProcessor {
     }
 
     public StreamProcessor processTotalTweetData(Broadcast<HashtagData> broadcastData) {
-        RealTimeTrendingProcessor.processTotalTweetPerHashtag(filteredStream, broadcastData);
+        RealTimeTrendingProcessor.processTotalTweet(filteredStream, broadcastData);
+        return this;
+    }
+
+    public StreamProcessor processWindowTotalTweetData(Broadcast<HashtagData> broadcastData) {
+        RealTimeTrendingProcessor.processWindowTweetTotalData(filteredStream, broadcastData);
         return this;
     }
 

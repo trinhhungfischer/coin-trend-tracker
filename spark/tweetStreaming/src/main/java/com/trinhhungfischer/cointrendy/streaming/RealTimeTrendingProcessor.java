@@ -4,6 +4,7 @@ import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
 import com.trinhhungfischer.cointrendy.common.entity.TotalTweetIndexData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
+import com.trinhhungfischer.cointrendy.common.entity.WindowTweetIndexData;
 import org.apache.log4j.Logger;
 import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.streaming.Durations;
@@ -28,13 +29,14 @@ public class RealTimeTrendingProcessor {
     private static final Logger logger = Logger.getLogger(RealTimeTrendingProcessor.class);
 
     /**
-     * This method to get window tweets for each different hashtags.
-     * Window duration = 30 seconds and Slide interval = 10 seconds
+     * This method to get tweets for each different hashtags
+     * and update them accordingly when there is new tweets with each
+     * related hashtags
      * @param filteredTweetData
      * @param broadcastData
      */
-    public static void processTotalTweetPerHashtag(JavaDStream<TweetData> filteredTweetData,
-                                                   Broadcast<HashtagData> broadcastData) {
+    public static void processTotalTweet(JavaDStream<TweetData> filteredTweetData,
+                                         Broadcast<HashtagData> broadcastData) {
         // Need to keep state for total count
         StateSpec<AggregateKey, TweetAnalysisField, TweetAnalysisField, Tuple2<AggregateKey, TweetAnalysisField>> stateSpec = StateSpec
                 .function(RealTimeTrendingProcessor::updateState)
@@ -61,7 +63,7 @@ public class RealTimeTrendingProcessor {
                 .map(tuple2 -> tuple2)
                 .map(RealTimeTrendingProcessor::mapToTotalTweetData);
 
-        saveTotalTweetPerHashtag(totalTweetDStream);
+        saveTotalTweet(totalTweetDStream);
     }
 
     private static TotalTweetIndexData mapToTotalTweetData(Tuple2<AggregateKey, TweetAnalysisField> tuple) {
@@ -79,7 +81,7 @@ public class RealTimeTrendingProcessor {
         return totalTweetIndexData;
     }
 
-    private static void saveTotalTweetPerHashtag(final JavaDStream<TotalTweetIndexData> totalTweetData) {
+    private static void saveTotalTweet(final JavaDStream<TotalTweetIndexData> totalTweetData) {
         // Map class property to cassandra table column
         HashMap<String, String> columnNameMappings = new HashMap<>();
         columnNameMappings.put("hashtag", "hashtag");
@@ -127,6 +129,76 @@ public class RealTimeTrendingProcessor {
         state.update(newSum);
 
         return totalPair;
+    }
+
+
+    /**
+     * Method to get window tweets counts of different type for each hashtag. Window duration = 30 seconds
+     * and Slide interval = 10 seconds
+     *
+     * @param filteredData data stream
+     * @param broadcastData Broad tweets hashtag data
+     */
+    public static void processWindowTweetTotalData(JavaDStream<TweetData> filteredData, Broadcast<HashtagData> broadcastData) {
+        // reduce by key and window (30 sec window and 10 sec slide).
+        JavaDStream<WindowTweetIndexData> analysisDStream = filteredData
+                .flatMapToPair(tweetData -> {
+                    List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
+                    for (String hashtag: tweetData.getHashtags()) {
+                        AggregateKey aggregateKey = new AggregateKey(hashtag);
+                        TweetAnalysisField tweetIndex = new TweetAnalysisField(1L, tweetData.getLikeCount(),
+                                tweetData.getRetweetCount(), tweetData.getReplyCount(), tweetData.getQuoteCount());
+                        output.add(new Tuple2<>(aggregateKey, tweetIndex));
+                    }
+                    return output.iterator();
+                })
+                .reduceByKeyAndWindow((a, b) -> TweetAnalysisField.add(a, b), Durations.seconds(30),
+                        Durations.seconds(10))
+                .map(RealTimeTrendingProcessor::mapToWindowTweetData);
+
+        saveWindowTotalTweet(analysisDStream);
+
+    }
+
+    /**
+     * Function to create WindowTweetIndexData object from Tweet data
+     *
+     * @param tuple
+     * @return
+     */
+    private static WindowTweetIndexData mapToWindowTweetData(Tuple2<AggregateKey, TweetAnalysisField> tuple) {
+        logger.debug("Window Count : " +
+                "key " + tuple._1().getHashtag() + " value " + tuple._2());
+
+        WindowTweetIndexData totalTweetIndexData = new WindowTweetIndexData();
+        totalTweetIndexData.setHashtag(tuple._1.getHashtag());
+        totalTweetIndexData.setTotalTweets(tuple._2().getNumTweet());
+        totalTweetIndexData.setTotalLikes(tuple._2().getNumLike());
+        totalTweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
+        totalTweetIndexData.setTotalReplies(tuple._2().getNumQuote());
+        totalTweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
+        totalTweetIndexData.setRecordDate(new Timestamp(new Date().getTime()));
+        return totalTweetIndexData;
+    }
+
+    private static void saveWindowTotalTweet(final JavaDStream<WindowTweetIndexData> totalTweetData) {
+        // Map class property to cassandra table column
+        HashMap<String, String> columnNameMappings = new HashMap<>();
+        columnNameMappings.put("hashtag", "hashtag");
+        columnNameMappings.put("totalTweets", "total_tweets");
+        columnNameMappings.put("totalLikes", "total_likes");
+        columnNameMappings.put("totalRetweets", "total_retweets");
+        columnNameMappings.put("totalReplies", "total_replies");
+        columnNameMappings.put("totalQuotes", "total_quotes");
+        columnNameMappings.put("recordDate", "record_date");
+
+
+        // Call CassandraStreamingJavaUtils function to save in DB
+        CassandraStreamingJavaUtil.javaFunctions(totalTweetData).writerBuilder(
+                "tweets_info",
+                "total_tweets_per_hashtag",
+                CassandraJavaUtil.mapToRow(WindowTweetIndexData.class, columnNameMappings)
+        ).saveToCassandra();
     }
 
 }

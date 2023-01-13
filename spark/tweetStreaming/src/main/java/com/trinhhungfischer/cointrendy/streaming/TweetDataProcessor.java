@@ -13,8 +13,8 @@ import java.util.Map;
 /**
  * This class processes the Tweets data
  */
-public class TweetDataProcess {
-    private static final Logger logger = Logger.getLogger(TweetDataProcess.class);
+public class TweetDataProcessor {
+    private static final Logger logger = Logger.getLogger(TweetDataProcessor.class);
 
     /**
      * Method to get and save Tweets data that has hashtags
