@@ -9,7 +9,8 @@ public class TotalTweetIndexData {
     private Long totalRetweets;
     private Long totalReplies;
     private Long totalQuotes;
-    private Timestamp recordDate;
+    private String recordDate;
+    private Timestamp timestamp;
     public String getHashtag() {
         return hashtag;
     }
@@ -26,12 +27,20 @@ public class TotalTweetIndexData {
         this.totalTweets = totalTweets;
     }
 
-    public Timestamp getRecordDate() {
+    public String getRecordDate() {
         return recordDate;
     }
 
-    public void setRecordDate(Timestamp recordDate) {
+    public void setRecordDate(String recordDate) {
         this.recordDate = recordDate;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 
     public Long getTotalLikes() {

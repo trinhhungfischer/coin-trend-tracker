@@ -4,16 +4,16 @@ CREATE KEYSPACE twitterSeries WITH REPLICATION = { 'class' : 'SimpleStrategy', '
 use twitterSeries;
 
 CREATE TABLE TrendingMinute (
-   year int,
-   month int,
-   day int,
-   hour int,
-   minute int, 
-   frequency int,
-   ticker text,
-   sentiment int,
-   PRIMARY KEY ((ticker),year, month, day, hour, minute)
-) WITH CLUSTERING ORDER BY (year DESC, month DESC, day DESC, hour DESC, minute DESC);
+ hashtag text,
+ total_tweets bigint,
+ total_likes bigint,
+ total_retweets bigint,
+ total_replies bigint,
+ total_quotes bigint,
+ record_date text,
+ timestamp timestamp,
+ PRIMARY KEY (hashtag)
+);
 
 CREATE TABLE TrendingHour (
    year int,

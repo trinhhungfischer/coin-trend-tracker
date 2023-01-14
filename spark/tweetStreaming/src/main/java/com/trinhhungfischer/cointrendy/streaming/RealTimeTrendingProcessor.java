@@ -15,6 +15,7 @@ import scala.Serializable;
 import scala.Tuple2;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
@@ -77,7 +78,8 @@ public class RealTimeTrendingProcessor {
         totalTweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
         totalTweetIndexData.setTotalReplies(tuple._2().getNumQuote());
         totalTweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
-        totalTweetIndexData.setRecordDate(new Timestamp(new Date().getTime()));
+        totalTweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+        totalTweetIndexData.setTimestamp(new Timestamp(new Date().getTime()));
         return totalTweetIndexData;
     }
 
@@ -91,6 +93,8 @@ public class RealTimeTrendingProcessor {
         columnNameMappings.put("totalReplies", "total_replies");
         columnNameMappings.put("totalQuotes", "total_quotes");
         columnNameMappings.put("recordDate", "record_date");
+        columnNameMappings.put("timestamp", "timestamp");
+
 
 
         // Call CassandraStreamingJavaUtils function to save in DB
@@ -152,6 +156,10 @@ public class RealTimeTrendingProcessor {
                     }
                     return output.iterator();
                 })
+                .filter(hashtagPair -> {
+                    String hashtag = hashtagPair._1().getHashtag();
+                    return broadcastData.value().isNeededHashtags(hashtag);
+                })
                 .reduceByKeyAndWindow((a, b) -> TweetAnalysisField.add(a, b), Durations.seconds(30),
                         Durations.seconds(10))
                 .map(RealTimeTrendingProcessor::mapToWindowTweetData);
@@ -177,7 +185,8 @@ public class RealTimeTrendingProcessor {
         totalTweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
         totalTweetIndexData.setTotalReplies(tuple._2().getNumQuote());
         totalTweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
-        totalTweetIndexData.setRecordDate(new Timestamp(new Date().getTime()));
+        totalTweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+        totalTweetIndexData.setTimestamp(new Timestamp(new Date().getTime()));
         return totalTweetIndexData;
     }
 
@@ -191,12 +200,14 @@ public class RealTimeTrendingProcessor {
         columnNameMappings.put("totalReplies", "total_replies");
         columnNameMappings.put("totalQuotes", "total_quotes");
         columnNameMappings.put("recordDate", "record_date");
+        columnNameMappings.put("timestamp", "timestamp");
+
 
 
         // Call CassandraStreamingJavaUtils function to save in DB
         CassandraStreamingJavaUtil.javaFunctions(totalTweetData).writerBuilder(
                 "tweets_info",
-                "total_tweets_per_hashtag",
+                "total_tweets_windows",
                 CassandraJavaUtil.mapToRow(WindowTweetIndexData.class, columnNameMappings)
         ).saveToCassandra();
     }

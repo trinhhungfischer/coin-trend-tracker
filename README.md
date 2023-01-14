@@ -43,9 +43,9 @@ Mô hình luồng dự án sẽ dựa trên kiến trúc Lambda (&#955;) với c
 - `docker-compose -p lambda up`
 - Wait all services be up and running, then...
 - `./project-orchestrate.sh`
-- Run realtime job `docker exec spark-master /spark/bin/spark-submit --class com.apssouza.iot.streaming.StreamingProcessor  --master spark://localhost:7077 /opt/spark-data/iot-spark-processor-1.0.0.jar`
+- Run realtime job `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.PipelineProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
 - Access the Spark cluster <http://localhost:8080>
-- Run the twitter producer `java -jar iot-kafka-producer/target/iot-kafka-producer-1.0.0.jar`
+- Run the twitter producer `java -jar kafka/twitterProducer/target/twitter-kafka-producer-1.0.0.jar`
 
 ### Cassandra
 

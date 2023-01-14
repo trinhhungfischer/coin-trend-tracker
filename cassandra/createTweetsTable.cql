@@ -12,7 +12,8 @@ CREATE TABLE recent_tweets
  retweet_count int,
  reply_count int,
  quote_count int,
- created_at timestamp,
+ record_date text,
+ timestamp timestamp,
  hashtags list<text>,
  PRIMARY KEY ((tweet_id), user_id, created_at)
 );
@@ -26,6 +27,19 @@ CREATE TABLE total_tweets_per_hashtag
  total_retweets bigint,
  total_replies bigint,
  total_quotes bigint,
+ record_date text,
+ timestamp timestamp,
+ PRIMARY KEY (hashtag, record_date)
+);
+
+CREATE TABLE total_tweets_windows
+(
+ hashtag text,
+ total_tweets bigint,
+ total_likes bigint,
+ total_retweets bigint,
+ total_replies bigint,
+ total_quotes bigint,
  record_date timestamp,
- PRIMARY KEY (hashtag)
+ PRIMARY KEY (hashtag, record_date)
 );
