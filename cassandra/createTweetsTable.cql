@@ -12,8 +12,7 @@ CREATE TABLE recent_tweets
  retweet_count int,
  reply_count int,
  quote_count int,
- record_date text,
- timestamp timestamp,
+ created_at timestamp,
  hashtags list<text>,
  PRIMARY KEY ((tweet_id), user_id, created_at)
 );
