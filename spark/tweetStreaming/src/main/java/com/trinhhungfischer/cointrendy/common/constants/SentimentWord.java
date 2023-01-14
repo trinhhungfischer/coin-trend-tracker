@@ -34,9 +34,9 @@ public class SentimentWord {
             "loser"
     ));
 
-    public static final int getWordSentiment(String word) {
-        if (positiveWords.contains(word)) return 1;
-        else if (negativeWords.contains(word)) return -1;
-        else return 0;
+    public static final Sentiment getWordSentiment(String word) {
+        if (positiveWords.contains(word)) return Sentiment.POSITIVE;
+        else if (negativeWords.contains(word)) return Sentiment.NEGATIVE;
+        else return Sentiment.NEURAL;
     }
 }

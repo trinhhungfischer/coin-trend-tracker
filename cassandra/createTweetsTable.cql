@@ -39,6 +39,7 @@ CREATE TABLE total_tweets_windows
  total_retweets bigint,
  total_replies bigint,
  total_quotes bigint,
- record_date timestamp,
+ record_date text,
+ timestamp timestamp,
  PRIMARY KEY (hashtag, record_date)
 );

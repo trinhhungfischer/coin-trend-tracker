@@ -2,7 +2,7 @@ package com.trinhhungfischer.cointrendy.streaming;
 
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
-import com.trinhhungfischer.cointrendy.common.entity.TotalTweetIndexData;
+import com.trinhhungfischer.cointrendy.common.entity.TweetIndexData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import com.trinhhungfischer.cointrendy.common.entity.WindowTweetIndexData;
 import org.apache.log4j.Logger;
@@ -44,7 +44,7 @@ public class RealTimeTrendingProcessor {
                 .timeout(Durations.seconds(3600));
 
         // We need to get count of tweets group by hashtag
-        JavaDStream<TotalTweetIndexData> totalTweetDStream = filteredTweetData
+        JavaDStream<TweetIndexData> totalTweetDStream = filteredTweetData
                 .flatMapToPair(tweetData -> {
                         List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
                         for (String hashtag: tweetData.getHashtags()) {
@@ -67,23 +67,23 @@ public class RealTimeTrendingProcessor {
         saveTotalTweet(totalTweetDStream);
     }
 
-    private static TotalTweetIndexData mapToTotalTweetData(Tuple2<AggregateKey, TweetAnalysisField> tuple) {
+    private static TweetIndexData mapToTotalTweetData(Tuple2<AggregateKey, TweetAnalysisField> tuple) {
         logger.debug(
                 "Total Count : " + "key " + tuple._1().getHashtag() + " value " +
                         tuple._2());
-        TotalTweetIndexData totalTweetIndexData = new TotalTweetIndexData();
-        totalTweetIndexData.setHashtag(tuple._1.getHashtag());
-        totalTweetIndexData.setTotalTweets(tuple._2().getNumTweet());
-        totalTweetIndexData.setTotalLikes(tuple._2().getNumLike());
-        totalTweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
-        totalTweetIndexData.setTotalReplies(tuple._2().getNumQuote());
-        totalTweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
-        totalTweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
-        totalTweetIndexData.setTimestamp(new Timestamp(new Date().getTime()));
-        return totalTweetIndexData;
+        TweetIndexData tweetIndexData = new TweetIndexData();
+        tweetIndexData.setHashtag(tuple._1.getHashtag());
+        tweetIndexData.setTotalTweets(tuple._2().getNumTweet());
+        tweetIndexData.setTotalLikes(tuple._2().getNumLike());
+        tweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
+        tweetIndexData.setTotalReplies(tuple._2().getNumQuote());
+        tweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
+        tweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+        tweetIndexData.setTimestamp(new Timestamp(new Date().getTime()));
+        return tweetIndexData;
     }
 
-    private static void saveTotalTweet(final JavaDStream<TotalTweetIndexData> totalTweetData) {
+    private static void saveTotalTweet(final JavaDStream<TweetIndexData> totalTweetData) {
         // Map class property to cassandra table column
         HashMap<String, String> columnNameMappings = new HashMap<>();
         columnNameMappings.put("hashtag", "hashtag");
@@ -101,7 +101,7 @@ public class RealTimeTrendingProcessor {
         CassandraStreamingJavaUtil.javaFunctions(totalTweetData).writerBuilder(
                 "tweets_info",
                 "total_tweets_per_hashtag",
-                CassandraJavaUtil.mapToRow(TotalTweetIndexData.class, columnNameMappings)
+                CassandraJavaUtil.mapToRow(TweetIndexData.class, columnNameMappings)
         ).saveToCassandra();
     }
 

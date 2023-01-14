@@ -2,7 +2,7 @@ package com.trinhhungfischer.cointrendy.common.entity;
 
 import java.sql.Timestamp;
 
-public class TotalTweetIndexData {
+public class TweetIndexData {
     private String hashtag;
     private Long totalTweets;
     private Long totalLikes;
