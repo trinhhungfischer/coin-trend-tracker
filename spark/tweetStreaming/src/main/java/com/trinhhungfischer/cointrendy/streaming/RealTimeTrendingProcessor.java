@@ -70,7 +70,7 @@ public class RealTimeTrendingProcessor {
     private static TweetIndexData mapToTotalTweetData(Tuple2<AggregateKey, TweetAnalysisField> tuple) {
         logger.debug(
                 "Total Count : " + "key " + tuple._1().getHashtag() + " value " +
-                        tuple._2());
+                        tuple._2().getNumTweet());
         TweetIndexData tweetIndexData = new TweetIndexData();
         tweetIndexData.setHashtag(tuple._1.getHashtag());
         tweetIndexData.setTotalTweets(tuple._2().getNumTweet());
