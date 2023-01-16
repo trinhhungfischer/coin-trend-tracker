@@ -18,7 +18,7 @@ CREATE TABLE recent_tweets
 );
 
 
-CREATE TABLE total_tweets_per_hashtag
+CREATE TABLE total_tweets
 (
  hashtag text,
  total_tweets bigint,
@@ -28,7 +28,7 @@ CREATE TABLE total_tweets_per_hashtag
  total_quotes bigint,
  record_date text,
  timestamp timestamp,
- PRIMARY KEY (hashtag, record_date)
+ PRIMARY KEY ((hashtag), record_date)
 );
 
 CREATE TABLE total_tweets_windows
@@ -41,5 +41,29 @@ CREATE TABLE total_tweets_windows
  total_quotes bigint,
  record_date text,
  timestamp timestamp,
- PRIMARY KEY (hashtag, record_date)
+ PRIMARY KEY ((hashtag), record_date)
+);
+
+CREATE TABLE total_sentiment
+(
+ hashtag text,
+ total_tweets bigint,
+ total_positives bigint,
+ total_negatives bigint,
+ total_neutrals bigint,
+ record_date text,
+ timestamp timestamp,
+ PRIMARY KEY ((hashtag), record_date)
+);
+
+CREATE TABLE total_sentiment_windows
+(
+ hashtag text,
+ total_tweets bigint,
+ total_positives bigint,
+ total_negatives bigint,
+ total_neutrals bigint,
+ record_date text,
+ timestamp timestamp,
+ PRIMARY KEY ((hashtag), record_date)
 );

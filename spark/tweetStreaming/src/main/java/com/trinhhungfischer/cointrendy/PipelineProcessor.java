@@ -94,7 +94,8 @@ public class PipelineProcessor implements Serializable {
                 .filterTweetData()
                 .cache()
                 .processTotalTweetData(broadcastHashtagsValue)
-                .processWindowTotalTweetData(broadcastHashtagsValue);
+                .processWindowTotalTweetData(broadcastHashtagsValue)
+                .processTotalTweetSentiment(broadcastHashtagsValue);
 
         // Commit offset to Kafka
         commitOffset(kafkaStream);

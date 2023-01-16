@@ -1,11 +1,14 @@
 package com.trinhhungfischer.cointrendy.streaming;
 
+import com.datastax.spark.connector.japi.CassandraJavaUtil;
+import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
 import com.trinhhungfischer.cointrendy.common.constants.Sentiment;
 import com.trinhhungfischer.cointrendy.common.constants.SentimentWord;
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import com.trinhhungfischer.cointrendy.common.entity.TweetSentimentData;
+import com.trinhhungfischer.cointrendy.common.entity.WindowTweetIndexData;
 import org.apache.log4j.Logger;
 import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.streaming.Durations;
@@ -38,30 +41,7 @@ public class TweetSentimentProcessor {
 
         //
         JavaDStream<TweetSentimentData> totalSentimentDStream = filteredTweetData.
-                map(tweetData -> {
-                    TweetSentimentField sentimentField;
-
-                    String tweetText = tweetData.getText();
-                    Sentiment curSentiment = SentimentWord.getWordSentiment(tweetText);
-                    switch (curSentiment) {
-                        case POSITIVE:
-                            sentimentField = new TweetSentimentField(1L, 1L, 0L, 0L);
-                            break;
-                        case NEGATIVE:
-                            sentimentField = new TweetSentimentField(1L, 0L, 1L, 0L);
-                            break;
-                        case NEURAL:
-                            sentimentField = new TweetSentimentField(1L, 0L, 0L, 1L);
-                            break;
-                        default:
-                            sentimentField = new TweetSentimentField(1L, 0L, 0L, 0L);
-                            break;
-                    }
-
-                    Tuple2<TweetData, TweetSentimentField> output = new Tuple2<TweetData, TweetSentimentField>(tweetData, sentimentField);
-
-                    return output;
-                })
+                map(TweetSentimentProcessor::mapToTweetSentimentField)
                 .flatMapToPair(
                         sentimentPair -> {
                             List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
@@ -83,6 +63,8 @@ public class TweetSentimentProcessor {
                 .map(tuple2 -> tuple2)
                 .map(TweetSentimentProcessor::mapToTotalSentiment);
 
+        // Save to database
+        saveTotalSentimentTweet(totalSentimentDStream);
 
     }
 
@@ -106,6 +88,31 @@ public class TweetSentimentProcessor {
         return totalPair;
     }
 
+    private static Tuple2<TweetData, TweetSentimentField> mapToTweetSentimentField(TweetData tweetData) {
+        TweetSentimentField sentimentField;
+
+        String tweetText = tweetData.getText();
+        Sentiment curSentiment = SentimentWord.getWordSentiment(tweetText);
+        switch (curSentiment) {
+            case POSITIVE:
+                sentimentField = new TweetSentimentField(1L, 1L, 0L, 0L);
+                break;
+            case NEGATIVE:
+                sentimentField = new TweetSentimentField(1L, 0L, 1L, 0L);
+                break;
+            case NEUTRAL:
+                sentimentField = new TweetSentimentField(1L, 0L, 0L, 1L);
+                break;
+            default:
+                sentimentField = new TweetSentimentField(1L, 0L, 0L, 0L);
+                break;
+        }
+
+        Tuple2<TweetData, TweetSentimentField> output = new Tuple2<TweetData, TweetSentimentField>(tweetData, sentimentField);
+
+        return output;
+    }
+
     private static TweetSentimentData mapToTotalSentiment(Tuple2<AggregateKey, TweetSentimentField> tuple) {
         logger.debug(
                 "Total Count : " + "key " + tuple._1().getHashtag() + " value " + tuple._2().getNumTweet());
@@ -114,28 +121,34 @@ public class TweetSentimentProcessor {
         tweetSentimentData.setTotalTweets(tuple._2().getNumTweet());
         tweetSentimentData.setTotalPositives(tuple._2().getNumPositive());
         tweetSentimentData.setTotalNegatives(tuple._2().getNumNegative());
-        tweetSentimentData.setTotalNeurals(tuple._2().getNumNeural());
+        tweetSentimentData.setTotalNeutrals(tuple._2().getNumNeural());
         tweetSentimentData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         tweetSentimentData.setTimestamp(new Timestamp(new Date().getTime()));
 
         return tweetSentimentData;
     }
 
-    private static void saveTotalSentimentTweet() {
+    private static void saveTotalSentimentTweet(final JavaDStream<TweetSentimentData> tweetSentiment) {
         // Map class property to cassandra table column
         HashMap<String, String> columnNameMappings = new HashMap<>();
         columnNameMappings.put("hashtag", "hashtag");
-        columnNameMappings.put("totalTweets", "");
-        columnNameMappings.put("totalPositives", "");
-        columnNameMappings.put("totalNegatives", "");
-        columnNameMappings.put("totalNeurals", "");
+        columnNameMappings.put("totalTweets", "total_tweets");
+        columnNameMappings.put("totalPositives", "total_positives");
+        columnNameMappings.put("totalNegatives", "total_negatives");
+        columnNameMappings.put("totalNeutrals", "total_neutrals");
         columnNameMappings.put("recordDate", "record_date");
         columnNameMappings.put("timestamp", "timestamp");
+
+        // Call CassandraStreamingJavaUtils function to save in DB
+        CassandraStreamingJavaUtil.javaFunctions(tweetSentiment).writerBuilder(
+                "tweets_info",
+                "total_sentiment",
+                CassandraJavaUtil.mapToRow(TweetSentimentData.class, columnNameMappings)
+        ).saveToCassandra();
 
     }
 
 }
-
 
 class TweetSentimentField implements Serializable {
     private Long numTweet;

@@ -7,7 +7,7 @@ public class TweetSentimentData {
     private Long totalTweets;
     private Long totalPositives;
     private Long totalNegatives;
-    private Long totalNeurals;
+    private Long totalNeutrals;
     private String recordDate;
     private Timestamp timestamp;
 
@@ -43,12 +43,12 @@ public class TweetSentimentData {
         this.totalNegatives = totalNegatives;
     }
 
-    public Long getTotalNeurals() {
-        return totalNeurals;
+    public Long getTotalNeutrals() {
+        return totalNeutrals;
     }
 
-    public void setTotalNeurals(Long totalNeurals) {
-        this.totalNeurals = totalNeurals;
+    public void setTotalNeutrals(Long totalNeutrals) {
+        this.totalNeutrals = totalNeutrals;
     }
 
     public String getRecordDate() {

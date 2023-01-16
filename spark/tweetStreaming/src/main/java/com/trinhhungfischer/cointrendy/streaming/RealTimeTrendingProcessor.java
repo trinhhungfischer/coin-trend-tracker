@@ -100,7 +100,7 @@ public class RealTimeTrendingProcessor {
         // Call CassandraStreamingJavaUtils function to save in DB
         CassandraStreamingJavaUtil.javaFunctions(totalTweetData).writerBuilder(
                 "tweets_info",
-                "total_tweets_per_hashtag",
+                "total_tweets",
                 CassandraJavaUtil.mapToRow(TweetIndexData.class, columnNameMappings)
         ).saveToCassandra();
     }

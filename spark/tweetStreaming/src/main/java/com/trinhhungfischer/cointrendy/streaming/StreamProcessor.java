@@ -110,6 +110,11 @@ public class StreamProcessor {
         return this;
     }
 
+    public StreamProcessor processTotalTweetSentiment(Broadcast<HashtagData> broadcastData) {
+        TweetSentimentProcessor.processTweetTotalSentiment(filteredStream, broadcastData);
+        return this;
+    }
+
     /**
      * Helper method sections from here
      */

@@ -37,6 +37,6 @@ public class SentimentWord {
     public static final Sentiment getWordSentiment(String word) {
         if (positiveWords.contains(word)) return Sentiment.POSITIVE;
         else if (negativeWords.contains(word)) return Sentiment.NEGATIVE;
-        else return Sentiment.NEURAL;
+        else return Sentiment.NEUTRAL;
     }
 }
