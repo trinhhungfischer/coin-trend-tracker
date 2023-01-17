@@ -2,6 +2,7 @@ package com.trinhhungfischer.cointrendy;
 
 import com.datastax.spark.connector.util.JavaApiHelper;
 import com.trinhhungfischer.cointrendy.batch.LatestOffsetReader;
+import com.trinhhungfischer.cointrendy.common.ProcessorUtils;
 import com.trinhhungfischer.cointrendy.common.PropertyFileReader;
 import com.trinhhungfischer.cointrendy.common.TweetDataDeserializer;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
@@ -15,11 +16,6 @@ import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
-
-import java.io.Serializable;
-import java.util.*;
-
-import com.trinhhungfischer.cointrendy.common.ProcessorUtils;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.sql.SparkSession;
@@ -28,6 +24,9 @@ import org.apache.spark.streaming.api.java.JavaInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.streaming.kafka010.*;
 import scala.reflect.ClassTag;
+
+import java.io.Serializable;
+import java.util.*;
 
 /**
  * This class represents Kafka Twitter Streaming and create pipeline for processing the Tweets Data
@@ -95,7 +94,7 @@ public class PipelineProcessor implements Serializable {
                 .cache()
                 .processTotalTweetData(broadcastHashtagsValue)
                 .processWindowTotalTweetData(broadcastHashtagsValue)
-//                .processTotalTweetSentiment(broadcastHashtagsValue)
+                .processTotalTweetSentiment(broadcastHashtagsValue)
                 .processWindowTotalSentiment(broadcastHashtagsValue);
 
         // Commit offset to Kafka
@@ -200,7 +199,7 @@ public class PipelineProcessor implements Serializable {
     }
 
 
-    private HashtagData getHashtagData() {
+    private static HashtagData getHashtagData() {
         HashtagData hashtagData = new HashtagData();
         hashtagData.getHashtags();
         return hashtagData;

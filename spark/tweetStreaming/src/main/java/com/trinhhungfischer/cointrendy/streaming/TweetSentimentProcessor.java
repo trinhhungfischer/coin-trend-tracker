@@ -42,11 +42,10 @@ public class TweetSentimentProcessor {
         //
         JavaDStream<TweetSentimentData> totalSentimentDStream = filteredTweetData.
                 map(TweetSentimentProcessor::mapToTweetSentimentField)
-                .flatMapToPair(
-                        sentimentPair -> {
+                .flatMapToPair(sentimentPair -> {
                             List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
 
-                            for (String hashtag: sentimentPair._1().getHashtags()) {
+                            for (String hashtag : sentimentPair._1().getHashtags()) {
                                 AggregateKey aggregateKey = new AggregateKey(hashtag);
                                 output.add(new Tuple2<>(aggregateKey, sentimentPair._2()));
                             }

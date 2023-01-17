@@ -1,9 +1,11 @@
 package com.trinhhungfischer.cointrendy.streaming;
 
+import com.datastax.spark.connector.japi.CassandraJavaUtil;
+import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
-import com.trinhhungfischer.cointrendy.common.entity.TweetIndexData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
+import com.trinhhungfischer.cointrendy.common.entity.TweetIndexData;
 import com.trinhhungfischer.cointrendy.common.entity.WindowTweetIndexData;
 import org.apache.log4j.Logger;
 import org.apache.spark.broadcast.Broadcast;
@@ -16,10 +18,10 @@ import scala.Tuple2;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.*;
-
-import com.datastax.spark.connector.japi.CassandraJavaUtil;
-import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Class to process Tweet Data stem to produce Tweet data details
@@ -94,8 +96,6 @@ public class RealTimeTrendingProcessor {
         columnNameMappings.put("totalQuotes", "total_quotes");
         columnNameMappings.put("recordDate", "record_date");
         columnNameMappings.put("timestamp", "timestamp");
-
-
 
         // Call CassandraStreamingJavaUtils function to save in DB
         CassandraStreamingJavaUtil.javaFunctions(totalTweetData).writerBuilder(
