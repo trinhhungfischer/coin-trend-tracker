@@ -144,7 +144,7 @@ public class RealTimeTrendingProcessor {
      * @param broadcastData Broad tweets hashtag data
      */
     public static void processWindowTweetTotalData(JavaDStream<TweetData> filteredData, Broadcast<HashtagData> broadcastData) {
-        // reduce by key and window (30 sec window and 10 sec slide).
+        // Reduce by key and window (30 sec window and 10 sec slide).
         JavaDStream<WindowTweetIndexData> analysisDStream = filteredData
                 .flatMapToPair(tweetData -> {
                     List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
@@ -185,13 +185,14 @@ public class RealTimeTrendingProcessor {
         totalTweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
         totalTweetIndexData.setTotalReplies(tuple._2().getNumQuote());
         totalTweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
-        totalTweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
-        totalTweetIndexData.setTimestamp(new Timestamp(new Date().getTime()));
+        Date currentTime = new Date();
+        totalTweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(currentTime));
+        totalTweetIndexData.setTimestamp(new Timestamp(currentTime.getTime()));
         return totalTweetIndexData;
     }
 
     private static void saveWindowTotalTweet(final JavaDStream<WindowTweetIndexData> totalTweetData) {
-        // Map class property to cassandra table column
+        // Map class properties to cassandra table columns
         HashMap<String, String> columnNameMappings = new HashMap<>();
         columnNameMappings.put("hashtag", "hashtag");
         columnNameMappings.put("totalTweets", "total_tweets");

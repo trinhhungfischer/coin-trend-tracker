@@ -1,0 +1,546 @@
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1197.0 (TID 1154, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1197.0 (TID 1155, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_232_piece0 in memory on 172.22.0.8:38035 (size: 5.4 KiB, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1197.0 (TID 1153) in 27 ms on 172.22.0.8 (executor 0) (1/3)
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 190
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1197.0 (TID 1154) in 28 ms on 172.22.0.8 (executor 0) (2/3)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1197.0 (TID 1155) in 28 ms on 172.22.0.8 (executor 0) (3/3)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1197.0, whose tasks have all completed, from pool 
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1197 (print at StreamProcessor.java:174) finished in 0.033 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 168 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1197: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 168 finished: print at StreamProcessor.java:174, took 0.034992 s
+-------------------------------------------
+Time: 1673877035000 ms
+-------------------------------------------
+
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.4 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Starting job streaming job 1673877035000 ms.5 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO SparkContext: Starting job: runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO DAGScheduler: Registering RDD 472 (filter at RealTimeTrendingProcessor.java:58) as input to shuffle 64
+23/01/16 13:50:35 INFO DAGScheduler: Got job 169 (runJob at DStreamFunctions.scala:54) with 8 output partitions
+23/01/16 13:50:35 INFO DAGScheduler: Final stage: ResultStage 1208 (runJob at DStreamFunctions.scala:54)
+23/01/16 13:50:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1202, ShuffleMapStage 1206, ShuffleMapStage 1203, ShuffleMapStage 1207, ShuffleMapStage 1204)
+23/01/16 13:50:35 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1206)
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ShuffleMapStage 1206 (MapPartitionsRDD[472] at filter at RealTimeTrendingProcessor.java:58), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_233 stored as values in memory (estimated size 13.8 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_233_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_233_piece0 in memory on spark-master:43441 (size: 6.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 233 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 1206 (MapPartitionsRDD[472] at filter at RealTimeTrendingProcessor.java:58) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1206.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1206.0 (TID 1156, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1206.0 (TID 1157, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1206.0 (TID 1158, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1206.0 (TID 1159, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1206.0 (TID 1160, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1206.0 (TID 1161, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1206.0 (TID 1162, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1206.0 (TID 1163, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_233_piece0 in memory on 172.22.0.8:38035 (size: 6.3 KiB, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_7 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_4 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_2 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_5 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1206.0 (TID 1163) in 54 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1206.0 (TID 1160) in 55 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_6 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_3 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1206.0 (TID 1161) in 55 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_1 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_0 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1206.0 (TID 1159) in 63 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1206.0 (TID 1162) in 63 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1206.0 (TID 1157) in 64 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1206.0 (TID 1156) in 68 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1206.0 (TID 1158) in 67 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1206.0, whose tasks have all completed, from pool 
+23/01/16 13:50:35 INFO DAGScheduler: ShuffleMapStage 1206 (filter at RealTimeTrendingProcessor.java:58) finished in 0.072 s
+23/01/16 13:50:35 INFO DAGScheduler: looking for newly runnable stages
+23/01/16 13:50:35 INFO DAGScheduler: running: Set()
+23/01/16 13:50:35 INFO DAGScheduler: waiting: Set(ResultStage 1208)
+23/01/16 13:50:35 INFO DAGScheduler: failed: Set()
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ResultStage 1208 (MapPartitionsRDD[477] at map at RealTimeTrendingProcessor.java:65), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_234 stored as values in memory (estimated size 22.4 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_234_piece0 stored as bytes in memory (estimated size 10.5 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_234_piece0 in memory on spark-master:43441 (size: 10.5 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 234 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ResultStage 1208 (MapPartitionsRDD[477] at map at RealTimeTrendingProcessor.java:65) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1208.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1208.0 (TID 1164, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1208.0 (TID 1165, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1208.0 (TID 1166, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1208.0 (TID 1167, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1208.0 (TID 1168, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1208.0 (TID 1169, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1208.0 (TID 1170, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1208.0 (TID 1171, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_234_piece0 in memory on 172.22.0.8:38035 (size: 10.5 KiB, free: 431.4 MiB)
+23/01/16 13:50:35 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 64 to 172.22.0.8:51010
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_0 in memory on 172.22.0.8:38035 (size: 15.4 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_3 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_6 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_5 in memory on 172.22.0.8:38035 (size: 15.8 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_2 in memory on 172.22.0.8:38035 (size: 13.5 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_7 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_1 in memory on 172.22.0.8:38035 (size: 14.2 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_4 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1208.0 (TID 1164) in 63 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1208.0 (TID 1167) in 67 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1208.0 (TID 1169) in 68 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1208.0 (TID 1171) in 67 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1208.0 (TID 1166) in 71 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1208.0 (TID 1168) in 72 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1208.0 (TID 1165) in 73 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1208.0 (TID 1170) in 71 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1208.0, whose tasks have all completed, from pool 
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1208 (runJob at DStreamFunctions.scala:54) finished in 0.081 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 169 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1208: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 169 finished: runJob at DStreamFunctions.scala:54, took 0.161333 s
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.5 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Starting job streaming job 1673877035000 ms.6 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO SparkContext: Starting job: runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO DAGScheduler: Registering RDD 480 (filter at TweetSentimentProcessor.java:56) as input to shuffle 65
+23/01/16 13:50:35 INFO DAGScheduler: Got job 170 (runJob at DStreamFunctions.scala:54) with 8 output partitions
+23/01/16 13:50:35 INFO DAGScheduler: Final stage: ResultStage 1242 (runJob at DStreamFunctions.scala:54)
+23/01/16 13:50:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1235, ShuffleMapStage 1236, ShuffleMapStage 1228, ShuffleMapStage 1237, ShuffleMapStage 1223, ShuffleMapStage 1215, ShuffleMapStage 1230, ShuffleMapStage 1216, ShuffleMapStage 1238, ShuffleMapStage 1232, ShuffleMapStage 1239, ShuffleMapStage 1240, ShuffleMapStage 1226, ShuffleMapStage 1241, ShuffleMapStage 1233, ShuffleMapStage 1227, ShuffleMapStage 1219)
+23/01/16 13:50:35 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1235)
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ShuffleMapStage 1235 (MapPartitionsRDD[480] at filter at TweetSentimentProcessor.java:56), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_235 stored as values in memory (estimated size 14.1 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_235_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_235_piece0 in memory on spark-master:43441 (size: 6.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 235 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 1235 (MapPartitionsRDD[480] at filter at TweetSentimentProcessor.java:56) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1235.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1235.0 (TID 1172, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1235.0 (TID 1173, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1235.0 (TID 1174, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1235.0 (TID 1175, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1235.0 (TID 1176, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1235.0 (TID 1177, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1235.0 (TID 1178, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1235.0 (TID 1179, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_235_piece0 in memory on 172.22.0.8:38035 (size: 6.4 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1235.0 (TID 1176) in 16 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1235.0 (TID 1178) in 16 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1235.0 (TID 1177) in 16 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1235.0 (TID 1179) in 19 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1235.0 (TID 1173) in 22 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1235.0 (TID 1174) in 22 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1235.0 (TID 1175) in 23 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1235.0 (TID 1172) in 23 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1235.0, whose tasks have all completed, from pool 
+23/01/16 13:50:35 INFO DAGScheduler: ShuffleMapStage 1235 (filter at TweetSentimentProcessor.java:56) finished in 0.027 s
+23/01/16 13:50:35 INFO DAGScheduler: looking for newly runnable stages
+23/01/16 13:50:35 INFO DAGScheduler: running: Set()
+23/01/16 13:50:35 INFO DAGScheduler: waiting: Set(ResultStage 1242)
+23/01/16 13:50:35 INFO DAGScheduler: failed: Set()
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ResultStage 1242 (MapPartitionsRDD[485] at map at TweetSentimentProcessor.java:63), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_236 stored as values in memory (estimated size 25.6 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_236_piece0 stored as bytes in memory (estimated size 11.1 KiB, free 433.8 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_236_piece0 in memory on spark-master:43441 (size: 11.1 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 236 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ResultStage 1242 (MapPartitionsRDD[485] at map at TweetSentimentProcessor.java:63) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1242.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1242.0 (TID 1180, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1242.0 (TID 1181, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1242.0 (TID 1182, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1242.0 (TID 1183, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1242.0 (TID 1184, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1242.0 (TID 1185, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1242.0 (TID 1186, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1242.0 (TID 1187, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_236_piece0 in memory on 172.22.0.8:38035 (size: 11.1 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 65 to 172.22.0.8:51010
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_7 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_0 in memory on 172.22.0.8:38035 (size: 15.4 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_4 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_3 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_6 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_2 in memory on 172.22.0.8:38035 (size: 13.5 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_1 in memory on 172.22.0.8:38035 (size: 14.2 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_5 in memory on 172.22.0.8:38035 (size: 15.8 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1242.0 (TID 1182) in 29 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1242.0 (TID 1181) in 32 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1242.0 (TID 1180) in 32 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1242.0 (TID 1187) in 32 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1242.0 (TID 1183) in 33 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1242.0 (TID 1186) in 34 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1242.0 (TID 1184) in 35 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1242.0 (TID 1185) in 35 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1242.0, whose tasks have all completed, from pool 
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1242 (runJob at DStreamFunctions.scala:54) finished in 0.040 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 170 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1242: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 170 finished: runJob at DStreamFunctions.scala:54, took 0.078572 s
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_237 stored as values in memory (estimated size 176.2 KiB, free 433.7 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_237_piece0 stored as bytes in memory (estimated size 27.3 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_237_piece0 in memory on spark-master:43441 (size: 27.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 237 from runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO SparkContext: Starting job: runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO DAGScheduler: Got job 171 (runJob at DStreamFunctions.scala:54) with 8 output partitions
+23/01/16 13:50:35 INFO DAGScheduler: Final stage: ResultStage 1266 (runJob at DStreamFunctions.scala:54)
+23/01/16 13:50:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1256, ShuffleMapStage 1257, ShuffleMapStage 1261, ShuffleMapStage 1258, ShuffleMapStage 1255, ShuffleMapStage 1265, ShuffleMapStage 1262, ShuffleMapStage 1259, ShuffleMapStage 1248, ShuffleMapStage 1263, ShuffleMapStage 1260, ShuffleMapStage 1264)
+23/01/16 13:50:35 INFO DAGScheduler: Missing parents: List()
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ResultStage 1266 (MapWithStateRDD[312] at mapWithState at TweetSentimentProcessor.java:61), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_238 stored as values in memory (estimated size 12.4 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_235_piece0 on spark-master:43441 in memory (size: 6.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_238_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_235_piece0 on 172.22.0.8:38035 in memory (size: 6.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_238_piece0 in memory on spark-master:43441 (size: 5.6 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 238 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ResultStage 1266 (MapWithStateRDD[312] at mapWithState at TweetSentimentProcessor.java:61) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1266.0 with 8 tasks
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_231_piece0 on spark-master:43441 in memory (size: 5.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1266.0 (TID 1188, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1266.0 (TID 1189, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1266.0 (TID 1190, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1266.0 (TID 1191, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1266.0 (TID 1192, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1266.0 (TID 1193, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1266.0 (TID 1194, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1266.0 (TID 1195, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_231_piece0 on 172.22.0.8:38035 in memory (size: 5.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_236_piece0 on spark-master:43441 in memory (size: 11.1 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_236_piece0 on 172.22.0.8:38035 in memory (size: 11.1 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_238_piece0 in memory on 172.22.0.8:38035 (size: 5.6 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_230_piece0 on spark-master:43441 in memory (size: 5.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_230_piece0 on 172.22.0.8:38035 in memory (size: 5.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_232_piece0 on spark-master:43441 in memory (size: 5.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_232_piece0 on 172.22.0.8:38035 in memory (size: 5.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_237_piece0 in memory on 172.22.0.8:38035 (size: 27.3 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_233_piece0 on spark-master:43441 in memory (size: 6.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_233_piece0 on 172.22.0.8:38035 in memory (size: 6.3 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_234_piece0 on spark-master:43441 in memory (size: 10.5 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_234_piece0 on 172.22.0.8:38035 in memory (size: 10.5 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1266.0 (TID 1189) in 103 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1266.0 (TID 1191) in 103 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1266.0 (TID 1195) in 105 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1266.0 (TID 1193) in 113 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1266.0 (TID 1190) in 117 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1266.0 (TID 1194) in 118 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1266.0 (TID 1192) in 119 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1266.0 (TID 1188) in 120 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1266.0, whose tasks have all completed, from pool 
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1266 (runJob at DStreamFunctions.scala:54) finished in 0.139 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 171 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1266: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 171 finished: runJob at DStreamFunctions.scala:54, took 0.142349 s
+23/01/16 13:50:35 INFO ReliableCheckpointRDD: Checkpointing took 179 ms.
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_239 stored as values in memory (estimated size 176.2 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_239_piece0 stored as bytes in memory (estimated size 27.3 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_239_piece0 in memory on spark-master:43441 (size: 27.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 239 from runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO ReliableRDDCheckpointData: Done checkpointing RDD 312 to hdfs://namenode:8020/cointrendy/checkpoint/ca3da3d1-e582-47b6-a50f-120fb11302a2/rdd-312, new parent is RDD 486
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.6 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Starting job streaming job 1673877035000 ms.7 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.7 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Total delay: 0.773 s for time 1673877035000 ms (execution: 0.731 s)
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 425 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 425
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 438 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 438
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 437 from persistence list
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 436 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 437
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 436
+23/01/16 13:50:35 INFO ShuffledRDD: Removing RDD 244 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 244
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 243 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 243
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 242 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 242
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 455 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 455
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 454 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 454
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 453 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 453
+23/01/16 13:50:35 INFO JobGenerator: Checkpointing graph for time 1673877035000 ms
+23/01/16 13:50:35 INFO DStreamGraph: Updating checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO DStreamGraph: Updated checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO CheckpointWriter: Submitted checkpoint of time 1673877035000 ms to writer queue
+23/01/16 13:50:35 INFO CheckpointWriter: Saving checkpoint for time 1673877035000 ms to file 'hdfs://namenode:8020/cointrendy/checkpoint/checkpoint-1673877035000'
+23/01/16 13:50:35 INFO CheckpointWriter: Deleting hdfs://namenode:8020/cointrendy/checkpoint/checkpoint-1673877010000
+23/01/16 13:50:35 INFO CheckpointWriter: Checkpoint for time 1673877035000 ms saved to file 'hdfs://namenode:8020/cointrendy/checkpoint/checkpoint-1673877035000', took 25882 bytes and 35 ms
+23/01/16 13:50:35 INFO DStreamGraph: Clearing checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO DStreamGraph: Cleared checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO ReceivedBlockTracker: Deleting batches: 
+23/01/16 13:50:35 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Attempting to clear 0 old log files in hdfs://namenode:8020/cointrendy/checkpoint/receivedBlockMetadata older than 1673876935000: 
+23/01/16 13:50:35 INFO InputInfoTracker: remove old batch metadata: 
+
+
+
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1197.0 (TID 1154, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1197.0 (TID 1155, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_232_piece0 in memory on 172.22.0.8:38035 (size: 5.4 KiB, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1197.0 (TID 1153) in 27 ms on 172.22.0.8 (executor 0) (1/3)
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 190
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1197.0 (TID 1154) in 28 ms on 172.22.0.8 (executor 0) (2/3)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1197.0 (TID 1155) in 28 ms on 172.22.0.8 (executor 0) (3/3)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1197.0, whose tasks have all completed, from pool
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1197 (print at StreamProcessor.java:174) finished in 0.033 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 168 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1197: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 168 finished: print at StreamProcessor.java:174, took 0.034992 s
+-------------------------------------------
+
+Time: 1673877035000 ms
+-------------------------------------------
+
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.4 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Starting job streaming job 1673877035000 ms.5 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO SparkContext: Starting job: runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO DAGScheduler: Registering RDD 472 (filter at RealTimeTrendingProcessor.java:58) as input to shuffle 64
+23/01/16 13:50:35 INFO DAGScheduler: Got job 169 (runJob at DStreamFunctions.scala:54) with 8 output partitions
+23/01/16 13:50:35 INFO DAGScheduler: Final stage: ResultStage 1208 (runJob at DStreamFunctions.scala:54)
+23/01/16 13:50:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1202, ShuffleMapStage 1206, ShuffleMapStage 1203, ShuffleMapStage 1207, ShuffleMapStage 1204)
+23/01/16 13:50:35 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1206)
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ShuffleMapStage 1206 (MapPartitionsRDD[472] at filter at RealTimeTrendingProcessor.java:58), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_233 stored as values in memory (estimated size 13.8 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_233_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_233_piece0 in memory on spark-master:43441 (size: 6.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 233 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 1206 (MapPartitionsRDD[472] at filter at RealTimeTrendingProcessor.java:58) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1206.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1206.0 (TID 1156, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1206.0 (TID 1157, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1206.0 (TID 1158, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1206.0 (TID 1159, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1206.0 (TID 1160, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1206.0 (TID 1161, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1206.0 (TID 1162, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1206.0 (TID 1163, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_233_piece0 in memory on 172.22.0.8:38035 (size: 6.3 KiB, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_7 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_4 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_2 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_5 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1206.0 (TID 1163) in 54 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1206.0 (TID 1160) in 55 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_6 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_3 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1206.0 (TID 1161) in 55 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_1 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_470_0 in memory on 172.22.0.8:38035 (size: 4.0 B, free: 431.4 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1206.0 (TID 1159) in 63 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1206.0 (TID 1162) in 63 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1206.0 (TID 1157) in 64 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1206.0 (TID 1156) in 68 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1206.0 (TID 1158) in 67 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1206.0, whose tasks have all completed, from pool
+23/01/16 13:50:35 INFO DAGScheduler: ShuffleMapStage 1206 (filter at RealTimeTrendingProcessor.java:58) finished in 0.072 s
+23/01/16 13:50:35 INFO DAGScheduler: looking for newly runnable stages
+23/01/16 13:50:35 INFO DAGScheduler: running: Set()
+23/01/16 13:50:35 INFO DAGScheduler: waiting: Set(ResultStage 1208)
+23/01/16 13:50:35 INFO DAGScheduler: failed: Set()
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ResultStage 1208 (MapPartitionsRDD[477] at map at RealTimeTrendingProcessor.java:65), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_234 stored as values in memory (estimated size 22.4 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_234_piece0 stored as bytes in memory (estimated size 10.5 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_234_piece0 in memory on spark-master:43441 (size: 10.5 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 234 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ResultStage 1208 (MapPartitionsRDD[477] at map at RealTimeTrendingProcessor.java:65) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1208.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1208.0 (TID 1164, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1208.0 (TID 1165, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1208.0 (TID 1166, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1208.0 (TID 1167, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1208.0 (TID 1168, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1208.0 (TID 1169, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1208.0 (TID 1170, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1208.0 (TID 1171, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7474 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_234_piece0 in memory on 172.22.0.8:38035 (size: 10.5 KiB, free: 431.4 MiB)
+23/01/16 13:50:35 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 64 to 172.22.0.8:51010
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_0 in memory on 172.22.0.8:38035 (size: 15.4 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_3 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_6 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_5 in memory on 172.22.0.8:38035 (size: 15.8 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_2 in memory on 172.22.0.8:38035 (size: 13.5 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_7 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_1 in memory on 172.22.0.8:38035 (size: 14.2 KiB, free: 431.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_474_4 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1208.0 (TID 1164) in 63 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1208.0 (TID 1167) in 67 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1208.0 (TID 1169) in 68 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1208.0 (TID 1171) in 67 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1208.0 (TID 1166) in 71 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1208.0 (TID 1168) in 72 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1208.0 (TID 1165) in 73 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1208.0 (TID 1170) in 71 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1208.0, whose tasks have all completed, from pool
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1208 (runJob at DStreamFunctions.scala:54) finished in 0.081 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 169 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1208: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 169 finished: runJob at DStreamFunctions.scala:54, took 0.161333 s
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.5 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Starting job streaming job 1673877035000 ms.6 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO SparkContext: Starting job: runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO DAGScheduler: Registering RDD 480 (filter at TweetSentimentProcessor.java:56) as input to shuffle 65
+23/01/16 13:50:35 INFO DAGScheduler: Got job 170 (runJob at DStreamFunctions.scala:54) with 8 output partitions
+23/01/16 13:50:35 INFO DAGScheduler: Final stage: ResultStage 1242 (runJob at DStreamFunctions.scala:54)
+23/01/16 13:50:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1235, ShuffleMapStage 1236, ShuffleMapStage 1228, ShuffleMapStage 1237, ShuffleMapStage 1223, ShuffleMapStage 1215, ShuffleMapStage 1230, ShuffleMapStage 1216, ShuffleMapStage 1238, ShuffleMapStage 1232, ShuffleMapStage 1239, ShuffleMapStage 1240, ShuffleMapStage 1226, ShuffleMapStage 1241, ShuffleMapStage 1233, ShuffleMapStage 1227, ShuffleMapStage 1219)
+23/01/16 13:50:35 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1235)
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ShuffleMapStage 1235 (MapPartitionsRDD[480] at filter at TweetSentimentProcessor.java:56), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_235 stored as values in memory (estimated size 14.1 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_235_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_235_piece0 in memory on spark-master:43441 (size: 6.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 235 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 1235 (MapPartitionsRDD[480] at filter at TweetSentimentProcessor.java:56) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1235.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1235.0 (TID 1172, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1235.0 (TID 1173, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1235.0 (TID 1174, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1235.0 (TID 1175, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1235.0 (TID 1176, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1235.0 (TID 1177, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1235.0 (TID 1178, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1235.0 (TID 1179, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7463 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_235_piece0 in memory on 172.22.0.8:38035 (size: 6.4 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1235.0 (TID 1176) in 16 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1235.0 (TID 1178) in 16 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1235.0 (TID 1177) in 16 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1235.0 (TID 1179) in 19 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1235.0 (TID 1173) in 22 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1235.0 (TID 1174) in 22 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1235.0 (TID 1175) in 23 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1235.0 (TID 1172) in 23 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1235.0, whose tasks have all completed, from pool
+23/01/16 13:50:35 INFO DAGScheduler: ShuffleMapStage 1235 (filter at TweetSentimentProcessor.java:56) finished in 0.027 s
+23/01/16 13:50:35 INFO DAGScheduler: looking for newly runnable stages
+23/01/16 13:50:35 INFO DAGScheduler: running: Set()
+23/01/16 13:50:35 INFO DAGScheduler: waiting: Set(ResultStage 1242)
+23/01/16 13:50:35 INFO DAGScheduler: failed: Set()
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ResultStage 1242 (MapPartitionsRDD[485] at map at TweetSentimentProcessor.java:63), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_236 stored as values in memory (estimated size 25.6 KiB, free 433.9 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_236_piece0 stored as bytes in memory (estimated size 11.1 KiB, free 433.8 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_236_piece0 in memory on spark-master:43441 (size: 11.1 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 236 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ResultStage 1242 (MapPartitionsRDD[485] at map at TweetSentimentProcessor.java:63) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1242.0 with 8 tasks
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1242.0 (TID 1180, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1242.0 (TID 1181, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1242.0 (TID 1182, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1242.0 (TID 1183, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1242.0 (TID 1184, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1242.0 (TID 1185, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1242.0 (TID 1186, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1242.0 (TID 1187, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7691 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_236_piece0 in memory on 172.22.0.8:38035 (size: 11.1 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 65 to 172.22.0.8:51010
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_7 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_0 in memory on 172.22.0.8:38035 (size: 15.4 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_4 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_3 in memory on 172.22.0.8:38035 (size: 13.6 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_6 in memory on 172.22.0.8:38035 (size: 13.2 KiB, free: 431.2 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_2 in memory on 172.22.0.8:38035 (size: 13.5 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_1 in memory on 172.22.0.8:38035 (size: 14.2 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added rdd_482_5 in memory on 172.22.0.8:38035 (size: 15.8 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1242.0 (TID 1182) in 29 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1242.0 (TID 1181) in 32 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1242.0 (TID 1180) in 32 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1242.0 (TID 1187) in 32 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1242.0 (TID 1183) in 33 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1242.0 (TID 1186) in 34 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1242.0 (TID 1184) in 35 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1242.0 (TID 1185) in 35 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1242.0, whose tasks have all completed, from pool
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1242 (runJob at DStreamFunctions.scala:54) finished in 0.040 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 170 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1242: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 170 finished: runJob at DStreamFunctions.scala:54, took 0.078572 s
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_237 stored as values in memory (estimated size 176.2 KiB, free 433.7 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_237_piece0 stored as bytes in memory (estimated size 27.3 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_237_piece0 in memory on spark-master:43441 (size: 27.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 237 from runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO SparkContext: Starting job: runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO DAGScheduler: Got job 171 (runJob at DStreamFunctions.scala:54) with 8 output partitions
+23/01/16 13:50:35 INFO DAGScheduler: Final stage: ResultStage 1266 (runJob at DStreamFunctions.scala:54)
+23/01/16 13:50:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1256, ShuffleMapStage 1257, ShuffleMapStage 1261, ShuffleMapStage 1258, ShuffleMapStage 1255, ShuffleMapStage 1265, ShuffleMapStage 1262, ShuffleMapStage 1259, ShuffleMapStage 1248, ShuffleMapStage 1263, ShuffleMapStage 1260, ShuffleMapStage 1264)
+23/01/16 13:50:35 INFO DAGScheduler: Missing parents: List()
+23/01/16 13:50:35 INFO DAGScheduler: Submitting ResultStage 1266 (MapWithStateRDD[312] at mapWithState at TweetSentimentProcessor.java:61), which has no missing parents
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_238 stored as values in memory (estimated size 12.4 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_235_piece0 on spark-master:43441 in memory (size: 6.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_238_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_235_piece0 on 172.22.0.8:38035 in memory (size: 6.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_238_piece0 in memory on spark-master:43441 (size: 5.6 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 238 from broadcast at DAGScheduler.scala:1200
+23/01/16 13:50:35 INFO DAGScheduler: Submitting 8 missing tasks from ResultStage 1266 (MapWithStateRDD[312] at mapWithState at TweetSentimentProcessor.java:61) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Adding task set 1266.0 with 8 tasks
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_231_piece0 on spark-master:43441 in memory (size: 5.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 0.0 in stage 1266.0 (TID 1188, 172.22.0.8, executor 0, partition 0, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 1.0 in stage 1266.0 (TID 1189, 172.22.0.8, executor 0, partition 1, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 2.0 in stage 1266.0 (TID 1190, 172.22.0.8, executor 0, partition 2, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 3.0 in stage 1266.0 (TID 1191, 172.22.0.8, executor 0, partition 3, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 4.0 in stage 1266.0 (TID 1192, 172.22.0.8, executor 0, partition 4, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 5.0 in stage 1266.0 (TID 1193, 172.22.0.8, executor 0, partition 5, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 6.0 in stage 1266.0 (TID 1194, 172.22.0.8, executor 0, partition 6, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO TaskSetManager: Starting task 7.0 in stage 1266.0 (TID 1195, 172.22.0.8, executor 0, partition 7, PROCESS_LOCAL, 7566 bytes)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_231_piece0 on 172.22.0.8:38035 in memory (size: 5.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_236_piece0 on spark-master:43441 in memory (size: 11.1 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_236_piece0 on 172.22.0.8:38035 in memory (size: 11.1 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_238_piece0 in memory on 172.22.0.8:38035 (size: 5.6 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_230_piece0 on spark-master:43441 in memory (size: 5.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_230_piece0 on 172.22.0.8:38035 in memory (size: 5.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_232_piece0 on spark-master:43441 in memory (size: 5.4 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_232_piece0 on 172.22.0.8:38035 in memory (size: 5.4 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_237_piece0 in memory on 172.22.0.8:38035 (size: 27.3 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_233_piece0 on spark-master:43441 in memory (size: 6.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_233_piece0 on 172.22.0.8:38035 in memory (size: 6.3 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_234_piece0 on spark-master:43441 in memory (size: 10.5 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Removed broadcast_234_piece0 on 172.22.0.8:38035 in memory (size: 10.5 KiB, free: 431.1 MiB)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 1.0 in stage 1266.0 (TID 1189) in 103 ms on 172.22.0.8 (executor 0) (1/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 3.0 in stage 1266.0 (TID 1191) in 103 ms on 172.22.0.8 (executor 0) (2/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 7.0 in stage 1266.0 (TID 1195) in 105 ms on 172.22.0.8 (executor 0) (3/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 5.0 in stage 1266.0 (TID 1193) in 113 ms on 172.22.0.8 (executor 0) (4/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 2.0 in stage 1266.0 (TID 1190) in 117 ms on 172.22.0.8 (executor 0) (5/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 6.0 in stage 1266.0 (TID 1194) in 118 ms on 172.22.0.8 (executor 0) (6/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 4.0 in stage 1266.0 (TID 1192) in 119 ms on 172.22.0.8 (executor 0) (7/8)
+23/01/16 13:50:35 INFO TaskSetManager: Finished task 0.0 in stage 1266.0 (TID 1188) in 120 ms on 172.22.0.8 (executor 0) (8/8)
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Removed TaskSet 1266.0, whose tasks have all completed, from pool
+23/01/16 13:50:35 INFO DAGScheduler: ResultStage 1266 (runJob at DStreamFunctions.scala:54) finished in 0.139 s
+23/01/16 13:50:35 INFO DAGScheduler: Job 171 is finished. Cancelling potential speculative or zombie tasks for this job
+23/01/16 13:50:35 INFO TaskSchedulerImpl: Killing all running tasks in stage 1266: Stage finished
+23/01/16 13:50:35 INFO DAGScheduler: Job 171 finished: runJob at DStreamFunctions.scala:54, took 0.142349 s
+23/01/16 13:50:35 INFO ReliableCheckpointRDD: Checkpointing took 179 ms.
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_239 stored as values in memory (estimated size 176.2 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO MemoryStore: Block broadcast_239_piece0 stored as bytes in memory (estimated size 27.3 KiB, free 433.6 MiB)
+23/01/16 13:50:35 INFO BlockManagerInfo: Added broadcast_239_piece0 in memory on spark-master:43441 (size: 27.3 KiB, free: 434.3 MiB)
+23/01/16 13:50:35 INFO SparkContext: Created broadcast 239 from runJob at DStreamFunctions.scala:54
+23/01/16 13:50:35 INFO ReliableRDDCheckpointData: Done checkpointing RDD 312 to hdfs://namenode:8020/cointrendy/checkpoint/ca3da3d1-e582-47b6-a50f-120fb11302a2/rdd-312, new parent is RDD 486
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.6 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Starting job streaming job 1673877035000 ms.7 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Finished job streaming job 1673877035000 ms.7 from job set of time 1673877035000 ms
+23/01/16 13:50:35 INFO JobScheduler: Total delay: 0.773 s for time 1673877035000 ms (execution: 0.731 s)
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 425 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 425
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 438 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 438
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 437 from persistence list
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 436 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 437
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 436
+23/01/16 13:50:35 INFO ShuffledRDD: Removing RDD 244 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 244
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 243 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 243
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 242 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 242
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 455 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 455
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 454 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 454
+23/01/16 13:50:35 INFO MapPartitionsRDD: Removing RDD 453 from persistence list
+23/01/16 13:50:35 INFO BlockManager: Removing RDD 453
+23/01/16 13:50:35 INFO JobGenerator: Checkpointing graph for time 1673877035000 ms
+23/01/16 13:50:35 INFO DStreamGraph: Updating checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO DStreamGraph: Updated checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO CheckpointWriter: Submitted checkpoint of time 1673877035000 ms to writer queue
+23/01/16 13:50:35 INFO CheckpointWriter: Saving checkpoint for time 1673877035000 ms to file 'hdfs://namenode:8020/cointrendy/checkpoint/checkpoint-1673877035000'
+23/01/16 13:50:35 INFO CheckpointWriter: Deleting hdfs://namenode:8020/cointrendy/checkpoint/checkpoint-1673877010000
+23/01/16 13:50:35 INFO CheckpointWriter: Checkpoint for time 1673877035000 ms saved to file 'hdfs://namenode:8020/cointrendy/checkpoint/checkpoint-1673877035000', took 25882 bytes and 35 ms
+23/01/16 13:50:35 INFO DStreamGraph: Clearing checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO DStreamGraph: Cleared checkpoint data for time 1673877035000 ms
+23/01/16 13:50:35 INFO ReceivedBlockTracker: Deleting batches:
+23/01/16 13:50:35 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Attempting to clear 0 old log files in hdfs://namenode:8020/cointrendy/checkpoint/receivedBlockMetadata older than 1673876935000:
+23/01/16 13:50:35 INFO InputInfoTracker: remove old batch metadata:

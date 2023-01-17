@@ -115,6 +115,11 @@ public class StreamProcessor {
         return this;
     }
 
+    public StreamProcessor processWindowTotalSentiment(Broadcast<HashtagData> broadcastData) {
+        TweetSentimentProcessor.processWindowTotalSentiment(filteredStream, broadcastData);
+        return this;
+    }
+
     /**
      * Helper method sections from here
      */
@@ -152,7 +157,6 @@ public class StreamProcessor {
 
     private JavaPairDStream<String, TweetData> mapToPair(final JavaDStream<TweetData> stream) {
         var dStream = stream.mapToPair(tweetData -> new Tuple2<>(tweetData.getTweetId(), tweetData));
-        dStream.print();
         return dStream;
     }
     
@@ -163,7 +167,6 @@ public class StreamProcessor {
                 .timeout(Durations.seconds(3600));//maintain state for one hour
 
         var dStream = key.mapWithState(stateFunc);
-        dStream.print();
         return dStream;
     }
 
@@ -171,7 +174,6 @@ public class StreamProcessor {
             final JavaMapWithStateDStream<String, TweetData, Boolean, Tuple2<TweetData, Boolean>> state) {
         var dsStream = state .filter(tuple -> tuple._2.equals(Boolean.FALSE));
         logger.info("Starting Stream Processing");
-        dsStream.print();
         return dsStream;
     }
 

@@ -8,7 +8,7 @@ import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
 import com.trinhhungfischer.cointrendy.common.entity.TweetSentimentData;
-import com.trinhhungfischer.cointrendy.common.entity.WindowTweetIndexData;
+import com.trinhhungfischer.cointrendy.common.entity.WindowTweetSentimentData;
 import org.apache.log4j.Logger;
 import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.streaming.Durations;
@@ -78,7 +78,7 @@ public class TweetSentimentProcessor {
         long totalTweet = objectOption.getNumTweet() + (state.exists() ? state.get().getNumTweet() : 0);
         long totalPositive = objectOption.getNumPositive() + (state.exists() ? state.get().getNumPositive() : 0);
         long totalNegative = objectOption.getNumNegative() + (state.exists() ? state.get().getNumNegative() : 0);
-        long totalNeural = objectOption.getNumNeural() + (state.exists() ? state.get().getNumNeural() : 0);
+        long totalNeural = objectOption.getNumNeutral() + (state.exists() ? state.get().getNumNeutral() : 0);
 
         TweetSentimentField newSum = new TweetSentimentField(totalTweet, totalPositive, totalNegative, totalNeural);
 
@@ -121,7 +121,7 @@ public class TweetSentimentProcessor {
         tweetSentimentData.setTotalTweets(tuple._2().getNumTweet());
         tweetSentimentData.setTotalPositives(tuple._2().getNumPositive());
         tweetSentimentData.setTotalNegatives(tuple._2().getNumNegative());
-        tweetSentimentData.setTotalNeutrals(tuple._2().getNumNeural());
+        tweetSentimentData.setTotalNeutrals(tuple._2().getNumNeutral());
         tweetSentimentData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         tweetSentimentData.setTimestamp(new Timestamp(new Date().getTime()));
 
@@ -145,7 +145,74 @@ public class TweetSentimentProcessor {
                 "total_sentiment",
                 CassandraJavaUtil.mapToRow(TweetSentimentData.class, columnNameMappings)
         ).saveToCassandra();
+    }
 
+/**
+ * Method to get window tweets counts of different type for each hashtag. Window duration = 30 seconds
+ * and Slide interval = 10 seconds
+ *
+ * @param filteredData data stream
+ * @param broadcastData Broad tweets hashtag data
+*/
+public static void processWindowTotalSentiment(JavaDStream<TweetData> filteredData, Broadcast<HashtagData> broadcastData) {
+        // Reduce by key and window (30 sec window and 10 seconds slide)
+        JavaDStream<WindowTweetSentimentData> sentimentDStream = filteredData
+                .map(TweetSentimentProcessor::mapToTweetSentimentField)
+                .flatMapToPair(
+                        sentimentPair -> {
+                            List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
+
+                            for (String hashtag: sentimentPair._1().getHashtags()) {
+                                AggregateKey aggregateKey = new AggregateKey(hashtag);
+                                output.add(new Tuple2<>(aggregateKey, sentimentPair._2()));
+                            }
+
+                            return output.iterator();
+                        }
+                )
+                .filter(hashtagPair -> {
+                    String hashtag = hashtagPair._1().getHashtag();
+                    return broadcastData.value().isNeededHashtags(hashtag);
+                })
+                .reduceByKeyAndWindow((a, b) -> TweetSentimentField.add(a, b), Durations.seconds(30), Durations.seconds(10))
+                .map(TweetSentimentProcessor::mapToWindowSentimentDate);
+
+        saveWindowSentimentData(sentimentDStream);
+    }
+
+    private static WindowTweetSentimentData mapToWindowSentimentDate(Tuple2<AggregateKey, TweetSentimentField> tuple) {
+        logger.debug("Window Count : " +
+                "key " + tuple._1().getHashtag() + " value " + tuple._2());
+
+        WindowTweetSentimentData tweetSentimentData = new WindowTweetSentimentData();
+        tweetSentimentData.setHashtag(tuple._1().getHashtag());
+        tweetSentimentData.setTotalTweets(tuple._2().getNumTweet());
+        tweetSentimentData.setTotalPositives(tuple._2().getNumPositive());
+        tweetSentimentData.setTotalNegatives(tuple._2().getNumNegative());
+        tweetSentimentData.setTotalNeutrals(tuple._2().getNumNeutral());
+        Date currentTime = new Date();
+        tweetSentimentData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(currentTime));
+        tweetSentimentData.setTimestamp(new Timestamp(currentTime.getTime()));
+        return tweetSentimentData;
+    }
+
+    private static void saveWindowSentimentData(final JavaDStream<WindowTweetSentimentData> tweetSentimentData) {
+        // Map class properties to cassandra table columns
+        HashMap<String, String> columnNameMappings = new HashMap<>();
+        columnNameMappings.put("hashtag", "hashtag");
+        columnNameMappings.put("totalTweets", "total_tweets");
+        columnNameMappings.put("totalPositives", "total_positives");
+        columnNameMappings.put("totalNegatives", "total_negatives");
+        columnNameMappings.put("totalNeutrals", "total_neutrals");
+        columnNameMappings.put("recordDate", "record_date");
+        columnNameMappings.put("timestamp", "timestamp");
+
+        // Call CassandraStreamingJavaUtils function to save in DB
+        CassandraStreamingJavaUtil.javaFunctions(tweetSentimentData).writerBuilder(
+                "tweets_info",
+                "total_sentiment_windows",
+                CassandraJavaUtil.mapToRow(WindowTweetSentimentData.class, columnNameMappings)
+        ).saveToCassandra();
     }
 
 }
@@ -154,13 +221,13 @@ class TweetSentimentField implements Serializable {
     private Long numTweet;
     private Long numPositive;
     private Long numNegative;
-    private Long numNeural;
+    private Long numNeutral;
 
-    public TweetSentimentField(Long numTweet, Long numPositive, Long numNegative, Long numNeural) {
+    public TweetSentimentField(Long numTweet, Long numPositive, Long numNegative, Long numNeutral) {
         this.numTweet = numTweet;
         this.numPositive = numPositive;
         this.numNegative = numNegative;
-        this.numNeural = numNeural;
+        this.numNeutral = numNeutral;
     }
 
     public Long getNumTweet() {
@@ -175,15 +242,15 @@ class TweetSentimentField implements Serializable {
         return numNegative;
     }
 
-    public Long getNumNeural() {
-        return numNeural;
+    public Long getNumNeutral() {
+        return numNeutral;
     }
 
     public static TweetSentimentField add(TweetSentimentField o1, TweetSentimentField o2){
         long totalTweet = o1.getNumTweet() + o2.getNumTweet();
         long totalPositive = o1.getNumPositive() + o2.getNumPositive();
         long totalNegative = o1.getNumNegative() + o2.getNumNegative();
-        long totalNeural = o1.getNumNeural() + o2.getNumNeural();
+        long totalNeural = o1.getNumNeutral() + o2.getNumNeutral();
         return new TweetSentimentField(totalTweet, totalPositive, totalNegative, totalNeural);
 
     }
