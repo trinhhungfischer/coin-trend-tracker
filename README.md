@@ -46,7 +46,7 @@ Mô hình luồng dự án sẽ dựa trên kiến trúc Lambda (&#955;) với c
 - Run realtime job `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.PipelineProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
 - Access the Spark cluster <http://localhost:8080>
 - Run the twitter producer `java -jar kafka/twitterProducer/target/twitter-kafka-producer-1.0.0.jar`
-
+- Run the batch job `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.batch.BatchProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
 ### Cassandra
 
 - Log in `docker exec -it cassandra-iot cqlsh --username cassandra --password cassandra`

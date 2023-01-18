@@ -67,3 +67,29 @@ CREATE TABLE total_sentiment_windows
  timestamp timestamp,
  PRIMARY KEY ((hashtag), record_date)
 );
+
+CREATE TABLE total_tweets_batch
+(
+ hashtag text,
+ total_tweets bigint,
+ total_likes bigint,
+ total_retweets bigint,
+ total_replies bigint,
+ total_quotes bigint,
+ record_date text,
+ timestamp timestamp,
+ PRIMARY KEY ((hashtag), record_date)
+);
+
+CREATE TABLE total_tweets_windows_batch
+(
+ hashtag text,
+ total_tweets bigint,
+ total_likes bigint,
+ total_retweets bigint,
+ total_replies bigint,
+ total_quotes bigint,
+ record_date text,
+ timestamp timestamp,
+ PRIMARY KEY ((hashtag), record_date)
+);

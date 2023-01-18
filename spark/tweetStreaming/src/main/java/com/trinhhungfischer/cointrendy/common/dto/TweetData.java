@@ -20,8 +20,9 @@ public class TweetData implements Serializable {
 
     private Map<String, String> metaData;
 
-    public TweetData(String tweetId, String text, ArrayList<String> editTweetIds, ArrayList<String> hashtags, String language,
-                     int retweetCount, int replyCount, int likeCount, int quoteCount, Timestamp createdAt, String authorId) {
+    public TweetData(String tweetId, String text, ArrayList<String> editTweetIds, ArrayList<String> hashtags,
+                     String language, long retweetCount, long replyCount, long likeCount, long quoteCount,
+                     Timestamp createdAt, String authorId) {
         this.tweetId = tweetId;
         this.text = text;
         this.editTweetIds = editTweetIds;

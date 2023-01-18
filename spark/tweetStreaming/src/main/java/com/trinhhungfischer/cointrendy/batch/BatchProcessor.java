@@ -5,6 +5,7 @@ import com.trinhhungfischer.cointrendy.common.ProcessorUtils;
 import com.trinhhungfischer.cointrendy.common.PropertyFileReader;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -13,6 +14,7 @@ import scala.reflect.ClassTag;
 
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 public class BatchProcessor {
     public static void main(String[] args) throws Exception {
@@ -36,7 +38,12 @@ public class BatchProcessor {
 
         // Batch process starts here
         Dataset<Row> dataFrame = getDataFrame(sparkSession, file);
-//        var rdd = dataFrame.javaRDD().map();
+        JavaRDD<TweetData> rdd = dataFrame.javaRDD().map(BatchProcessor::transformToTweetData);
+
+        BatchTrendingProcessor.processTotalTweetData(rdd, broadcastHashtagsValue);
+        BatchTrendingProcessor.processWindowTotalTweetData(rdd, broadcastHashtagsValue);
+        sparkSession.close();
+        sparkSession.stop();
 
     }
 
@@ -44,7 +51,8 @@ public class BatchProcessor {
         TweetData tweetData = new TweetData(
                 row.getString(0),
                 row.getString(1),
-                row.getList(2).stream().map(_.as)
+                row.getList (2).stream().map(Object::toString).collect(Collectors.toCollection(ArrayList::new)),
+                row.getList (3).stream().map(Object::toString).collect(Collectors.toCollection(ArrayList::new)),
                 row.getString(4),
                 row.getLong(5),
                 row.getLong(6),
