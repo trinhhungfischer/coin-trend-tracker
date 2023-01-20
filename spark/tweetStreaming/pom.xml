@@ -66,6 +66,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.apache.opennlp/opennlp-tools -->
+    <dependency>
+      <groupId>org.apache.opennlp</groupId>
+      <artifactId>opennlp-tools</artifactId>
+      <version>1.9.1</version>
+    </dependency>
+
   </dependencies>
 
   <build>

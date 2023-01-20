@@ -91,7 +91,7 @@ public class TweetSentimentProcessor {
         TweetSentimentField sentimentField;
 
         String tweetText = tweetData.getText();
-        Sentiment curSentiment = SentimentWord.getWordSentiment(tweetText);
+        Sentiment curSentiment = SentimentWord.getTextSentiment(tweetText);
         switch (curSentiment) {
             case POSITIVE:
                 sentimentField = new TweetSentimentField(1L, 1L, 0L, 0L);

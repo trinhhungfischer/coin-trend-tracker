@@ -57,9 +57,9 @@ public class BatchProcessor {
                 row.getLong(5),
                 row.getLong(6),
                 row.getLong(7),
-                row.getLong(7),
-                row.getTimestamp(8),
-                row.getString(9)
+                row.getLong(8),
+                row.getTimestamp(9),
+                row.getString(10)
         );
         return tweetData;
     }
