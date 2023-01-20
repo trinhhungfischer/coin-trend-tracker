@@ -3,10 +3,11 @@ package com.trinhhungfischer.cointrendy.streaming;
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
 import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
 import com.trinhhungfischer.cointrendy.common.constants.Sentiment;
-import com.trinhhungfischer.cointrendy.common.constants.SentimentWord;
+import com.trinhhungfischer.cointrendy.common.SentimentJob;
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetSentimentField;
 import com.trinhhungfischer.cointrendy.common.entity.TweetSentimentData;
 import com.trinhhungfischer.cointrendy.common.entity.WindowTweetSentimentData;
 import org.apache.log4j.Logger;
@@ -41,7 +42,7 @@ public class TweetSentimentProcessor {
 
         //
         JavaDStream<TweetSentimentData> totalSentimentDStream = filteredTweetData.
-                map(TweetSentimentProcessor::mapToTweetSentimentField)
+                map(TweetSentimentField::mapToTweetSentimentField)
                 .flatMapToPair(sentimentPair -> {
                             List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
 
@@ -87,30 +88,7 @@ public class TweetSentimentProcessor {
         return totalPair;
     }
 
-    private static Tuple2<TweetData, TweetSentimentField> mapToTweetSentimentField(TweetData tweetData) {
-        TweetSentimentField sentimentField;
 
-        String tweetText = tweetData.getText();
-        Sentiment curSentiment = SentimentWord.getTextSentiment(tweetText);
-        switch (curSentiment) {
-            case POSITIVE:
-                sentimentField = new TweetSentimentField(1L, 1L, 0L, 0L);
-                break;
-            case NEGATIVE:
-                sentimentField = new TweetSentimentField(1L, 0L, 1L, 0L);
-                break;
-            case NEUTRAL:
-                sentimentField = new TweetSentimentField(1L, 0L, 0L, 1L);
-                break;
-            default:
-                sentimentField = new TweetSentimentField(1L, 0L, 0L, 0L);
-                break;
-        }
-
-        Tuple2<TweetData, TweetSentimentField> output = new Tuple2<TweetData, TweetSentimentField>(tweetData, sentimentField);
-
-        return output;
-    }
 
     private static TweetSentimentData mapToTotalSentiment(Tuple2<AggregateKey, TweetSentimentField> tuple) {
         logger.debug(
@@ -156,7 +134,7 @@ public class TweetSentimentProcessor {
 public static void processWindowTotalSentiment(JavaDStream<TweetData> filteredData, Broadcast<HashtagData> broadcastData) {
         // Reduce by key and window (30 sec window and 10 seconds slide)
         JavaDStream<WindowTweetSentimentData> sentimentDStream = filteredData
-                .map(TweetSentimentProcessor::mapToTweetSentimentField)
+                .map(TweetSentimentField::mapToTweetSentimentField)
                 .flatMapToPair(
                         sentimentPair -> {
                             List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
@@ -214,43 +192,4 @@ public static void processWindowTotalSentiment(JavaDStream<TweetData> filteredDa
         ).saveToCassandra();
     }
 
-}
-
-class TweetSentimentField implements Serializable {
-    private Long numTweet;
-    private Long numPositive;
-    private Long numNegative;
-    private Long numNeutral;
-
-    public TweetSentimentField(Long numTweet, Long numPositive, Long numNegative, Long numNeutral) {
-        this.numTweet = numTweet;
-        this.numPositive = numPositive;
-        this.numNegative = numNegative;
-        this.numNeutral = numNeutral;
-    }
-
-    public Long getNumTweet() {
-        return numTweet;
-    }
-
-    public Long getNumPositive() {
-        return numPositive;
-    }
-
-    public Long getNumNegative() {
-        return numNegative;
-    }
-
-    public Long getNumNeutral() {
-        return numNeutral;
-    }
-
-    public static TweetSentimentField add(TweetSentimentField o1, TweetSentimentField o2){
-        long totalTweet = o1.getNumTweet() + o2.getNumTweet();
-        long totalPositive = o1.getNumPositive() + o2.getNumPositive();
-        long totalNegative = o1.getNumNegative() + o2.getNumNegative();
-        long totalNeural = o1.getNumNeutral() + o2.getNumNeutral();
-        return new TweetSentimentField(totalTweet, totalPositive, totalNegative, totalNeural);
-
-    }
 }

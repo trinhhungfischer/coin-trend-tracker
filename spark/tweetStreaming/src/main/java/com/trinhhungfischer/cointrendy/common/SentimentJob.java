@@ -1,12 +1,11 @@
-package com.trinhhungfischer.cointrendy.common.constants;
+package com.trinhhungfischer.cointrendy.common;
 
-import java.io.InputStream;
+import com.trinhhungfischer.cointrendy.common.constants.Sentiment;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import opennlp.tools.doccat.DocumentCategorizerME;
-
-public class SentimentWord {
+public class SentimentJob {
 
 
     private static ArrayList<String> positiveWords = new ArrayList<String>(Arrays.asList(

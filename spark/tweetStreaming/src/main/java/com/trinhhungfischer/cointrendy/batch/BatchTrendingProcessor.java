@@ -14,8 +14,6 @@ import org.apache.log4j.Logger;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.broadcast.Broadcast;
-import org.apache.spark.streaming.api.java.JavaPairDStream;
-import org.codehaus.janino.Java;
 import scala.Tuple2;
 
 import java.sql.Timestamp;
