@@ -43,19 +43,16 @@ public class HashtagData implements Serializable {
         return hashtags;
     }
 
+    public void setHashtags(List<String> hashtags) {
+        this.hashtags = hashtags;
+    }
+
     public boolean isNeededHashtags(String hashtag) {
         if (this.hashtags == null || this.hashtags.size() == 0) {
             return false;
         }
 
-        if (hashtags.contains(hashtag.toLowerCase())) {
-            return true;
-        }
-        return false;
-    }
-
-    public void setHashtags(List<String> hashtags) {
-        this.hashtags = hashtags;
+        return hashtags.contains(hashtag.toLowerCase());
     }
 
 }

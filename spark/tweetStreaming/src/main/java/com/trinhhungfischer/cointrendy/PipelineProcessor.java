@@ -30,12 +30,14 @@ import java.util.*;
 
 /**
  * This class represents Kafka Twitter Streaming and create pipeline for processing the Tweets Data
+ *
  * @author trinhhungfischer
  */
 public class PipelineProcessor implements Serializable {
 
     private static final Logger logger = Logger.getLogger(PipelineProcessor.class);
     private final Properties properties;
+
     public PipelineProcessor(Properties properties) {
         this.properties = properties;
     }
@@ -45,6 +47,43 @@ public class PipelineProcessor implements Serializable {
         Properties properties = PropertyFileReader.readPropertyFile(file);
         PipelineProcessor pipelineProcessor = new PipelineProcessor(properties);
         pipelineProcessor.start();
+    }
+
+    /**
+     * @param prop Properties to configure the streaming
+     * @param jars JARS files to configure
+     * @return SparkConf class
+     */
+    private static SparkConf getSparkConf(Properties prop, String[] jars) {
+        return new SparkConf()
+                .setAppName(prop.getProperty(""))
+                .setMaster(prop.getProperty("com.twitter.app.spark.master"))
+                .set("spark.cassandra.connection.host", prop.getProperty("com.twitter.app.cassandra.host"))
+                .set("spark.cassandra.connection.port", prop.getProperty("com.twitter.app.cassandra.port"))
+                .set("spark.cassandra.auth.username", prop.getProperty("com.twitter.app.cassandra.username"))
+                .set("spark.cassandra.auth.password", prop.getProperty("com.twitter.app.cassandra.password"))
+                .set("spark.cassandra.connection.keep_alive_ms", prop.getProperty("com.twitter.app.cassandra.keep_alive"));
+    }
+
+    /**
+     * @param properties
+     * @return
+     */
+    private static Map<String, Object> getKafkaParams(Properties properties) {
+        Map<String, Object> kafkaProperties = new HashMap<>();
+        kafkaProperties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, properties.getProperty("com.twitter.app.kafka.brokerlist"));
+        kafkaProperties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        kafkaProperties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, TweetDataDeserializer.class);
+        kafkaProperties.put(ConsumerConfig.GROUP_ID_CONFIG, properties.getProperty("com.twitter.app.kafka.topic"));
+        kafkaProperties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, properties.getProperty("com.twitter.app.kafka.resetType"));
+        kafkaProperties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+        return kafkaProperties;
+    }
+
+    private static HashtagData getHashtagData() {
+        HashtagData hashtagData = new HashtagData();
+        hashtagData.getHashtags();
+        return hashtagData;
     }
 
     private void start() throws Exception {
@@ -69,10 +108,10 @@ public class PipelineProcessor implements Serializable {
 
         // Create kafka steamer instance
         JavaInputDStream<ConsumerRecord<String, TweetData>> kafkaStream = getKafkaStream(
-             properties,
-             streamingContext,
-             kafkaProperties,
-             offsets
+                properties,
+                streamingContext,
+                kafkaProperties,
+                offsets
         );
 
         logger.info("Starting Kafka Steaming Process");
@@ -104,45 +143,10 @@ public class PipelineProcessor implements Serializable {
         streamingContext.awaitTermination();
     }
 
-
-
-    /**
-     *
-     * @param prop  Properties to configure the streaming
-     * @param jars  JARS files to configure
-     * @return      SparkConf class
-     */
-    private static SparkConf getSparkConf(Properties prop, String[] jars) {
-        return new SparkConf()
-                .setAppName(prop.getProperty(""))
-                .setMaster(prop.getProperty("com.twitter.app.spark.master"))
-                .set("spark.cassandra.connection.host", prop.getProperty("com.twitter.app.cassandra.host"))
-                .set("spark.cassandra.connection.port", prop.getProperty("com.twitter.app.cassandra.port"))
-                .set("spark.cassandra.auth.username", prop.getProperty("com.twitter.app.cassandra.username"))
-                .set("spark.cassandra.auth.password", prop.getProperty("com.twitter.app.cassandra.password"))
-                .set("spark.cassandra.connection.keep_alive_ms", prop.getProperty("com.twitter.app.cassandra.keep_alive"));
-    }
-
-
-    /**
-     *
-     * @param properties
-     * @return
-     */
-    private static Map<String, Object> getKafkaParams(Properties properties) {
-        Map<String, Object> kafkaProperties = new HashMap<>();
-        kafkaProperties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, properties.getProperty("com.twitter.app.kafka.brokerlist"));
-        kafkaProperties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        kafkaProperties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, TweetDataDeserializer.class);
-        kafkaProperties.put(ConsumerConfig.GROUP_ID_CONFIG, properties.getProperty("com.twitter.app.kafka.topic"));
-        kafkaProperties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, properties.getProperty("com.twitter.app.kafka.resetType"));
-        kafkaProperties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
-        return kafkaProperties;
-    }
-
     /**
      * This method creates a directed stream from properties
      * and stream context
+     *
      * @param prop
      * @param streamingContext
      * @param kafkaProperties
@@ -155,7 +159,7 @@ public class PipelineProcessor implements Serializable {
             Map<String, Object> kafkaProperties,
             Map<TopicPartition, Long> fromOffsets
     ) {
-        List<String> topicSet = Arrays.asList(new String[]{prop.getProperty("com.twitter.app.kafka.topic")});
+        List<String> topicSet = Arrays.asList(prop.getProperty("com.twitter.app.kafka.topic"));
         if (fromOffsets.isEmpty()) {
             return KafkaUtils.createDirectStream(
                     streamingContext,
@@ -170,7 +174,6 @@ public class PipelineProcessor implements Serializable {
                 ConsumerStrategies.Subscribe(topicSet, kafkaProperties, fromOffsets)
         );
     }
-
 
     private Map<TopicPartition, Long> getOffsets(final String parquetFile, final SparkSession sparkSession) {
         try {
@@ -197,18 +200,10 @@ public class PipelineProcessor implements Serializable {
             }
         });
     }
-
-
-    private static HashtagData getHashtagData() {
-        HashtagData hashtagData = new HashtagData();
-        hashtagData.getHashtags();
-        return hashtagData;
-    }
 }
 
 /**
  * This class implements OffsetCommitCallback interface
- *
  */
 final class TwitterOffsetCommitCallback implements OffsetCommitCallback, Serializable {
 
@@ -217,7 +212,7 @@ final class TwitterOffsetCommitCallback implements OffsetCommitCallback, Seriali
     @Override
     public void onComplete(Map<TopicPartition, OffsetAndMetadata> offsets, Exception exception) {
         log.info("---------------------------------------------------");
-        log.info(String.format("{0} | {1}", new Object[]{offsets, exception}));
+        log.info(String.format("{0} | {1}", offsets, exception));
         log.info("---------------------------------------------------");
     }
 }

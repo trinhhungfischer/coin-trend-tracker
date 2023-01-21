@@ -6,6 +6,7 @@ public enum Sentiment {
     NEUTRAL(0);
 
     private final int value;
+
     Sentiment(int value) {
         this.value = value;
     }

@@ -11,6 +11,7 @@ public class TweetIndexData {
     private Long totalQuotes;
     private String recordDate;
     private Timestamp timestamp;
+
     public String getHashtag() {
         return hashtag;
     }

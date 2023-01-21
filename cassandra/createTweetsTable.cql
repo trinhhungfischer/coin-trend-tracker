@@ -94,7 +94,7 @@ CREATE TABLE total_tweets_windows_batch
  PRIMARY KEY ((hashtag), record_date)
 );
 
-CREATE TABLE total_sentiment
+CREATE TABLE total_sentiment_batch
 (
  hashtag text,
  total_tweets bigint,
@@ -106,7 +106,7 @@ CREATE TABLE total_sentiment
  PRIMARY KEY ((hashtag), record_date)
 );
 
-CREATE TABLE total_sentiment_windows
+CREATE TABLE total_sentiment_windows_batch
 (
  hashtag text,
  total_tweets bigint,

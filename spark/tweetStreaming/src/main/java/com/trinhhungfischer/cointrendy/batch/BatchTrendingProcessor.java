@@ -1,7 +1,6 @@
 package com.trinhhungfischer.cointrendy.batch;
 
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
-import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
 import com.trinhhungfischer.cointrendy.common.TweetDataTimestampComparator;
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
@@ -31,7 +30,7 @@ public class BatchTrendingProcessor {
         JavaPairRDD<AggregateKey, TweetAnalysisField> analysisDStream = filteredTweetData
                 .flatMapToPair(tweetData -> {
                     List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
-                    for (String hashtag: tweetData.getHashtags()) {
+                    for (String hashtag : tweetData.getHashtags()) {
                         AggregateKey aggregateKey = new AggregateKey(hashtag);
                         TweetAnalysisField tweetIndex = new TweetAnalysisField(1L, tweetData.getLikeCount(),
                                 tweetData.getRetweetCount(), tweetData.getReplyCount(), tweetData.getQuoteCount());
@@ -113,15 +112,15 @@ public class BatchTrendingProcessor {
         // Filter the data in a given period
         JavaRDD<TweetData> filteredTimeData = data
                 .filter(measurement ->
-                    (measurement.getCreatedAt().equals(start) || measurement.getCreatedAt().after(start))
-                            && measurement.getCreatedAt().before(end)
+                        (measurement.getCreatedAt().equals(start) || measurement.getCreatedAt().after(start))
+                                && measurement.getCreatedAt().before(end)
                 );
 
         // Transform date filter data to window tweet index data
         JavaRDD<WindowTweetIndexData> tweetIndexDataJavaRDD = filteredTimeData
                 .flatMapToPair(tweetData -> {
                     List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
-                    for (String hashtag: tweetData.getHashtags()) {
+                    for (String hashtag : tweetData.getHashtags()) {
                         AggregateKey aggregateKey = new AggregateKey(hashtag);
                         TweetAnalysisField tweetIndex = new TweetAnalysisField(1L, tweetData.getLikeCount(),
                                 tweetData.getRetweetCount(), tweetData.getReplyCount(), tweetData.getQuoteCount());

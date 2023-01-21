@@ -14,7 +14,6 @@ import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.State;
 import org.apache.spark.streaming.StateSpec;
 import org.apache.spark.streaming.api.java.JavaDStream;
-import scala.Serializable;
 import scala.Tuple2;
 
 import java.sql.Timestamp;
@@ -26,6 +25,7 @@ import java.util.List;
 
 /**
  * Class to process Tweet Data stem to produce Tweet data details
+ *
  * @author trinhhungfischer
  */
 public class RealTimeTrendingProcessor {
@@ -36,6 +36,7 @@ public class RealTimeTrendingProcessor {
      * This method to get tweets for each different hashtags
      * and update them accordingly when there is new tweets with each
      * related hashtags
+     *
      * @param filteredTweetData
      * @param broadcastData
      */
@@ -49,15 +50,15 @@ public class RealTimeTrendingProcessor {
         // We need to get count of tweets group by hashtag
         JavaDStream<TweetIndexData> totalTweetDStream = filteredTweetData
                 .flatMapToPair(tweetData -> {
-                        List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
-                        for (String hashtag: tweetData.getHashtags()) {
-                            AggregateKey aggregateKey = new AggregateKey(hashtag);
-                            TweetAnalysisField tweetIndex = new TweetAnalysisField(1L, tweetData.getLikeCount(),
-                                    tweetData.getRetweetCount(), tweetData.getReplyCount(), tweetData.getQuoteCount());
-                            output.add(new Tuple2<>(aggregateKey, tweetIndex));
-                        }
-                        return output.iterator();
-                    })
+                    List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
+                    for (String hashtag : tweetData.getHashtags()) {
+                        AggregateKey aggregateKey = new AggregateKey(hashtag);
+                        TweetAnalysisField tweetIndex = new TweetAnalysisField(1L, tweetData.getLikeCount(),
+                                tweetData.getRetweetCount(), tweetData.getReplyCount(), tweetData.getQuoteCount());
+                        output.add(new Tuple2<>(aggregateKey, tweetIndex));
+                    }
+                    return output.iterator();
+                })
                 .filter(hashtagPair -> {
                     String hashtag = hashtagPair._1().getHashtag();
                     return broadcastData.value().isNeededHashtags(hashtag);
@@ -141,7 +142,7 @@ public class RealTimeTrendingProcessor {
      * Method to get window tweets counts of different type for each hashtag. Window duration = 30 seconds
      * and Slide interval = 10 seconds
      *
-     * @param filteredData data stream
+     * @param filteredData  data stream
      * @param broadcastData Broad tweets hashtag data
      */
     public static void processWindowTweetTotalData(JavaDStream<TweetData> filteredData, Broadcast<HashtagData> broadcastData) {
@@ -149,7 +150,7 @@ public class RealTimeTrendingProcessor {
         JavaDStream<WindowTweetIndexData> analysisDStream = filteredData
                 .flatMapToPair(tweetData -> {
                     List<Tuple2<AggregateKey, TweetAnalysisField>> output = new ArrayList();
-                    for (String hashtag: tweetData.getHashtags()) {
+                    for (String hashtag : tweetData.getHashtags()) {
                         AggregateKey aggregateKey = new AggregateKey(hashtag);
                         TweetAnalysisField tweetIndex = new TweetAnalysisField(1L, tweetData.getLikeCount(),
                                 tweetData.getRetweetCount(), tweetData.getReplyCount(), tweetData.getQuoteCount());
@@ -203,7 +204,6 @@ public class RealTimeTrendingProcessor {
         columnNameMappings.put("totalQuotes", "total_quotes");
         columnNameMappings.put("recordDate", "record_date");
         columnNameMappings.put("timestamp", "timestamp");
-
 
 
         // Call CassandraStreamingJavaUtils function to save in DB

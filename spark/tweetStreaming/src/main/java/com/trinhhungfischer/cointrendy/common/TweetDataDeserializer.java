@@ -13,7 +13,7 @@ import java.util.Map;
  * @author trinhhungfischer
  */
 public class TweetDataDeserializer implements Deserializer<TweetData> {
-    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public TweetData fromBytes(byte[] bytes) {
         try {

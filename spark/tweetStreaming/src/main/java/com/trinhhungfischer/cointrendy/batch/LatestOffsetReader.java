@@ -13,19 +13,28 @@ import java.util.stream.Collectors;
 
 /**
  * Read from the HDFS the latest processed kafka offset
- * 
  */
 public class LatestOffsetReader {
-    
-    private Dataset<Row> parquetData;
 
     final SparkSession sparkSession;
-    
     final String file;
+    private Dataset<Row> parquetData;
 
     public LatestOffsetReader(final SparkSession sparkSession, final String file) {
         this.sparkSession = sparkSession;
         this.file = file;
+    }
+
+    private static Tuple2<TopicPartition, Long> mapToPartition(Row row) {
+        TopicPartition topicPartition = new TopicPartition(
+                row.getString(row.fieldIndex("topic")),
+                row.getInt(row.fieldIndex("kafkaPartition"))
+        );
+        Long offSet = Long.valueOf(row.getString(row.fieldIndex("untilOffset")));
+        return new Tuple2<>(
+                topicPartition,
+                offSet
+        );
     }
 
     public LatestOffsetReader read() {
@@ -48,17 +57,5 @@ public class LatestOffsetReader {
                 .collect(Collectors.toMap(Tuple2::_1, Tuple2::_2));
     }
 
-    private static Tuple2<TopicPartition, Long> mapToPartition(Row row) {
-        TopicPartition topicPartition = new TopicPartition(
-                row.getString(row.fieldIndex("topic")),
-                row.getInt(row.fieldIndex("kafkaPartition"))
-        );
-        Long offSet = Long.valueOf(row.getString(row.fieldIndex("untilOffset")));
-        return new Tuple2<>(
-                topicPartition,
-                offSet
-        );
-    }
-    
-    
+
 }

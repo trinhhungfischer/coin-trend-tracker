@@ -25,13 +25,12 @@ import java.util.List;
 
 /**
  * Class to process filtered Tweets data to get tweet sentiment
- *
  */
 public class RealtimeSentimentProcessor {
     private static final Logger logger = Logger.getLogger(RealtimeSentimentProcessor.class);
 
     public static void processTweetTotalSentiment(JavaDStream<TweetData> filteredTweetData,
-                                             Broadcast<HashtagData> broadcastData) {
+                                                  Broadcast<HashtagData> broadcastData) {
         // Everytime data state is changed, it will update the tweet sentiment table
         StateSpec<AggregateKey, TweetSentimentField, TweetSentimentField, Tuple2<AggregateKey, TweetSentimentField>> stateSpec = StateSpec
                 .function(RealtimeSentimentProcessor::updateState)
@@ -86,7 +85,6 @@ public class RealtimeSentimentProcessor {
     }
 
 
-
     private static TweetSentimentData mapToTotalSentiment(Tuple2<AggregateKey, TweetSentimentField> tuple) {
         logger.debug(
                 "Total Count : " + "key " + tuple._1().getHashtag() + " value " + tuple._2().getNumTweet());
@@ -121,14 +119,14 @@ public class RealtimeSentimentProcessor {
         ).saveToCassandra();
     }
 
-/**
- * Method to get window tweets counts of different type for each hashtag. Window duration = 30 seconds
- * and Slide interval = 10 seconds
- *
- * @param filteredData data stream
- * @param broadcastData Broad tweets hashtag data
-*/
-public static void processWindowTotalSentiment(JavaDStream<TweetData> filteredData, Broadcast<HashtagData> broadcastData) {
+    /**
+     * Method to get window tweets counts of different type for each hashtag. Window duration = 30 seconds
+     * and Slide interval = 10 seconds
+     *
+     * @param filteredData  data stream
+     * @param broadcastData Broad tweets hashtag data
+     */
+    public static void processWindowTotalSentiment(JavaDStream<TweetData> filteredData, Broadcast<HashtagData> broadcastData) {
         // Reduce by key and window (30 sec window and 10 seconds slide)
         JavaDStream<WindowTweetSentimentData> sentimentDStream = filteredData
                 .map(TweetSentimentField::mapToTweetSentimentField)
@@ -136,7 +134,7 @@ public static void processWindowTotalSentiment(JavaDStream<TweetData> filteredDa
                         sentimentPair -> {
                             List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
 
-                            for (String hashtag: sentimentPair._1().getHashtags()) {
+                            for (String hashtag : sentimentPair._1().getHashtags()) {
                                 AggregateKey aggregateKey = new AggregateKey(hashtag);
                                 output.add(new Tuple2<>(aggregateKey, sentimentPair._2()));
                             }

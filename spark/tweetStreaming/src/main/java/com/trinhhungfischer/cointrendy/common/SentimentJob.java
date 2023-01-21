@@ -8,8 +8,7 @@ import java.util.Arrays;
 public class SentimentJob {
 
 
-    private static ArrayList<String> positiveWords = new ArrayList<String>(Arrays.asList(
-
+    private static final ArrayList<String> positiveWords = new ArrayList<String>(Arrays.asList(
 
 
             "upgrade", "upgraded", "long", "buy", "buying", "growth", "good",
@@ -18,7 +17,7 @@ public class SentimentJob {
             "potential", "success", "winner", "winning", "good"
     ));
 
-    private static ArrayList<String> negativeWords = new ArrayList<String>(Arrays.asList(
+    private static final ArrayList<String> negativeWords = new ArrayList<String>(Arrays.asList(
             "downgraded",
             "bears",
             "bear",

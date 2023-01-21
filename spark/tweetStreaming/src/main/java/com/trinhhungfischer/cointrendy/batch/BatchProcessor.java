@@ -53,8 +53,8 @@ public class BatchProcessor {
         TweetData tweetData = new TweetData(
                 row.getString(0),
                 row.getString(1),
-                row.getList (2).stream().map(Object::toString).collect(Collectors.toCollection(ArrayList::new)),
-                row.getList (3).stream().map(Object::toString).collect(Collectors.toCollection(ArrayList::new)),
+                row.getList(2).stream().map(Object::toString).collect(Collectors.toCollection(ArrayList::new)),
+                row.getList(3).stream().map(Object::toString).collect(Collectors.toCollection(ArrayList::new)),
                 row.getString(4),
                 row.getLong(5),
                 row.getLong(6),
@@ -69,6 +69,7 @@ public class BatchProcessor {
     public static Dataset<Row> getDataFrame(SparkSession sqlContext, String file) {
         return sqlContext.read().parquet(file);
     }
+
     private static HashtagData getHashtagData() {
         HashtagData hashtagData = new HashtagData();
         hashtagData.getHashtags();

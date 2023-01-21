@@ -34,9 +34,7 @@ public class AggregateKey implements Serializable {
     public boolean equals(Object obj) {
         if (obj != null && obj instanceof AggregateKey) {
             AggregateKey other = (AggregateKey) obj;
-            if (other.getHashtag() != null && other.getHashtag().equals(this.hashtag)) {
-                return true;
-            }
+            return other.getHashtag() != null && other.getHashtag().equals(this.hashtag);
         }
         return false;
     }

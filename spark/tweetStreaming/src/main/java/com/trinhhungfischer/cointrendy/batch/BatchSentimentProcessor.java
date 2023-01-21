@@ -1,11 +1,12 @@
 package com.trinhhungfischer.cointrendy.batch;
 
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
-import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
 import com.trinhhungfischer.cointrendy.common.TweetDataTimestampComparator;
-import com.trinhhungfischer.cointrendy.common.dto.*;
+import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
+import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetData;
+import com.trinhhungfischer.cointrendy.common.dto.TweetSentimentField;
 import com.trinhhungfischer.cointrendy.common.entity.TweetSentimentData;
-import com.trinhhungfischer.cointrendy.common.entity.WindowTweetIndexData;
 import com.trinhhungfischer.cointrendy.common.entity.WindowTweetSentimentData;
 import org.apache.log4j.Logger;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -29,7 +30,7 @@ public class BatchSentimentProcessor {
                 .flatMapToPair(sentimentPair -> {
                     List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
 
-                    for (String hashtag: sentimentPair._1().getHashtags()) {
+                    for (String hashtag : sentimentPair._1().getHashtags()) {
                         AggregateKey aggregateKey = new AggregateKey(hashtag);
                         output.add(new Tuple2<>(aggregateKey, sentimentPair._2()));
                     }
@@ -83,7 +84,7 @@ public class BatchSentimentProcessor {
     }
 
     public static void processWindowSentimentTweetData(JavaRDD<TweetData> filteredTweetData,
-                                                   Broadcast<HashtagData> broadcastData) {
+                                                       Broadcast<HashtagData> broadcastData) {
         Date minTimestamp = filteredTweetData.min(new TweetDataTimestampComparator()).getCreatedAt();
         Date maxTimestamp = filteredTweetData.max(new TweetDataTimestampComparator()).getCreatedAt();
         long diffInMillis = Math.abs(maxTimestamp.getTime() - minTimestamp.getTime());
@@ -118,7 +119,7 @@ public class BatchSentimentProcessor {
                 .flatMapToPair(sentimentPair -> {
                     List<Tuple2<AggregateKey, TweetSentimentField>> output = new ArrayList();
 
-                    for (String hashtag: sentimentPair._1().getHashtags()) {
+                    for (String hashtag : sentimentPair._1().getHashtags()) {
                         AggregateKey aggregateKey = new AggregateKey(hashtag);
                         output.add(new Tuple2<>(aggregateKey, sentimentPair._2()));
                     }

@@ -1,15 +1,15 @@
 package com.trinhhungfischer.cointrendy.common.dto;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class TweetData implements Serializable {
     private String tweetId;
     private String text;
-    private ArrayList<String> editTweetIds;
-    private ArrayList<String> hashtags;
+    private final ArrayList<String> editTweetIds;
+    private final ArrayList<String> hashtags;
     private String language;
     private long retweetCount;
     private long replyCount;

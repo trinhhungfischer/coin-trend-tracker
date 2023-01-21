@@ -9,7 +9,7 @@ import java.util.Properties;
 public class PropertyFileReader {
     private static final Logger logger = Logger.getLogger(PropertyFileReader.class);
 
-    private static Properties prop = new Properties();
+    private static final Properties prop = new Properties();
 
     public static Properties readPropertyFile(String file) throws Exception {
         if (prop.isEmpty()) {

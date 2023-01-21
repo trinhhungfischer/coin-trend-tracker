@@ -1,7 +1,5 @@
 package com.trinhhungfischer.cointrendy;
 
-import java.sql.Date;
-import java.time.LocalDate;
 import java.sql.Timestamp;
 
 public class Test {

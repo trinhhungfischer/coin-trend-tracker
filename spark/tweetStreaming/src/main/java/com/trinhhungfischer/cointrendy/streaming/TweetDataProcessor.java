@@ -18,6 +18,7 @@ public class TweetDataProcessor {
 
     /**
      * Method to get and save Tweets data that has hashtags
+     *
      * @param dataStream original Tweet data stream
      */
     public static void processTweetData(
@@ -53,13 +54,11 @@ public class TweetDataProcessor {
 
     /**
      * Filter the tweet with the hashtag
+     *
      * @param tweetData
      * @return
      */
     private static boolean filterTweetWithHashTags(TweetData tweetData) {
-        if (tweetData.getHashtags().size() > 0) {
-            return true;
-        }
-        else return false;
+        return tweetData.getHashtags().size() > 0;
     }
 }

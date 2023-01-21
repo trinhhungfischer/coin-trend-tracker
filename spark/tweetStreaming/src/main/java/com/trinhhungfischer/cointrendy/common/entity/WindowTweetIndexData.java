@@ -12,6 +12,7 @@ public class WindowTweetIndexData implements Serializable {
     private Long totalQuotes;
     private String recordDate;
     private Timestamp timestamp;
+
     public String getHashtag() {
         return hashtag;
     }

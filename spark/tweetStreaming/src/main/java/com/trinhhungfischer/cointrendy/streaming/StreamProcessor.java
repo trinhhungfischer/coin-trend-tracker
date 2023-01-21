@@ -39,13 +39,55 @@ public class StreamProcessor {
     /**
      * This method does transform operations allowing RDD-to-RDD function applied on
      * current DStream
+     *
      * @param item
      * @return
      */
     private static JavaRDD<TweetData> transformRecord(JavaRDD<ConsumerRecord<String, TweetData>> item) {
         OffsetRange[] offsetRanges;
-        offsetRanges =  ((HasOffsetRanges) item.rdd()).offsetRanges();
+        offsetRanges = ((HasOffsetRanges) item.rdd()).offsetRanges();
         return item.mapPartitionsWithIndex(addMetaData(offsetRanges), true);
+    }
+
+    /**
+     * @param offsetRanges
+     * @return
+     */
+    private static Function2<Integer, Iterator<ConsumerRecord<String, TweetData>>, Iterator<TweetData>> addMetaData(
+            final OffsetRange[] offsetRanges) {
+        return (index, items) -> {
+            List<TweetData> list = new ArrayList<>();
+            while (items.hasNext()) {
+                ConsumerRecord<String, TweetData> next = items.next();
+                TweetData dataItem = next.value();
+
+                Map<String, String> meta = new HashMap<>();
+                meta.put("topic", offsetRanges[index].topic());
+                meta.put("fromOffset", "" + offsetRanges[index].fromOffset());
+                meta.put("kafkaPartition", "" + offsetRanges[index].partition());
+                meta.put("untilOffset", "" + offsetRanges[index].untilOffset());
+                meta.put("hour", "" + dataItem.getCreatedAt().toLocalDateTime().getHour());
+                meta.put("dayOfMonth", "" + dataItem.getCreatedAt().toLocalDateTime().getDayOfMonth());
+                meta.put("month", "" + dataItem.getCreatedAt().toLocalDateTime().getMonth());
+                meta.put("year", "" + dataItem.getCreatedAt().toLocalDateTime().getYear());
+
+                dataItem.setMetaData(meta);
+                list.add(dataItem);
+            }
+            return list.iterator();
+        };
+    }
+
+    private static Tuple2<TweetData, Boolean> updateState(String str,
+                                                          Optional<TweetData> tweetData, State<Boolean> state) {
+
+        Tuple2<TweetData, Boolean> tweets = new Tuple2<>(tweetData.get(), false);
+        if (state.exists()) {
+            tweets = new Tuple2<>(tweetData.get(), true);
+        } else {
+            state.update(Boolean.TRUE);
+        }
+        return tweets;
     }
 
     public StreamProcessor appendToHDFS(final SparkSession sql, final String file) {
@@ -110,6 +152,10 @@ public class StreamProcessor {
         return this;
     }
 
+    /**
+     * Helper method sections from here
+     */
+
     public StreamProcessor processTotalTweetSentiment(Broadcast<HashtagData> broadcastData) {
         RealtimeSentimentProcessor.processTweetTotalSentiment(filteredStream, broadcastData);
         return this;
@@ -120,46 +166,11 @@ public class StreamProcessor {
         return this;
     }
 
-    /**
-     * Helper method sections from here
-     */
-
-    /**
-     *
-     * @param offsetRanges
-     * @return
-     */
-    private static Function2<Integer, Iterator<ConsumerRecord<String, TweetData>>, Iterator<TweetData>> addMetaData(
-            final OffsetRange[] offsetRanges)
-    {
-        return (index, items) -> {
-            List<TweetData> list = new ArrayList<>();
-            while (items.hasNext()) {
-                ConsumerRecord<String, TweetData> next = items.next();
-                TweetData dataItem = next.value();
-
-                Map<String, String> meta = new HashMap<>();
-                meta.put("topic", offsetRanges[index].topic());
-                meta.put("fromOffset", "" + offsetRanges[index].fromOffset());
-                meta.put("kafkaPartition", "" + offsetRanges[index].partition());
-                meta.put("untilOffset", "" + offsetRanges[index].untilOffset());
-                meta.put("hour", "" + dataItem.getCreatedAt().toLocalDateTime().getHour());
-                meta.put("dayOfMonth", "" + dataItem.getCreatedAt().toLocalDateTime().getDayOfMonth());
-                meta.put("month", "" + dataItem.getCreatedAt().toLocalDateTime().getMonth());
-                meta.put("year", "" + dataItem.getCreatedAt().toLocalDateTime().getYear());
-
-                dataItem.setMetaData(meta);
-                list.add(dataItem);
-            }
-            return list.iterator();
-        };
-    }
-
     private JavaPairDStream<String, TweetData> mapToPair(final JavaDStream<TweetData> stream) {
         var dStream = stream.mapToPair(tweetData -> new Tuple2<>(tweetData.getTweetId(), tweetData));
         return dStream;
     }
-    
+
     private JavaMapWithStateDStream<String, TweetData, Boolean, Tuple2<TweetData, Boolean>> mapWithState(final JavaPairDStream<String, TweetData> key) {
         // Check tweets id is already processed
         StateSpec<String, TweetData, Boolean, Tuple2<TweetData, Boolean>> stateFunc = StateSpec
@@ -172,21 +183,9 @@ public class StreamProcessor {
 
     private JavaDStream<Tuple2<TweetData, Boolean>> filterByState(
             final JavaMapWithStateDStream<String, TweetData, Boolean, Tuple2<TweetData, Boolean>> state) {
-        var dsStream = state .filter(tuple -> tuple._2.equals(Boolean.FALSE));
+        var dsStream = state.filter(tuple -> tuple._2.equals(Boolean.FALSE));
         logger.info("Starting Stream Processing");
         return dsStream;
     }
 
-    private static Tuple2<TweetData, Boolean> updateState(String str,
-              Optional<TweetData> tweetData, State<Boolean> state) {
-
-        Tuple2<TweetData, Boolean> tweets= new Tuple2<>(tweetData.get(), false);
-        if (state.exists()) {
-            tweets = new Tuple2<>(tweetData.get(), true);
-        } else {
-            state.update(Boolean.TRUE);
-        }
-        return tweets;
-    }
-    
 }

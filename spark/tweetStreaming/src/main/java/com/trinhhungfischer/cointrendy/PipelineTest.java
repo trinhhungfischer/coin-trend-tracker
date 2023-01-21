@@ -6,10 +6,9 @@ import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import scala.Tuple2;
 
 import java.util.Arrays;
-
-import scala.Tuple2;
 
 public class PipelineTest {
 
@@ -38,7 +37,7 @@ public class PipelineTest {
         JavaPairDStream<String, Integer> pairs = words.mapToPair(x -> new Tuple2<>(x, 1));
         pairs.print();
 
-        JavaPairDStream<String, Integer> sum = pairs.reduceByKey((a,b) -> a + b);
+        JavaPairDStream<String, Integer> sum = pairs.reduceByKey((a, b) -> a + b);
         sum.print();
 
         JavaPairDStream<String, Long> countByValue = words.countByValue();
