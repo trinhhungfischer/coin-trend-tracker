@@ -111,12 +111,12 @@ public class StreamProcessor {
     }
 
     public StreamProcessor processTotalTweetSentiment(Broadcast<HashtagData> broadcastData) {
-        TweetSentimentProcessor.processTweetTotalSentiment(filteredStream, broadcastData);
+        RealtimeSentimentProcessor.processTweetTotalSentiment(filteredStream, broadcastData);
         return this;
     }
 
     public StreamProcessor processWindowTotalSentiment(Broadcast<HashtagData> broadcastData) {
-        TweetSentimentProcessor.processWindowTotalSentiment(filteredStream, broadcastData);
+        RealtimeSentimentProcessor.processWindowTotalSentiment(filteredStream, broadcastData);
         return this;
     }
 

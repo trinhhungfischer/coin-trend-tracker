@@ -106,8 +106,7 @@ public class BatchTrendingProcessor {
             Date end = c.getTime();
             processInterval(filteredTweetData, broadcastData, start, end);
             start = end;
-        };
-
+        }
     }
 
     private static void processInterval(JavaRDD<TweetData> data, Broadcast<HashtagData> broadcastData, Date start, Date end) {

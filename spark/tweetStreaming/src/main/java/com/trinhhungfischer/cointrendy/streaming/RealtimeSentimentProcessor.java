@@ -2,8 +2,6 @@ package com.trinhhungfischer.cointrendy.streaming;
 
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
 import com.datastax.spark.connector.japi.CassandraStreamingJavaUtil;
-import com.trinhhungfischer.cointrendy.common.constants.Sentiment;
-import com.trinhhungfischer.cointrendy.common.SentimentJob;
 import com.trinhhungfischer.cointrendy.common.dto.AggregateKey;
 import com.trinhhungfischer.cointrendy.common.dto.HashtagData;
 import com.trinhhungfischer.cointrendy.common.dto.TweetData;
@@ -18,7 +16,6 @@ import org.apache.spark.streaming.StateSpec;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import scala.Tuple2;
 
-import java.io.Serializable;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,14 +27,14 @@ import java.util.List;
  * Class to process filtered Tweets data to get tweet sentiment
  *
  */
-public class TweetSentimentProcessor {
-    private static final Logger logger = Logger.getLogger(TweetSentimentProcessor.class);
+public class RealtimeSentimentProcessor {
+    private static final Logger logger = Logger.getLogger(RealtimeSentimentProcessor.class);
 
     public static void processTweetTotalSentiment(JavaDStream<TweetData> filteredTweetData,
                                              Broadcast<HashtagData> broadcastData) {
         // Everytime data state is changed, it will update the tweet sentiment table
         StateSpec<AggregateKey, TweetSentimentField, TweetSentimentField, Tuple2<AggregateKey, TweetSentimentField>> stateSpec = StateSpec
-                .function(TweetSentimentProcessor::updateState)
+                .function(RealtimeSentimentProcessor::updateState)
                 .timeout(Durations.seconds(3600));
 
         //
@@ -61,7 +58,7 @@ public class TweetSentimentProcessor {
                 .reduceByKey((a, b) -> TweetSentimentField.add(a, b))
                 .mapWithState(stateSpec)
                 .map(tuple2 -> tuple2)
-                .map(TweetSentimentProcessor::mapToTotalSentiment);
+                .map(RealtimeSentimentProcessor::mapToTotalSentiment);
 
         // Save to database
         saveTotalSentimentTweet(totalSentimentDStream);
@@ -152,7 +149,7 @@ public static void processWindowTotalSentiment(JavaDStream<TweetData> filteredDa
                     return broadcastData.value().isNeededHashtags(hashtag);
                 })
                 .reduceByKeyAndWindow((a, b) -> TweetSentimentField.add(a, b), Durations.seconds(30), Durations.seconds(10))
-                .map(TweetSentimentProcessor::mapToWindowSentimentDate);
+                .map(RealtimeSentimentProcessor::mapToWindowSentimentDate);
 
         saveWindowSentimentData(sentimentDStream);
     }
