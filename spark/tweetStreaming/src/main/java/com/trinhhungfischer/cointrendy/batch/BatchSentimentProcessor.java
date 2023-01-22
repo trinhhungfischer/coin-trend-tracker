@@ -46,6 +46,8 @@ public class BatchSentimentProcessor {
         JavaRDD<TweetSentimentData> tweetSentimentDataJavaRDD = analysisDStream
                 .map(BatchSentimentProcessor::mapToTotalSentiment);
 
+        tweetSentimentDataJavaRDD.foreach(tuple -> System.out.println(tuple.getHashtag()));
+
         persistSentimentTweetData(tweetSentimentDataJavaRDD);
     }
 

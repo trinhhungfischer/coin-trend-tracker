@@ -42,8 +42,8 @@ public class BatchProcessor {
 
         BatchTrendingProcessor.processTotalTweetData(rdd, broadcastHashtagsValue);
         BatchTrendingProcessor.processWindowTotalTweetData(rdd, broadcastHashtagsValue);
-        BatchSentimentProcessor.processTweetSentimentData(rdd, broadcastHashtagsValue);
-        BatchSentimentProcessor.processWindowSentimentTweetData(rdd, broadcastHashtagsValue);
+//        BatchSentimentProcessor.processTweetSentimentData(rdd, broadcastHashtagsValue);
+//        BatchSentimentProcessor.processWindowSentimentTweetData(rdd, broadcastHashtagsValue);
         sparkSession.close();
         sparkSession.stop();
 
