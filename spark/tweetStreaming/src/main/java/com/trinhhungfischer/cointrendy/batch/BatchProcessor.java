@@ -41,8 +41,8 @@ public class BatchProcessor {
         JavaRDD<TweetData> rdd = dataFrame.javaRDD().map(BatchProcessor::transformToTweetData);
 
         BatchTrendingProcessor.processTotalTweetData(rdd, broadcastHashtagsValue);
-        BatchTrendingProcessor.processWindowTotalTweetData(rdd, broadcastHashtagsValue);
-//        BatchSentimentProcessor.processTweetSentimentData(rdd, broadcastHashtagsValue);
+//        BatchTrendingProcessor.processWindowTotalTweetData(rdd, broadcastHashtagsValue);
+        BatchSentimentProcessor.processTweetSentimentData(rdd, broadcastHashtagsValue);
 //        BatchSentimentProcessor.processWindowSentimentTweetData(rdd, broadcastHashtagsValue);
         sparkSession.close();
         sparkSession.stop();

@@ -50,22 +50,6 @@ public class PipelineProcessor implements Serializable {
     }
 
     /**
-     * @param prop Properties to configure the streaming
-     * @param jars JARS files to configure
-     * @return SparkConf class
-     */
-    private static SparkConf getSparkConf(Properties prop, String[] jars) {
-        return new SparkConf()
-                .setAppName(prop.getProperty(""))
-                .setMaster(prop.getProperty("com.twitter.app.spark.master"))
-                .set("spark.cassandra.connection.host", prop.getProperty("com.twitter.app.cassandra.host"))
-                .set("spark.cassandra.connection.port", prop.getProperty("com.twitter.app.cassandra.port"))
-                .set("spark.cassandra.auth.username", prop.getProperty("com.twitter.app.cassandra.username"))
-                .set("spark.cassandra.auth.password", prop.getProperty("com.twitter.app.cassandra.password"))
-                .set("spark.cassandra.connection.keep_alive_ms", prop.getProperty("com.twitter.app.cassandra.keep_alive"));
-    }
-
-    /**
      * @param properties
      * @return
      */

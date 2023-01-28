@@ -1,0 +1,170 @@
+<html>
+
+<head>
+    <title>Coin Hashtag Monitoring Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Coin Hashtag Monitoring Dashboard</h2>
+			</div>
+		</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-md-3">
+			<table class="table outerTable">
+				<thead>
+					<tr>
+						<th>Top 10 Total Coin Chart</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><canvas id="totalTrafficChart"></canvas></td>
+					</tr>
+			    </tbody>
+			</table>
+			<table class="table outerTable">
+				<thead>
+					<tr>
+						<th>Total Traffic Data</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>	
+							<div id="total_traffic">
+								<table class="table table-bordered table-condensed table-hover innerTable">
+									<tr>
+										<thead>
+											<th>Route</th><th>Vehicle</th><th>Count</th>
+										</thead>
+									</tr>
+								</table>
+							</div>	
+						</td>
+					</tr>
+			    </tbody>
+			</table>
+		</div>
+		<div class="col-md-3">
+			<table class="table outerTable">
+				<thead>
+					<tr>
+						<th>BTC Coin Chart</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><canvas id="route37TrafficChart"></canvas></td>
+					</tr>
+			    </tbody>
+			</table>
+			<table class="table outerTable">
+				<thead>
+					<tr>
+						<th>Last 30 Seconds Window</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>	
+							<div id="window_traffic">
+								<table class="table table-bordered table-condensed table-hover innerTable">
+									<tr>
+										<thead>
+											<th>Route</th><th>Vehicle</th><th>Count</th>
+										</thead>
+									</tr>
+								</table>
+							</div>	
+						</td>
+					</tr>
+			    </tbody>
+			</table>		
+		</div>
+		<div class="col-md-3">
+			<table class="table outerTable">
+				<thead>
+					<tr>
+						<th>POI Vehicle Chart</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><canvas id="poiTrafficChart"></canvas></td>
+					</tr>
+			    </tbody>
+			</table>
+			<table class="table outerTable">
+				<thead>
+					<tr>
+						<th>Vehicles At a POI (last 2 minutes)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>	
+							<div id="poi_traffic">
+								<table class="table table-bordered table-condensed table-hover innerTable">
+									<tr>
+										<thead>
+											<th>Vehicle</th><th>Distance</th>
+										</thead>
+									</tr>
+								</table>
+							</div>	
+						</td>
+					</tr>
+			    </tbody>
+			</table>
+		</div>
+		<div class="col-md-3">
+			<table class="table outerTable">
+				<thead>
+				<tr>
+					<th>Qtd of Vehicles per Area (last 2 minutes)</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<div id="gridBoxContent">
+							<table class="table table-bordered table-condensed table-hover innerTable">
+								<thead>
+								<tr>
+									<th>Grid box center</th>
+									<th>Quantity</th>
+								</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+</div>
+
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/sockjs-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/stomp.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>`
+	<script type="text/javascript" src="js/Chart.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
