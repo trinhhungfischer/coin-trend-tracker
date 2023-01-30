@@ -271,7 +271,7 @@ body {
     grid-gap: 30px; */
 }
 
-.details .recentOrders {
+.details .recentTwitters {
     position: relative;
     border-radius: 40px;
     /* display: grid; */
@@ -279,16 +279,19 @@ body {
     background: var(--white);
     padding: 20px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    overflow-y: auto;
     max-height: 500px;
 }
 
+.tableBox {
+    overflow-y: auto;
+    max-height: 400px;
+}
 /* Hide scrollbar for Chrome, Safari and Opera */
-.recentOrders::-webkit-scrollbar {
+.tableBox::-webkit-scrollbar {
     display: none;
 }
   /* Hide scrollbar for IE, Edge and Firefox */
-.recentOrders {
+.tableBox {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -301,6 +304,7 @@ body {
 }
 
 .cardHeader h2 {
+    padding-bottom: 10px;
     font-weight: 600;
     color: var(--blue);
 }
@@ -324,21 +328,21 @@ body {
     font-weight: 600;
 }
 
-.details .recentOrders table tr {
+.details .recentTwitters table tr {
     color: var(--black1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.details .recentOrders table tr:last-child {
+.details .recentTwitters table tr:last-child {
     border-bottom: none;
 }
 
-.details .recentOrders table tbody tr:hover {
+.details .recentTwitters table tbody tr:hover {
     background: var(--blue);
     color: var(--white);
 }
 
-.details .recentOrders table tr td {
+.details .recentTwitters table tr td {
     padding: 10px;
 }
 
@@ -372,7 +376,7 @@ body {
         grid-template-columns: repeat(1,1fr);
     }
 
-    .recentOrders {
+    .recentTwitters {
         overflow-x: auto;
     }
 
