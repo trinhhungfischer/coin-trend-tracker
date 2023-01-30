@@ -273,13 +273,27 @@ body {
 
 .details .recentOrders {
     position: relative;
+    border-radius: 40px;
     /* display: grid; */
-    min-height: 500px;
+    /* min-height: 500px; */
     background: var(--white);
     padding: 20px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+    max-height: 500px;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.recentOrders::-webkit-scrollbar {
+    display: none;
+}
+  /* Hide scrollbar for IE, Edge and Firefox */
+.recentOrders {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Card */
 .cardHeader {
     display: flex;
     justify-content: space-between;
@@ -326,4 +340,76 @@ body {
 
 .details .recentOrders table tr td {
     padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .navigation {
+        left: -300px;
+    }
+
+    .navigation.active {
+        width: 300px;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 300px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .details {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .recentOrders {
+        overflow-x: auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .cardBox {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .cardHeader h2 {
+        font-size: 20px;
+    }
+
+    .user {
+        min-width: 40px;
+    }
+
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.active .toggle {
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: var(--white);
+    }
 }

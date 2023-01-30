@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin Analysis</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/tophastag.css">
 </head>
 <body>
     <div class="container">
@@ -29,15 +30,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="coingecko.html">
+                    <a href="sentiment.html">
                         <span class="icon"><ion-icon name="nuclear-outline"></ion-icon></span>
-                        <span class="title">CoinGecko</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="coinmarketcap.html">
-                        <span class="icon"><ion-icon name="tablet-landscape-outline"></ion-icon></span>
-                        <span class="title">CoinMarketCap</span>
+                        <span class="title">Sentiment Analysis</span>
                     </a>
                 </li>
             </ul>
@@ -106,6 +101,82 @@
             </div>
 
             <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Top 100 Hashtag</h2>
+                        <!-- <a href="#" class="btn">View All</a> -->
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Hashtag</td>
+                                <td>Like</td>
+                                <td>Retweet</td>
+                                <td>Replies</td>
+                                <td>Quote</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#btc</td>
+                                <td>10000</td>
+                                <td>25000</td>
+                                <td>56200</td>
+                                <td>100000</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Chart for hashtag -->
+            <div class="visualize">
+                <div class="topcoin">
+                    <div class="cardHeader">
+                        <h2>Top Hashtag Analysis</h2>
+                    </div>
+                    
+                    <div class="cardChartBox">
+                        <div class="cardChart">
+                            <div class="titleChart">
+                                <h3>Like</h3>
+                            </div>
+                            <div class="contentChart">
+                                <td><canvas id="route37TrafficChart"></canvas></td>
+                            </div>
+                        </div>
+
+                        <div class="cardChart">
+                            <div class="titleChart">
+                                <h3>Retweet</h3>
+                            </div>
+                            <div class="contentChart">
+                                <td><canvas id="route37TrafficChart"></canvas></td>
+                            </div>
+                        </div>
+
+                        <div class="cardChart">
+                            <div class="titleChart">
+                                <h3>Reply</h3>
+                            </div>
+                            <div class="contentChart">
+                                <td><canvas id="route37TrafficChart"></canvas></td>
+                            </div>
+                        </div>
+
+                        <div class="cardChart">
+                            <div class="titleChart">
+                                <h3>Quote</h3>
+                            </div>
+                            <div class="contentChart">
+                                <td><canvas id="route37TrafficChart"></canvas></td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
