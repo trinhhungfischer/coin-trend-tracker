@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Analysis</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="hottwitter.html">
+                        <span class="icon"><ion-icon name="logo-bitcoin"></ion-icon></span>
+                        <span class="title">Coin Analysis</span>
+                    </a>
+                <li>
+                    <a href="hottwitter.html">
+                        <span class="icon"><ion-icon name="logo-twitter"></ion-icon></span>
+                        <span class="title">Hot Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tophashtag.html">
+                        <span class="icon"><ion-icon name="pricetags-outline"></ion-icon></span>
+                        <span class="title">Top Hashtag</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="coingecko.html">
+                        <span class="icon"><ion-icon name="nuclear-outline"></ion-icon></span>
+                        <span class="title">CoinGecko</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="coinmarketcap.html">
+                        <span class="icon"><ion-icon name="tablet-landscape-outline"></ion-icon></span>
+                        <span class="title">CoinMarketCap</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- Search -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <!-- UsrImg -->
+                <div class="user">
+                    <!-- image here -->
+                </div>
+            </div>
+
+            <!-- card -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Top like</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="calculator-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Top retweet</div>    
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="calculator-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Top reply</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="calculator-outline"></ion-icon>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Top quote</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="calculator-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Hot Twitter</h2>
+                        <!-- <a href="#" class="btn">View All</a> -->
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Tweet</td>
+                                <td>Time</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>"twitter.com/anyuser/status/" + tweet_id.</td>
+                                <td>Time stamp</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        // toggle sidebar
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function() {
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        // add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('hovered'));
+            this.classList.add('hovered');
+            this.classList.remove('hovered');
+        }
+        list.forEach((item) => item.addEventListener('mouseover', activeLink));
+    </script>
+
+</body>
+</html>
