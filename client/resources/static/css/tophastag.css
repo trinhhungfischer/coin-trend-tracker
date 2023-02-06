@@ -26,7 +26,7 @@
     grid-template-columns: 2fr 2fr;
     grid-gap: 30px; 
     overflow-y: auto;
-    max-height: 500px;
+    min-height: 1000px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -60,8 +60,12 @@ body {
 }
 
 .navigation ul li:nth-child(1) {
+    margin-top: 20px;
     margin-bottom: 40px;
     pointer-events: none;
+    font-weight: 600;
+    font-size: 25px;
+    align-items: center;
 }
 
 .navigation ul li a {
@@ -286,6 +290,7 @@ body {
     overflow-y: auto;
     max-height: 400px;
 }
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .tableBox::-webkit-scrollbar {
     display: none;
