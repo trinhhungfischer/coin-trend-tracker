@@ -25,20 +25,40 @@ def get_hottwitter():
     timestamps = []
     texts = []
     count = 0
+    top = []
+    top_like = 0
+    top_retweet = 0
+    top_reply = 0
+    top_quote = 0
     for row in results:
-        print(row)
         ids.append(row.tweet_id)
         timestamps.append(row.created_at)
         texts.append(row.tweet_text)
+        if row.like_count >= top_like:
+            top_like = row.like_count
+        if row.retweet_count >= top_retweet:
+            top_retweet = row.retweet_count
+        if row.reply_count >= top_reply:
+            top_reply = row.reply_count
+        if row.quote_count >= top_quote:
+            top_quote = row.quote_count
         count += 1
-    return render_template('hottwitter.html', ids=ids, timestamps=timestamps, texts=texts, count = count)
+    
+    top = [top_like, top_retweet, top_reply, top_quote]
+    return render_template('hottwitter.html', ids=ids, timestamps=timestamps, texts=texts, count = count, top=top)
 
 @app.route('/tophashtag', methods=['GET'])
 def get_tophashtag():
-    return render_template('tophashtag.html')
+    # Table
+
+    # Chart: Ve top 10 tweet, top 10 like, top 10 retweet, top 10 reply cac hashtag
+
+    return render_template('tophashtag.html', chart="conic-gradient(#F15854 4%, #4D4D4D 0 8%, #5DA5DA 0 17%,#DECF3F 0 48%,#B276B2 0 54%,#FAA43A 0);")
 
 @app.route('/sentiment', methods=['GET'])
 def get_sentiment():
+    # Chua biet ban muon ve gi
+
     return render_template('sentiment.html')
 
 if __name__ == "__main__":
