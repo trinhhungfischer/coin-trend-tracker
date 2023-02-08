@@ -64,7 +64,7 @@ body {
     margin-bottom: 40px;
     pointer-events: none;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 30px;
     align-items: center;
 }
 
@@ -289,7 +289,7 @@ body {
 .tableBox {
     overflow-y: auto;
     max-height: 400px;
-    max-width: 1150px;
+    /* max-width: 1150px; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

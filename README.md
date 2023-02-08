@@ -49,6 +49,6 @@ Mô hình luồng dự án sẽ dựa trên kiến trúc Lambda (&#955;) với c
 - Run the batch job `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.batch.BatchProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
 ### Cassandra
 
-- Log in `docker exec -it cassandra-iot cqlsh --username cassandra --password cassandra`
+- Log in `docker exec -it cassandra-coin-trendy cqlsh --username cassandra --password cassandra`
 - Acess Tweet Keyspace "USE tweets_info;" và xem data trong bảng total_tweets_per_hashtag bằng câu lệnh "SELECT * FROM tweets_info.total_tweets_per_hashtag;".
 - - Nhớ làm các bước trên trước thì mới có dữ liệu trong bảng

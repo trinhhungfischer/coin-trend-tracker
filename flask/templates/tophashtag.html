@@ -7,18 +7,11 @@
     <title>Coin Analysis</title>
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../static/css/tophastag.css"
-    />
-    <style>
-      .x-box {
-          background: {{chart}};
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../../static/css/tophastag.css"/>
   </head>
   <body>
+    <!-- Trar day -->
+
     <div class="container">
       <div class="navigation">
         <ul>
@@ -81,40 +74,45 @@
         <div class="cardBox">
           <div class="card">
             <div>
-              <div class="numbers">1,504</div>
+              <div class="numbers">{{top[1]}}</div>
               <div class="cardName">Top like</div>
             </div>
             <div class="iconBx">
-              <ion-icon name="calculator-outline"></ion-icon>
+              <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+              {{top[6]}}
             </div>
           </div>
 
           <div class="card">
             <div>
-              <div class="numbers">1,504</div>
+              <div class="numbers">{{top[2]}}</div>
               <div class="cardName">Top retweet</div>
             </div>
             <div class="iconBx">
-              <ion-icon name="calculator-outline"></ion-icon>
+              <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+              {{top[7]}}
             </div>
           </div>
 
           <div class="card">
             <div>
-              <div class="numbers">1,504</div>
+              <div class="numbers">{{top[3]}}</div>
               <div class="cardName">Top reply</div>
             </div>
             <div class="iconBx">
-              <ion-icon name="calculator-outline"></ion-icon>
+              <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+              {{top[8]}}
             </div>
           </div>
 
           <div class="card">
             <div>
-              <div class="numbers">1,504</div>
+              <div class="numbers">{{top[4]}}</div>
               <div class="cardName">Top quote</div>
             </div>
-            <div class="iconBx">BTC</div>
+            <div class="iconBx">
+              {{top[9]}}
+            </div>
           </div>
         </div>
 
@@ -139,13 +137,16 @@
                 </thead>
                 <tbody>
                   <!-- form of item in table -->
+                  {% for i in range(table_count)%}
                   <tr>
-                    <td>#btc</td>
-                    <td>10000</td>
-                    <td>25000</td>
-                    <td>56200</td>
-                    <td>100000</td>
+                      <td>#{{table_hashtags[i]}}</td>
+                      <td>{{table_tweets_total[i]}}</td>
+                      <td>{{table_tweets_like[i]}}</td>
+                      <td>{{table_tweets_retweet[i]}}</td>
+                      <td>{{table_tweets_reply[i]}}</td>
                   </tr>
+                  {% endfor %}  
+            
                 </tbody>
               </table>
             </div>
@@ -163,42 +164,10 @@
               <!-- Form chart card -->
               <div class="cardChart">
                 <div class="titleChart">
-                  <h3>Top 10 Tweets</h3>
+                  <h3>Top 10 Tweets Total</h3>
                 </div>
                 <div class="contentChart">
-                  <div class="x-box"></div>
-                  <div class="x-box-cont">
-                    <strong class="color: #ff264a">BTC</strong>
-                    <strong class="color: #feec1e">LUNA</strong>
-                    <strong class="color: #12cbc4">ROOM</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cardChart">
-                <div class="titleChart">
-                  <h3>Top 10 Likes</h3>
-                </div>
-                <div class="contentChart">
-                  <td><canvas id="myChart"> </canvas></td>
-                </div>
-              </div>
-
-              <div class="cardChart">
-                <div class="titleChart">
-                  <h3>Top 10 Retweets</h3>
-                </div>
-                <div class="contentChart">
-                  <td><canvas id="route37TrafficChart"></canvas></td>
-                </div>
-              </div>
-
-              <div class="cardChart">
-                <div class="titleChart">
-                  <h3>Top 10 Replies</h3>
-                </div>
-                <div class="contentChart">
-                  <td><canvas id="route37TrafficChart"></canvas></td>
+                  <canvas id="TweetsPieChart"></canvas>
                 </div>
               </div>
             </div>
@@ -229,27 +198,138 @@
     </script>
 
     <script>
-      const ctx = document.getElementById("myChart");
-
-      new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [
-            {
-              label: "# of Votes",
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
+      var top10 = {{chart10_tweets_total_hashtags|tojson|safe}}
+      var top10_total = {{chart10_tweets_total|tojson|safe}}
+      var ctx = document.getElementById('TweetsPieChart').getContext('2d')
+      var myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: top10,
+              datasets: [{
+                  label: 'Ahihi',
+                  data: top10_total,
+                  backgroundColor: ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#00FFFF", "#FF00FF", "#800000", "#008000", "#000080", "#808000"],
+                  borderColor: ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#00FFFF", "#FF00FF", "#800000", "#008000", "#000080", "#808000"],
+                  borderWidth: 1
+              }]
           },
-        },
+          // options: {
+          //     scales: {
+          //         yAxes: [{
+          //             ticks: {
+          //                 beginAtZero: true
+          //             }
+          //         }]
+          //     }
+          // }
+      });
+
+      var ctx = document.getElementById('LikesPieChart').getContext('2d')
+      var myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
+
+      var ctx = document.getElementById('RetweetsPieChart').getContext('2d')
+      var myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
+
+      var ctx = document.getElementById('RepliesPieChart').getContext('2d')
+      var myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
       });
     </script>
   </body>

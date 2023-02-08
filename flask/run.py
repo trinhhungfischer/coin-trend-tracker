@@ -61,7 +61,7 @@ def get_tophashtag():
     tweets_like = []
     tweets_retweet = []
     tweets_reply = []
-    tweets_quoute = []
+    tweets_quote = []
     
     count = 0
     top = []
@@ -82,7 +82,7 @@ def get_tophashtag():
         tweets_like.append(row.total_likes)
         tweets_retweet.append(row.total_retweets)
         tweets_reply.append(row.total_replies)
-        tweets_quoute.append(row.total_quotes)
+        tweets_quote.append(row.total_quotes)
         
         if row.total_tweets >= top_total:
             top_total = row.total_tweets
@@ -109,38 +109,93 @@ def get_tophashtag():
     top = [top_total, top_like, top_retweet, top_reply, top_quote,
            top_total_hashtag, top_like_hashtag, top_retweet_hashtag, top_reply_hashtag, top_quote_hashtag]
     
-    sort_arrays_by_reference(tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quoute, reverse=True)    
+    sort_arrays_by_reference(tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quote, reverse=True)    
     
     
     # Chart: Ve top 10 tweet, top 10 like, top 10 retweet, top 10 reply cac hashtag
-    top10 = []
-    top10_total = []
+    top10_tweets_total_hashtag = []
+    top10_tweets_total = []
     for i in range(10):
-        top10.append(hashtags[i])
-        top10_total.append(tweets_total[i])
-        
-    top10_total_percentage = map_to_percentages(top10_total) 
+        top10_tweets_total_hashtag.append(hashtags[i])
+        top10_tweets_total.append(tweets_total[i])
     
-    
-    
-
     return render_template('tophashtag.html',
-                           table_count = count,
-                           table_hashtags = hashtags, 
-                           table_tweets_total = tweets_total,
-                           table_tweets_like = tweets_like,
-                           table_tweets_retweet = tweets_retweet,
-                           table_tweets_reply = tweets_reply,
-                           table_tweets_quoute = tweets_quoute,
-                           top = top,
-                           chart10_hashtags = top10,
-                           chart10_percentage = top10_total_percentage)
+                    table_count = count,
+                    table_hashtags = hashtags, 
+                    table_tweets_total = tweets_total,
+                    table_tweets_like = tweets_like,
+                    table_tweets_retweet = tweets_retweet,
+                    table_tweets_reply = tweets_reply,
+                    table_tweets_quote = tweets_quote,
+                    top = top,
+                    chart10_tweets_total_hashtags = top10_tweets_total_hashtag,
+                    chart10_tweets_total = top10_tweets_total,
+                    )
 
 @app.route('/sentiment', methods=['GET'])
 def get_sentiment():
-    # Chua biet ban muon ve gi
+    results = session.execute('select * from tweets_info.total_sentiment;')
 
-    return render_template('sentiment.html')
+    hashtags = []
+    total_tweets = []
+    total_positives = []
+    total_negatives = []
+    total_neutrals = []
+    count = 0
+
+    top_total_tweets_hashtag = ''
+    top_total_tweets = 0
+    top_positive_hashtag = ''
+    top_positive = 0
+    top_negative_hashtag = ''
+    top_negative = 0
+    top_neutral_hashtag = ''
+    top_neutral = 0
+
+
+    for row in results:
+        hashtags.append(row.hashtag)
+        total_tweets.append(row.total_tweets)
+        total_positives.append(row.total_positives)
+        total_negatives.append(row.total_negatives)
+        total_neutrals.append(row.total_neutrals)
+    
+        if row.total_tweets >= top_total_tweets:
+            top_total_tweets = row.total_tweets
+            top_total_tweets_hashtag = row.hashtag
+        
+        if row.total_positives >= top_positive:
+            top_positive = row.total_positives
+            top_positive_hashtag = row.hashtag
+        
+        if row.total_negatives >= top_negative:
+            top_negative = row.total_negatives
+            top_negative_hashtag = row.hashtag
+        
+        if row.total_neutrals >= top_neutral:
+            top_neutral = row.total_neutrals
+            top_neutral_hashtag = row.hashtag
+        
+        count += 1
+    top = [top_total_tweets, top_positive, top_neutral, top_negative,
+    top_total_tweets_hashtag, top_positive_hashtag, top_neutral_hashtag, top_negative_hashtag]
+
+    # Chart
+    sort_arrays_by_reference(total_tweets, hashtags, total_positives, total_negatives, total_neutrals, reverse=True)
+
+    return render_template('sentiment.html',
+                    top = top,
+                    table_count = count,
+                    table_hashtags = hashtags,
+                    table_total_tweets = total_tweets,
+                    table_total_positives = total_positives,
+                    table_total_neutrals = total_neutrals,
+                    table_total_negatives = total_negatives,
+                    chart100_hashtags = hashtags[:100],
+                    chart100_total_positives = total_positives[:100],
+                    chart100_total_negatives = total_negatives[:100],
+                    chart100_total_neutrals = total_neutrals[:100],
+                    )
 
 
 def sort_arrays_by_reference(reference, *arrays, reverse=False):
@@ -154,9 +209,9 @@ def sort_arrays_by_reference(reference, *arrays, reverse=False):
 
     return results
 
-def map_to_percentages(array):
-    total = sum(array)
-    return [round(x / total * 100, 2) for x in array]
+# def map_to_percentages(array):
+#     total = sum(array)
+#     return [round(x / total * 100, 2) for x in array]
 
 if __name__ == "__main__":
     app.run(debug=True)

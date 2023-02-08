@@ -7,6 +7,7 @@
     <title>Coin Analysis</title>
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/sentiment.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -61,46 +62,107 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">1,024</div>
-                        <div class="cardName">Top tweets</div>
+                        <div class="numbers">{{top[0]}}</div>
+                        <div class="cardName">Top Total Tweets</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="calculator-outline"></ion-icon>
+                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+                        {{top[4]}}
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
-                        <div class="numbers">1,601</div>
-                        <div class="cardName">Positives</div>    
+                        <div class="numbers">{{top[1]}}</div>
+                        <div class="cardName">Top Positives</div>    
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="calculator-outline"></ion-icon>
+                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+                        {{top[5]}}
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
-                        <div class="numbers">5402</div>
-                        <div class="cardName">Negatives</div>
+                        <div class="numbers">{{top[2]}}</div>
+                        <div class="cardName">Top Negatives</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="calculator-outline"></ion-icon>
+                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+                        {{top[6]}}
                     </div>
                 </div>
                 
                 <div class="card">
                     <div>
-                        <div class="numbers">1,504</div>
-                        <div class="cardName">Neutrals</div>
+                        <div class="numbers">{{top[3]}}</div>
+                        <div class="cardName">Top Neutral</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="calculator-outline"></ion-icon>
+                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+                        {{top[7]}}
                     </div>
                 </div>
             </div>
 
+            <!-- Table for hashtag sentiment -->
+            <!-- Details -->
+        <div class="details">
+            <div class="recentTwitters">
+              <div class="cardHeader">
+                <h2>Top 100 Hashtag</h2>
+                <!-- <a href="#" class="btn">View All</a> -->
+              </div>
+  
+              <div class="tableBox">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>Hashtag</td>
+                      <td>Total Tweets</td>
+                      <td>Positives</td>
+                      <td>Neutrals</td>
+                      <td>Negatives</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- form of item in table -->
+                    {% for i in range(table_count)%}
+                    <tr>
+                        <td>#{{table_hashtags[i]}}</td>
+                        <td>{{table_total_tweets[i]}}</td>
+                        <td>{{table_total_positives[i]}}</td>
+                        <td>{{table_total_neutrals[i]}}</td>
+                        <td>{{table_total_negatives[i]}}</td>
+                    </tr>
+                    {% endfor %}  
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+  
             <!-- Chart for sentiment -->
+            <div class="visualize">
+                <div class="topcoin">
+                  <div class="cardHeader">
+                    <h2>Top Hashtag Analysis</h2>
+                  </div>
+      
+                  <div class="cardChartBox">
+                    <!-- Form chart card -->
+                    <div class="cardChart">
+                      <div class="titleChart">
+                        <h3>Sentiment Analysis 100 hashtag coin</h3>
+                      </div>
+                      <div class="contentChart">
+                        <canvas id="barchartsentiment"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
     </div>
 
@@ -117,6 +179,58 @@
             navigation.classList.toggle('active');
             main.classList.toggle('active');
         }
+
+        // chart
+        var top100_label = {{chart100_hashtags|tojson|safe}};
+        var top100_positives = {{chart100_total_positives|tojson|safe}};
+        var top100_neutrals = {{chart100_total_neutrals|tojson|safe}};
+        var top100_negatives = {{chart100_total_negatives|tojson|safe}};
+        var ctx = document.getElementById("barchartsentiment").getContext('2d');
+        var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: top100_label,
+            datasets: [{
+            label: 'Negative',
+            backgroundColor: "#caf270",
+            data: top100_negatives,
+            }, {
+            label: 'Neutral',
+            backgroundColor: "#45c490",
+            data: top100_neutrals,
+            }, {
+            label: 'Positive',
+            backgroundColor: "#008d93",
+            data: top100_positives,
+            }],
+        },
+        options: {
+            tooltips: {
+            displayColors: true,
+            callbacks:{
+                mode: 'x',
+            },
+            },
+            scales: {
+            xAxes: [{
+                stacked: true,
+                gridLines: {
+                display: false,
+                }
+            }],
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                beginAtZero: true,
+                },
+                type: 'linear',
+            }]
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: { position: 'bottom' },
+        }
+        });
     </script>
 
 </body>
