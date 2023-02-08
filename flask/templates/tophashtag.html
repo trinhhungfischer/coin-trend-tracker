@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coin Analysis</title>
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -179,7 +180,7 @@
                   <h3>Top 10 Likes</h3>
                 </div>
                 <div class="contentChart">
-                  <td><canvas id="route37TrafficChart"></canvas></td>
+                  <td><canvas id="myChart"> </canvas></td>
                 </div>
               </div>
 
@@ -225,6 +226,31 @@
         navigation.classList.toggle("active");
         main.classList.toggle("active");
       };
+    </script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
     </script>
   </body>
 </html>

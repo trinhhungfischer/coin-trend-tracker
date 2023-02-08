@@ -88,20 +88,20 @@ def get_tophashtag():
             top_total = row.total_tweets
             top_total_hashtag = row.hashtag
         
-        if row.like_count >= top_like:
-            top_like = row.like_count
+        if row.total_likes >= top_like:
+            top_like = row.total_likes
             top_like_hashtag = row.hashtag 
                        
-        if row.retweet_count >= top_retweet:
-            top_retweet = row.retweet_count
+        if row.total_retweets >= top_retweet:
+            top_retweet = row.total_retweets
             top_retweet_hashtag = row.hashtag
             
-        if row.reply_count >= top_reply:
-            top_reply = row.reply_count
+        if row.total_replies >= top_reply:
+            top_reply = row.total_replies
             top_reply_hashtag = row.hashtag
             
-        if row.quote_count >= top_quote:
-            top_quote = row.quote_count
+        if row.total_quotes >= top_quote:
+            top_quote = row.total_quotes
             top_quote_hashtag = row.hashtag
         
         count += 1
