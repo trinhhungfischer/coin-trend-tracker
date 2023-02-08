@@ -18,6 +18,10 @@ session, cluster = cassandra_conn()
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/', methods=['GET'])
+def index():
+    return get_hottwitter()
+
 @app.route('/hottwitter', methods=['GET'])
 def get_hottwitter():
     results = session.execute('select * from tweets_info.recent_tweets')
@@ -49,17 +53,110 @@ def get_hottwitter():
 
 @app.route('/tophashtag', methods=['GET'])
 def get_tophashtag():
+    results = session.execute('select * from tweets_info.total_tweets;')
+
     # Table
-
+    hashtags = []
+    tweets_total = []
+    tweets_like = []
+    tweets_retweet = []
+    tweets_reply = []
+    tweets_quoute = []
+    
+    count = 0
+    top = []
+    top_total = 0
+    top_like = 0
+    top_retweet = 0
+    top_reply = 0
+    top_quote = 0
+    top_total_hashtag = ''
+    top_like_hashtag = ''
+    top_retweet_hashtag = ''
+    top_reply_hashtag = ''
+    top_quote_hashtag = ''
+    
+    for row in results:
+        hashtags.append(row.hashtag)
+        tweets_total.append(row.total_tweets)
+        tweets_like.append(row.total_likes)
+        tweets_retweet.append(row.total_retweets)
+        tweets_reply.append(row.total_replies)
+        tweets_quoute.append(row.total_quotes)
+        
+        if row.total_tweets >= top_total:
+            top_total = row.total_tweets
+            top_total_hashtag = row.hashtag
+        
+        if row.like_count >= top_like:
+            top_like = row.like_count
+            top_like_hashtag = row.hashtag 
+                       
+        if row.retweet_count >= top_retweet:
+            top_retweet = row.retweet_count
+            top_retweet_hashtag = row.hashtag
+            
+        if row.reply_count >= top_reply:
+            top_reply = row.reply_count
+            top_reply_hashtag = row.hashtag
+            
+        if row.quote_count >= top_quote:
+            top_quote = row.quote_count
+            top_quote_hashtag = row.hashtag
+        
+        count += 1
+    
+    top = [top_total, top_like, top_retweet, top_reply, top_quote,
+           top_total_hashtag, top_like_hashtag, top_retweet_hashtag, top_reply_hashtag, top_quote_hashtag]
+    
+    sort_arrays_by_reference(tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quoute, reverse=True)    
+    
+    
     # Chart: Ve top 10 tweet, top 10 like, top 10 retweet, top 10 reply cac hashtag
+    top10 = []
+    top10_total = []
+    for i in range(10):
+        top10.append(hashtags[i])
+        top10_total.append(tweets_total[i])
+        
+    top10_total_percentage = map_to_percentages(top10_total) 
+    
+    
+    
 
-    return render_template('tophashtag.html', chart="conic-gradient(#F15854 4%, #4D4D4D 0 8%, #5DA5DA 0 17%,#DECF3F 0 48%,#B276B2 0 54%,#FAA43A 0);")
+    return render_template('tophashtag.html',
+                           table_count = count,
+                           table_hashtags = hashtags, 
+                           table_tweets_total = tweets_total,
+                           table_tweets_like = tweets_like,
+                           table_tweets_retweet = tweets_retweet,
+                           table_tweets_reply = tweets_reply,
+                           table_tweets_quoute = tweets_quoute,
+                           top = top,
+                           chart10_hashtags = top10,
+                           chart10_percentage = top10_total_percentage)
 
 @app.route('/sentiment', methods=['GET'])
 def get_sentiment():
     # Chua biet ban muon ve gi
 
     return render_template('sentiment.html')
+
+
+def sort_arrays_by_reference(reference, *arrays, reverse=False):
+    zipped = zip(reference, *arrays)
+    sorted_zipped = sorted(zipped, key=lambda x: x[0], reverse=reverse)
+    sorted_reference, *sorted_arrays = zip(*sorted_zipped)
+    
+    results = [list(sorted_reference)]
+    for array in sorted_arrays:
+        results.append(list(array))
+
+    return results
+
+def map_to_percentages(array):
+    total = sum(array)
+    return [round(x / total * 100, 2) for x in array]
 
 if __name__ == "__main__":
     app.run(debug=True)
