@@ -10,6 +10,7 @@ public class ProcessorUtils {
         var sparkConf = new SparkConf()
                 .setAppName(appName)
                 .setMaster(prop.getProperty("com.twitter.app.spark.master"))
+                .set("spark.executor.cores", "4")
                 .set("spark.cassandra.connection.host", prop.getProperty("com.twitter.app.cassandra.host"))
                 .set("spark.cassandra.connection.port", prop.getProperty("com.twitter.app.cassandra.port"))
                 .set("spark.cassandra.auth.username", prop.getProperty("com.twitter.app.cassandra.username"))

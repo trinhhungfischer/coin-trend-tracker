@@ -87,15 +87,17 @@ public class RealtimeSentimentProcessor {
 
     private static TweetSentimentData mapToTotalSentiment(Tuple2<AggregateKey, TweetSentimentField> tuple) {
         logger.debug(
-                "Total Count : " + "key " + tuple._1().getHashtag() + " value " + tuple._2().getNumTweet());
+                "Total Count : " + "key " + tuple._1().getHashtag() + " value " + tuple._2());
 
         TweetSentimentData tweetSentimentData = new TweetSentimentData();
+        tweetSentimentData.setHashtag(tuple._1().getHashtag());
         tweetSentimentData.setTotalTweets(tuple._2().getNumTweet());
         tweetSentimentData.setTotalPositives(tuple._2().getNumPositive());
         tweetSentimentData.setTotalNegatives(tuple._2().getNumNegative());
         tweetSentimentData.setTotalNeutrals(tuple._2().getNumNeutral());
-        tweetSentimentData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
-        tweetSentimentData.setTimestamp(new Timestamp(new Date().getTime()));
+        Date currentTime = new Date();
+        tweetSentimentData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(currentTime));
+        tweetSentimentData.setTimestamp(new Timestamp(currentTime.getTime()));
 
         return tweetSentimentData;
     }

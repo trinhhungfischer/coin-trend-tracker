@@ -1,237 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coin Analysis</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/sentiment.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../static/css/sentiment.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="hottwitter">
-                        <span class="icon"><ion-icon name="logo-bitcoin"></ion-icon></span>
-                        <span class="title">Coin Analysis</span>
-                    </a>
-                <li>
-                    <a href="hottwitter">
-                        <span class="icon"><ion-icon name="logo-twitter"></ion-icon></span>
-                        <span class="title">Hot Twitter</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="tophashtag">
-                        <span class="icon"><ion-icon name="pricetags-outline"></ion-icon></span>
-                        <span class="title">Top Hashtag</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="sentiment">
-                        <span class="icon"><ion-icon name="nuclear-outline"></ion-icon></span>
-                        <span class="title">Sentiment Analysis</span>
-                    </a>
-                </li>
-            </ul>
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="hottwitter">
+              <span class="icon"
+                ><ion-icon name="logo-bitcoin"></ion-icon
+              ></span>
+              <span class="title">Coin Analysis</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="hottwitter">
+              <span class="icon"
+                ><ion-icon name="logo-twitter"></ion-icon
+              ></span>
+              <span class="title">Hot Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="tophashtag">
+              <span class="icon"
+                ><ion-icon name="pricetags-outline"></ion-icon
+              ></span>
+              <span class="title">Top Hashtag</span>
+            </a>
+          </li>
+          <li>
+            <a href="sentiment">
+              <span class="icon"
+                ><ion-icon name="nuclear-outline"></ion-icon
+              ></span>
+              <span class="title">Sentiment Analysis</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- MAIN -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <!-- Search -->
+          <div class="search">
+            <label>
+              <input type="text" placeholder="Search here" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div>
+          <!-- UsrImg -->
+          <div class="user">
+            <!-- image here -->
+          </div>
         </div>
 
-        <!-- MAIN -->
-        <div class="main">
-            <div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-                <!-- Search -->
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
-                </div>
-                <!-- UsrImg -->
-                <div class="user">
-                    <!-- image here -->
-                </div>
+        <!-- card -->
+        <div class="cardBox">
+          <div class="card">
+            <div>
+              <div class="numbers">{{top[0]}}</div>
+              <div class="cardName">Top Total Tweets</div>
             </div>
-
-            <!-- card -->
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{top[0]}}</div>
-                        <div class="cardName">Top Total Tweets</div>
-                    </div>
-                    <div class="iconBx">
-                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
-                        {{top[4]}}
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{top[1]}}</div>
-                        <div class="cardName">Top Positives</div>    
-                    </div>
-                    <div class="iconBx">
-                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
-                        {{top[5]}}
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{top[2]}}</div>
-                        <div class="cardName">Top Negatives</div>
-                    </div>
-                    <div class="iconBx">
-                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
-                        {{top[6]}}
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div>
-                        <div class="numbers">{{top[3]}}</div>
-                        <div class="cardName">Top Neutral</div>
-                    </div>
-                    <div class="iconBx">
-                        <!-- <ion-icon name="calculator-outline"></ion-icon> -->
-                        {{top[7]}}
-                    </div>
-                </div>
+            <div class="iconBx">
+              <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+              #{{top[4]}}
             </div>
+          </div>
 
-            <!-- Table for hashtag sentiment -->
-            <!-- Details -->
+          <div class="card">
+            <div>
+              <div class="numbers">{{top[1]}}</div>
+              <div class="cardName">Top Positives</div>
+            </div>
+            <div class="iconBx">
+              <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+              #{{top[5]}}
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">{{top[2]}}</div>
+              <div class="cardName">Top Negatives</div>
+            </div>
+            <div class="iconBx">
+              <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+              #{{top[6]}}
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">{{top[3]}}</div>
+              <div class="cardName">Top Neutral</div>
+            </div>
+            <div class="iconBx">
+              <!-- <ion-icon name="calculator-outline"></ion-icon> -->
+              #{{top[7]}}
+            </div>
+          </div>
+        </div>
+
+        <!-- Table for hashtag sentiment -->
+        <!-- Details -->
         <div class="details">
-            <div class="recentTwitters">
-              <div class="cardHeader">
-                <h2>Top 100 Hashtag</h2>
-                <!-- <a href="#" class="btn">View All</a> -->
-              </div>
-  
-              <div class="tableBox">
-                <table>
-                  <thead>
-                    <tr>
-                      <td>Hashtag</td>
-                      <td>Total Tweets</td>
-                      <td>Positives</td>
-                      <td>Neutrals</td>
-                      <td>Negatives</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- form of item in table -->
-                    {% for i in range(table_count)%}
-                    <tr>
-                        <td>#{{table_hashtags[i]}}</td>
-                        <td>{{table_total_tweets[i]}}</td>
-                        <td>{{table_total_positives[i]}}</td>
-                        <td>{{table_total_neutrals[i]}}</td>
-                        <td>{{table_total_negatives[i]}}</td>
-                    </tr>
-                    {% endfor %}  
-                    
-                  </tbody>
-                </table>
+          <div class="recentTwitters">
+            <div class="cardHeader">
+              <h2>Top 100 Hashtag</h2>
+              <!-- <a href="#" class="btn">View All</a> -->
+            </div>
+
+            <div class="tableBox">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Hashtag</td>
+                    <td>Total Tweets</td>
+                    <td>Positives</td>
+                    <td>Neutrals</td>
+                    <td>Negatives</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- form of item in table -->
+                  {% for i in range(table_count)%}
+                  <tr>
+                    <td>#{{table_hashtags[i]}}</td>
+                    <td>{{table_total_tweets[i]}}</td>
+                    <td>{{table_total_positives[i]}}</td>
+                    <td>{{table_total_neutrals[i]}}</td>
+                    <td>{{table_total_negatives[i]}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart for sentiment -->
+        <div class="visualize">
+          <div class="topcoin">
+            <div class="cardHeader">
+              <h2>Top Hashtag Analysis</h2>
+            </div>
+
+            <div class="cardChartBox">
+              <!-- Form chart card -->
+              <div class="cardChart">
+                <div class="titleChart">
+                  <h3>Sentiment Analysis 100 hashtag coin</h3>
+                </div>
+                <div class="contentChart">
+                  <canvas id="barchartsentiment"></canvas>
+                </div>
               </div>
             </div>
           </div>
-  
-            <!-- Chart for sentiment -->
-            <div class="visualize">
-                <div class="topcoin">
-                  <div class="cardHeader">
-                    <h2>Top Hashtag Analysis</h2>
-                  </div>
-      
-                  <div class="cardChartBox">
-                    <!-- Form chart card -->
-                    <div class="cardChart">
-                      <div class="titleChart">
-                        <h3>Sentiment Analysis 100 hashtag coin</h3>
-                      </div>
-                      <div class="contentChart">
-                        <canvas id="barchartsentiment"></canvas>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
         </div>
+      </div>
     </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 
     <script>
-        // toggle sidebar
-        let toggle = document.querySelector('.toggle');
-        let navigation = document.querySelector('.navigation');
-        let main = document.querySelector('.main');
+      // toggle sidebar
+      let toggle = document.querySelector('.toggle');
+      let navigation = document.querySelector('.navigation');
+      let main = document.querySelector('.main');
 
-        toggle.onclick = function() {
-            navigation.classList.toggle('active');
-            main.classList.toggle('active');
-        }
+      toggle.onclick = function() {
+          navigation.classList.toggle('active');
+          main.classList.toggle('active');
+      }
 
-        // chart
-        var top100_label = {{chart100_hashtags|tojson|safe}};
-        var top100_positives = {{chart100_total_positives|tojson|safe}};
-        var top100_neutrals = {{chart100_total_neutrals|tojson|safe}};
-        var top100_negatives = {{chart100_total_negatives|tojson|safe}};
-        var ctx = document.getElementById("barchartsentiment").getContext('2d');
-        var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: top100_label,
-            datasets: [{
-            label: 'Negative',
-            backgroundColor: "#caf270",
-            data: top100_negatives,
-            }, {
-            label: 'Neutral',
-            backgroundColor: "#45c490",
-            data: top100_neutrals,
-            }, {
-            label: 'Positive',
-            backgroundColor: "#008d93",
-            data: top100_positives,
-            }],
-        },
-        options: {
-            tooltips: {
-            displayColors: true,
-            callbacks:{
-                mode: 'x',
-            },
-            },
-            scales: {
-            xAxes: [{
-                stacked: true,
-                gridLines: {
-                display: false,
-                }
-            }],
-            yAxes: [{
-                stacked: true,
-                ticks: {
-                beginAtZero: true,
-                },
-                type: 'linear',
-            }]
-            },
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: { position: 'bottom' },
-        }
-        });
+      // chart
+      var top100_label = {{chart100_hashtags|tojson|safe}};
+      var top100_positives = {{chart100_total_positives|tojson|safe}};
+      var top100_neutrals = {{chart100_total_neutrals|tojson|safe}};
+      var top100_negatives = {{chart100_total_negatives|tojson|safe}};
+      var ctx = document.getElementById("barchartsentiment").getContext('2d');
+      var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: top100_label,
+          datasets: [{
+          label: 'Negative',
+          backgroundColor: "#b81d13",
+          data: top100_negatives,
+          }, {
+          label: 'Neutral',
+          backgroundColor: "#efb700",
+          data: top100_neutrals,
+          }, {
+          label: 'Positive',
+          backgroundColor: "#008450",
+          data: top100_positives,
+          }],
+      },
+      options: {
+          tooltips: {
+          displayColors: true,
+          callbacks:{
+              mode: 'x',
+          },
+          },
+          scales: {
+          xAxes: [{
+              stacked: true,
+              gridLines: {
+              display: false,
+              }
+          }],
+          yAxes: [{
+              stacked: true,
+              ticks: {
+              beginAtZero: true,
+              },
+              type: 'linear',
+          }]
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: { position: 'bottom' },
+      }
+      });
     </script>
-
-</body>
+  </body>
 </html>

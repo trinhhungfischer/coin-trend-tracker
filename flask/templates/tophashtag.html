@@ -7,7 +7,11 @@
     <title>Coin Analysis</title>
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../static/css/tophastag.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../static/css/tophastag.css"
+    />
   </head>
   <body>
     <!-- Trar day -->
@@ -79,7 +83,7 @@
             </div>
             <div class="iconBx">
               <!-- <ion-icon name="calculator-outline"></ion-icon> -->
-              {{top[6]}}
+              #{{top[6]}}
             </div>
           </div>
 
@@ -90,7 +94,7 @@
             </div>
             <div class="iconBx">
               <!-- <ion-icon name="calculator-outline"></ion-icon> -->
-              {{top[7]}}
+              #{{top[7]}}
             </div>
           </div>
 
@@ -101,7 +105,7 @@
             </div>
             <div class="iconBx">
               <!-- <ion-icon name="calculator-outline"></ion-icon> -->
-              {{top[8]}}
+              #{{top[8]}}
             </div>
           </div>
 
@@ -110,9 +114,7 @@
               <div class="numbers">{{top[4]}}</div>
               <div class="cardName">Top quote</div>
             </div>
-            <div class="iconBx">
-              {{top[9]}}
-            </div>
+            <div class="iconBx">#{{top[9]}}</div>
           </div>
         </div>
 
@@ -139,14 +141,13 @@
                   <!-- form of item in table -->
                   {% for i in range(table_count)%}
                   <tr>
-                      <td>#{{table_hashtags[i]}}</td>
-                      <td>{{table_tweets_total[i]}}</td>
-                      <td>{{table_tweets_like[i]}}</td>
-                      <td>{{table_tweets_retweet[i]}}</td>
-                      <td>{{table_tweets_reply[i]}}</td>
+                    <td>#{{table_hashtags[i]}}</td>
+                    <td>{{table_tweets_total[i]}}</td>
+                    <td>{{table_tweets_like[i]}}</td>
+                    <td>{{table_tweets_retweet[i]}}</td>
+                    <td>{{table_tweets_reply[i]}}</td>
                   </tr>
-                  {% endfor %}  
-            
+                  {% endfor %}
                 </tbody>
               </table>
             </div>

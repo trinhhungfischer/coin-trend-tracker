@@ -109,7 +109,7 @@ def get_tophashtag():
     top = [top_total, top_like, top_retweet, top_reply, top_quote,
            top_total_hashtag, top_like_hashtag, top_retweet_hashtag, top_reply_hashtag, top_quote_hashtag]
     
-    sort_arrays_by_reference(tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quote, reverse=True)    
+    tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quote = sort_arrays_by_reference(tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quote, reverse=True)    
     
     
     # Chart: Ve top 10 tweet, top 10 like, top 10 retweet, top 10 reply cac hashtag
@@ -181,7 +181,7 @@ def get_sentiment():
     top_total_tweets_hashtag, top_positive_hashtag, top_neutral_hashtag, top_negative_hashtag]
 
     # Chart
-    sort_arrays_by_reference(total_tweets, hashtags, total_positives, total_negatives, total_neutrals, reverse=True)
+    total_tweets, hashtags, total_positives, total_negatives, total_neutrals = sort_arrays_by_reference(total_tweets, hashtags, total_positives, total_negatives, total_neutrals, reverse=True)
 
     return render_template('sentiment.html',
                     top = top,
@@ -191,10 +191,10 @@ def get_sentiment():
                     table_total_positives = total_positives,
                     table_total_neutrals = total_neutrals,
                     table_total_negatives = total_negatives,
-                    chart100_hashtags = hashtags[:100],
-                    chart100_total_positives = total_positives[:100],
-                    chart100_total_negatives = total_negatives[:100],
-                    chart100_total_neutrals = total_neutrals[:100],
+                    chart100_hashtags = hashtags[:10],
+                    chart100_total_positives = total_positives[:10],
+                    chart100_total_negatives = total_negatives[:10],
+                    chart100_total_neutrals = total_neutrals[:10],
                     )
 
 
