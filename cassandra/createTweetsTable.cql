@@ -1,5 +1,5 @@
 DROP KEYSPACE IF EXISTS tweets_info;
-CREATE KEYSPACE tweets_info WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+CREATE KEYSPACE tweets_info WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1};
 
 use tweets_info;
 

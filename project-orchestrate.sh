@@ -24,3 +24,8 @@ docker exec namenode hdfs dfs -mkdir /cointrendy/checkpoint
 docker exec namenode hdfs dfs -chmod -R 777 /cointrendy
 docker exec namenode hdfs dfs -chmod -R 777 /cointrendy/checkpoint
 
+# Create virtual environment for python and install requirements
+pip install virtualenv
+virtualenv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
