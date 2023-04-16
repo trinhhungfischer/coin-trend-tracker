@@ -37,7 +37,7 @@ public class FilteredTweetStream {
     private static final Logger logger = Logger.getLogger(FilteredTweetStream.class);
     // To set your environment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
-    private static final String bearerToken = "AAAAAAAAAAAAAAAAAAAAAC%2BWkQEAAAAA5VceSkxXDVgtBKWMUhmSeZRVkuc%3DySnwaTG37tA1Xa5051I2A7lvjMsNdpodUSLQdgyxn9PxrxGWav";
+    private static final String bearerToken = "YOUR_BEARER_TOKEN";
 
 
     /*
