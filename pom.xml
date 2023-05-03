@@ -8,7 +8,8 @@
 	<name>Coin Trendy Monitor</name>
 
 	<modules>
-		<module>kafka/coinProducer</module>
-    </modules>
+		<module>kafka/twitterProducer</module>
+		<module>spark/tweetStreaming</module>
+    	</modules>
 	
 </project>
