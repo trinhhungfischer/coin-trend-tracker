@@ -31,24 +31,33 @@ Mô hình luồng dự án sẽ dựa trên kiến trúc Lambda (&#955;) với c
 # Các bước thực hiện
 
 ## Tạo luồng crawl top 100 coin từ Coingeko
-Đầu tiên nghiên cứu các API liên quan đến lấy dữ liệu từ Coingeko về tài sản top 100 theo tổng giá trị. 
+Đầu tiên nghiên cứu các API liên quan đến lấy dữ liệu từ Coingeko về tài sản top 100 theo tổng giá trị. Chúng ta thay đổi luồng để có thể crawl realtime được trước.
 
 
-## Lấy dữ liệu từ 
+## Lấy dữ liệu từ Tweet Realtime bằng Twitter API
+
+
 ## Tạo giao diện phân tích cho trang
 
 
-## How to use
+## Các bước sử dụng
 
-- `docker-compose -p lambda up`
-- Wait all services be up and running, then...
+- `docker-compose up -d`
+- Chờ tất cả các Image được tải về, build và chạy được
+- Tải Maven to build các package
+- `sudo apt install maven`
+- `mvn package`
+- Đợi tất cả các package được build xong
 - `./project-orchestrate.sh`
-- Run realtime job `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.PipelineProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
-- Access the Spark cluster <http://localhost:8080>
-- Run the twitter producer `java -jar kafka/twitterProducer/target/twitter-kafka-producer-1.0.0.jar`
-- Run the batch job `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.batch.BatchProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
+- Chạy các Spark Realtime Job bằng câu lệnh `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.PipelineProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
+- Truy cập Spark cluster <http://localhost:8080>
+- Chạy Twitter Producer của Kafka bằng câu lệnh `java -jar kafka/twitterProducer/target/twitter-kafka-producer-1.0.0.jar`
+- Chạy Spark Batch Job bằng câu lệnh `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.batch.BatchProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
+- Sau các bước trên sẽ tạo ra một luồng để xuất dữ liệu ra Cassandra
+
 ### Cassandra
 
-- Log in `docker exec -it cassandra-coin-trendy cqlsh --username cassandra --password cassandra`
+- Đăng nhập `docker exec -it cassandra-coin-trendy cqlsh --username cassandra --password cassandra`
 - Acess Tweet Keyspace "USE tweets_info;" và xem data trong bảng total_tweets_per_hashtag bằng câu lệnh "SELECT * FROM tweets_info.total_tweets_per_hashtag;".
-- - Nhớ làm các bước trên trước thì mới có dữ liệu trong bảng
+- Nhớ làm các bước trên trước thì mới có dữ liệu trong bảng
+
