@@ -5,10 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kafka.serializer.Encoder;
 import kafka.utils.VerifiableProperties;
 import org.apache.log4j.Logger;
-
 /**
  * Class to conver TweetData java object to JSON
  *
+ * @author trinhhungfischer
  */
 public class TweetDataEncoder implements Encoder<TweetData> {
 
