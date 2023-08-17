@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public class TweetData implements Serializable {
     private static final Logger logger = Logger.getLogger(TweetData.class);
     private String tweetId;
@@ -24,47 +25,43 @@ public class TweetData implements Serializable {
     private String authorId;
 
     public TweetData() {
-          this.editTweetIds = new ArrayList<String>();
-          this.hashtags = new ArrayList<String>();
+        this.editTweetIds = new ArrayList<String>();
+        this.hashtags = new ArrayList<String>();
     }
 
-    public TweetData(JsonNode jsonNode) {
+    public TweetData(String tweetId, String full_text, String UserId, ArrayList<String> hashtags, String lang, int retweet, int like, Date twitterTime ) {
         this();
         try {
-            JsonNode data = jsonNode.get("data");
-            this.tweetId = data.get("id").asText();
-            this.text = data.get("text").asText();
-            this.createdAt = new DateTime(data.get("created_at").asText()).toDate();
-            this.authorId = data.get("author_id").asText();
-            this.language = data.get("lang").asText();
+
+            this.tweetId = tweetId;
+            this.text = full_text;
+            this.createdAt = twitterTime;
+            this.authorId = UserId;
+            this.language = lang;
 
             // Tweet Histories ID
-            ArrayNode tweetHistoryIds = (ArrayNode) data.get("edit_history_tweet_ids");
-            if (tweetHistoryIds!= null && tweetHistoryIds.size() > 0) {
-                for (JsonNode tweetIdNode : tweetHistoryIds) {
-                    String tweetId = tweetIdNode.asText();
-                    if (tweetId != null) {
-                        this.editTweetIds.add(tweetId);
-                    }
-                }
-            }
+//            ArrayNode tweetHistoryIds = (ArrayNode) data.get("edit_history_tweet_ids");
+//            if (tweetHistoryIds!= null && tweetHistoryIds.size() > 0) {
+//                for (JsonNode tweetIdNode : tweetHistoryIds) {
+//                    String tweetId = tweetIdNode.asText();
+//                    if (tweetId != null) {
+//                        this.editTweetIds.add(tweetId);
+//                    }
+//                }
+//            }
 
-            // Get Public Metrics includes retweets, replies, likes and quotes.
-            JsonNode publicMetrics = data.get("public_metrics");
-            if (publicMetrics!= null) {
-                this.retweetCount = publicMetrics.get("retweet_count").asInt();
-                this.replyCount = publicMetrics.get("reply_count").asInt();
-                this.likeCount = publicMetrics.get("like_count").asInt();
-                this.quoteCount = publicMetrics.get("quote_count").asInt();
-            }
 
-            // Get Tweet hashtags from Filter response
-            ArrayNode hashtagsArray = (ArrayNode) data.get("entities").get("hashtags");
-            if (hashtagsArray!= null && hashtagsArray.size() > 0) {
-                for (JsonNode hashtagsNode : hashtagsArray) {
-                    String hashtag = hashtagsNode.get("tag").asText();
-                    this.hashtags.add(hashtag);
-                }
+
+            this.retweetCount = retweet;
+            this.replyCount = 0;
+            this.likeCount = like;
+            this.quoteCount = 0;
+
+
+
+            for (String hashtag : hashtags) {
+//                System.out.println("Hashtag: " + hashtag.getText());
+                this.hashtags.add(hashtag);
             }
 
 

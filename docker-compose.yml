@@ -50,7 +50,7 @@ services:
     hostname: cassandra
     networks:
       net:
-        ipv4_address: 172.22.0.6
+        ipv4_address: 172.22.0.8
     ports:
       - "9042:9042"
     environment:

@@ -25,7 +25,7 @@ import scala.Tuple2;
 import java.util.*;
 
 public class StreamProcessor {
-
+//
     private static final Logger logger = Logger.getLogger(StreamProcessor.class);
 
     private final JavaDStream<ConsumerRecord<String, TweetData>> directKafkaConsumer;
@@ -130,7 +130,7 @@ public class StreamProcessor {
     }
 
     public StreamProcessor filterTweetData() {
-        // We need filtered stream for total counts and sentiment counts later
+        //  need filtered stream for total counts and sentiment counts later
         var map = this.mapToPair(transformedStream);
         var state = this.mapWithState(map);
         this.filteredStream = filterByState(state).map(tuple -> tuple._1);

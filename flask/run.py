@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from flask import Flask, redirect, url_for, render_template
 from flask_cors import CORS
+from flask import Flask, request, jsonify
 from cassandra.cluster import Cluster
 from cassandra.cluster import Cluster
 from cassandra.policies import DCAwareRoundRobinPolicy
@@ -17,6 +18,9 @@ session, cluster = cassandra_conn()
 
 app = Flask(__name__)
 CORS(app)
+
+
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -135,7 +139,7 @@ def get_tophashtag():
 @app.route('/sentiment', methods=['GET'])
 def get_sentiment():
     results = session.execute('select * from tweets_info.total_sentiment;')
-
+    # results = session.execute("select * from tweets_info.total_sentiment  where hashtag = 'pepe';")
     hashtags = []
     total_tweets = []
     total_positives = []
@@ -154,7 +158,78 @@ def get_sentiment():
 
 
     for row in results:
-        hashtags.append(row.hashtag)
+        hashtags.append(row.hashtag+row.record_date)
+        total_tweets.append(row.total_tweets)
+        total_positives.append(row.total_positives)
+        total_negatives.append(row.total_negatives)
+        total_neutrals.append(row.total_neutrals)
+    
+        if row.total_tweets >= top_total_tweets:
+            top_total_tweets = row.total_tweets
+            top_total_tweets_hashtag = row.hashtag
+        
+        if row.total_positives >= top_positive:
+            top_positive = row.total_positives
+            top_positive_hashtag = row.hashtag
+        
+        if row.total_negatives >= top_negative:
+            top_negative = row.total_negatives
+            top_negative_hashtag = row.hashtag
+            if row.total_neutrals >= top_neutral:
+                top_neutral = row.total_neutrals
+                top_neutral_hashtag = row.hashtag
+        
+        count += 1
+    top = [top_total_tweets, top_positive, top_neutral, top_negative,
+    top_total_tweets_hashtag, top_positive_hashtag, top_neutral_hashtag, top_negative_hashtag]
+
+    # Chart
+    total_tweets, hashtags, total_positives, total_negatives, total_neutrals = sort_arrays_by_reference(total_tweets, hashtags, total_positives, total_negatives, total_neutrals, reverse=True)
+
+    return render_template('sentiment.html',
+                    top = top,
+                    table_count = count,
+                    table_hashtags = hashtags,
+                    table_total_tweets = total_tweets,
+                    table_total_positives = total_positives,
+                    table_total_neutrals = total_neutrals,
+                    table_total_negatives = total_negatives,
+                    chart100_hashtags = hashtags[:10],
+                    chart100_total_positives = total_positives[:10],
+                    chart100_total_negatives = total_negatives[:10],
+                    chart100_total_neutrals = total_neutrals[:10],
+                    )
+
+@app.route('/search_sentiment', methods=['POST'])
+def search_sentiment():
+    query = request.form['search_query']
+    print(query)
+    if len(query) < 9 :
+        results = session.execute("select * from tweets_info.total_sentiment  where hashtag = '"+query+"';")
+    else  : 
+        results = session.execute("select * from tweets_info.total_sentiment  where record_date = '"+query+"'"+" ALLOW FILTERING;") 
+    hashtags = []
+    total_tweets = []
+    total_positives = []
+    total_negatives = []
+    total_neutrals = []
+    count = 0
+
+    top_total_tweets_hashtag = ''
+    top_total_tweets = 0
+    top_positive_hashtag = ''
+    top_positive = 0
+    top_negative_hashtag = ''
+    top_negative = 0
+    top_neutral_hashtag = ''
+    top_neutral = 0
+
+
+    for row in results:
+        if len(query) < 9 :
+            hashtags.append(row.record_date)
+        else :
+            hashtags.append(row.hashtag)  
         total_tweets.append(row.total_tweets)
         total_positives.append(row.total_positives)
         total_negatives.append(row.total_negatives)
@@ -181,7 +256,7 @@ def get_sentiment():
     top_total_tweets_hashtag, top_positive_hashtag, top_neutral_hashtag, top_negative_hashtag]
 
     # Chart
-    total_tweets, hashtags, total_positives, total_negatives, total_neutrals = sort_arrays_by_reference(total_tweets, hashtags, total_positives, total_negatives, total_neutrals, reverse=True)
+    # total_tweets, hashtags, total_positives, total_negatives, total_neutrals = sort_arrays_by_reference(total_tweets, hashtags, total_positives, total_negatives, total_neutrals, reverse=False)
 
     return render_template('sentiment.html',
                     top = top,
@@ -196,8 +271,96 @@ def get_sentiment():
                     chart100_total_negatives = total_negatives[:10],
                     chart100_total_neutrals = total_neutrals[:10],
                     )
+@app.route('/search_total_tweet', methods=['POST'])
+def search_total_tweet():
+    query = request.form['search_query']
+    print(query)
+    if len(query) < 9 :
+        results = session.execute("select * from tweets_info.total_tweets  where hashtag = '"+query+"';")
+    else  : 
+        results = session.execute("select * from tweets_info.total_tweets  where record_date = '"+query+"'"+" ALLOW FILTERING;") 
+    # results = session.execute('select * from tweets_info.total_tweets;')
 
-
+    # Table
+    hashtags = []
+    tweets_total = []
+    tweets_like = []
+    tweets_retweet = []
+    tweets_reply = []
+    tweets_quote = []
+    
+    count = 0
+    top = []
+    top_total = 0
+    top_like = 0
+    top_retweet = 0
+    top_reply = 0
+    top_quote = 0
+    top_total_hashtag = ''
+    top_like_hashtag = ''
+    top_retweet_hashtag = ''
+    top_reply_hashtag = ''
+    top_quote_hashtag = ''
+    
+    for row in results:
+        if len(query) < 9 :
+            hashtags.append(row.record_date)
+        else :
+            hashtags.append(row.hashtag)  
+        tweets_total.append(row.total_tweets)
+        tweets_like.append(row.total_likes)
+        tweets_retweet.append(row.total_retweets)
+        tweets_reply.append(row.total_replies)
+        tweets_quote.append(row.total_quotes)
+        
+        if row.total_tweets >= top_total:
+            top_total = row.total_tweets
+            top_total_hashtag = row.hashtag
+        
+        if row.total_likes >= top_like:
+            top_like = row.total_likes
+            top_like_hashtag = row.hashtag 
+                       
+        if row.total_retweets >= top_retweet:
+            top_retweet = row.total_retweets
+            top_retweet_hashtag = row.hashtag
+            
+        if row.total_replies >= top_reply:
+            top_reply = row.total_replies
+            top_reply_hashtag = row.hashtag
+            
+        if row.total_quotes >= top_quote:
+            top_quote = row.total_quotes
+            top_quote_hashtag = row.hashtag
+        
+        count += 1
+    
+    top = [top_total, top_like, top_retweet, top_reply, top_quote,
+           top_total_hashtag, top_like_hashtag, top_retweet_hashtag, top_reply_hashtag, top_quote_hashtag]
+    
+    tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quote = sort_arrays_by_reference(tweets_total, hashtags, tweets_like, tweets_retweet, tweets_reply, tweets_quote, reverse=True)    
+    
+    
+    # Chart: Ve top 10 tweet, top 10 like, top 10 retweet, top 10 reply cac hashtag
+    top10_tweets_total_hashtag = []
+    top10_tweets_total = []
+    # for i in range(10):
+    #     top10_tweets_total_hashtag.append(hashtags[i])
+    #     top10_tweets_total.append(tweets_total[i])
+    
+    
+    return render_template('tophashtag.html',
+                    table_count = count,
+                    table_hashtags = hashtags, 
+                    table_tweets_total = tweets_total,
+                    table_tweets_like = tweets_like,
+                    table_tweets_retweet = tweets_retweet,
+                    table_tweets_reply = tweets_reply,
+                    table_tweets_quote = tweets_quote,
+                    top = top,
+                    chart10_tweets_total_hashtags = top10_tweets_total_hashtag,
+                    chart10_tweets_total = top10_tweets_total,
+                    )
 def sort_arrays_by_reference(reference, *arrays, reverse=False):
     zipped = zip(reference, *arrays)
     sorted_zipped = sorted(zipped, key=lambda x: x[0], reverse=reverse)

@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 /**
  * Class to conver TweetData java object to JSON
  *
- * @author trinhhungfischer
  */
 public class TweetDataEncoder implements Encoder<TweetData> {
 

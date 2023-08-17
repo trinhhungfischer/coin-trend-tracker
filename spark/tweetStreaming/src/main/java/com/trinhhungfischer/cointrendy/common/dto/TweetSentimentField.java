@@ -50,7 +50,7 @@ public class TweetSentimentField implements Serializable {
         }
 
         Tuple2<TweetData, TweetSentimentField> output = new Tuple2<>(tweetData, sentimentField);
-
+//
         return output;
     }
 

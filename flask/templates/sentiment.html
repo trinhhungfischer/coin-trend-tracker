@@ -61,10 +61,16 @@
           </div>
           <!-- Search -->
           <div class="search">
-            <label>
-              <input type="text" placeholder="Search here" />
-              <ion-icon name="search-outline"></ion-icon>
-            </label>
+            <form id="searchForm" action="/search_sentiment" method="post">
+              <label>
+                <input
+                  type="text"
+                  name="search_query"
+                  placeholder="Search here"
+                />
+                <ion-icon name="search-outline"></ion-icon>
+              </label>
+            </form>
           </div>
           <!-- UsrImg -->
           <div class="user">
@@ -99,7 +105,7 @@
           <div class="card">
             <div>
               <div class="numbers">{{top[2]}}</div>
-              <div class="cardName">Top Negatives</div>
+              <div class="cardName">Top Neutral</div>
             </div>
             <div class="iconBx">
               <!-- <ion-icon name="calculator-outline"></ion-icon> -->
@@ -110,7 +116,7 @@
           <div class="card">
             <div>
               <div class="numbers">{{top[3]}}</div>
-              <div class="cardName">Top Neutral</div>
+              <div class="cardName">Top Negatives</div>
             </div>
             <div class="iconBx">
               <!-- <ion-icon name="calculator-outline"></ion-icon> -->
@@ -187,6 +193,7 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
       // toggle sidebar

@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Class to deserialize JSON string to TweetData object
  *
- * @author trinhhungfischer
+ *
  */
 public class TweetDataDeserializer implements Deserializer<TweetData> {
     private static final ObjectMapper objectMapper = new ObjectMapper();

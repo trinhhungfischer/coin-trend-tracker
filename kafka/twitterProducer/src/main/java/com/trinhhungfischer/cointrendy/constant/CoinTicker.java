@@ -43,24 +43,38 @@ public class CoinTicker {
 
     public static ArrayList<String> getTickerRules() {
         ArrayList<String> rules = new ArrayList<String>();
-
-        String rule = "(";
-
         listCoinTicker = getListCoinTicker();
-
-        for (int i = 0; i < listCoinTicker.size(); i++) {
-            if (rule.length() + listCoinTicker.get(i).length() + 5 +
-                    END_RULE_STR.length() >= MAX_CHARS_IN_RULE) {
-                rules.add(rule.substring(0, rule.length() - 4) + ")" + END_RULE_STR);
-                rule = "(";
+        String rule = "";
+        for (int i = 0; i < 34; i++) {
+            if (i < 33) {
+                rule += ("%23" + listCoinTicker.get(i) + "%20OR%20");
+            } else {
+                rule += ("%23" + listCoinTicker.get(i) + "");
             }
 
-            if (i < listCoinTicker.size() - 1) {
-                rule += ("#" + listCoinTicker.get(i) + " OR ");
-            }
-            else rule += ("#" + listCoinTicker.get(i) + ")");
         }
-        rules.add(rule + END_RULE_STR);
+        rules.add(rule);
+
+        rule = "";
+        for (int i = 34; i < 67; i++) {
+            if (i < 66) {
+                rule += ("%23" + listCoinTicker.get(i) + "%20OR%20");
+            } else {
+                rule += ("%23" + listCoinTicker.get(i) + "");
+            }
+
+        }
+        rules.add(rule);
+        rule = "";
+        for (int i = 67; i < 100; i++) {
+            if (i < 99) {
+                rule += ("%23" + listCoinTicker.get(i) + "%20OR%20");
+            } else {
+                rule += ("%23" + listCoinTicker.get(i) + "");
+            }
+
+        }
+        rules.add(rule);
 
         return rules;
     }

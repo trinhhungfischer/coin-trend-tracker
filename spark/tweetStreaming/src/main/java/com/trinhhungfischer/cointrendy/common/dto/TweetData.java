@@ -17,7 +17,7 @@ public class TweetData implements Serializable {
     private long quoteCount;
     private Timestamp createdAt;
     private String authorId;
-
+//
     private Map<String, String> metaData;
 
     public TweetData(String tweetId, String text, ArrayList<String> editTweetIds, ArrayList<String> hashtags,

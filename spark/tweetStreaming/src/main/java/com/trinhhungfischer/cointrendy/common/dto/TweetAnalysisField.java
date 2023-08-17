@@ -16,7 +16,7 @@ public class TweetAnalysisField implements Serializable {
         this.numReply = num_reply;
         this.numQuote = num_quote;
     }
-
+//
     public static TweetAnalysisField add(TweetAnalysisField o1, TweetAnalysisField o2) {
         long totalTweet = o1.getNumTweet() + o2.getNumTweet();
         long totalLike = o1.getNumLike() + o2.getNumLike();

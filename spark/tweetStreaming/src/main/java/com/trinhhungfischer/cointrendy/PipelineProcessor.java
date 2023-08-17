@@ -31,7 +31,7 @@ import java.util.*;
 /**
  * This class represents Kafka Twitter Streaming and create pipeline for processing the Tweets Data
  *
- * @author trinhhungfischer
+ * 
  */
 public class PipelineProcessor implements Serializable {
 

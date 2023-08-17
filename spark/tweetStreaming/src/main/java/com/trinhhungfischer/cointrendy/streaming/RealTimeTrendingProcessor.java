@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Class to process Tweet Data stem to produce Tweet data details
  *
- * @author trinhhungfischer
+
  */
 public class RealTimeTrendingProcessor {
 
