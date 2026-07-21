@@ -79,6 +79,19 @@ docker exec spark-master /spark/bin/spark-submit \
   /opt/spark-data/twitter-spark-processor-1.0.0.jar
 ```
 
+### 5. Khởi chạy Web Dashboard (Flask)
+
+Ứng dụng Flask sẽ đọc dữ liệu đã phân tích từ Cassandra và hiển thị biểu đồ.
+
+```bash
+# Kích hoạt môi trường ảo Python
+source .venv/bin/activate
+
+# Chạy Flask Server
+python flask/run.py
+```
+*(Giao diện sẽ hiển thị tại: `http://localhost:5000`)*
+
 ---
 
 ## 📊 Truy vấn Dữ liệu (Cassandra)
