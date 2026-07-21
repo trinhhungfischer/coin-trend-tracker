@@ -1,63 +1,95 @@
-# Big Data Capstone Project
+<div align="center">
+  <img src="assets/readme/hero.svg" alt="Coin Trend Tracker" width="100%" />
+</div>
 
-- [Big Data Capstone Project](#big-data-capstone-project)
-  - [1. Mô tả bài toán](#1-mô-tả-bài-toán)
-  - [2. Mục tiêu và phạm vi của đề tài](#2-mục-tiêu-và-phạm-vi-của-đề-tài)
-  - [3. Mô hình luồng dự án](#3-mô-hình-luồng-dự-án)
-- [Các bước thực hiện](#các-bước-thực-hiện)
-  - [Tạo luồng crawl top 100 coin từ Coingeko](#tạo-luồng-crawl-top-100-coin-từ-coingeko)
-  - [Lấy dữ liệu từ](#lấy-dữ-liệu-từ)
-  - [Tạo giao diện phân tích cho trang](#tạo-giao-diện-phân-tích-cho-trang)
-  - [How to use](#how-to-use)
-    - [Cassandra](#cassandra)
+<br/>
 
-## 1. Mô tả bài toán
+**Coin Trend Tracker** là một công cụ phân tích Big Data thời gian thực. Hệ thống thu thập, tổng hợp, và phân tích cảm xúc (sentiment) của cộng đồng về các tài sản kỹ thuật số (Cryptocurrency) trên mạng xã hội Twitter, giúp nhà đầu tư nắm bắt nhanh chóng rủi ro hoặc cơ hội khi có tin tức lớn lan truyền.
 
-Trong thị trường tiền số tiền số, sự biến động lớn của thị trường cũng như từng loại tài sản trong thị trường trở thành rủi ro rất lớn với nhà đầu tư. Những biến động tốt có xấu có có thể được tạo ra bằng những nguồn tin trên mạng xã hội. Bất cứ khi nào xuất hiện những thông tin bất lợi cho tài sản thì gần như ngay lập tức số lượng thông tin được phổ biến trên mạng xã hội tăng lên nhanh chóng, từ đó, tạo một phản ứng tiêu cực của cộng đồng lên loại tài sản đó. Do đó, cần thiết một công cụ theo dõi những thông tin trending về các loại tài sản số này trên các nền tảng mạng xã hội, đặc biệt Twitter nơi các trang mạng xã hội thông tin chính thức của nhiều nền tảng tiền kĩ thuật số. Công cụ này có thể giúp người dùng biết được những tài sản số nào đang được quan tâm nhiều nhất trên mạng xã hội trong một khoảng thời gian nhất định và mức độ phản hồi của nó như thế nào của cộng đồng.
+---
 
-## 2. Mục tiêu và phạm vi của đề tài
-Thông qua khảo sát, mục tiêu của đề tài, nhóm mong muốn tạo ra công cụ đưa ra cái nhìn tổng quan cho người dùng về các luồng thông tin của mạng xã hội một cách tốt nhất. Bài toán nhóm đặt ra có nhiệm vụ chính sau: 
+## ⚡ Kiến trúc hệ thống (Data Pipeline)
 
-Thu thập dữ liệu những tài sản số có giá trị tốt lắm trong top 100 coin hiện tại thông qua API của các chuyên trang phân tích như Coingecko, ngoài ra thu thập dữ liệu về giá của các loại tài sản trên sàn.
+Hệ thống được thiết kế theo kiến trúc Lambda (λ) để đáp ứng cả xử lý luồng (Real-time) và lô (Batch).
 
-Thu thập dữ liệu từ các Tweet với hashtag liên quan trực tiếp tới từng loại tài sản ví dụ như #FTM, #SOL, #LUNC, … thường được thêm vào bài viết liên quan tới loại tài sản đó cũng như các hashtag liên quan tới tài sản số như #Web3. Ngoài thông tin thu thập được, nhóm mong muốn đưa thêm vào tính năng phân tích semantic dữ liệu văn bản của các tweet bằng tiếng Anh để hiểu tweet đang đánh giá tích cực hoặc tiêu cực về loại tài sản này.
-Tạo phân tích dựa trên dữ liệu thu thập được từ dữ liệu trending về thông tin tweet của loại tài sản trên mạng xã hội cũng như giá biến động của tài sản
+<div align="center">
+  <img src="images/pipeline.png" alt="Data Pipeline Architecture" width="800" />
+</div>
+<br/>
 
-## 3. Mô hình luồng dự án
-Mô hình luồng dự án sẽ dựa trên kiến trúc Lambda (&#955;) với các tầng xử lý dữ liệu khác nhau  được trình bày trong sơ đồ dưới
-![#Data Pipeline](images/pipeline.png)
+- **Thu thập dữ liệu (Ingestion)**:
+  - **CoinGecko Crawler**: Lấy dữ liệu giá và danh sách Top 100 coin.
+  - **Twitter API (Kafka Producer)**: Streaming các dòng tweet theo hashtag (ví dụ: `#BTC`, `#ETH`).
+- **Xử lý tính toán (Processing)**: 
+  - **Spark Streaming (Real-time)**: Tính toán xu hướng hashtag, tổng hợp lượt tương tác (Like, Retweet, Reply) và phân tích cảm xúc (Positive, Negative, Neutral).
+  - **Spark Batch**: Xử lý dữ liệu định kỳ lưu trên HDFS.
+- **Lưu trữ (Storage)**:
+  - **Cassandra**: Lưu trữ dữ liệu phân tích đã qua xử lý để truy vấn trực tiếp.
+  - **HDFS**: Lưu raw data và thông tin checkpoint cho Spark.
+- **Hiển thị (Visualization)**:
+  - **Flask / Spring Boot**: Backend cung cấp API và Dashboard hiển thị biểu đồ trực quan.
 
+---
 
-# Các bước thực hiện
+## 🚀 Hướng dẫn cài đặt & sử dụng
 
-## Tạo luồng crawl top 100 coin từ Coingeko
-Đầu tiên nghiên cứu các API liên quan đến lấy dữ liệu từ Coingeko về tài sản top 100 theo tổng giá trị. Chúng ta thay đổi luồng để có thể crawl realtime được trước.
+Yêu cầu hệ thống: **Docker**, **Docker Compose**, **Java 11**, **Maven**, **Python 3**. Đừng quên cấu hình `BEARER_TOKEN` trong file `.env` trước khi khởi chạy.
 
+### 1. Khởi động hạ tầng Docker
+Hệ thống sử dụng Docker Compose để tự động triển khai Kafka, Zookeeper, Cassandra, Spark Master/Worker, và Hadoop HDFS.
+```bash
+docker-compose up -d
+```
+> [!NOTE]
+> Vui lòng đợi vài phút để tất cả các container khởi động hoàn toàn. Network và Volume sẽ được cấp phát tự động.
 
-## Lấy dữ liệu từ Tweet Realtime bằng Twitter API
+### 2. Biên dịch mã nguồn (Build Packages)
+Sử dụng Maven để đóng gói các thư viện và module xử lý (Kafka Producer & Spark Processor).
+```bash
+mvn clean package
+```
 
+### 3. Thiết lập hệ thống (Provisioning)
+Khởi tạo cấu trúc thư mục trên Hadoop HDFS, tạo Kafka Topic, Cassandra Schema, và cài đặt môi trường ảo cho Python:
+```bash
+./project-orchestrate.sh
+```
 
-## Tạo giao diện phân tích cho trang
+### 4. Khởi chạy luồng dữ liệu (Data Flow)
 
+**Bật Spark Real-time Processor**
+```bash
+docker exec spark-master /spark/bin/spark-submit \
+  --class com.trinhhungfischer.cointrendy.PipelineProcessor \
+  --master spark://localhost:7077 \
+  /opt/spark-data/twitter-spark-processor-1.0.0.jar
+```
+*(Giao diện quản lý Spark Master: http://localhost:8080)*
 
-## Các bước sử dụng
+**Bật Twitter Kafka Producer (Đổ dữ liệu vào)**
+```bash
+java -jar kafka/twitterProducer/target/twitter-kafka-producer-1.0.0.jar
+```
 
-- `docker-compose up -d`
-- Chờ tất cả các Image được tải về, build và chạy được
-- Tải Maven to build các package
-- `sudo apt install maven`
-- `mvn package`
-- Đợi tất cả các package được build xong
-- `./project-orchestrate.sh`
-- Chạy các Spark Realtime Job bằng câu lệnh `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.PipelineProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
-- Truy cập Spark cluster <http://localhost:8080>
-- Chạy Twitter Producer của Kafka bằng câu lệnh `java -jar kafka/twitterProducer/target/twitter-kafka-producer-1.0.0.jar`
-- Chạy Spark Batch Job bằng câu lệnh `docker exec spark-master /spark/bin/spark-submit --class com.trinhhungfischer.cointrendy.batch.BatchProcessor --master spark://localhost:7077 /opt/spark-data/twitter-spark-processor-1.0.0.jar`
-- Sau các bước trên sẽ tạo ra một luồng để xuất dữ liệu ra Cassandra
+**(Tùy chọn) Chạy Spark Batch Job**
+```bash
+docker exec spark-master /spark/bin/spark-submit \
+  --class com.trinhhungfischer.cointrendy.batch.BatchProcessor \
+  --master spark://localhost:7077 \
+  /opt/spark-data/twitter-spark-processor-1.0.0.jar
+```
 
-### Cassandra
+---
 
-- Đăng nhập `docker exec -it cassandra-coin-trendy cqlsh --username cassandra --password cassandra`
-- Acess Tweet Keyspace "USE tweets_info;" và xem data trong bảng total_tweets_per_hashtag bằng câu lệnh "SELECT * FROM tweets_info.total_tweets_per_hashtag;".
-- Nhớ làm các bước trên trước thì mới có dữ liệu trong bảng
+## 📊 Truy vấn Dữ liệu (Cassandra)
 
+Dữ liệu phân tích luồng đã được ghi vào Cassandra tại keyspace `tweets_info`.
+
+```bash
+# 1. Truy cập vào CQL Shell
+docker exec -it cassandra-coin-trendy cqlsh --username cassandra --password cassandra
+
+# 2. Truy vấn dữ liệu thực tế
+USE tweets_info;
+SELECT * FROM total_tweets;
+```

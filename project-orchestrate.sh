@@ -8,8 +8,13 @@
 # description: This script is used to orchestrate the project
 ######################################################################
 
+# Load environment variables if .env exists
+if [ -f .env ]; then
+  export $(cat .env | grep -v '^#' | xargs)
+fi
+
 # Create cassandra schema
-docker exec cassandra-coin-trendy cqlsh -u cassandra -p cassandra -f /cassandra/createTweetsTable.cql
+docker exec cassandra-coin-trendy cqlsh -u ${CASSANDRA_USER:-cassandra} -p ${CASSANDRA_PASSWORD:-cassandra} -f /cassandra/createTweetsTable.cql
 
 # Create kafka topic
 docker exec kafka-coin-trendy kafka-topics --create --topic twitter-data-event --zookeeper zookeeper-coin-trendy:2181 --replication-factor 1 --partitions 1

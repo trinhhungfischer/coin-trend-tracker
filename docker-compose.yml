@@ -75,7 +75,7 @@ services:
       - "4041:4041"
     environment:
       - INIT_DAEMON_STEP=false
-      - SPARK_DRIVER_HOST=192.168.1.5
+      - SPARK_DRIVER_HOST=${SPARK_DRIVER_HOST:-spark-master}
     volumes:
       - ./spark/tweetStreaming/target:/opt/spark-data/
     networks:

@@ -55,3 +55,4 @@ target
 /data/namenode/*
 .venv
 __pycache__
+.env

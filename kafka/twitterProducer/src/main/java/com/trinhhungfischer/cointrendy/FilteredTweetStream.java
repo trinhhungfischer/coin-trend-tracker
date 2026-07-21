@@ -35,9 +35,7 @@ import java.util.Map;
 public class FilteredTweetStream {
 
     private static final Logger logger = Logger.getLogger(FilteredTweetStream.class);
-    // To set your environment variables in your terminal run the following line:
-    // export 'BEARER_TOKEN'='<your_bearer_token>'
-    private static final String bearerToken = "YOUR_BEARER_TOKEN";
+    private static final String bearerToken = System.getenv("BEARER_TOKEN") != null ? System.getenv("BEARER_TOKEN") : "YOUR_BEARER_TOKEN";
 
 
     /*

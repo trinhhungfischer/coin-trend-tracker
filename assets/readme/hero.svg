@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%">
+    <title>Coin Trend Tracker Architecture</title>
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0d1117" />
+            <stop offset="100%" stop-color="#161b22" />
+        </linearGradient>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        </pattern>
+        <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3fb950" />
+            <stop offset="100%" stop-color="#2f81f7" />
+        </linearGradient>
+    </defs>
+    
+    <rect width="1200" height="400" fill="url(#bg)" rx="16" />
+    <rect width="1200" height="400" fill="url(#grid)" rx="16" />
+    
+    <!-- Title -->
+    <text x="600" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="url(#textGradient)" text-anchor="middle">Coin Trend Tracker</text>
+    
+    <!-- Subtitle -->
+    <text x="600" y="230" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="500" fill="#8b949e" text-anchor="middle">Real-time Crypto Sentiment &amp; Trend Analytics Pipeline</text>
+
+    <!-- Badges area -->
+    <g transform="translate(425, 290)">
+        <rect x="0" y="0" width="70" height="28" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+        <text x="35" y="19" font-family="system-ui" font-size="13" font-weight="600" fill="#c9d1d9" text-anchor="middle">Kafka</text>
+        
+        <rect x="80" y="0" width="70" height="28" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+        <text x="115" y="19" font-family="system-ui" font-size="13" font-weight="600" fill="#c9d1d9" text-anchor="middle">Spark</text>
+        
+        <rect x="160" y="0" width="90" height="28" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+        <text x="205" y="19" font-family="system-ui" font-size="13" font-weight="600" fill="#c9d1d9" text-anchor="middle">Cassandra</text>
+        
+        <rect x="260" y="0" width="90" height="28" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+        <text x="305" y="19" font-family="system-ui" font-size="13" font-weight="600" fill="#c9d1d9" text-anchor="middle">Flask / Spring</text>
+    </g>
+</svg>

@@ -1,17 +1,30 @@
+import os
+import time
 from datetime import datetime, timedelta
 from flask import Flask, redirect, url_for, render_template
 from flask_cors import CORS
+from dotenv import load_dotenv
 from cassandra.cluster import Cluster
 from cassandra.cluster import Cluster
 from cassandra.policies import DCAwareRoundRobinPolicy
 from cassandra.auth import PlainTextAuthProvider
 
 def cassandra_conn():
-    auth_provider = PlainTextAuthProvider(username='cassandra', password='cassandra')
+    load_dotenv()
+    cassandra_user = os.getenv('CASSANDRA_USER', 'cassandra')
+    cassandra_password = os.getenv('CASSANDRA_PASSWORD', 'cassandra')
+    auth_provider = PlainTextAuthProvider(username=cassandra_user, password=cassandra_password)
     cluster = Cluster(['localhost'], port=9042, auth_provider=auth_provider)
-    session = cluster.connect("tweets_info")
-    print('================== Connect Cassandra Successful ============================')
-    return session, cluster
+    for i in range(5):
+        try:
+            session = cluster.connect("tweets_info")
+            print('================== Connect Cassandra Successful ============================')
+            return session, cluster
+        except Exception as e:
+            print(f"Cassandra connection failed: {e}. Retrying in 5 seconds...")
+            time.sleep(5)
+    print("Warning: Could not connect to Cassandra after retries.")
+    return None, cluster
 
 session, cluster = cassandra_conn()
 
@@ -24,7 +37,11 @@ def index():
 
 @app.route('/hottwitter', methods=['GET'])
 def get_hottwitter():
-    results = session.execute('select * from tweets_info.recent_tweets')
+    try:
+        results = session.execute('select * from tweets_info.recent_tweets')
+    except Exception as e:
+        print(f"Error executing query: {e}")
+        return "Database error", 500
     ids = []
     timestamps = []
     texts = []
@@ -53,7 +70,11 @@ def get_hottwitter():
 
 @app.route('/tophashtag', methods=['GET'])
 def get_tophashtag():
-    results = session.execute('select * from tweets_info.total_tweets;')
+    try:
+        results = session.execute('select * from tweets_info.total_tweets;')
+    except Exception as e:
+        print(f"Error executing query: {e}")
+        return "Database error", 500
 
     # Table
     hashtags = []
@@ -134,7 +155,11 @@ def get_tophashtag():
 
 @app.route('/sentiment', methods=['GET'])
 def get_sentiment():
-    results = session.execute('select * from tweets_info.total_sentiment;')
+    try:
+        results = session.execute('select * from tweets_info.total_sentiment;')
+    except Exception as e:
+        print(f"Error executing query: {e}")
+        return "Database error", 500
 
     hashtags = []
     total_tweets = []

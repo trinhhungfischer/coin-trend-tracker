@@ -80,8 +80,8 @@ public class RealTimeTrendingProcessor {
         tweetIndexData.setTotalTweets(tuple._2().getNumTweet());
         tweetIndexData.setTotalLikes(tuple._2().getNumLike());
         tweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
-        tweetIndexData.setTotalReplies(tuple._2().getNumQuote());
-        tweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
+        tweetIndexData.setTotalReplies(tuple._2().getNumReply());
+        tweetIndexData.setTotalQuotes(tuple._2().getNumQuote());
         tweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         tweetIndexData.setTimestamp(new Timestamp(new Date().getTime()));
         return tweetIndexData;
@@ -124,7 +124,7 @@ public class RealTimeTrendingProcessor {
         TweetAnalysisField objectOption = currentIndex.get();
         objectOption = objectOption == null ? new TweetAnalysisField(0L, 0L, 0L, 0L, 0L) : objectOption;
         long totalTweet = objectOption.getNumTweet() + (state.exists() ? state.get().getNumTweet() : 0);
-        long totalLike = objectOption.getNumLike() + (state.exists() ? state.get().getNumTweet() : 0);
+        long totalLike = objectOption.getNumLike() + (state.exists() ? state.get().getNumLike() : 0);
         long totalRetweet = objectOption.getNumRetweet() + (state.exists() ? state.get().getNumRetweet() : 0);
         long totalReply = objectOption.getNumReply() + (state.exists() ? state.get().getNumReply() : 0);
         long totalQuote = objectOption.getNumQuote() + (state.exists() ? state.get().getNumQuote() : 0);
@@ -185,8 +185,8 @@ public class RealTimeTrendingProcessor {
         totalTweetIndexData.setTotalTweets(tuple._2().getNumTweet());
         totalTweetIndexData.setTotalLikes(tuple._2().getNumLike());
         totalTweetIndexData.setTotalRetweets(tuple._2().getNumRetweet());
-        totalTweetIndexData.setTotalReplies(tuple._2().getNumQuote());
-        totalTweetIndexData.setTotalQuotes(tuple._2().getNumTweet());
+        totalTweetIndexData.setTotalReplies(tuple._2().getNumReply());
+        totalTweetIndexData.setTotalQuotes(tuple._2().getNumQuote());
         Date currentTime = new Date();
         totalTweetIndexData.setRecordDate(new SimpleDateFormat("yyyy-MM-dd").format(currentTime));
         totalTweetIndexData.setTimestamp(new Timestamp(currentTime.getTime()));
